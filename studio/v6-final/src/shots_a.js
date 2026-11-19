@@ -1,7 +1,7 @@
 // EPISODE 6 · worker A : "Shadow Play on Parched Earth" opening (0 → L(5)).
 // Backlit leather-puppet screen (bone cloth, one flickering oil lamp, wooden frame, puppet sticks), parched cracked earth,
 // gold grain as the only signal colour, woodblock labels, crack-spread transitions with falling shards.
-import { ctx, W, H, TAU, clamp, lerp, seg, eo, eio, eob, rnd } from './core/lib.js';
+import { ctx, setCtx, W, H, TAU, clamp, lerp, seg, eo, eio, eob, rnd } from './core/lib.js';
 import { L, Wd } from './core/timing.js';
 import { lg, poly, rgba, mixc, cached, blit } from './art.js';
 
@@ -140,10 +140,19 @@ function shadows(t, fn, o = {}) {
   const lx = o.lx ?? 540, ly = o.ly ?? 700, s = 1 + 0.015 * fl(t * 0.8);
   ctx.save(); poly([[SX0, SY0], [SX1, SY0], [SX1, SY1], [SX0, SY1]]); ctx.clip();
   ctx.translate(lx, ly); ctx.scale(s, s); ctx.translate(-lx, -ly);
-  ctx.save(); ctx.globalAlpha = 0.28; ctx.filter = 'blur(7px)'; ctx.translate(0, 4); fn(true); ctx.restore();
-  ctx.filter = 'blur(0.9px)'; fn(false); ctx.filter = 'none';
+  // each pass is drawn sharp into an offscreen layer, then the whole layer is blurred once
+  // (a blur filter on every path was extremely slow in headless/software Chrome: up to 60 s per frame)
+  const pass = (soft, blur, alpha, dy) => {
+    const L = shLayer(soft ? 1 : 0, ctx.canvas.width, ctx.canvas.height), m = ctx.getTransform(), prev = ctx;
+    const lc = L.getContext('2d'); lc.setTransform(1, 0, 0, 1, 0, 0); lc.clearRect(0, 0, L.width, L.height); lc.setTransform(m); lc.translate(0, dy);
+    setCtx(lc); lc.save(); fn(soft); lc.restore(); setCtx(prev);
+    ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha *= alpha; ctx.filter = `blur(${blur * Math.hypot(m.a, m.b)}px)`; ctx.drawImage(L, 0, 0); ctx.restore();
+  };
+  pass(true, 7, 0.28, 4); pass(false, 0.9, 1, 0);
   ctx.restore();
 }
+const SHL = [];
+function shLayer(i, w, h) { let c = SHL[i]; if (!c || c.width !== w || c.height !== h) { c = SHL[i] = document.createElement('canvas'); c.width = w; c.height = h; } return c; }
 function motes(t, n = 40, seed = 0, area = [SX0, SY0, SX1, SY1], col = '255,228,170', a = 0.55) {
   const [x0, y0, x1, y1] = area, w = x1 - x0, h = y1 - y0;
   for (let i = 0; i < n; i++) {

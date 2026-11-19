@@ -3,7 +3,7 @@ Updated: 2026-11-19 03:20 UTC (scheduled run)
 YT uploads in rolling 24h: 5/5 (v1,v2,v3,v2b,v3b 07:35-07:58 IST 19 Nov) (0zjKdLa3qQg, 2_N2dKh-SGU, 0kiWffItkg4, fF8fHqk3-vc, -OXGm_74tFM) -> quota FULL; next upload only when the oldest of these is >24h old (exact upload times not logged; log UTC time with every future upload).
 Sheet: 3 rows (videos 1-3), no Status set yet -> nothing approved, nothing to publish.
 v4 Lake Nyos = off-genre exception set up by another session (project in studio/v4-final), rendered, NOT uploaded, waiting for quota (frees ~08:00 IST 2026-11-20, uploads were 07:35-07:58 IST 2026-11-19). Upload order when free: v4 first, then v5. My QA recheck of v/v4.mp4: 75.5 s, 1080x1920, -14.2 LUFS, true peak was -0.9 dBTP -> FIXED 03:30 UTC (limiter, video stream copied): -14.8 LUFS, -1.5 dBTP, pushed to videos v/v4.mp4 (QA pass).
-Current: v5 Kallanai / Grand Anicut - steps 2-4 done: studio/autopilot/v5/script.json (14 lines, 3 sources, hedges), IPA added (Kallanai, Karikala, Sangam, Anaikattu, Anicut, Kollidam). Note: wikipedia / dtnext / incredibleindia were blocked by this session's network, facts came from search snippets; re-check against sources in QA.
+Current: v5 Kallanai / Grand Anicut - step 5 running (project studio/v5-final, voice done 72.8 s, 3 shot workers). Steps 2-4 done: studio/autopilot/v5/script.json (14 lines, 3 sources, hedges), IPA added (Kallanai, Karikala, Sangam, Anaikattu, Anicut, Kollidam). Note: wikipedia / dtnext / incredibleindia were blocked by this session's network, facts came from search snippets; re-check against sources in QA.
 Next command: v5 step 5 - pick new art direction (log in compositions.md), install kokoro-onnx + models, voice_ph.py, shots_a/b/c swarm (engine from studio/v3-final/src, capture.mjs from studio/v2-gangaikonda/tools), mix.py, QA, push v/v5.mp4, upload when quota frees.
 Missing: memory /areas/aazhi-channel.md was not reachable in this run; studio/autopilot/tools/capture.mjs does not exist (copies in ep1-rajaraja/tools, v2-gangaikonda/tools).
 
@@ -20,3 +20,4 @@ heartbeat: 2026-11-19T03:09:48Z
 heartbeat: 2026-11-19T03:07:36Z
 heartbeat: 2026-11-19T03:10:07Z
 heartbeat: 2026-11-19T03:10:41Z
+heartbeat: 2026-11-19T03:13:28Z

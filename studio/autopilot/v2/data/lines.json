@@ -42,63 +42,63 @@
   "end": 31.598
  },
  {
-  "text": "It was poured into a new lake, called Chola Gangam. A victory pillar, made of water.",
-  "caps": "poured into a new lake | called *Chola Gangam | a victory *pillar | made of *water.",
+  "text": "It was poured into a new water body, called Chola Gangam. A victory pillar, made of water.",
+  "caps": "poured into a new *water body | called *Chola Gangam | a victory *pillar | made of *water.",
   "start": 32.498,
-  "end": 37.584
+  "end": 38.285
  },
  {
   "text": "Historians note this is the king's own boast. No one else recorded the ceremony.",
   "caps": "historians note | it is the king's *own boast | no one else *recorded it.",
-  "start": 38.584,
-  "end": 43.636
+  "start": 39.285,
+  "end": 44.338
  },
  {
   "text": "But the stone is real.",
   "caps": "but the *stone | is *real.",
-  "start": 44.736,
-  "end": 45.958
+  "start": 45.438,
+  "end": 46.66
  },
  {
   "text": "Tradition says its tower was built a little lower, out of respect for his father.",
   "caps": "tradition says its tower | was built a little *lower | out of *respect | for his father.",
-  "start": 46.958,
-  "end": 51.655
+  "start": 47.66,
+  "end": 52.356
  },
  {
   "text": "Around it, a whole city once stood. Palaces, walls, a fort.",
   "caps": "around it a *whole city | once stood | palaces | walls | a *fort.",
-  "start": 52.655,
-  "end": 56.897
+  "start": 53.356,
+  "end": 57.599
  },
  {
   "text": "Today, only mounds, brick walls, and broken pillars remain.",
   "caps": "today only *mounds | brick walls | and broken *pillars remain.",
-  "start": 57.797,
-  "end": 61.796
+  "start": 58.499,
+  "end": 62.498
  },
  {
   "text": "Why the city fell is unclear. Some point to Pandya revenge. Others, to raids from Delhi.",
   "caps": "why it fell is *unclear | some say *Pandya revenge | others | raids from *Delhi.",
-  "start": 62.796,
-  "end": 68.569
+  "start": 63.498,
+  "end": 69.27
  },
  {
   "text": "Yet the temple survived, and people still worship there.",
   "caps": "yet the *temple survived | and people still *worship there.",
-  "start": 69.569,
-  "end": 72.746
+  "start": 70.27,
+  "end": 73.448
  },
  {
   "text": "A thousand years on, the king's boast still stands in stone.",
   "caps": "a *thousand years on | the king's boast | still stands in *stone.",
-  "start": 73.746,
-  "end": 77.067
+  "start": 74.448,
+  "end": 77.769
  },
  {
   "text": "Follow Aazhi for the next chronicle.",
   "caps": "Follow *Aazhi | for the next *chronicle.",
-  "start": 78.367,
-  "end": 80.245
+  "start": 79.069,
+  "end": 80.946
  }
 ]

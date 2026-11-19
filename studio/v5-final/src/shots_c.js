@@ -102,7 +102,7 @@ function stonePath(st, j = 0) {
   for (let k = 0; k < 8; k++) { const a = k / 8 * TAU, f = 0.78 + rnd(st.s * 9 + k) * 0.3, x = st.cx + Math.cos(a) * st.rx * f + j, y = st.cy + Math.sin(a) * st.ry * f; k ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
   ctx.closePath();
 }
-function section(t, beam, t0, haze = 1) {
+function section(t, beam, t0, haze = 1, labels = true) {
   paper(3);
   const draw = clamp((t - t0) / 0.8);
   // water + sand washes
@@ -148,6 +148,7 @@ function section(t, beam, t0, haze = 1) {
     ctx.save(); font(900, 28, 'Inter', 4); rr(940, beam - 46, 120, 40, 20); ctx.fillStyle = SUN; ctx.fill(); ctx.fillStyle = P0; ctx.fillText('SCAN', 1000, beam - 25); ctx.restore(); ctx.letterSpacing = '0px';
   }
   // labels + brackets
+  if (!labels) return;
   const pD = seg(beam, 560, 760), pO = seg(beam, 860, 1080);
   pen([[948, 470], [972, 470], [972, 760], [948, 760]], pD, SUN, 4, null, false);
   sten('1800s REPAIRS', 1040, 425, 36, SUN, eo(pD), 4, 'right');
@@ -162,14 +163,14 @@ const pj = (X, z) => [540 + X * F / z, HZ + F / z];
 const ZW0 = 1.38, ZW1 = 1.5;
 const CH = [ // downstream channels: centre X(z), half width(z), z range
   { c: (z) => 0.1 * Math.sin(z * 0.7), w: (z) => Math.max(0.16, 0.42 - 0.03 * (z - 1.5)), z0: 1.5, z1: 40 },
-  { c: (z) => -0.3 - 0.85 * (z - 1.55), w: () => 0.1, z0: 1.55, z1: 7 },
-  { c: (z) => 0.3 + 0.6 * (z - 1.55), w: () => 0.1, z0: 1.55, z1: 9 },
-  { c: (z) => -0.2 - 0.28 * (z - 2.4), w: () => 0.06, z0: 2.4, z1: 14 },
-  { c: (z) => 0.22 + 0.2 * (z - 3.2), w: () => 0.06, z0: 3.2, z1: 18 },
+  { c: (z) => -0.3 - 0.5 * (z - 1.55) - 0.35 * Math.sin((z - 1.55) * 1.3), w: () => 0.08, z0: 1.55, z1: 8 },
+  { c: (z) => 0.3 + 0.4 * (z - 1.55) + 0.3 * Math.sin((z - 1.55) * 1.1), w: () => 0.08, z0: 1.55, z1: 10 },
+  { c: (z) => -0.2 - 0.2 * (z - 2.4) - 0.25 * Math.sin(z * 0.8), w: () => 0.05, z0: 2.4, z1: 14 },
+  { c: (z) => 0.22 + 0.14 * (z - 3.2) + 0.2 * Math.sin(z * 0.7), w: () => 0.05, z0: 3.2, z1: 18 },
 ];
 const ROWS = [0.46, 0.6, 0.8, 1.05, ZW0, 1.62, 1.95, 2.4, 3.1, 4.1, 5.6, 8, 12, 20, 40];
 const FIELDS = [];
-ROWS.forEach((z0, r) => { const z1 = ROWS[r + 1]; if (!z1 || z0 === ZW0) return; for (let c = -12; c < 12; c++) { const X0 = c * 0.62 + (r % 2) * 0.2, X1 = X0 + 0.62; if (z1 <= ZW0 && X1 > -0.6 && X0 < 0.6) continue; FIELDS.push({ X0, X1, z0, z1, col: [FIELD, FIELD, OCHRE, TEAL][Math.floor(rnd(r * 40 + c) * 4)], a: 0.22 + rnd(r * 13 + c + 0.5) * 0.3 }); } });
+ROWS.forEach((z0, r) => { const z1 = ROWS[r + 1]; if (!z1 || z0 === ZW0) return; for (let c = -12; c < 12; c++) { const X0 = c * 0.62 + (r % 2) * 0.2, X1 = X0 + 0.62; if (z1 <= ZW0 && X1 > -0.6 && X0 < 0.6) continue; FIELDS.push({ X0, X1, z0, z1, col: [FIELD, FIELD, OCHRE, FIELD][Math.floor(rnd(r * 40 + c) * 4)], a: 0.1 + rnd(r * 13 + c + 0.5) * 0.18 }); } });
 function chanPoly(ch, zEnd) {
   const L_ = [], R_ = []; const ze = Math.min(ch.z1, zEnd); if (ze <= ch.z0) return null;
   for (let z = ch.z0; ; z *= 1.06) { const zz = Math.min(z, ze); L_.push(pj(ch.c(zz) - ch.w(zz), zz)); R_.push(pj(ch.c(zz) + ch.w(zz), zz)); if (zz >= ze) break; }
@@ -199,7 +200,7 @@ function land(t, lt) {
   wash(up, TEAL, 0.62);
   for (const s of [-0.56, 0.56]) { const a = pj(s, 0.45), b = pj(s, ZW0); ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.strokeStyle = rgba(CHALK, 0.8); ctx.lineWidth = 4; ctx.stroke(); }
   // downstream channels
-  for (const ch of CH) { const pts = chanPoly(ch, zR); if (pts) wash(pts, TEAL, 0.6); }
+  for (const ch of CH) { const pts = chanPoly(ch, zR); if (pts) wash(pts, TEAL, 0.85); }
   for (const ch of CH) { const pts = chanPoly(ch, zR); if (!pts) continue; const n = pts.length / 2; ctx.strokeStyle = rgba(CHALK, 0.55); ctx.lineWidth = 2.5; ctx.beginPath(); for (let i = 0; i < n; i++) i ? ctx.lineTo(pts[i][0], pts[i][1]) : ctx.moveTo(pts[i][0], pts[i][1]); ctx.moveTo(pts[n][0], pts[n][1]); for (let i = n; i < pts.length; i++) ctx.lineTo(pts[i][0], pts[i][1]); ctx.stroke(); }
   // ripples flowing away from the viewer
   ctx.lineCap = 'round';
@@ -266,7 +267,7 @@ function rose(x, y, R, lt, t) {
 
 export function buildC(add, cue) {
   const T1 = L(10), T2 = L(11) - 0.15, T3 = Wd('that', 11) - 0.1, T4 = L(12) - 0.1, T5 = L(13) - 0.1;
-  const tFrom = Wd('from', 10), tTamil = Wd('tamil', 10), tAnai = Wd('anaikattu', 10), tDam = Wd('a', 10) - 0.05;
+  const tFrom = Wd('from', 10), tTamil = Wd('tamil', 10), tAnai = Wd('anaikattu', 10), tDam = Wd('dam', 10) - 0.15;
   const tRep = Wd('repairs', 11), tNot = Wd('not', 11) - 0.05, tOld = Wd('oldest', 12) - 0.15, tStill = Wd('still', 12) - 0.1;
   const tAazhi = Wd('aazhi', 13), tNext = Wd('next', 13);
 
@@ -333,7 +334,7 @@ export function buildC(add, cue) {
   // ═════════ C3 · line 11b · punch-in: "?" + NOT CLEAR ═════════
   const d3 = (t) => {
     const lt = t - T3;
-    ctx.save(); ctx.translate(540, 820); ctx.scale(1.5, 1.5); ctx.translate(-540, -900); section(t, 1300, T2 - 5, 1.6); ctx.restore();
+    ctx.save(); ctx.translate(540, 820); ctx.scale(1.5, 1.5); ctx.translate(-540, -900); section(t, 1300, T2 - 5, 1.6, false); ctx.restore();
     ctx.fillStyle = 'rgba(6,20,42,0.3)'; ctx.fillRect(-300, -300, W + 600, H + 600);
     const pq = seg(lt, 0.05, 0.4);
     if (pq > 0) {
@@ -349,7 +350,7 @@ export function buildC(add, cue) {
 
   // ═════════ C4 · line 12 · pull back to the living weir + delta at sunrise ═════════
   const d4 = (t) => {
-    const lt = t - T4, z = lerp(2.4, 1, eio(seg(lt, 0.2, 2.2)));
+    const lt = t - T4, z = lerp(1.8, 1, eio(seg(lt, 0.15, 2.0)));
     ctx.save(); ctx.translate(540, 1000); ctx.scale(z, z); ctx.translate(-540, -1000); land(t, lt); ctx.restore();
     calm(0.5);
     landLabels(t, lt, tOld, tStill);

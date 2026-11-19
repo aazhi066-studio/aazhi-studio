@@ -256,7 +256,7 @@ export function buildB(add, cue) {
       flow(wob([[-300, 760], [1380, 760]], 1, 0, 200), cum(wob([[-300, 760], [1380, 760]], 1, 0, 200)), t, 26, 340, 9, 1, 0.08, CH, 0.4);
       // sand
       const sand = [...bed, [1380, 1500], [-300, 1500]];
-      wash(sand, OCH, 0.3, 5, 0); hatch(sand, 24, CH, 0.18, 2, 0.9); stipple(sand, 220, 3, CH, 0.28);
+      wash(sand, OCH, 0.6, 5, 0); hatch(sand, 24, CH, 0.18, 2, 0.9); stipple(sand, 220, 3, CH, 0.28);
       pen(bed, pr(lt, 0, 0.7), CH, 6);
       // stones
       for (let i = 0; i < drops.length; i++) {
@@ -295,7 +295,7 @@ export function buildB(add, cue) {
       ctx.save(); poly(wat); ctx.clip(); wash(wat, TEAL, 0.42, 4, 0); blooms(wat, TEAL, 4, 9, 0.16, 140); ripples(100, 980, wl + 10, t, 12, 5, 0.4); ctx.restore();
       pen(wob([[110, wl], [970, wl]], 5, 3), pr(lt, 0.4, 0.5), CH, 4, 0.8);
       // earth + sand
-      wash(ground, OCH, 0.26, 6, 0); hatch(ground, 30, OCH, 0.35, 2, -0.8); wash(sandBand, OCH, 0.35, 8, 0); stipple(sandBand, 160, 7, CH, 0.35);
+      wash(ground, OCH, 0.5, 6, 0); hatch(ground, 30, OCH, 0.35, 2, -0.8); wash(sandBand, OCH, 0.5, 8, 0); stipple(sandBand, 160, 7, CH, 0.35);
       pen(prof, pr(lt, 0, 0.55), CH, 6);
       // the wall, laid left to right
       for (let i = 0; i < wall.length; i++) {
@@ -306,8 +306,8 @@ export function buildB(add, cue) {
       note('FIG. 2 · ACROSS THE RIVER', 80, 180, 40, pr(lt, 0.1, 0.5), { align: 'left', alpha: 0.85 });
       label('LAID ACROSS', 80, 300, 112, pr(lt, 0.25, 0.45), { align: 'left' });
       pen(wob([[86, 375], [760, 375]], 8, 2), pr(lt, 0.6, 0.4), SUN, 6);
-      note('unhewn stone', 660, 560, 62, pr(lt, tB - 0.2, 0.5), { col: SUN, rot: -0.05 });
-      penArrow([[640, 600], [610, 760], [560, 905]], pr(lt, tB + 0.1, 0.35), SUN, 5);
+      note('unhewn stone', 660, 560, 62, pr(lt, tA + 0.2, 0.5), { col: SUN, rot: -0.05 });
+      penArrow([[640, 600], [610, 760], [560, 905]], pr(lt, tA + 0.6, 0.35), SUN, 5);
       note('sandy bed', 540, 1170, 46, pr(lt, tB + 0.3, 0.5));
       pageEdge(lt);
       finish();
@@ -327,7 +327,7 @@ export function buildB(add, cue) {
       hatch([[-300, -300], [370, -300], [370, 1500], [-300, 1500]], 34, OCH, 0.22, 2, 0.4); hatch([[710, -300], [1380, -300], [1380, 1500], [710, 1500]], 34, OCH, 0.22, 2, -0.4);
       waterBand(riv, 1, 300);
       // dry bed downstream
-      pen(down, 1, CH, 310, 0.85, false); pen(down, 1, BGM, 300, 1, false); pen(down, 1, OCH, 300, 0.32, false);
+      { const db = [[381, 760], [695, 760], [695, 1500], [381, 1500]]; poly(db); ctx.fillStyle = BGM; ctx.fill(); wash(db, OCH, 0.45, 12, 0); pen([[381, 760], [381, 1500]], 1, CH, 5, 0.85); pen([[695, 760], [695, 1500]], 1, CH, 5, 0.85); }
       ctx.save(); poly([[386, 770], [690, 770], [690, 1500], [386, 1500]]); ctx.clip(); stipple([[386, 770], [690, 770], [690, 1500], [386, 1500]], 200, 11, CH, 0.3); ctx.restore();
       // flow, piling at the wall
       ctx.save(); ctx.strokeStyle = rgba(CH, 0.7); ctx.lineWidth = 4; ctx.lineCap = 'round';
@@ -402,7 +402,7 @@ export function buildB(add, cue) {
       stamp('A SPLITTER', 540, 250, pr(lt, tSp + 0.15, 0.32), { size: 88, rot: -0.07 });
       note('delta fields', 860, 1180, 50, pr(lt, tFi, 0.5), { col: SUN, rot: -0.04 });
       compass(940, 170, 52, pr(lt, 0.1, 0.5), t);
-      note('stylised, not to scale', 80, 170, 34, pr(lt, 0.2, 0.5), { align: 'left', alpha: 0.75 });
+      note('stylised, not to scale', 540, 1250, 34, pr(lt, 0.2, 0.5), { alpha: 0.75 });
       finish();
     } });
     cue(T4 + tSp + 0.15, 'thud', { gain: 0.6 }); cue(T4 + tSp, 'zip', { gain: 0.4 }); cue(T4 + tSe + 0.2, 'bubbles', { gain: 0.45 });
@@ -442,7 +442,7 @@ export function buildB(add, cue) {
         ctx.fillStyle = NAVY; ctx.beginPath(); ctx.arc(0, 0, 56, 0, TAU); ctx.fill(); ctx.strokeStyle = SUN; ctx.lineWidth = 7; ctx.stroke();
         ctx.rotate(-k * 18); ctx.strokeStyle = CH; ctx.lineWidth = 4; ctx.beginPath(); ctx.arc(0, 0, 24, 0, TAU); ctx.moveTo(0, -24); ctx.lineTo(0, 24); ctx.moveTo(-24, 0); ctx.lineTo(24, 0); ctx.stroke();
         ctx.restore();
-        const n = Math.round(k * 330); label(`${n} m`, tx, ty + 100, 56, 1, { col: CH, ls: 2 });
+        const n = Math.round(k * 330); label(`${n} m`, Math.min(tx, 880), ty + 100, 56, 1, { col: CH, ls: 2 });
       }
       // dimension line + result
       dimH(X0, X1, 560, pr(lt, tM, 0.45), SUN, 5);
@@ -451,7 +451,7 @@ export function buildB(add, cue) {
       note('length of the weir, approx.', 540, 1080, 42, pr(lt, tM + 0.4, 0.5));
       ctx.restore();
       stamp('TODAY', 240, 230, pr(lt, 0.12, 0.32), { size: 84, rot: -0.12 });
-      note('stylised, not to scale', 1000, 1250, 34, pr(lt, 0.4, 0.5), { align: 'right', alpha: 0.75 });
+      note('stylised, not to scale', 540, 1170, 34, pr(lt, 0.4, 0.5), { alpha: 0.75 });
       pageEdge(lt);
       finish();
     } });
@@ -477,7 +477,7 @@ export function buildB(add, cue) {
       wash(upW, TEAL, 0.45, 2, 0); blooms(upW, TEAL, 4, 5, 0.15, 150); pen([[-300, lvl], [400, lvl]], 1, CH, 4, 0.7);
       wash(dnW, TEAL, 0.32, 3, 0); pen([[700, 990], [1380, 990]], 1, CH, 4, 0.6);
       ripples(-200, 300, lvl + 8, t, 10, 3, 0.4); ripples(820, 1300, 998, t, 10, 6, 0.4);
-      const sand = [...bed, [1380, 1500], [-300, 1500]]; wash(sand, OCH, 0.3, 4, 0); hatch(sand, 24, CH, 0.18, 2, 0.9); stipple(sand, 200, 9, CH, 0.28); pen(bed, 1, CH, 6);
+      const sand = [...bed, [1380, 1500], [-300, 1500]]; wash(sand, OCH, 0.6, 4, 0); hatch(sand, 24, CH, 0.18, 2, 0.9); stipple(sand, 200, 9, CH, 0.28); pen(bed, 1, CH, 6);
       for (let i = 0; i < old.length; i++) { const s = old[i]; stone(s.x, s.y, s.r, s.seed, { rot: (rnd(i + 2) - 0.5) * 0.5, lw: 3.5 }); }
       // new courses
       const drawCourse = (cs, t0) => cs.forEach((b, i) => { const k = pr(lt, t0 + i * 0.09, 0.22); if (k <= 0) return; block(b.x, b.y - (1 - k * k) * 140, b.w, b.h, 50 + i, clamp(k * 3)); });
@@ -533,7 +533,7 @@ export function buildB(add, cue) {
       ctx.restore();
       note('sketch: illustrative', 400, 480, 30, pr(lt, 0.5, 0.4), { align: 'right', alpha: 0.7 });
       ctx.restore();
-      stamp('IS SAID TO', 640, 330, pr(lt, tSa + 0.05, 0.32), { size: 78, rot: 0.1 });
+      stamp('IS SAID TO', 700, 590, pr(lt, tSa + 0.05, 0.32), { size: 78, rot: 0.1 });
       pageEdge(lt, 0.4);
       finish();
     } });

@@ -1,0 +1,22 @@
+# v8 Mangammal - ART DIRECTION "Kalamkari Cloth" (new to the channel)
+Story: Mangammal, queen regent of the Madurai Nayak kingdom (c.1689-1704), roads, rest houses, Tamukkam summer palace (now Gandhi Memorial Museum), wars/tribute, and the mysterious death (a later, unreliable story of starvation in a locked room). Script: script.json; line times: data/lines.json; word times: data/words.json (use L(i), Le(i), Wd(word, line) from src/core/timing.js).
+Look: the whole film is a hand-painted KALAMKARI-style temple cloth (pen-drawn cotton, natural dyes) that comes alive. Story told in painted panels and registers.
+ - Palette: unbleached cotton #EFE3C8 (shade #E2D2AF), iron-black outline ink #1E1611, madder red #A8322A (dark #7A1F1A), indigo #23305E (light #3D4F8A), myrobalan mustard #D9A441, faded leaf green #5E7A4E. ONE signal colour for key facts/labels: indigo-on-mustard (mustard patch, indigo text). Night/sad shots: cloth dyed deep indigo with cream outlines.
+ - Texture: fine cotton weave (cached offscreen tile of faint crossing threads + slubs) over every shot; slight uneven dye (soft blotches) inside fills.
+ - Figures: flat profile figures in the kalamkari manner, thick black outlines, patterned garments (dots, stripes). FACELESS: heads are plain ovals with a hair knot/crown, no eyes/mouth/features. Mangammal = crowned woman figure under a parasol, seated or standing; grandson = small figure (baby in cradle, later a youth). Never a portrait.
+ - Devices NEW to the channel (use several per shot):
+   (1) PEN-KALAM OUTLINE DRAW: black outlines draw themselves (stroke reveal via setLineDash/lineDashOffset), then DYE BLEED: colour fills spread from a point with soft edges (clip + growing radial gradient).
+   (2) CLOTH REGISTERS: frame split into stacked horizontal painted panels separated by ornamental border bands (procedural creeper/lotus/triangle borders drawn once into cached canvases), camera glides down/up between registers.
+   (3) CLOTH SWAY: the whole cloth gently ripples (draw scene to an offscreen canvas, blit in ~24 vertical strips with small sine x/y offsets) - only for some shots, keep cost low.
+   (4) RUNNING-STITCH LINES: routes/roads appear as thread stitches popping in one by one, with a needle leading the line.
+   (5) DYE-DRIP TRANSITION: madder or indigo dye runs down from the top edge in uneven streaks, covering the old shot; the next shot appears as the dye "washes" out (fade with streak mask).
+   (6) EMBROIDERED PATCH LABELS: small rectangles with stitched dashed border: "RECORD", "TRADITION", "LATER STORY", "ILLUSTRATION", "UNCERTAIN" (mustard patch, indigo text).
+   (7) FOLD/UNFOLD: cloth panel folds in half (scaleY via 2 halves with shading crease) to change shots.
+ - Text: big words Inter 900 caps, iron-black on cotton (or cotton on madder/indigo), slight letter spacing, a thin offset second colour for a printed feel. Small notes Caladea 700. NO Tamil script text (avoid errors); no invented inscriptions or quotes.
+ - Never (used before): blueprint/cyanotype, rubber stamps, balance scales, palm-leaf bundles, compass roses, measuring tapes, dimension lines (v5); shadow puppets, crack transitions (v6); lanterns going out (v4); sand pours, strata, pearls, coral pill tags, glass bottle (v7).
+ - Captions are drawn by the engine at y ~1640; keep y 1500-1760 calm (no big text there). Main action in y 150-1450.
+ - Every shot: camera always moving (sh.zoom, sh.cam), something animates the whole time. Shots 1.5-4 s. Draw cost < ~0.2 s/frame: no per-path shadowBlur/filter; cache static layers with cached()/offscreen canvases; textures generated once.
+Engine: src/main.js (shot = {id, at, draw(lt, d, t), cam:[x,y], zoom, note}), src/core/lib.js (ctx, W=1080, H=1920, clamp, lerp, seg, eo, eio, eob, rnd, TAU, circle, ell, rr, line), src/core/timing.js (L, Le, Wd), src/art.js (lg, poly, fillP, rgba, mixc, cached(key,w,h,q,fn), blit).
+ Sound cues: cue(t, type, {gain, dur, pan}); types: whoosh slide pop plop gulp boing bubbles sizzle sparkle thud slam tock zip alarm inhale heartbeat drum rumble chisel bell swell.
+ Reference code style: ../v7-final/src/shots_c.js (a different film: do NOT copy its look).
+Workers: A = lines 0-4 (src/shots_a.js, export function buildA(add, cue)), B = lines 5-9 (src/shots_b.js, buildB), C = lines 10-14 (src/shots_c.js, buildC). Each worker's first shot starts at L(first line) (A at 0), last shot runs until the next group starts. Prefix shot ids/cached keys with a/b/c. Keep helpers inside your own file (no shared edits to other files).

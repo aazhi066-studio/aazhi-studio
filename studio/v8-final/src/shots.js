@@ -1,4 +1,4 @@
-// EPISODE 7 · THE PORT THE SEA LEFT BEHIND (Korkai) : merged shot list (groups written by separate workers)
+// EPISODE 8 · THE QUEEN BEHIND THE LOCKED DOOR (Mangammal) : merged shot list (groups written by separate workers)
 import { buildA } from './shots_a.js';
 import { buildB } from './shots_b.js';
 import { buildC } from './shots_c.js';

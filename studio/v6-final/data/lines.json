@@ -1,0 +1,103 @@
+{
+ "duration": 77.402,
+ "lines": [
+  {
+   "text": "A canal in Chennai was dug by people who were starving.",
+   "caps": "a canal in *Chennai | dug by people | who were *starving.",
+   "start": 0.6,
+   "end": 4.018,
+   "i": 0
+  },
+  {
+   "text": "In eighteen seventy six the monsoon failed, and famine spread across the Madras Presidency.",
+   "caps": "in *1876 | the monsoon *failed | *famine spread.",
+   "start": 4.918,
+   "end": 10.582,
+   "i": 1
+  },
+  {
+   "text": "Across India, millions died. Estimates run from about five million to over nine million.",
+   "caps": "across India | *millions died | about *five million | to over *nine.",
+   "start": 11.482,
+   "end": 17.227,
+   "i": 2
+  },
+  {
+   "text": "Relief came with a condition. To be fed, you had to work.",
+   "caps": "relief came with | a *condition | to be fed | you had to *work.",
+   "start": 18.227,
+   "end": 21.576,
+   "i": 3
+  },
+  {
+   "text": "In early eighteen seventy seven, the daily relief wage for a man was cut to one pound of grain, and one anna.",
+   "caps": "in early *1877 | the wage was cut | to *one pound | of grain.",
+   "start": 22.476,
+   "end": 29.431,
+   "i": 4
+  },
+  {
+   "text": "Women and children got less. Even the sanitary commissioner of Madras argued for at least one and a half pounds.",
+   "caps": "women and children | got *less | even the *sanitary commissioner | argued for *more.",
+   "start": 30.331,
+   "end": 37.185,
+   "i": 5
+  },
+  {
+   "text": "One of these relief works was a canal through the city of Madras.",
+   "caps": "one relief work | was a *canal | through *Madras.",
+   "start": 38.185,
+   "end": 42.04,
+   "i": 6
+  },
+  {
+   "text": "Workers dug a link about eight kilometres long, joining the Adyar river to the Cooum.",
+   "caps": "a link about | *8 kilometres | joining the *Adyar | to the *Cooum.",
+   "start": 42.94,
+   "end": 48.085,
+   "i": 7
+  },
+  {
+   "text": "It was ordered by the Governor, the Duke of Buckingham.",
+   "caps": "ordered by | the *Governor | the Duke of *Buckingham.",
+   "start": 48.985,
+   "end": 51.87,
+   "i": 8
+  },
+  {
+   "text": "And the canal took his name. The diggers left no names that we know of.",
+   "caps": "the canal took | *his name | the *diggers | left *no names.",
+   "start": 52.67,
+   "end": 56.666,
+   "i": 9
+  },
+  {
+   "text": "Joined to older stretches, the Buckingham Canal runs about seven hundred and ninety six kilometres along the coast.",
+   "caps": "joined to older stretches | it runs about | *796 km | along the *coast.",
+   "start": 57.666,
+   "end": 64.457,
+   "i": 10
+  },
+  {
+   "text": "Today, in Chennai, long stretches lie choked and neglected.",
+   "caps": "today in Chennai | long stretches | lie *choked.",
+   "start": 65.457,
+   "end": 69.534,
+   "i": 11
+  },
+  {
+   "text": "So the next time you cross it, remember who dug it.",
+   "caps": "next time you *cross it | remember | who *dug it.",
+   "start": 70.534,
+   "end": 73.225,
+   "i": 12
+  },
+  {
+   "text": "Follow Aazhi for the next chronicle.",
+   "caps": "follow *Aazhi | for the next *chronicle.",
+   "start": 74.425,
+   "end": 76.302,
+   "i": 13
+  }
+ ]
+}

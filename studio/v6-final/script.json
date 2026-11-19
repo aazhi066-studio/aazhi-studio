@@ -1,0 +1,112 @@
+{
+ "title": "The Canal Dug by a Famine | Buckingham Canal, Chennai #shorts",
+ "voice": "af_heart",
+ "speed": 0.9,
+ "lead": 0.6,
+ "outro": 0.5,
+ "music": "gen:dust",
+ "music_seed": 62813,
+ "lines": [
+  {
+   "text": "A canal in Chennai was dug by people who were starving.",
+   "caps": "a canal in *Chennai | dug by people | who were *starving.",
+   "gap": 0.9
+  },
+  {
+   "text": "In eighteen seventy six the monsoon failed, and famine spread across the Madras Presidency.",
+   "caps": "in *1876 | the monsoon *failed | *famine spread.",
+   "gap": 0.9
+  },
+  {
+   "text": "Across India, millions died. Estimates run from about five million to over nine million.",
+   "caps": "across India | *millions died | about *five million | to over *nine.",
+   "gap": 1.0
+  },
+  {
+   "text": "Relief came with a condition. To be fed, you had to work.",
+   "caps": "relief came with | a *condition | to be fed | you had to *work.",
+   "gap": 0.9
+  },
+  {
+   "text": "In early eighteen seventy seven, the daily relief wage for a man was cut to one pound of grain, and one anna.",
+   "caps": "in early *1877 | the wage was cut | to *one pound | of grain.",
+   "gap": 0.9
+  },
+  {
+   "text": "Women and children got less. Even the sanitary commissioner of Madras argued for at least one and a half pounds.",
+   "caps": "women and children | got *less | even the *sanitary commissioner | argued for *more.",
+   "gap": 1.0
+  },
+  {
+   "text": "One of these relief works was a canal through the city of Madras.",
+   "caps": "one relief work | was a *canal | through *Madras.",
+   "gap": 0.9
+  },
+  {
+   "text": "Workers dug a link about eight kilometres long, joining the Adyar river to the Cooum.",
+   "caps": "a link about | *8 kilometres | joining the *Adyar | to the *Cooum.",
+   "gap": 0.9
+  },
+  {
+   "text": "It was ordered by the Governor, the Duke of Buckingham.",
+   "caps": "ordered by | the *Governor | the Duke of *Buckingham.",
+   "gap": 0.8
+  },
+  {
+   "text": "And the canal took his name. The diggers left no names that we know of.",
+   "caps": "the canal took | *his name | the *diggers | left *no names.",
+   "gap": 1.0
+  },
+  {
+   "text": "Joined to older stretches, the Buckingham Canal runs about seven hundred and ninety six kilometres along the coast.",
+   "caps": "joined to older stretches | it runs about | *796 km | along the *coast.",
+   "gap": 1.0
+  },
+  {
+   "text": "Today, in Chennai, long stretches lie choked and neglected.",
+   "caps": "today in Chennai | long stretches | lie *choked.",
+   "gap": 1.0
+  },
+  {
+   "text": "So the next time you cross it, remember who dug it.",
+   "caps": "next time you *cross it | remember | who *dug it.",
+   "gap": 1.2
+  },
+  {
+   "text": "Follow Aazhi for the next chronicle.",
+   "caps": "follow *Aazhi | for the next *chronicle.",
+   "gap": 0.6
+  }
+ ],
+ "sources": [
+  {
+   "name": "Buckingham Canal (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Buckingham_Canal",
+   "supports": "the 8 km Adyar-Cooum link built in 1877-78 as famine relief work; named after the Governor, the Duke of Buckingham and Chandos, who ordered it; earlier stretches from 1806 (Cochrane's Canal); total length about 796 km along the Coromandel coast"
+  },
+  {
+   "name": "Great Famine of 1876-1878 (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Great_Famine_of_1876%E2%80%931878",
+   "supports": "monsoon failure and drought from 1876; death toll estimates from about 5.5 million to 9.6 million across India (official figure about 5.2 million); the 'Temple wage' of 1 lb of grain plus one anna for a man on relief works from January 1877, less for women and children; Sanitary Commissioner W. R. Cornish arguing for at least 1.5 lb"
+  },
+  {
+   "name": "The Duke who gave us a canal (Sriram V, Madras Musings)",
+   "url": "https://sriramv.com/2017/10/17/the-duke-who-gave-us-a-canal/",
+   "supports": "a food-for-work programme begun during the famine that involved digging the canal through Madras, named after the Governor"
+  },
+  {
+   "name": "Buckingham Canal: Undoing 150 years of damage (DT Next)",
+   "url": "https://www.dtnext.in/news/chennai/buckingham-canal-undoing-150-years-of-damage",
+   "supports": "the canal's present neglected and polluted state in Chennai"
+  }
+ ],
+ "illustration": "All figures are faceless shadow silhouettes; no portraits of real people (including the Duke) are shown. Grain, coins, notices and maps are illustrations with no real document text. Maps are stylised, not to scale.",
+ "uncertain": [
+  "Death toll estimates for the famine vary widely (official about 5.2 million; later estimates up to about 9.6 million across India). Madras-only figures are not given in the video.",
+  "Sources differ on when the name Buckingham Canal came into use (1878 in some, the 1880s in others); the video only says the canal took his name.",
+  "The 796 km length covers the whole canal from Kakinada in Andhra Pradesh; the famine-relief link in Chennai is only about 8 km of it.",
+  "That the diggers' names were not recorded is phrased 'that we know of'.",
+  "The 1 lb wage was the scale set in January 1877; Madras moved to a revised scale in March 1877."
+ ],
+ "story_device": "Shadow-play on parched earth"
+}

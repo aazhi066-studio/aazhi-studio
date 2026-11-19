@@ -1,0 +1,29 @@
+{
+ "title": "The Dam the British Came to Learn From | Kallanai #shorts",
+ "voice": "af_heart", "speed": 0.9, "lead": 0.6, "outro": 0.5,
+ "music": "gen:frost", "music_seed": 51907,
+ "lines": [
+  {"text": "A British engineer once studied a Tamil river dam that was already ancient.", "caps": "a British engineer | studied a Tamil *river dam | that was already *ancient.", "gap": 0.9},
+  {"text": "Its name is Kallanai, the stone dam, on the Kaveri river.", "caps": "its name is *Kallanai | the *stone dam | on the *Kaveri.", "gap": 0.9},
+  {"text": "Tradition credits an early Chola king, Karikala.", "caps": "tradition credits | an early Chola king | *Karikala.", "gap": 1.0},
+  {"text": "When? Nobody is sure. Dates range from before the common era to about the second century.", "caps": "when? | *nobody is sure | dates range across | *centuries.", "gap": 1.0},
+  {"text": "His story comes mostly from Sangam poems, and it mixes record with legend.", "caps": "his story comes from | *Sangam poems | record mixed with *legend.", "gap": 1.0},
+  {"text": "The idea was simple. Rough, uncut stone, laid across a sandy river bed.", "caps": "the idea was *simple | rough *uncut stone | across a *sandy river bed.", "gap": 0.9},
+  {"text": "Not to block the Kaveri, but to split it, and send water into the fields of the delta.", "caps": "not to *block the river | but to *split it | into the *delta fields.", "gap": 1.0},
+  {"text": "Today the structure is about three hundred and thirty metres long.", "caps": "today it runs | about *330 metres.", "gap": 1.0},
+  {"text": "In the eighteen hundreds, British engineers repaired it and raised it.", "caps": "in the *1800s | British engineers | *repaired and raised it.", "gap": 0.9},
+  {"text": "Arthur Cotton is said to have learned from it, and the British called it the Grand Anicut.", "caps": "Arthur *Cotton | is said to have *learned from it | the *Grand Anicut.", "gap": 1.0},
+  {"text": "Anicut comes from the Tamil word Anaikattu, a dam.", "caps": "from the Tamil | *Anaikattu | a *dam.", "gap": 1.0},
+  {"text": "How much of the original stone survives under the repairs? That is not clear.", "caps": "how much *original stone | survives? | that is *not clear.", "gap": 1.1},
+  {"text": "But it is often called one of the oldest water works in the world still in use.", "caps": "one of the *oldest | water works | *still in use.", "gap": 1.2},
+  {"text": "Follow Aazhi for the next chronicle.", "caps": "follow *Aazhi | for the next *chronicle.", "gap": 0.6}
+ ],
+ "sources": [
+  {"name": "Kallanai Dam (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Kallanai_Dam", "supports": "attribution to Karikala Chola, contested date, unhewn stone, length about 329 m, 19th-century British repairs (Caldwell, Sim, Cotton), the name Grand Anicut from Tamil Anaikattu"},
+  {"name": "The Cholas as Hydraulic Engineers (Storytrails)", "url": "https://storytrails.in/places/the-cholas-as-hydraulic-engineers", "supports": "Karikala story drawn from Sangam literature and mixed with legend; the dam's role in dividing the Kaveri to irrigate the delta"},
+  {"name": "Dam standing tall 2000 years (The Better India)", "url": "https://www.thebetterindia.com/12031/dam-standing-tall-2000-years/", "supports": "Cotton studying the structure; the Lower Anicut on the Kollidam modelled on it; 'one of the oldest still in use' framing"}
+ ],
+ "illustration": "All scenes, river views, stones, workers and engineers are illustrations. No portrait of Karikala exists and none is shown. No real inscription text is shown. Maps are stylised, not to scale.",
+ "uncertain": ["The construction date is debated (estimates from before the common era to about the 2nd century CE).", "Karikala's role comes from Sangam poetry and tradition, not a dated building record.", "How much original stonework survives under 19th-century repairs is unclear.", "'Oldest dam in the world' is a popular claim; the video says 'one of the oldest still in use'.", "Exactly what Cotton learned from it is reported in popular sources, so it is phrased 'is said to'."],
+ "story_device": "TO PLAN in step 5: new art direction, no reuse from compositions.md"
+}

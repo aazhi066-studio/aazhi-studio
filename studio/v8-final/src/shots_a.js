@@ -80,13 +80,13 @@ function drawFig(F, x, y, s, o = {}) {
   if (draw > 0 && ia > 0) {
     ctx.globalAlpha = base * ia; ctx.strokeStyle = ink; let b = draw * F.tot;
     for (const sh of F.S) {
-      if (b <= 0) break; const k = Math.min(1, b / sh.len); ctx.lineWidth = sh.w ?? 5; trace(sh.p, sh.closed);
+      if (b <= 0) break; const k = draw >= 1 ? 1 : Math.min(1, b / sh.len); ctx.lineWidth = sh.w ?? 5; trace(sh.p, sh.closed);
       if (k < 1) { ctx.setLineDash([k * sh.len, sh.len + 20]); tip = walk(sh.closed ? sh.p.concat([sh.p[0]]) : sh.p, k * sh.len); }
       ctx.stroke(); ctx.setLineDash([]); b -= sh.len;
     }
   }
   ctx.globalAlpha = base;
-  if (tip && o.pen !== false) pen(tip[0], tip[1], 1.4);
+  if (tip && o.pen !== false) pen(tip[0], tip[1], 1.4 / s);
   ctx.restore();
 }
 /** fully dyed static figure from a cache (cheap) */
@@ -186,17 +186,14 @@ const KING = () => _F.k || (_F.k = mkFig([
   { p: E(44, -420, 13, 6), f: MUS, w: 3 }, { p: E(60, -338, 12, 12), f: CTS },
 ]));
 const CRADLE = () => _F.c || (_F.c = mkFig([
-  { p: [[0, 0], [-118, 250]], open: true, w: 4 }, { p: [[0, 0], [118, 250]], open: true, w: 4 },
-  { p: E(-10, 248, 82, 22), f: IND, pat: 'dc' },
-  { p: E(64, 234, 26, 24), f: CTS }, { p: E(50, 214, 11, 8), f: INK },
-  { p: cat([[-136, 248], [136, 248]], B([136, 248], [110, 352], [-110, 352], [-136, 248])), f: MAD, pat: 'dc' },
-  { p: tube([[-142, 248], [142, 248]], 12), f: MUS },
-  { p: E(0, 0, 10, 10), f: MUS, w: 4 },
-]));
-const BEAM = () => _F.b || (_F.b = mkFig([
-  { p: tube([[-230, -8], [230, -8]], 26), f: MADD, pat: 'dc' },
-  { p: E(-246, -8, 18, 22), f: MUS }, { p: E(246, -8, 18, 22), f: MUS },
-  { p: tube([[0, 4], [0, 14]], 8), f: MUS, w: 3 },
+  { p: tube(B([-170, -26], [-90, 6], [90, 6], [170, -26], 16), 16), f: MADD },
+  { p: tube([[-96, -10], [-84, -80]], 16), f: MADD }, { p: tube([[96, -10], [84, -80]], 16), f: MADD },
+  { p: E(-24, -182, 110, 30), f: IND, pat: 'dc' },
+  { p: E(100, -214, 30, 28), f: CTS }, { p: E(100, -214, 31, 29, 0.72 * PI, 1.62 * PI, 14), f: INK },
+  { p: cat([[-160, -170], [160, -170]], B([160, -170], [130, -56], [-130, -56], [-160, -170])), f: MAD, pat: 'dc' },
+  { p: tube([[-166, -170], [166, -170]], 12), f: MUS },
+  { p: E(-176, -186, 19, 19), f: MUS, pat: 'dm' }, { p: E(176, -186, 19, 19), f: MUS, pat: 'dm' },
+  { p: B([-120, -120], [-60, -90], [60, -90], [120, -120]), open: true, w: 3 },
 ]));
 const LAMP = () => _F.l || (_F.l = mkFig([
   { p: cat(B([-80, 0], [-80, -30], [-40, -46], [0, -48]), B([0, -48], [40, -46], [80, -30], [80, 0]).slice(1)), f: MUS, pat: 'di' },
@@ -230,6 +227,10 @@ function pavilion() {
   for (const sx of [-1, 1]) S.push({ p: cat(E(sx * 128, -270, 26, 34, PI, TAU, 10), [[sx * 128 - 26, -270]]), f: MAD, w: 4 });
   return mkFig(S);
 }
+const CROWN = () => _F.cr || (_F.cr = mkFig([
+  { p: [[-46, 0], [46, 0], [44, -30], [28, -46], [18, -92], [6, -132], [-6, -92], [-16, -46], [-34, -30]], f: MUS, pat: 'dm' },
+  { p: tube([[-50, -2], [50, -2]], 14), f: MAD }, { p: E(6, -142, 7, 9), f: MAD, w: 3 },
+]));
 const GOP = () => _F.g || (_F.g = gopuram());
 const PAV = () => _F.p || (_F.p = pavilion());
 const DOOR = () => _F.d || (_F.d = mkFig([
@@ -350,9 +351,8 @@ function needle(tip, s = 1) {
 function drips(p, col, mode = 'cover', seed = 1) {
   if (p <= 0 || (mode === 'wash' && p >= 1)) return;
   const n = 20, cw = W / n; ctx.save(); ctx.fillStyle = col;
-  if (mode === 'wash') ctx.globalAlpha *= 1 - eio(p) * 0.55;
   for (let i = -1; i <= n; i++) {
-    const dl = rnd(i * 7.3 + seed) * 0.4, q = clamp((p - dl) / (1 - dl)), k = mode === 'cover' ? eio(q) : 1 - eio(q), len = (H + 420) * k;
+    const dl = rnd(i * 7.3 + seed) * (mode === 'wash' ? 0.2 : 0.4), q = clamp((p - dl) / (1 - dl)), k = mode === 'cover' ? eio(q) : 1 - eo(q), len = (mode === 'cover' ? H + 420 : H + 260) * k;
     if (len <= 1) continue; const x = i * cw - rnd(i * 3.1 + seed) * 12, w = cw * (1.15 + rnd(i * 5.5 + seed) * 0.4), yb = -200 + len - rnd(i * 2.7 + seed) * 180 * (1 - k);
     ctx.fillRect(x, -200, w, yb + 200); ctx.beginPath(); ctx.ellipse(x + w / 2, yb, w / 2, w * 0.45, 0, 0, TAU); ctx.fill();
     const tw = w * 0.22, tl = 60 + rnd(i * 9.9 + seed) * 140; ctx.fillRect(x + w * (0.2 + rnd(i + seed) * 0.5), yb, tw, tl); ctx.beginPath(); ctx.arc(x + w * (0.2 + rnd(i + seed) * 0.5) + tw / 2, yb + tl, tw * 0.8, 0, TAU); ctx.fill();
@@ -434,8 +434,8 @@ const horseImg = () => cached('a:horse', 130, 160, 1.2, () => {
   ctx.strokeStyle = INK; ctx.lineWidth = 4.5; for (const lx of [-22, -12, 14, 24]) { ctx.beginPath(); ctx.moveTo(lx, -44); ctx.lineTo(lx + (lx > 0 ? 3 : -2), 0); ctx.stroke(); }
   ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(-32, -52); ctx.quadraticCurveTo(-48, -40, -44, -20); ctx.stroke();
   ctx.beginPath(); ctx.ellipse(0, -52, 35, 17, 0, 0, TAU); ctx.fillStyle = MUS; ctx.fill(); O();
-  ctx.beginPath(); ctx.moveTo(20, -62); ctx.lineTo(34, -92); ctx.lineTo(48, -88); ctx.lineTo(38, -52); ctx.closePath(); ctx.fillStyle = MUS; ctx.fill(); O();
-  ctx.beginPath(); ctx.ellipse(50, -88, 15, 8, 0.5, 0, TAU); ctx.fillStyle = MUS; ctx.fill(); O();
+  ctx.beginPath(); ctx.moveTo(20, -62); ctx.lineTo(32, -84); ctx.lineTo(46, -82); ctx.lineTo(38, -52); ctx.closePath(); ctx.fillStyle = MUS; ctx.fill(); O();
+  ctx.beginPath(); ctx.ellipse(50, -80, 16, 8, 0.55, 0, TAU); ctx.fillStyle = MUS; ctx.fill(); O();
   ctx.fillStyle = MAD; ctx.fillRect(-16, -70, 28, 22); ctx.strokeRect(-16, -70, 28, 22);
   ctx.beginPath(); ctx.moveTo(-10, -66); ctx.lineTo(12, -66); ctx.lineTo(2, -100); ctx.closePath(); ctx.fillStyle = IND; ctx.fill(); O();
   ctx.beginPath(); ctx.ellipse(2, -110, 9, 10, 0, 0, TAU); ctx.fillStyle = CTS; ctx.fill(); O();
@@ -460,6 +460,8 @@ export function buildA(add, cue) {
   const tReg = Wd('regent', 3), tGs = Wd('grandson', 3);
   const tMug = Wd('Mughal', 4), tSouth = Wd('south', 4), tAcc4 = Wd('accounts', 4), tTrib = Wd('tribute', 4), tNot = Wd('not', 4);
 
+  // warm the heavy caches at boot so no frame pays for them
+  mapImg(); horseImg(); bgImg('c'); bgImg('i'); weaveTile(); for (const k in BANDS) bandImg(k); for (const k in TILES) tile(k); figImg('qs', QS()); figImg('qseat', QSEAT());
   const A2 = tNob - 0.12, A3 = L(1) - 0.25, A4 = tNay - 0.18, A5 = L(2) - 0.12, A6 = tSon - 0.12, A7 = tAcc - 0.1, A8 = tLeave - 0.1, A9 = L(3) - 0.15, A10 = tGs - 0.3, A11 = L(4) - 0.15, A12 = tAcc4 - 0.12;
 
   // a1 · hook: cloth unrolls, the queen draws herself, MADURAI, 15 YEARS
@@ -478,24 +480,24 @@ export function buildA(add, cue) {
       ctx.fillStyle = MADD; ctx.fillRect(-300, ry - 22, W + 600, 40); ctx.fillStyle = rgba(CT, 0.25); ctx.fillRect(-300, ry - 16, W + 600, 6);
       ctx.fillStyle = INK; ctx.fillRect(-300, ry - 24, W + 600, 4); ctx.fillRect(-300, ry + 16, W + 600, 4);
     }
-    drips(clamp((lt - (d - 0.45)) / 0.45), IND, 'cover', 3);
+    drips(clamp((lt - (d - 0.36)) / 0.36), IND, 'cover', 3);
   } });
   cue(0.02, 'whoosh', { gain: 0.6 }); cue(0.3, 'zip', { gain: 0.35 }); cue(tMad, 'thud', { gain: 0.5 }); cue(t15, 'pop', { gain: 0.6 }); cue(A2 - 0.4, 'bubbles', { gain: 0.4 });
 
   // a2 · the closed door and the question
-  add({ id: 'a2', at: A2, cam: [540, 760], zoom: 0.08, note: 'indigo night cloth: arched closed door pen-draws in cream, "?" stitched over it, light under the door; UNCERTAIN patch; folds shut', draw(lt, d, t) {
+  add({ id: 'a2', at: A2, cam: [540, 760], zoom: 0.08, note: 'indigo night cloth: arched closed door pen-draws in cream, light under it, her crown left on the threshold; UNCERTAIN patch; folds shut', draw(lt, d, t) {
     compose(() => {
       bg('i');
       glow(540, 1250, 420, MUS, 0.18 + 0.05 * Math.sin(t * 6));
       drawFig(DOOR(), 0, 0, 1, { draw: eio(clamp(lt / 1.1)), bleed: eo(clamp((lt - 0.4) / 0.8)), org: [540, 800], R: 760, ink: CT });
       ctx.fillStyle = rgba(MUS, 0.75 + 0.2 * Math.sin(t * 9)); ctx.fillRect(350, 1240, 380, 8);
-      const qa = clamp((lt - 0.55) / 0.9), Q = cat(E(540, 520, 92, 92, 1.08 * PI, 2.32 * PI, 26), [[540, 652], [540, 712]]);
-      const tip = stitch(Q, qa, MUS, 10, 20, 11);
-      if (qa >= 1) { const k = eob(clamp((lt - 1.45) / 0.3)); ctx.beginPath(); ctx.arc(540, 790, 16 * k, 0, TAU); ctx.fillStyle = MUS; ctx.fill(); }
-      else needle(tip, 1.3);
+      // her crown left on the threshold step
+      const cp = clamp((lt - 0.7) / 0.8);
+      glow(560, 1215, 120, MUS, 0.3 * cp);
+      drawFig(CROWN(), 560, 1236, 1.35, { draw: eio(cp), bleed: eo(clamp((cp - 0.5) / 0.5)), org: [0, -40], R: 90, ink: CT, rot: 0.05 });
       patch('UNCERTAIN', 540, 1395, 46, clamp((lt - (tDie0 - A2 - 0.1)) / 0.35));
       weave();
-      drips(clamp(lt / 0.55), IND, 'wash', 3);
+      drips(clamp(lt / 0.45), IND, 'wash', 3);
     }, clamp((lt - (d - 0.32)) / 0.32));
   } });
   cue(A2 + 0.05, 'swell', { gain: 0.5 }); cue(A2 + 0.7, 'zip', { gain: 0.35 }); cue(tDie0 - 0.05, 'tock', { gain: 0.6 }); cue(A3 - 0.3, 'whoosh', { gain: 0.4 });
@@ -507,14 +509,14 @@ export function buildA(add, cue) {
     band('creeper', 120);
     blitFig('qs', QS(), 540, 960, 0.95);
     band('tri', 1010);
-    printWord('MANGAMMAL', 540, 1128, 124, { col: MAD, off: MUS, pOut: clamp((lt3 - (tMang - A3 - 0.45)) / 0.6), pFill: clamp((lt3 - (tMang - A3 - 0.05)) / 0.6) });
+    printWord('MANGAMMAL', 540, 1128, 110, { col: MAD, off: MUS, pOut: clamp((lt3 - (tMang - A3 - 0.45)) / 0.6), pFill: clamp((lt3 - (tMang - A3 - 0.05)) / 0.6) });
     band('lotus', 1240);
-    const dg = eio(clamp((lt4 - 0.1) / 1.1)), bl = eo(clamp((lt4 - 0.55) / 0.9));
+    const dg = eio(clamp(lt4 / 0.95)), bl = eo(clamp((lt4 - 0.45) / 0.85));
     drawFig(PAV(), 190, 1985, 0.9, { draw: dg, bleed: bl, org: [0, -200], R: 400, pen: false });
     drawFig(PAV(), 890, 1985, 0.9, { draw: dg, bleed: bl, org: [0, -200], R: 400, pen: false });
     drawFig(GOP(), 540, 1985, 1.0, { draw: dg, bleed: bl, org: [0, -300], R: 520 });
     band('creeper', 2020);
-    patch('MADURAI NAYAK KINGDOM', 540, 2130, 40, clamp((lt4 - 0.35) / 0.35));
+    patch('MADURAI NAYAK KINGDOM', 540, 2115, 40, clamp((lt4 - 0.7) / 0.35));
     ctx.restore(); weave();
   };
   add({ id: 'a3', at: A3, cam: [540, 980], zoom: 0.06, note: 'cloth unfolds: queen under parasol in top register; MANGAMMAL pen-outlined then dyed madder between borders', draw(lt, d) {
@@ -524,7 +526,7 @@ export function buildA(add, cue) {
     const ty = lerp(-40, -760, eio(clamp(lt / 0.75))) - 30 * clamp((lt - 0.75) / (d - 0.75));
     compose(() => tall(ty, 9, lt), 0, 5, t);
   } });
-  cue(A3, 'slide', { gain: 0.4 }); cue(tMang, 'sparkle', { gain: 0.45 }); cue(A4, 'whoosh', { gain: 0.4 }); cue(A4 + 0.3, 'zip', { gain: 0.3 }); cue(A4 + 0.55, 'pop', { gain: 0.5 });
+  cue(A3, 'slide', { gain: 0.4 }); cue(tMang, 'sparkle', { gain: 0.45 }); cue(A4, 'whoosh', { gain: 0.4 }); cue(A4 + 0.3, 'zip', { gain: 0.3 }); cue(A4 + 0.72, 'pop', { gain: 0.5 });
 
   // a5 · 1689
   add({ id: 'a5', at: A5, cam: [540, 860], zoom: 0.08, note: 'sun + moon cross the top register; AROUND patch; 1689 printed; running-stitch timeline 1600-1700 with a knot at 1689', draw(lt, d, t) {
@@ -570,11 +572,10 @@ export function buildA(add, cue) {
     }
     drawFig(KING(), 540, 1300, 1.15, { fillA: 1 - 0.85 * fd, ink: mixc(INK, '#9A8A6E', fd), inkA: 1 - 0.45 * fd, rot: Math.sin(t * 1.2) * 0.008 });
     band('creeper', 1370);
-    patch('DIED YOUNG', 540, 310, 46, clamp((lt - (tYoung - A6 - 0.05)) / 0.35));
+    patch('DIED YOUNG', 540, 310, 46, clamp((lt - (tDied - A6 - 0.05)) / 0.35));
     weave();
-    drips(clamp((lt - (d - 0.4)) / 0.4), IND, 'cover', 7);
   } });
-  cue(A6, 'slide', { gain: 0.35 }); cue(tDied, 'heartbeat', { gain: 0.5 }); cue(tYoung, 'pop', { gain: 0.5 }); cue(A7 - 0.4, 'bubbles', { gain: 0.35 });
+  cue(A6, 'slide', { gain: 0.35 }); cue(tDied, 'heartbeat', { gain: 0.5 }); cue(tDied + 0.02, 'pop', { gain: 0.45 }); cue(A7, 'bubbles', { gain: 0.35 });
 
   // a7 · the widow (abstract and gentle): an outline beside a lamp dissolves into petals
   add({ id: 'a7', at: A7, cam: [560, 860], zoom: 0.06, note: 'indigo cloth: cream outline of the widow beside a brass lamp gently dissolves into rising petals; ACCOUNTS SAY patch; no fire on any figure', draw(lt, d, t) {
@@ -598,26 +599,24 @@ export function buildA(add, cue) {
   cue(A7 + 0.05, 'swell', { gain: 0.4 }); cue(tSati - 0.1, 'bell', { gain: 0.35 });
 
   // a8 · the baby in the cradle
-  add({ id: 'a8', at: A8, cam: [540, 760], zoom: 0.08, note: 'indigo washes off: hanging cradle with baby pen-draws, dyes, swings; THE HEIR patch', draw(lt, d, t) {
+  add({ id: 'a8', at: A8, cam: [540, 760], zoom: 0.08, note: 'indigo washes off: wooden rocking cradle with swaddled baby pen-draws, dyes, rocks; THE HEIR patch', draw(lt, d, t) {
     bg('c');
     band('lotus', 260);
     for (let i = 0; i < 14; i++) { const a = 0.3 + 0.7 * (0.5 + 0.5 * Math.sin(t * 3 + i * 2)); ctx.fillStyle = rgba(i % 2 ? MUS : MAD, a); const x = 120 + rnd(i * 3) * 840, y = 340 + rnd(i * 7) * 760; if (Math.abs(x - 540) > 290 || y > 1080) { ctx.beginPath(); ctx.arc(x, y, 7, 0, TAU); ctx.fill(); } }
     const dr = eio(clamp(lt / 0.9)), bl = eo(clamp((lt - 0.45) / 0.8));
-    drawFig(BEAM(), 540, 470, 1.2, { draw: dr, bleed: bl, org: [0, 0], R: 300, pen: false });
-    drawFig(CRADLE(), 540, 480, 1.55, { draw: dr, bleed: bl, org: [0, 260], R: 260, rot: Math.sin(lt * 2.4) * 0.11 * clamp(lt / 0.6) });
+    drawFig(CRADLE(), 540, 1040, 2.4, { draw: dr, bleed: bl, org: [0, -150], R: 260, rot: Math.sin(lt * 2.6) * 0.06 * clamp(lt / 0.6) });
     band('creeper', 1130);
     patch('THE HEIR', 540, 1255, 48, clamp((lt - (tBaby - A8 - 0.05)) / 0.35));
     weave();
-    drips(clamp(lt / 0.55), IND, 'wash', 11);
+    drips(clamp(lt / 0.45), IND, 'wash', 11);
   } });
   cue(A8 + 0.1, 'zip', { gain: 0.3 }); cue(tBaby, 'sparkle', { gain: 0.5 });
 
   // a9 · regent: the queen seated beside the cradle
-  add({ id: 'a9', at: A9, cam: [520, 820], zoom: 0.07, note: 'queen seated on throne under parasol pen-draws beside the swinging cradle; REGENT printed', draw(lt, d, t) {
+  add({ id: 'a9', at: A9, cam: [520, 820], zoom: 0.07, note: 'queen seated on throne under parasol pen-draws beside the rocking cradle; REGENT printed', draw(lt, d, t) {
     bg('c');
     band('tri', 150);
-    drawFig(BEAM(), 805, 520, 0.62);
-    drawFig(CRADLE(), 805, 525, 0.95, { rot: Math.sin(t * 2.4) * 0.09 });
+    drawFig(CRADLE(), 795, 1120, 1.15, { rot: Math.sin(t * 2.6) * 0.05 });
     drawFig(QSEAT(), 370, 1120, 1.0, { draw: eio(clamp(lt / 1.1)), bleed: eo(clamp((lt - 0.6) / 0.9)), org: [0, -350], R: 720 });
     band('creeper', 1190);
     printWord('REGENT', 540, 1320, 150, { col: IND, off: MAD, pOut: clamp((lt - (tReg - A9 - 0.35)) / 0.5), pFill: clamp((lt - (tReg - A9 - 0.05)) / 0.5) });
@@ -632,11 +631,10 @@ export function buildA(add, cue) {
       band('lotus', 250);
       blitFig('qs', QS(), 210, 1100, 0.72);
       drawFig(KING(), 535, 1100, 0.74, { fillA: 0.15, ink: '#9A8A6E', inkA: 0.6 });
-      drawFig(BEAM(), 860, 690, 0.42);
-      drawFig(CRADLE(), 860, 694, 0.82, { rot: Math.sin(t * 2.4) * 0.09 });
+      drawFig(CRADLE(), 860, 1100, 0.85, { rot: Math.sin(t * 2.6) * 0.05 });
       const thin = stitch(B([250, 520], [330, 420], [470, 440], [520, 560]), clamp(lt / 0.5), INDL, 3, 8, 7);
-      stitch(B([560, 560], [640, 450], [800, 470], [850, 660]), clamp((lt - 0.25) / 0.5), INDL, 3, 8, 7);
-      const arc = B([215, 470], [380, 300], [760, 300], [880, 650], 30), ap = eio(clamp((lt - 0.2) / 0.9)), tip = stitch(arc, ap, MAD, 7, 18, 10);
+      stitch(B([560, 560], [640, 450], [800, 560], [860, 880]), clamp((lt - 0.25) / 0.5), INDL, 3, 8, 7);
+      const arc = B([215, 470], [380, 300], [800, 300], [890, 870], 30), ap = eio(clamp((lt - 0.2) / 0.9)), tip = stitch(arc, ap, MAD, 7, 18, 10);
       if (ap > 0 && ap < 1) needle(tip, 1.3);
       band('creeper', 1150);
       note('QUEEN', 210, 1225, 40, INK, clamp(lt / 0.3)); note('HER SON', 535, 1225, 40, '#8A7A5E', clamp(lt / 0.3));
@@ -650,7 +648,7 @@ export function buildA(add, cue) {
   add({ id: 'a11', at: A11, cam: [560, 560], zoom: 0.06, note: 'cloth map of the south unfolds: rows of stitched Mughal horsemen with pennants advance from the north; MUGHAL ARMY; madder stitched arrows south', draw(lt, d, t) {
     compose(() => {
       blit(mapImg(), 0, 0, 0, 0);
-      army(lerp(240, 520, eio(clamp(lt / d))), t);
+      army(lerp(260, 640, eio(clamp(lt / d))), t);
       const ap = clamp((lt - (tSouth - A11 - 0.35)) / 0.6);
       for (const [x0, x1] of [[400, 440], [700, 660]]) {
         const tip = stitch([[x0, 620], [x1, 980]], ap, MAD, 8, 18, 10);
@@ -664,11 +662,11 @@ export function buildA(add, cue) {
   cue(A11 + 0.2, 'rumble', { gain: 0.55, dur: 2 }); cue(tMug, 'drum', { gain: 0.5 }); cue(tSouth, 'zip', { gain: 0.35 });
 
   // a12 · tribute, not war
-  const ROUTE = B([600, 1130], [500, 1040], [700, 960], [600, 840], 30);
+  const ROUTE = B([600, 1130], [500, 1060], [700, 990], [600, 880], 30);
   add({ id: 'a12', at: A12, cam: [600, 820], zoom: 0.08, note: 'stitched route from Madurai north, tray of gifts travels it, the army halts; TRIBUTE printed; NOT WAR patch', draw(lt, d, t) {
     blit(mapImg(), 0, 0, 0, 0);
     const halt = clamp((lt - (tTrib - A12)) / 0.4);
-    army(lerp(530, 560, eo(clamp(lt / (tTrib - A12)))), t, halt);
+    army(lerp(640, 670, eo(clamp(lt / (tTrib - A12)))), t, halt);
     blitFig('qseat', QSEAT(), 770, 1215, 0.27);
     const sp = eio(clamp((lt - 0.1) / 1.0)), tip = stitch(ROUTE, sp, MAD, 6, 15, 9);
     if (sp < 1) needle(tip, 1.2);
@@ -681,10 +679,10 @@ export function buildA(add, cue) {
     ctx.restore();
     if (halt > 0) { ctx.beginPath(); ctx.arc(x, y - 40, 60 + halt * 90, 0, TAU); ctx.strokeStyle = rgba(MUS, 1 - halt); ctx.lineWidth = 8; ctx.stroke(); }
     // a stitched line the army does not cross
-    const np = clamp((lt - (tNot - A12 - 0.2)) / 0.6); stitch([[180, 760], [900, 760]], np, IND, 6, 16, 10);
+    const np = clamp((lt - (tNot - A12 - 0.2)) / 0.6); stitch([[260, 742], [880, 742]], np, IND, 6, 16, 10);
     ctx.fillStyle = rgba(CT, 0.85); ctx.fillRect(60, 110, 960, 170);
     printWord('TRIBUTE', 540, 196, 128, { col: MAD, off: IND, pOut: clamp((lt - (tTrib - A12 - 0.35)) / 0.45), pFill: clamp((lt - (tTrib - A12 - 0.05)) / 0.45) });
-    patch('NOT WAR', 540, 352, 50, clamp((lt - (tNot - A12 - 0.05)) / 0.35));
+    patch('NOT WAR', 560, 1345, 50, clamp((lt - (tNot - A12 - 0.05)) / 0.35));
     weave();
   } });
   cue(A12 + 0.15, 'zip', { gain: 0.35 }); cue(A12 + 0.5, 'slide', { gain: 0.4 }); cue(tTrib, 'sparkle', { gain: 0.55 }); cue(tNot, 'thud', { gain: 0.55 });

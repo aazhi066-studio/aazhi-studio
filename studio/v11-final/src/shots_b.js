@@ -324,15 +324,15 @@ function tusk(cx, cy) {
   for (let a = 200; a <= 335; a += 5) { const r = a * Math.PI / 180, th = 42 * (1 - (a - 200) / 150) + 6; pts.push([cx + R * Math.cos(r), cy + R * Math.sin(r)]); inner.push([cx + (R - th) * Math.cos(r), cy + (R - th) * Math.sin(r)]); }
   Pf(pts.concat(inner.reverse()), K.m3); const r0 = 200 * Math.PI / 180; El(cx + 152 * Math.cos(r0), cy + 152 * Math.sin(r0), 26, 18, K.m2, 0.4);
 }
-function holdBase() { for (let y = Y0; y < Y1; y += 66) Rc(X0, y + 44, X1 - X0, 22, '#8C5A33'); Rc(X0, 520, X1 - X0, 22, '#5A3A22'); Rc(X0, 726, X1 - X0, 22, '#5A3A22'); Rc(X0, 990, X1 - X0, 22, '#5A3A22'); }
+function holdBase() { for (let y = Y0; y < Y1; y += 66) Rc(X0, y + 44, X1 - X0, 22, '#4A4038'); Rc(X0, 520, X1 - X0, 22, '#5A3A22'); Rc(X0, 726, X1 - X0, 22, '#5A3A22'); Rc(X0, 990, X1 - X0, 22, '#5A3A22'); }
 function holdCargo() {
   for (const x of [186, 318, 450, 582, 714, 846]) amph(x, 196, 518);
   for (const x of [240, 520, 800]) tusk(x, 860);
   for (const x of [190, 365, 540, 715, 890]) { ctx.beginPath(); ctx.roundRect(x - 72, 800, 144, 186, 44); ctx.fillStyle = K.mud2; ctx.fill(); Pf([[x - 30, 808], [x + 30, 808], [x + 22, 762], [x - 22, 762]], K.mud); Rc(x - 72, 890, 144, 22, '#9C7A45'); }
 }
-const LholdE = () => layer('bHoldE', { draw: panel(PLANK, holdBase), post: frameBorder });
-const Lhold = () => layer('bHold', { draw: panel(PLANK, () => { holdBase(); holdCargo(); }), post: frameBorder });
-const LholdP = () => layer('bHoldP', { draw: panel(PLANK, () => {
+const LholdE = () => layer('bHoldE', { draw: panel(DARK, holdBase), post: frameBorder });
+const Lhold = () => layer('bHold', { draw: panel(DARK, () => { holdBase(); holdCargo(); }), post: frameBorder });
+const LholdP = () => layer('bHoldP', { draw: panel(DARK, () => {
   holdBase(); holdCargo();
   Pf([[X0, 1000], [X0, 640], [170, 600], [260, 560], [360, 590], [450, 548], [560, 580], [660, 552], [760, 590], [860, 560], [X1, 600], [X1, 1000]], K.pep);
   for (let k = 0; k < 14; k++) El(150 + k * 60, 990 - rnd(k + 3) * 30, 50, 30, K.pep);
@@ -430,7 +430,7 @@ const Lker = (v) => layer('bKer' + v, { draw: panel(K.lap2, () => {
     landFill(kcxB);
     St(RIVB, K.lap2, 40); St([[694, 1060], [684, 1150], [694, 1260]], K.lap2, 30);
     Pf([[kcxB(930) - 20, 930], [700, 940], [736, 1000], [700, 1062], [kcxB(1070) - 20, 1070]], K.lap2); El(kcxB(1000) + 20, 1000, 34, 22, LAND);
-    El(640, 560, 90, 60, K.mud); El(700, 690, 60, 90, K.mud2); El(760, 430, 70, 46, K.mud);
+    El(650, 560, 50, 34, K.mud2); El(760, 640, 40, 50, K.mud2);
     Rc(MUZ[0] - 22, MUZ[1] - 22, 44, 44, K.mortar);
   } else {
     landFill(kcx);

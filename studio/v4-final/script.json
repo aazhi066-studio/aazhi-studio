@@ -1,0 +1,103 @@
+{
+ "title": "The Lake That Held Its Breath",
+ "voice": "af_heart",
+ "speed": 0.9,
+ "lead": 0.6,
+ "outro": 0.5,
+ "music": "gen:abyss",
+ "music_seed": 404,
+ "lines": [
+  {
+   "text": "A calm lake in Cameroon killed more than seventeen hundred people in a single night.",
+   "caps": "a calm *lake in *Cameroon | killed more than *1700 people | in a single *night.",
+   "gap": 0.9
+  },
+  {
+   "text": "It was Lake Nyos, in nineteen eighty six.",
+   "caps": "it was Lake *Nyos | in *1986.",
+   "gap": 1.0
+  },
+  {
+   "text": "Deep underwater, carbon dioxide had been building up for decades, or even centuries.",
+   "caps": "deep *underwater | carbon dioxide | building up for *decades.",
+   "gap": 1.0
+  },
+  {
+   "text": "It seeped in from below, and the heavy bottom water kept it locked in.",
+   "caps": "it seeped in from *below | the heavy bottom water | kept it *locked in.",
+   "gap": 1.0
+  },
+  {
+   "text": "Then something disturbed the lake, and the layers of water overturned.",
+   "caps": "then something *disturbed | the lake | the layers *overturned.",
+   "gap": 1.0
+  },
+  {
+   "text": "A huge cloud of gas poured out, and rolled downhill into the valleys.",
+   "caps": "a huge cloud of *gas | poured out | and rolled *downhill.",
+   "gap": 1.0
+  },
+  {
+   "text": "Carbon dioxide is heavier than air. It hugs the ground, and you cannot see it.",
+   "caps": "carbon dioxide | is *heavier than air | you cannot *see it.",
+   "gap": 1.1
+  },
+  {
+   "text": "It reached villages more than twenty kilometres away. People, cattle, and wild animals died.",
+   "caps": "villages *20 kilometres away | people | cattle | and *wild animals died.",
+   "gap": 1.0
+  },
+  {
+   "text": "One survivor woke around midnight, to a silent village.",
+   "caps": "one *survivor | woke around midnight | to a *silent village.",
+   "gap": 1.1
+  },
+  {
+   "text": "What set it off? Scientists still debate it.",
+   "caps": "what *set it off? | scientists | still *debate it.",
+   "gap": 1.0
+  },
+  {
+   "text": "A landslide, or heavy rain sinking down one side of the lake, have both been suggested.",
+   "caps": "a *landslide | or heavy *rain | both suggested.",
+   "gap": 1.0
+  },
+  {
+   "text": "A similar lake, Monoun, had killed people two years earlier.",
+   "caps": "a similar lake | *Monoun | killed people *two years earlier.",
+   "gap": 1.0
+  },
+  {
+   "text": "Today, pipes draw water up from the deep, so the gas can escape slowly.",
+   "caps": "today | *pipes draw water up | so gas escapes *slowly.",
+   "gap": 1.2
+  },
+  {
+   "text": "A quiet lake, holding its breath for centuries.",
+   "caps": "a *quiet lake | holding its *breath | for *centuries.",
+   "gap": 1.3
+  },
+  {
+   "text": "Follow Aazhi for the next chronicle.",
+   "caps": "Follow *Aazhi | for the next *chronicle.",
+   "gap": 0.5
+  }
+ ],
+ "sources": [
+  {
+   "n": 1,
+   "title": "Benchmarks: August 15, 1984 & August 21, 1986: African killer lakes erupt (EARTH Magazine)",
+   "url": "https://www.earthmagazine.org/article/benchmarks-august-15-1984-august-21-1986-african-killer-lakes-erupt/",
+   "supports": "night of 21 Aug 1986; more than 1,700 people died; effects up to about 26 km away; CO2 built up in deep bottom waters over decades or centuries; a landslide is 'thought to be the likely trigger'; Monoun 1984; degassing pipes installed since 2001"
+  },
+  {
+   "n": 2,
+   "title": "Lake Nyos (San Diego State University, How Volcanoes Work)",
+   "url": "https://volcanoes.sdsu.edu/Nyos.html",
+   "supports": "21 Aug 1986; over 1,700 people plus cattle and wildlife died; CO2 denser than air so it flowed down valleys; about 23 km affected; bottom layers overturned; rain-water trigger widely believed but little evidence for landslide/earthquake; pipes siphon deep water"
+  }
+ ],
+ "illustration": "All imagery is the artist's illustration: villages, people and the lake are stylised; no real victims or survivors are depicted; gas cloud shapes are schematic; the chart is not to scale.",
+ "uncertain": "The trigger is debated (landslide per one source, rainwater per another, volcanic gas per a minority). Reach is given as 'more than twenty kilometres' because sources say about 23 and up to 26. Omitted because sources conflict: cloud speed (70 vs 100 km/h), Monoun death toll (37 vs 34), exact time, 'August 12' typo on one page.",
+ "story_device": "Cold night palette (ink black, teal, one sickly green), NOT golden; invisible gas shown by candle flames and lanterns going out, a water-layer cross-section with bubbles, ground-level fog creeping down a valley, a map ring of reach, pipe fountain at dawn; end card must differ from ep1-3 (use a still lake surface with a single rising bubble)"
+}

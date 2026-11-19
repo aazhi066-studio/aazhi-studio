@@ -1,3 +1,5 @@
 # Composition registry (do not reuse)
 ep1 Rajaraja: sky time-lapse 1004 CE build; copper pots/lamps field; shadow-less vimana; dancer; crowd wide; upper tiers close; ledger-less; end card = Aazhi plaque
 v2 (Gangaikonda) planned: pot-carrier road POV at dawn; map route Ganges to Tamil country; tiger-banner name plate; palm-leaf city ground-plan with surveyor ropes; distant city gate wide; banner-raising tally; procession ridge with ledger counter of pots; lake filling with a water-column pillar; blank ledger beside one inscribed line; macro granite chisel dust; two tower outlines compared; city plan dissolving into mounds; two arrows (south/north) over fog; temple survives dawn; end card = copper pot with ripple rings
+v3 (Srivijaya) planned: night open-sea fleet silhouettes under star dome; Bay of Bengal palm-leaf chart with dotted sail route; wake-and-star-compass helm POV; harbour ledger of ports; (workers record exact compositions below)
+v4 (Lake Nyos): cold night palette; candles/lanterns going out; water-layer cross-section; ground fog down valley; reach ring map; pipe fountain; still-lake bubble end card

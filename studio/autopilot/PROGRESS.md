@@ -1,4 +1,5 @@
 # PROGRESS
+v9 13:08 run: previous run stalled at shots WIP (heartbeat 11:50). Resumed: narration regenerated (+IPA Kuyili's, 92.05 s), 3 workers redrawing shots_a/b/c. Sheet 13:10 UTC: no Status set -> nothing to publish.
 Updated: 2026-11-19 11:50 UTC (scheduled run 11:08)
 v9 IN PROGRESS (11:08 run): Kuyili & Velu Nachiyar (record vs folk song), studio/v9-final, script+narration 92.0 s, ART "Ember Linocut", music gen:abyss 93061 music_sim PASS (vs v4-v8), desc.txt written. 3 workers drawing shots_a/b/c. Sources via search snippets (wikipedia, sivaganga.nic.in blocked for fetch).
 Sheet 11:10 UTC (16:40 IST): no Status set on any row -> nothing to publish.
@@ -22,4 +23,4 @@ Missing: memory /areas/aazhi-channel.md not reachable from the 03:07 UTC run.
 Scheduled task: hourly at :07 IST, lock via heartbeat line
 Approval sheet: 'AAZHI Approvals' id 1PeKpfx2zq7oCEoTtotyLLU-J3krC_T18zjU26NiKrCU https://docs.google.com/spreadsheets/d/1PeKpfx2zq7oCEoTtotyLLU-J3krC_T18zjU26NiKrCU/edit (read Status/Instagram columns before upload/post; Google Sheets default connection set)
 VOICE (user approved 2026-11-18): Kokoro voice af_heart, speed 0.9, phoneme mode. Narration is built as IPA: English text via tokenizer.phonemize, Tamil names via data/pronunciations.json (kokoro_onnx create(..., is_phonemes=True), words never split, single pass). Add every new Tamil name to the list. Channel name spoken "Aali". Captions keep English spelling. Install: pip install kokoro-onnx; models in ~/.faceless-shorts/kokoro (GitHub release files).
-heartbeat: 2026-11-19T13:10:00Z (run 13:08 UTC active)
+heartbeat: 2026-11-19T13:12:00Z (run 13:08 UTC active)

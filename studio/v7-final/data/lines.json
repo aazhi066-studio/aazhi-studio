@@ -1,0 +1,103 @@
+{
+ "duration": 84.469,
+ "lines": [
+  {
+   "text": "There is a Tamil port that the sea walked away from.",
+   "caps": "a *Tamil port | the sea | walked *away.",
+   "start": 0.6,
+   "end": 3.424,
+   "i": 0
+  },
+  {
+   "text": "Its name is Korkai, near Thoothukudi. Tradition says it was the first capital of the Pandya kings.",
+   "caps": "its name is *Korkai | near Thoothukudi | tradition says | the first *Pandya capital.",
+   "start": 4.324,
+   "end": 10.631,
+   "i": 1
+  },
+  {
+   "text": "Sangam poems praise the Pandya king as Korkai Koman, lord of Korkai.",
+   "caps": "Sangam poems | praise the king as | *Korkai Koman | lord of *Korkai.",
+   "start": 11.531,
+   "end": 15.973,
+   "i": 2
+  },
+  {
+   "text": "Its treasure lay under the water. Divers brought up pearls from the Gulf of Mannar.",
+   "caps": "its treasure | lay *underwater | divers brought up | *pearls.",
+   "start": 16.873,
+   "end": 21.74,
+   "i": 3
+  },
+  {
+   "text": "A Greek sailing guide from around the first century, the Periplus, names it Colchi, where the pearl fisheries were.",
+   "caps": "a Greek sailing guide | the *Periplus | names it *Colchi | where the *pearls were.",
+   "start": 22.64,
+   "end": 29.409,
+   "i": 4
+  },
+  {
+   "text": "But the Tamirabarani river kept carrying silt, and slowly the land grew out into the sea.",
+   "caps": "but the river | kept carrying *silt | the land | grew *outward.",
+   "start": 30.409,
+   "end": 35.821,
+   "i": 5
+  },
+  {
+   "text": "Ships could no longer reach the harbour. Trade moved down the river, to a new port called Kayal.",
+   "caps": "ships could not | *reach it | trade moved | to *Kayal.",
+   "start": 36.721,
+   "end": 42.273,
+   "i": 6
+  },
+  {
+   "text": "Today Korkai is a quiet village, about six kilometres from the shore.",
+   "caps": "today Korkai | is a quiet *village | about *6 km | from the *shore.",
+   "start": 43.173,
+   "end": 47.565,
+   "i": 7
+  },
+  {
+   "text": "In eighteen seventy six, the missionary Robert Caldwell dug here, and found burial urns.",
+   "caps": "in *1876 | Robert *Caldwell | dug here | found *burial urns.",
+   "start": 48.565,
+   "end": 54.129,
+   "i": 8
+  },
+  {
+   "text": "Later digs found pottery scratched with early Tamil letters, in the script called Tamil Brahmi.",
+   "caps": "later digs found | *pottery | scratched with | early Tamil *letters.",
+   "start": 55.029,
+   "end": 60.6,
+   "i": 9
+  },
+  {
+   "text": "Charcoal from one trench was dated to about seven eighty five B C E. Nearly two thousand eight hundred years ago.",
+   "caps": "charcoal from | one *trench | dated to about | *785 BCE | nearly *2800 years.",
+   "start": 61.501,
+   "end": 68.741,
+   "i": 10
+  },
+  {
+   "text": "One date from one trench is not the whole story. New excavations have been announced.",
+   "caps": "one date | is not the *whole story | new digs | are *announced.",
+   "start": 69.741,
+   "end": 74.815,
+   "i": 11
+  },
+  {
+   "text": "The sea left Korkai. The pearls are gone. But the ground still remembers.",
+   "caps": "the sea *left | the pearls are *gone | the ground | still *remembers.",
+   "start": 75.815,
+   "end": 80.291,
+   "i": 12
+  },
+  {
+   "text": "Follow Aazhi for the next chronicle.",
+   "caps": "follow *Aazhi | for the next *chronicle.",
+   "start": 81.491,
+   "end": 83.369,
+   "i": 13
+  }
+ ]
+}

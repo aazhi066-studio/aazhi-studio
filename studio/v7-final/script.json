@@ -1,0 +1,41 @@
+{
+ "title": "The Pandya Port the Sea Walked Away From | Korkai #shorts",
+ "voice": "af_heart",
+ "speed": 0.9,
+ "lead": 0.6,
+ "outro": 0.5,
+ "music": "gen:tide",
+ "music_seed": 73591,
+ "lines": [
+  {"text": "There is a Tamil port that the sea walked away from.", "caps": "a *Tamil port | the sea | walked *away.", "gap": 0.9},
+  {"text": "Its name is Korkai, near Thoothukudi. Tradition says it was the first capital of the Pandya kings.", "caps": "its name is *Korkai | near Thoothukudi | tradition says | the first *Pandya capital.", "gap": 0.9},
+  {"text": "Sangam poems praise the Pandya king as Korkai Koman, lord of Korkai.", "caps": "Sangam poems | praise the king as | *Korkai Koman | lord of *Korkai.", "gap": 0.9},
+  {"text": "Its treasure lay under the water. Divers brought up pearls from the Gulf of Mannar.", "caps": "its treasure | lay *underwater | divers brought up | *pearls.", "gap": 0.9},
+  {"text": "A Greek sailing guide from around the first century, the Periplus, names it Colchi, where the pearl fisheries were.", "caps": "a Greek sailing guide | the *Periplus | names it *Colchi | where the *pearls were.", "gap": 1.0},
+  {"text": "But the Tamirabarani river kept carrying silt, and slowly the land grew out into the sea.", "caps": "but the river | kept carrying *silt | the land | grew *outward.", "gap": 0.9},
+  {"text": "Ships could no longer reach the harbour. Trade moved down the river, to a new port called Kayal.", "caps": "ships could not | *reach it | trade moved | to *Kayal.", "gap": 0.9},
+  {"text": "Today Korkai is a quiet village, about six kilometres from the shore.", "caps": "today Korkai | is a quiet *village | about *6 km | from the *shore.", "gap": 1.0},
+  {"text": "In eighteen seventy six, the missionary Robert Caldwell dug here, and found burial urns.", "caps": "in *1876 | Robert *Caldwell | dug here | found *burial urns.", "gap": 0.9},
+  {"text": "Later digs found pottery scratched with early Tamil letters, in the script called Tamil Brahmi.", "caps": "later digs found | *pottery | scratched with | early Tamil *letters.", "gap": 0.9},
+  {"text": "Charcoal from one trench was dated to about seven eighty five B C E. Nearly two thousand eight hundred years ago.", "caps": "charcoal from | one *trench | dated to about | *785 BCE | nearly *2800 years.", "gap": 1.0},
+  {"text": "One date from one trench is not the whole story. New excavations have been announced.", "caps": "one date | is not the *whole story | new digs | are *announced.", "gap": 1.0},
+  {"text": "The sea left Korkai. The pearls are gone. But the ground still remembers.", "caps": "the sea *left | the pearls are *gone | the ground | still *remembers.", "gap": 1.2},
+  {"text": "Follow Aazhi for the next chronicle.", "caps": "follow *Aazhi | for the next *chronicle.", "gap": 0.6}
+ ],
+ "sources": [
+  {"name": "Korkai (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Korkai", "supports": "Korkai in Thoothukudi district on the Tamirabarani; early Pandya port and pearl fishery; identified with Colchi of the Periplus and Kolkhoi of Ptolemy; sea receded about 6 km through silting; Caldwell's 1876 dig found burial urns; Tamil Nadu archaeology excavation 1968-69; charcoal dated by TIFR to 785 BCE; Tamil Brahmi graffiti pottery 3rd c BCE - 2nd c CE"},
+  {"name": "Early Pandyan kingdom (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Early_Pandyan_kingdom", "supports": "Korkai as an early Pandya capital/port before Madurai (tradition); Sangam poets' title Korkai Koman; pearl trade"},
+  {"name": "Periplus of the Erythraean Sea, ch. 59 (W. H. Schoff translation, 1912)", "url": "https://en.wikisource.org/wiki/The_Periplus_of_the_Erythraean_Sea", "supports": "the Pandian kingdom extending from Comari to Colchi, where the pearl fisheries are"},
+  {"name": "Korkai: India's Pearl Port (Live History India)", "url": "https://www.livehistoryindia.com/story/places/korkai-indias-pearl-port", "supports": "pearl port history; silting of the delta and the shift of trade to Kayal"},
+  {"name": "Korkai, ancient port city of the Pandyan empire, up for major excavations (The Tribune / PTI)", "url": "https://www.tribuneindia.com/news/india/korkai-ancient-port-city-of-pandyan-empire-in-tamil-nadu-up-for-major-excavations", "supports": "Tamil Nadu's announcement of new excavations at Korkai"}
+ ],
+ "illustration": "Divers, ships, kings and archaeologists are anonymous faceless figures; no portrait of any real person (including Robert Caldwell) is shown. Pottery marks are generic scratch strokes and symbols (fish, bow), not real Tamil Brahmi text. Maps and the moving coastline are stylised, not to scale.",
+ "uncertain": [
+  "That Korkai was the FIRST Pandya capital is tradition, supported by Sangam references, not proven by a dated record.",
+  "The Periplus is usually dated to the 1st century CE; exact year unknown.",
+  "The 785 BCE date comes from one charcoal sample in one trench (1968-69 dig, dated by TIFR); it dates that layer, not the founding of the port.",
+  "Distance from the sea is given as about 5 to 6 km in different sources; the video says about six.",
+  "When Kayal replaced Korkai is debated (estimates range from about the 3rd to the 12th century CE); the video gives no date."
+ ],
+ "story_device": "Sand-bottle strata"
+}

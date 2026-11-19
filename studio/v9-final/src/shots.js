@@ -1,4 +1,4 @@
-// EPISODE 8 · THE QUEEN BEHIND THE LOCKED DOOR (Mangammal) : merged shot list (groups written by separate workers)
+// EPISODE 9 · THE WOMAN WHO WALKED INTO THE GUNPOWDER STORE (Kuyili & Velu Nachiyar)
 import { buildA } from './shots_a.js';
 import { buildB } from './shots_b.js';
 import { buildC } from './shots_c.js';

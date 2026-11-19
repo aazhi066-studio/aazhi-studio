@@ -11,4 +11,5 @@ Status: done | making | open
 8. open  - Rajendra Chola's Ganga water carried south
 9. open  - Darasuram Airavatesvara: temple that sings in stone steps
 10. open - Tamil merchant guilds (Ayyavole, Manigramam) and sea trade
+11. done (v7, rendered + QA pass, upload queued) - Korkai: the Pandya pearl port the sea walked away from
 (Refill to 60 from LEARNINGS.md; every topic needs 2 checkable sources.)

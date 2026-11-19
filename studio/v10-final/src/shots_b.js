@@ -847,7 +847,7 @@ export function buildB(add, cue) {
   // ── b12 the king takes a title ──
   add({ id: 'b12', at: T9, cam: [540, 700], zoom: 0.08, note: 'granite king raises his sword under an empty carved cartouche, lion banner; tilt up, chisel arrives',
     draw(lt, d, t) {
-      const lk = LK(lerp(0.1, 0.55, eio(lt / d))), ty = lerp(120, -40, eio(lt / d)), ch = seg(t, tTitle - 0.2, tTitle + 0.25);
+      const lk = LK(lerp(0.1, 0.55, eio(lt / d))), ty = lerp(0, -50, eio(lt / d)), ch = seg(t, tTitle - 0.2, tTitle + 0.25);
       ctx.save(); ctx.translate(0, ty);
       bg('gf'); band(1250, 40, lk, GR, 110, 970);
       drawR(cartR(), 500, 330, 540, 340, 0.68, lk, { d: 7 });

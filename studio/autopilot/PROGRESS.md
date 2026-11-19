@@ -1,6 +1,6 @@
 # PROGRESS
 Updated: 2026-11-18
-Current: video 2 - narration regenerated (81.9 s, water-body wording). Worker C re-running src/shots_c.js. Then merge, mix.py, render, QA, push mp4 to branch videos, YouTube unlisted, sheet row. STORAGE: GitHub repo aazhi066-studio/aazhi-studio (see memory)
+Current: v4 (Lake Nyos, off-genre exception) RENDERED + QA ok, on branch videos v/v4.mp4, NOT yet uploaded: Zapier free cap 5 YouTube uploads per 24 h was used up (v1,v2,v3,v2b,v3b between ~07:35-07:58 IST 2026-11-19); retry after ~08:00 IST 2026-11-20, then add sheet row 5 + WhatsApp. Video 5 (Tamil history, dark/little-known, new look, music gen style frost or dust) is NEXT for the scheduled task. Old task paused; new task AAZHI autopilot v2 handles production. STORAGE: repo (see memory)
 Uploaded: none yet (ep1 ready in ~/faceless-shorts/aazhi-rajaraja/deliver)
 Rule: upload when 3 videos are finished (ep1 + 2 new). YouTube unlisted. Instagram only after user approval.
 Next command: start step 4 for video 2.

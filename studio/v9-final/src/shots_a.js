@@ -11,7 +11,7 @@
 //   a10 carved fort + gopuram on a hill; Company files from the left, Nawab's soot-grey horsemen with pennants from the right; "+ NAWAB OF ARCOT"; on "attacked" muskets level, carved starburst, smoke, print shake
 //   a11 king silhouette (spear, carved crown with vermilion copy) gouge-carved before a paper-shade colonnade, royal vermilion banner flutters, smoke drifts; name ribbon + ILLUSTRATION
 //   a12 the carved crown tumbles down and lands with a dust puff while the banner pole topples (no body, no gore)
-//   a13 queen Velu Nachiyar: high hair knot, raised sword, gouge-carved over a vermilion disc, sword glint, sash flutters; name ribbon + ILLUSTRATION
+//   a13 queen Velu Nachiyar: high hair knot, raised sword, gouge-carved over a vermilion disc, sword glint, drifting embers; name ribbon + ILLUSTRATION
 //   a14 INK ROLLER to night: paper-carved queen on a galloping horse with little Vellachi in front, moon, far fort burning, palms + ground streak past; "WITH DAUGHTER VELLACHI"
 import { ctx, W, H, TAU, clamp, lerp, seg, eo, eio, eob, rnd } from './core/lib.js';
 import { L, Wd } from './core/timing.js';
@@ -643,7 +643,7 @@ export function buildA(add, cue) {
     put(groundImg('a13', 1400, 60, INK, PAP), 540, 1236);
     const p = seg(lt, 0, 0.62);
     woman(640, 1240, 1.3, 0, womanImg('high'), { walk: false, arm: 'sword', reveal: p, limbA: seg(p, 0.7, 1), t: lt, glint: seg(lt, 0.7, 1.4) });
-    ctx.save(); ctx.translate(640, 1240); ctx.scale(1.3, 1.3); ctx.beginPath(); ctx.moveTo(-76, -330); for (let k = 0; k <= 8; k++) ctx.lineTo(-76 - k * 12, -330 + k * 9 + sin(k * 0.9 - lt * 9) * 6 * k / 8); for (let k = 8; k >= 0; k--) ctx.lineTo(-76 - k * 12, -304 + k * 9 + sin(k * 0.9 - lt * 9) * 6 * k / 8); ctx.closePath(); ctx.fillStyle = rgba(INK, seg(p, 0.7, 1)); ctx.fill(); ctx.restore();
+    embers(lt, 14, 61, 360, 900, 1230, 700, 0.6);
     ribbon('VELU NACHIYAR', 50, 250, seg(lt, nT, nT + 0.4), { size: 50 });
     ribbon('ILLUSTRATION', 50, 340, seg(lt, nT + 0.2, nT + 0.5), { size: 22 });
   };

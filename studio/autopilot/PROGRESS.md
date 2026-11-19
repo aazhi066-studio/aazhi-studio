@@ -12,4 +12,4 @@ Missing: memory /areas/aazhi-channel.md not reachable from the 03:07 UTC run.
 Scheduled task: hourly at :07 IST, lock via heartbeat line
 Approval sheet: 'AAZHI Approvals' id 1PeKpfx2zq7oCEoTtotyLLU-J3krC_T18zjU26NiKrCU https://docs.google.com/spreadsheets/d/1PeKpfx2zq7oCEoTtotyLLU-J3krC_T18zjU26NiKrCU/edit (read Status/Instagram columns before upload/post; Google Sheets default connection set)
 VOICE (user approved 2026-11-18): Kokoro voice af_heart, speed 0.9, phoneme mode. Narration is built as IPA: English text via tokenizer.phonemize, Tamil names via data/pronunciations.json (kokoro_onnx create(..., is_phonemes=True), words never split, single pass). Add every new Tamil name to the list. Channel name spoken "Aali". Captions keep English spelling. Install: pip install kokoro-onnx; models in ~/.faceless-shorts/kokoro (GitHub release files).
-heartbeat: 2026-11-19T04:31:30Z
+heartbeat: 2026-11-19T04:41:31Z

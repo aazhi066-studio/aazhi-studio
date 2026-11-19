@@ -7,27 +7,108 @@
  "music": "gen:ember",
  "music_seed": 84127,
  "lines": [
-  {"text": "A queen ruled Madurai for fifteen years. Nobody knows for sure how she died.", "caps": "a *queen | ruled *Madurai | nobody knows | how she *died.", "gap": 0.9},
-  {"text": "Her name was Mangammal, of the Madurai Nayak kingdom.", "caps": "her name was | *Mangammal | of the *Nayak kingdom.", "gap": 0.8},
-  {"text": "Around sixteen eighty nine, her son the king died young. Accounts say his widow died by sati, leaving a baby son.", "caps": "around *1689 | her son | the king | died *young | his widow | died by *sati | leaving a *baby son.", "gap": 0.9},
-  {"text": "So Mangammal ruled as regent, for that baby, her grandson.", "caps": "Mangammal ruled | as *regent | for her *grandson.", "gap": 0.9},
-  {"text": "When a Mughal army pressed south, accounts say she chose to pay tribute, not fight.", "caps": "a *Mughal army | pressed south | she paid | *tribute | not fight.", "gap": 0.8},
-  {"text": "But she also sent armies, against Travancore in sixteen ninety seven, and later against the Maratha ruler of Thanjavur.", "caps": "she sent *armies | against *Travancore | in *1697 | and later | against *Thanjavur.", "gap": 0.9},
-  {"text": "She is remembered for roads. The old highway from Kanyakumari was once called Mangammal Salai.", "caps": "she is remembered | for *roads | the old *highway | was called | *Mangammal Salai.", "gap": 0.8},
-  {"text": "And for rest houses, where pilgrims found shelter and food.", "caps": "and for | *rest houses | shelter and *food.", "gap": 0.8},
-  {"text": "Her summer palace, Tamukkam, still stands in Madurai. Today it holds the Gandhi Memorial Museum.", "caps": "her summer palace | *Tamukkam | still stands | today the *Gandhi | Memorial *Museum.", "gap": 1.0},
-  {"text": "Then the grandson came of age. Accounts say she would not hand over power.", "caps": "then the grandson | came of *age | she would not | hand over *power.", "gap": 0.9},
-  {"text": "One later story says she was locked away, and slowly starved.", "caps": "one later *story | she was | *locked away | slowly *starved.", "gap": 0.7},
-  {"text": "Food was placed outside, close enough to see and smell, but never to reach.", "caps": "*food outside | close enough | to *see | and *smell | never to *reach.", "gap": 1.0},
-  {"text": "But a historian writing in nineteen seventeen called that source unreliable. The true cause, he said, may stay a mystery.", "caps": "a historian | in *1917 | called it | *unreliable | the true cause | may stay | a *mystery.", "gap": 0.9},
-  {"text": "Her roads outlived her. Her last days left no clear record.", "caps": "her *roads | outlived her | her last days | no clear *record.", "gap": 1.1},
-  {"text": "Follow Aazhi for the next chronicle.", "caps": "follow *Aazhi | for the next *chronicle.", "gap": 0.6}
+  {
+   "text": "A queen ruled Madurai for fifteen years. Nobody knows for sure how she died.",
+   "caps": "a *queen | ruled *Madurai | nobody knows | how she *died.",
+   "gap": 0.9
+  },
+  {
+   "text": "Her name was Mangammal, of the Madurai Nayak kingdom.",
+   "caps": "her name was | *Mangammal | of the *Nayak kingdom.",
+   "gap": 0.8
+  },
+  {
+   "text": "Around sixteen eighty nine, her son the king died young. Accounts say his widow died by sati, leaving a baby son.",
+   "caps": "around *1689 | her son | the king | died *young | his widow | died by *sati | leaving a *baby son.",
+   "gap": 0.9
+  },
+  {
+   "text": "So Mangammal ruled as regent, for that baby, her grandson.",
+   "caps": "Mangammal ruled | as *regent | for her *grandson.",
+   "gap": 0.9
+  },
+  {
+   "text": "When a Mughal army pressed south, accounts say she chose to pay tribute, not fight.",
+   "caps": "a *Mughal army | pressed south | she paid | *tribute | not fight.",
+   "gap": 0.8
+  },
+  {
+   "text": "But she also sent armies, against Travancore in sixteen ninety seven, and later against the Maratha ruler of Thanjavur.",
+   "caps": "she sent *armies | against *Travancore | in *1697 | and later | against *Thanjavur.",
+   "gap": 0.9
+  },
+  {
+   "text": "She is remembered for roads. The old highway from Kanyakumari was once called Mangammal Salai.",
+   "caps": "she is remembered | for *roads | the old *highway | was called | *Mangammal Salai.",
+   "gap": 0.8
+  },
+  {
+   "text": "And for rest houses, where pilgrims found shelter and food.",
+   "caps": "and for | *rest houses | shelter and *food.",
+   "gap": 0.8
+  },
+  {
+   "text": "Her summer palace, Tamukkam, still stands in Madurai. Today it holds the Gandhi Memorial Museum.",
+   "caps": "her summer palace | *Tamukkam | still stands | today the *Gandhi | Memorial *Museum.",
+   "gap": 1.0
+  },
+  {
+   "text": "Then the grandson came of age. Accounts say she would not hand over power.",
+   "caps": "then the grandson | came of *age | she would not | hand over *power.",
+   "gap": 0.9
+  },
+  {
+   "text": "One later story says she was locked away, and slowly starved.",
+   "caps": "one later *story | she was | *locked away | slowly *starved.",
+   "gap": 0.7
+  },
+  {
+   "text": "Food was placed outside, close enough to see and smell, but never to reach.",
+   "caps": "*food outside | close enough | to *see | and *smell | never to *reach.",
+   "gap": 1.0
+  },
+  {
+   "text": "But a historian writing in nineteen seventeen called that source unreliable. The true cause, he said, may stay a mystery.",
+   "caps": "a historian | in *1917 | called it | *unreliable | the true cause | may stay | a *mystery.",
+   "gap": 0.9
+  },
+  {
+   "text": "Her roads outlived her. Her last days left no clear record.",
+   "caps": "her *roads | outlived her | her last days | no clear *record.",
+   "gap": 1.1
+  },
+  {
+   "text": "Follow Aazhi for the next chronicle.",
+   "caps": "follow *Aazhi | for the next *chronicle.",
+   "gap": 0.6
+  }
  ],
  "sources": [
-  {"name": "Mangammal (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Mangammal", "supports": "queen regent of the Madurai Nayak kingdom for her grandson Vijaya Ranga Chokkanatha; daughter-in-law committed sati; regency c. 1689-1704/05; tribute to the Mughals; expedition to Travancore (1697) and war with Shahaji of Thanjavur; roads (Mangammal Salai), choultries, Tamukkam summer palace; death c. 1705 surrounded by folklore of imprisonment and starvation"},
-  {"name": "R. Sathyanatha Aiyar, 'History of the Nayaks of Madura', The Indian Antiquary vol. 46 (1917), p. 197", "url": "https://jainqq.org/pagetext/Indian_Antiquary_Vol_46/032538/197", "supports": "the tradition (from a historian called 'most unreliable') that she was imprisoned and slowly starved with food placed where she could see and smell but not reach it; the author's conclusion that the true cause of her death is and is ever likely to be a mystery; a small room 'Mangammal's Hall' pointed out as the place of death"},
-  {"name": "Tamukkam Palace (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Tamukkam_Palace", "supports": "summer palace of Rani Mangammal (c. 1670), now houses the Gandhi Memorial Museum, Madurai"},
-  {"name": "A Queen Who Would Not Yield (Swarajya)", "url": "https://swarajyamag.com/magazine/a-queen-who-would-not-yield", "supports": "Mangammal's regency, diplomacy with the Mughals, wars, public works"}
+  {
+   "name": "Mangammal (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Mangammal",
+   "supports": "queen regent of the Madurai Nayak kingdom for her grandson Vijaya Ranga Chokkanatha; daughter-in-law committed sati; regency c. 1689-1704/05; tribute to the Mughals; expedition to Travancore (1697) and war with Shahaji of Thanjavur; roads (Mangammal Salai), choultries, Tamukkam summer palace; death c. 1705 surrounded by folklore of imprisonment and starvation"
+  },
+  {
+   "name": "V. Rangachari, 'The History of the Naik Kingdom of Madura', The Indian Antiquary vol. 46 (1917), p. 197",
+   "url": "https://jainqq.org/pagetext/Indian_Antiquary_Vol_46/032538/197",
+   "supports": "the tradition (from a historian called 'most unreliable') that she was imprisoned and slowly starved with food placed where she could see and smell but not reach it; the author's conclusion that the true cause of her death is and is ever likely to be a mystery; a small room 'Mangammal's Hall' pointed out as the place of death"
+  },
+  {
+   "name": "Tamukkam Palace (Wikipedia)",
+   "url": "https://en.wikipedia.org/wiki/Tamukkam_Palace",
+   "supports": "summer palace of Rani Mangammal (c. 1670), now houses the Gandhi Memorial Museum, Madurai"
+  },
+  {
+   "name": "A Queen Who Would Not Yield (Swarajya)",
+   "url": "https://swarajyamag.com/magazine/a-queen-who-would-not-yield",
+   "supports": "Mangammal's regency, diplomacy with the Mughals, wars, public works"
+  },
+  {
+   "name": "R. Sathyanatha Aiyar, History of the Nayaks of Madura (Oxford University Press, Madras, 1924)",
+   "url": "https://archive.org/details/historyofthenaya035252mbp",
+   "supports": "Mangammal's regency (dated 1689-1706 in this book), wars, public works, the succession of Vijaya Ranga Chokkanatha"
+  }
  ],
  "illustration": "Mangammal, her son, her grandson and all soldiers and pilgrims are anonymous faceless figures; no portrait of any real person exists or is shown. Palaces, maps, roads and the locked room are stylised illustrations, not reconstructions. No inscription or quotation is shown.",
  "uncertain": [

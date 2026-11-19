@@ -1,5 +1,6 @@
 # PROGRESS
-Updated: 2026-11-19 03:20 UTC (scheduled run)
+Updated: 2026-11-19 08:30 UTC (scheduled run)
+08:08 UTC run: lock stale (06:01) -> took over. Sheet: still no Status set, nothing to publish. v6 shots A/B/C all complete; check OK (30 shots, 77.4 s); narration regenerated (identical timings), cues 130, mix done (gen:dust 62813); contact sheet reviewed OK; full render running -> renders/v6.mp4. Env note: CHROME=/opt/pw-browsers/chromium-1243/chrome-linux64/chrome; capture.mjs check does not exit by itself (use timeout); pip via 'python3 -m pip'.
 YT uploads in rolling 24h: 5/5 (v1,v2,v3,v2b,v3b 07:35-07:58 IST 19 Nov) (0zjKdLa3qQg, 2_N2dKh-SGU, 0kiWffItkg4, fF8fHqk3-vc, -OXGm_74tFM) -> quota FULL; next upload only when the oldest of these is >24h old (exact upload times not logged; log UTC time with every future upload).
 Sheet: 3 rows (videos 1-3), no Status set yet -> nothing approved, nothing to publish.
 v4 Lake Nyos = off-genre exception set up by another session (project in studio/v4-final), rendered, NOT uploaded, waiting for quota (frees ~08:00 IST 2026-11-20, uploads were 07:35-07:58 IST 2026-11-19). Upload order when free: v4 first, then v5. My QA recheck of v/v4.mp4: 75.5 s, 1080x1920, -14.2 LUFS, true peak was -0.9 dBTP -> FIXED 03:30 UTC (limiter, video stream copied): -14.8 LUFS, -1.5 dBTP, pushed to videos v/v4.mp4 (QA pass).

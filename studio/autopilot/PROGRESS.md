@@ -1,5 +1,7 @@
 # PROGRESS
-Updated: 2026-11-19 10:35 UTC (scheduled run 10:07)
+Updated: 2026-11-19 11:50 UTC (scheduled run 11:08)
+v9 IN PROGRESS (11:08 run): Kuyili & Velu Nachiyar (record vs folk song), studio/v9-final, script+narration 92.0 s, ART "Ember Linocut", music gen:abyss 93061 music_sim PASS (vs v4-v8), desc.txt written. 3 workers drawing shots_a/b/c. Sources via search snippets (wikipedia, sivaganga.nic.in blocked for fetch).
+Sheet 11:10 UTC (16:40 IST): no Status set on any row -> nothing to publish.
 v8 Mangammal DONE + QA PASS (10:33 UTC 19 Nov): 'The Queen of Madurai Who Died Behind a Locked Door', 88.8 s, 1080x1920 30fps 2665 frames, -14.0 LUFS, -1.5 dBTP (loudnorm), captions on estimated word timings (NEW tool autopilot/tools/words_est.py) within exact line times, segment joins checked, facts match 5 sources (hedged: accounts say / later story / 1917 Rangachari calls it unreliable). Pushed videos v/v8.mp4 (79 MB, raw URL 206 OK). Project studio/v8-final, desc studio/v8-final/desc.txt, ART 'Kalamkari Cloth'. Music gen:ember 84127 music_sim PASS. Render: 4 parallel segments took ~2 min total.
 Sheet 10:08 UTC (15:38 IST): no Status set on any row -> nothing to publish.
 v7 Korkai DONE + QA PASS (09:28 UTC 19 Nov): 'The Pandya Port the Sea Walked Away From', 84.5 s, 1080x1920 30fps 2534 frames, -14.3 LUFS, -1.6 dBTP (limiter), captions on word timings estimated from phoneme counts within exact line times, segment joins checked, facts match 5 sources (hedged: tradition / one sample / ~6 km). Pushed videos v/v7.mp4 (65 MB, raw URL 200). Project studio/v7-final, desc studio/v7-final/desc.txt, ART 'Sand-Bottle Strata'. Music gen:tide 73591: NEW tool autopilot/tools/music_sim.py PASS (self mean -0.05, cross vs v4/v5/v6 mean <0.01, no repeated passage). Note: single-window max similarity is ~0.5-0.9 for any two tracks (one shared note), so the check uses mean < 0.3 + no 3-window repeat run.
@@ -20,4 +22,4 @@ Missing: memory /areas/aazhi-channel.md not reachable from the 03:07 UTC run.
 Scheduled task: hourly at :07 IST, lock via heartbeat line
 Approval sheet: 'AAZHI Approvals' id 1PeKpfx2zq7oCEoTtotyLLU-J3krC_T18zjU26NiKrCU https://docs.google.com/spreadsheets/d/1PeKpfx2zq7oCEoTtotyLLU-J3krC_T18zjU26NiKrCU/edit (read Status/Instagram columns before upload/post; Google Sheets default connection set)
 VOICE (user approved 2026-11-18): Kokoro voice af_heart, speed 0.9, phoneme mode. Narration is built as IPA: English text via tokenizer.phonemize, Tamil names via data/pronunciations.json (kokoro_onnx create(..., is_phonemes=True), words never split, single pass). Add every new Tamil name to the list. Channel name spoken "Aali". Captions keep English spelling. Install: pip install kokoro-onnx; models in ~/.faceless-shorts/kokoro (GitHub release files).
-heartbeat: 2026-11-19T11:10:00Z (run 11:08 UTC active)
+heartbeat: 2026-11-19T11:50:00Z (run 11:08 UTC active)

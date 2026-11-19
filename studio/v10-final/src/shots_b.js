@@ -434,7 +434,7 @@ const cliffR = () => relief('b:cliff', 1240, 780, SS, () => {
   for (let i = 0; i < 12; i++) { const x = rnd(i * 5.5) * 1240, y = 200 + rnd(i * 2.2) * 200; groove(st, lx, ly, 3, () => { ctx.moveTo(x, y); ctx.lineTo(x + 10, y + 120 + rnd(i) * 160); }); }
   for (const [cx, cy, w] of [[330, 330, 150], [780, 260, 170]]) {
     ctx.fillStyle = st.sh; ctx.globalAlpha = 0.9; ctx.fillRect(cx - w / 2, cy, w, 92); ctx.globalAlpha = 1;
-    ctx.fillStyle = pat(st.tex); for (let k = 0; k < 4; k++) ctx.fillRect(cx - w / 2 + 14 + k * (w - 36) / 3, cy, 10, 92);
+    ctx.fillStyle = pat(st.tex); for (let k = 1; k < 3; k++) { ctx.fillRect(cx - w / 2 + k * w / 3 - 9, cy + 14, 18, 78); ctx.fillRect(cx - w / 2 + k * w / 3 - 16, cy + 8, 32, 10); } ctx.fillRect(cx - w / 2, cy, w, 8);
     groove(st, lx, ly, 4, () => ctx.rect(cx - w / 2 - 8, cy - 8, w + 16, 108));
   }
 } });
@@ -808,11 +808,11 @@ export function buildB(add, cue) {
     draw(lt, d, t) {
       const lk = LK(0.78 + 0.08 * lt / d), tk = tTaken - tVat8, dr = seg(lt, tk - 0.22, tk + 0.05), [sx, sy] = shake(lt - tk - 0.05, 7);
       ctx.save(); ctx.translate(sx, sy + lerp(-20, 20, lt / d));
-      bg('s'); drawR(discR('b:moon', SS, false), 150, 150, 840, 330, 0.75, lk, { d: 6 });
+      bg('s'); drawR(discR('b:moon', SS, false), 150, 150, 880, 190, 0.7, lk, { d: 6 });
       city(lt, lk, seg(lt, d - 0.6, d) * 0.4, 1);
       ctx.fillStyle = 'rgba(12,16,28,0.5)'; ctx.fillRect(-300, -300, W + 600, H + 600);
-      drawX(cityR(), 'moon', 540, 880, 540, 1250, 1, 0.55); drawX(cliffR(), 'moon', 620, 780, 540, 990, 1, 0.45);
-      glow(840, 330, 260, '170,190,230', 0.22);
+      drawX(cityR(), 'moon', 540, 880, 540, 1250, 1, 0.3); drawX(cliffR(), 'moon', 620, 780, 540, 990, 1, 0.25);
+      glow(880, 190, 240, '170,190,230', 0.25);
       if (dr > 0) { const by = lerp(-500, 690, dr * dr); drawR(bannerR('lion'), 40, 1020, 540, by, 0.5, lk, { d: 7 }); glow(540 + 90, by - 380, 160, '200,210,235', 0.1); }
       ctx.restore();
       puff(540, 692, lt - tk - 0.05, 0.6, '150,150,170', 5, 3);

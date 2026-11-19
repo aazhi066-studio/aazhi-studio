@@ -1,1 +1,5 @@
 studio/*/review_*/
+studio/*/review/
+studio/*/renders/
+*.wav
+__pycache__/

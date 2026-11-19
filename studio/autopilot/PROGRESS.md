@@ -1,6 +1,6 @@
 # PROGRESS
 Updated: 2026-11-18
-Current: video 2 - narration regenerated (81.9 s, water-body wording). Worker C re-running src/shots_c.js. Then merge, mix.py, render, QA, push mp4 to branch videos, YouTube unlisted, sheet row. STORAGE: GitHub repo aazhi066-studio/aazhi-studio (see memory)
+Current: v1 (0zjKdLa3qQg) and v2 (2_N2dKh-SGU) uploaded UNLISTED, sheet rows 2-3 added. Now video 3 (Srivijaya fleet). STORAGE: GitHub repo aazhi066-studio/aazhi-studio (see memory)
 Uploaded: none yet (ep1 ready in ~/faceless-shorts/aazhi-rajaraja/deliver)
 Rule: upload when 3 videos are finished (ep1 + 2 new). YouTube unlisted. Instagram only after user approval.
 Next command: start step 4 for video 2.

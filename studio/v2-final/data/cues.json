@@ -1,0 +1,407 @@
+{
+ "duration": 81.946,
+ "cues": [
+  {
+   "t": 0.05,
+   "type": "swell",
+   "gain": 0.8
+  },
+  {
+   "t": 0.4,
+   "type": "rumble",
+   "gain": 0.5,
+   "dur": 2.6
+  },
+  {
+   "t": 3.515,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 4.515,
+   "type": "sparkle",
+   "gain": 0.5
+  },
+  {
+   "t": 6.515,
+   "type": "pop",
+   "gain": 0.7
+  },
+  {
+   "t": 7.517,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 7.717,
+   "type": "drum",
+   "gain": 0.9
+  },
+  {
+   "t": 8.317,
+   "type": "pop",
+   "gain": 0.7
+  },
+  {
+   "t": 8.617,
+   "type": "sparkle",
+   "gain": 0.6
+  },
+  {
+   "t": 11.317,
+   "type": "bell",
+   "gain": 0.5
+  },
+  {
+   "t": 12.447,
+   "type": "whoosh",
+   "gain": 0.7
+  },
+  {
+   "t": 12.597,
+   "type": "chisel",
+   "gain": 0.5,
+   "pan": -0.3
+  },
+  {
+   "t": 12.717,
+   "type": "chisel",
+   "gain": 0.5,
+   "pan": 0.3
+  },
+  {
+   "t": 12.837,
+   "type": "chisel",
+   "gain": 0.5,
+   "pan": -0.3
+  },
+  {
+   "t": 12.957,
+   "type": "chisel",
+   "gain": 0.5,
+   "pan": 0.3
+  },
+  {
+   "t": 13.747,
+   "type": "sparkle",
+   "gain": 0.6
+  },
+  {
+   "t": 14.747,
+   "type": "rumble",
+   "gain": 0.5,
+   "dur": 1.5
+  },
+  {
+   "t": 15.147,
+   "type": "pop",
+   "gain": 0.8
+  },
+  {
+   "t": 15.447,
+   "type": "bell",
+   "gain": 0.7
+  },
+  {
+   "t": 16.593,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 16.893,
+   "type": "swell",
+   "gain": 0.8
+  },
+  {
+   "t": 17.51,
+   "type": "bell",
+   "gain": 0.8
+  },
+  {
+   "t": 22.341,
+   "type": "whoosh",
+   "gain": 0.7
+  },
+  {
+   "t": 22.741,
+   "type": "pop",
+   "gain": 0.7
+  },
+  {
+   "t": 25.041,
+   "type": "sparkle",
+   "gain": 0.9
+  },
+  {
+   "t": 25.091,
+   "type": "bell",
+   "gain": 0.9
+  },
+  {
+   "t": 26.037,
+   "type": "whoosh",
+   "gain": 0.7
+  },
+  {
+   "t": 26.637,
+   "type": "drum",
+   "gain": 0.3
+  },
+  {
+   "t": 27.257,
+   "type": "drum",
+   "gain": 0.5
+  },
+  {
+   "t": 27.877,
+   "type": "drum",
+   "gain": 0.3
+  },
+  {
+   "t": 28.497,
+   "type": "drum",
+   "gain": 0.5
+  },
+  {
+   "t": 29.117,
+   "type": "drum",
+   "gain": 0.3
+  },
+  {
+   "t": 29.237,
+   "type": "sparkle",
+   "gain": 0.5
+  },
+  {
+   "t": 29.737,
+   "type": "drum",
+   "gain": 0.5
+  },
+  {
+   "t": 30.357,
+   "type": "drum",
+   "gain": 0.3
+  },
+  {
+   "t": 30.977,
+   "type": "drum",
+   "gain": 0.5
+  },
+  {
+   "t": 31.437,
+   "type": "sparkle",
+   "gain": 0.5
+  },
+  {
+   "t": 31.597,
+   "type": "drum",
+   "gain": 0.3
+  },
+  {
+   "t": 32.217,
+   "type": "drum",
+   "gain": 0.5
+  },
+  {
+   "t": 32.398,
+   "type": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 32.898,
+   "type": "pop",
+   "gain": 0.22
+  },
+  {
+   "t": 33.248,
+   "type": "pop",
+   "gain": 0.22
+  },
+  {
+   "t": 33.598,
+   "type": "pop",
+   "gain": 0.22
+  },
+  {
+   "t": 33.948,
+   "type": "pop",
+   "gain": 0.22
+  },
+  {
+   "t": 34.298,
+   "type": "pop",
+   "gain": 0.22
+  },
+  {
+   "t": 34.648,
+   "type": "pop",
+   "gain": 0.22
+  },
+  {
+   "t": 35.698,
+   "type": "rumble",
+   "gain": 0.8,
+   "dur": 1.6
+  },
+  {
+   "t": 35.798,
+   "type": "swell",
+   "gain": 0.9
+  },
+  {
+   "t": 36.898,
+   "type": "sparkle",
+   "gain": 0.95
+  },
+  {
+   "t": 36.948,
+   "type": "bell",
+   "gain": 0.7
+  },
+  {
+   "t": 39.185,
+   "type": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 39.685,
+   "type": "chisel",
+   "gain": 0.35
+  },
+  {
+   "t": 40.185,
+   "type": "chisel",
+   "gain": 0.35
+  },
+  {
+   "t": 40.685,
+   "type": "chisel",
+   "gain": 0.35
+  },
+  {
+   "t": 41.185,
+   "type": "chisel",
+   "gain": 0.35
+  },
+  {
+   "t": 41.685,
+   "type": "chisel",
+   "gain": 0.35
+  },
+  {
+   "t": 42.385,
+   "type": "swell",
+   "gain": 0.6
+  },
+  {
+   "t": 42.485,
+   "type": "bell",
+   "gain": 0.5
+  },
+  {
+   "t": 45.618,
+   "type": "chisel",
+   "gain": 0.75
+  },
+  {
+   "t": 45.998,
+   "type": "chisel",
+   "gain": 0.75
+  },
+  {
+   "t": 46.378,
+   "type": "chisel",
+   "gain": 0.75
+  },
+  {
+   "t": 46.758,
+   "type": "chisel",
+   "gain": 0.75
+  },
+  {
+   "t": 47.86,
+   "type": "whoosh",
+   "gain": 0.45
+  },
+  {
+   "t": 48.86,
+   "type": "whoosh",
+   "gain": 0.4
+  },
+  {
+   "t": 50.26,
+   "type": "sparkle",
+   "gain": 0.5
+  },
+  {
+   "t": 51.06,
+   "type": "pop",
+   "gain": 0.7
+  },
+  {
+   "t": 53.656,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 56.956,
+   "type": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 58.556,
+   "type": "rumble",
+   "gain": 0.5
+  },
+  {
+   "t": 63.698,
+   "type": "rumble",
+   "gain": 0.5
+  },
+  {
+   "t": 64.298,
+   "type": "whoosh",
+   "gain": 0.4
+  },
+  {
+   "t": 66.798,
+   "type": "pop",
+   "gain": 0.6
+  },
+  {
+   "t": 70.248,
+   "type": "swell",
+   "gain": 0.7
+  },
+  {
+   "t": 70.648,
+   "type": "bell",
+   "gain": 0.7
+  },
+  {
+   "t": 71.548,
+   "type": "sparkle",
+   "gain": 0.4
+  },
+  {
+   "t": 74.548,
+   "type": "swell",
+   "gain": 0.6
+  },
+  {
+   "t": 75.948,
+   "type": "bell",
+   "gain": 0.5
+  },
+  {
+   "t": 78.898,
+   "type": "sparkle",
+   "gain": 0.9
+  },
+  {
+   "t": 79.418,
+   "type": "pop",
+   "gain": 0.8
+  }
+ ]
+}

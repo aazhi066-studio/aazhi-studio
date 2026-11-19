@@ -13,37 +13,52 @@ const poly = (pts) => { ctx.beginPath(); pts.forEach((p, i) => (i ? ctx.lineTo(p
 const pr = (lt, s, dur = 0.4) => clamp((lt - s) / dur);
 
 // ───────── paper ─────────
-function paper(t, seed = 0) {
-  ctx.fillStyle = lg(0, -300, 0, H + 300, [[0, BG1], [0.5, BGM], [1, BG0]]); ctx.fillRect(-300, -300, W + 600, H + 600);
-  // cyanotype mottling (soft uneven exposure)
+let PAPER = null;   // the static sheet (wash, mottling, grid, fixed grain, vignette), rendered once on first draw
+function paperSheet() {
+  if (PAPER) return PAPER;
+  const c = typeof OffscreenCanvas !== 'undefined' ? new OffscreenCanvas(W + 600, H + 600) : Object.assign(document.createElement('canvas'), { width: W + 600, height: H + 600 });
+  const g0 = c.getContext('2d'); g0.translate(300, 300);
+  const g = (x0, y0, x1, y1, st) => { const q = g0.createLinearGradient(x0, y0, x1, y1); st.forEach(([o, cc]) => q.addColorStop(o, cc)); return q; };
+  g0.fillStyle = g(0, -300, 0, H + 300, [[0, BG1], [0.5, BGM], [1, BG0]]); g0.fillRect(-300, -300, W + 600, H + 600);
   for (let i = 0; i < 6; i++) {
-    const x = rnd(i + seed * 13) * W, y = rnd(i * 3 + 7 + seed) * 1400, r = 300 + rnd(i + 2) * 400;
-    const g = ctx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, rnd(i + 5) > 0.5 ? 'rgba(60,120,190,0.12)' : 'rgba(5,20,45,0.14)'); g.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = g; ctx.fillRect(x - r, y - r, r * 2, r * 2);
+    const x = rnd(i + 13) * W, y = rnd(i * 3 + 8) * 1400, r = 300 + rnd(i + 2) * 400;
+    const q = g0.createRadialGradient(x, y, 0, x, y, r); q.addColorStop(0, rnd(i + 5) > 0.5 ? 'rgba(60,120,190,0.12)' : 'rgba(5,20,45,0.14)'); q.addColorStop(1, 'rgba(0,0,0,0)');
+    g0.fillStyle = q; g0.fillRect(x - r, y - r, r * 2, r * 2);
   }
-  // graph grid
-  ctx.lineWidth = 1.2; ctx.strokeStyle = 'rgba(200,225,255,0.06)'; ctx.beginPath();
-  for (let x = -280; x < W + 300; x += 40) { ctx.moveTo(x, -300); ctx.lineTo(x, H + 300); }
-  for (let y = -280; y < H + 300; y += 40) { ctx.moveTo(-300, y); ctx.lineTo(W + 300, y); }
-  ctx.stroke();
-  ctx.lineWidth = 2; ctx.strokeStyle = 'rgba(200,225,255,0.11)'; ctx.beginPath();
-  for (let x = -280; x < W + 300; x += 200) { ctx.moveTo(x, -300); ctx.lineTo(x, H + 300); }
-  for (let y = -280; y < H + 300; y += 200) { ctx.moveTo(-300, y); ctx.lineTo(W + 300, y); }
-  ctx.stroke();
+  g0.lineWidth = 1.2; g0.strokeStyle = 'rgba(200,225,255,0.06)'; g0.beginPath();
+  for (let x = -280; x < W + 300; x += 40) { g0.moveTo(x, -300); g0.lineTo(x, H + 300); }
+  for (let y = -280; y < H + 300; y += 40) { g0.moveTo(-300, y); g0.lineTo(W + 300, y); }
+  g0.stroke();
+  g0.lineWidth = 2; g0.strokeStyle = 'rgba(200,225,255,0.11)'; g0.beginPath();
+  for (let x = -280; x < W + 300; x += 200) { g0.moveTo(x, -300); g0.lineTo(x, H + 300); }
+  for (let y = -280; y < H + 300; y += 200) { g0.moveTo(-300, y); g0.lineTo(W + 300, y); }
+  g0.stroke();
+  for (let pass = 0; pass < 2; pass++) {
+    g0.beginPath(); for (let i = 0; i < 900; i++) { if ((rnd(i + 77) > 0.45) !== (pass === 0)) continue; g0.rect(rnd(i * 3 + 1) * (W + 600) - 300, rnd(i * 7 + 2) * (H + 600) - 300, 2 + rnd(i) * 2, 2 + rnd(i + 1) * 2); }
+    g0.fillStyle = pass === 0 ? 'rgba(220,235,255,0.06)' : 'rgba(0,10,30,0.12)'; g0.fill();
+  }
+  const v = g0.createRadialGradient(540, 860, 560, 540, 860, 1350); v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, 'rgba(2,10,25,0.5)');
+  g0.fillStyle = v; g0.fillRect(-300, -300, W + 600, H + 600);
+  return (PAPER = c);
+}
+function paper(t, seed = 0) {
+  ctx.drawImage(paperSheet(), -300, -300);
   grain(t, seed);
 }
 function grain(t, seed = 0) {
   const f = Math.floor(t * 6);
-  for (let i = 0; i < 320; i++) {
-    const k = i < 260 ? seed * 31 : f * 17 + seed; const x = rnd(i * 3 + k) * (W + 400) - 200, y = rnd(i * 7 + k + 5) * (H + 400) - 200;
-    ctx.fillStyle = rnd(i + k) > 0.45 ? 'rgba(220,235,255,0.06)' : 'rgba(0,10,30,0.12)'; ctx.fillRect(x, y, 2 + rnd(i) * 2, 2 + rnd(i + 1) * 2);
+  for (let pass = 0; pass < 2; pass++) {
+    ctx.beginPath();
+    for (let i = 0; i < 70; i++) {
+      const k = f * 17 + seed * 31; if ((rnd(i + k) > 0.45) !== (pass === 0)) continue;
+      ctx.rect(rnd(i * 3 + k) * (W + 400) - 200, rnd(i * 7 + k + 5) * (H + 400) - 200, 2 + rnd(i) * 2, 2 + rnd(i + 1) * 2);
+    }
+    ctx.fillStyle = pass === 0 ? 'rgba(220,235,255,0.06)' : 'rgba(0,10,30,0.12)'; ctx.fill();
   }
 }
 // keep the caption band calm and darker; soft edge vignette
 function finish() {
   ctx.fillStyle = lg(0, 1220, 0, 1920, [[0, 'rgba(4,16,36,0)'], [0.25, 'rgba(4,16,36,0.42)'], [0.7, 'rgba(4,16,36,0.5)'], [1, 'rgba(4,16,36,0.3)']]); ctx.fillRect(-300, 1220, W + 600, 1000);
-  const g = ctx.createRadialGradient(540, 860, 560, 540, 860, 1350); g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(2,10,25,0.55)');
-  ctx.fillStyle = g; ctx.fillRect(-300, -300, W + 600, H + 600);
 }
 // page slide-in: returns the x offset for the content, draws the incoming page edge
 function slideIn(lt, dur = 0.42) { const k = eo(clamp(lt / dur)); return (1 - k) * 360; }
@@ -176,8 +191,8 @@ function stonePts(r, seed, sq = 0.72) {
 function stone(x, y, r, seed, o = {}) {
   const p = stonePts(r, seed, o.sq ?? 0.72);
   ctx.save(); ctx.translate(x, y); ctx.rotate(o.rot || 0); ctx.scale(o.sx || 1, o.sy || 1);
-  poly(p); ctx.fillStyle = lg(-r, -r, r, r, [[0, '#8C6A3C'], [1, '#5E4628']]); ctx.fill();
-  wash(p, OCH, 0.9, seed, 0);
+  poly(p); ctx.fillStyle = '#76582F'; ctx.fill();
+  ctx.save(); ctx.translate((rnd(seed) - 0.5) * r * 0.2, (rnd(seed + 1) - 0.5) * r * 0.2); poly(p); ctx.fillStyle = rgba(OCH, 0.75); ctx.fill(); ctx.restore();
   ctx.save(); poly(p); ctx.clip(); ctx.fillStyle = 'rgba(255,240,210,0.16)'; ctx.beginPath(); ctx.ellipse(-r * 0.3, -r * 0.35, r * 0.6, r * 0.3, -0.3, 0, TAU); ctx.fill();
   ctx.strokeStyle = 'rgba(40,25,10,0.35)'; ctx.lineWidth = 2; ctx.beginPath(); for (let i = 0; i < 3; i++) { const yy = (rnd(seed + i + 40) - 0.5) * r; ctx.moveTo(-r, yy); ctx.lineTo(r, yy + r * 0.5); } ctx.stroke(); ctx.restore();
   poly(p); ctx.strokeStyle = CH; ctx.lineWidth = o.lw || 4; ctx.lineJoin = 'round'; ctx.globalAlpha *= 0.9; ctx.stroke();

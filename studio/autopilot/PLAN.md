@@ -3,7 +3,7 @@ Status: done | making | open
 1. done (YT 0zjKdLa3qQg unlisted) - Rajaraja, Brihadisvara
 2. done (YT 2_N2dKh-SGU unlisted) - Gangaikonda Cholapuram river water
 3. done (YT 0kiWffItkg4 unlisted) - Srivijaya fleet
-4. making (v5: script done, render next) - Grand Anicut (Kallanai): the dam the British came to learn from
+4. done (v5, rendered + QA pass, upload queued) - Grand Anicut (Kallanai): the dam the British came to learn from
 4b. v4 Lake Nyos (off-genre exception, studio/v4-final) - rendered, upload queued for when quota frees
 5. open  - Chola bronzes: lost-wax casting of Nataraja at Swamimalai
 6. open  - Uttaramerur inscriptions: village democracy under the Cholas

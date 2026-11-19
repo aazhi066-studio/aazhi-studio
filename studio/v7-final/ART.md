@@ -15,7 +15,7 @@ Look: the whole film lives inside / around a tall GLASS SAND-ART BOTTLE and its 
  - Text: big words in Inter 900 (caps, slightly letter-spaced) set in a pale sand colour with a dark shadow; small notes in Caladea 700. Labels "RECORD" / "TRADITION" / "ILLUSTRATION" as small coral pill tags (rounded rect), not stamps.
  - Tamil-Brahmi: NEVER write invented letters. Draw generic scratch strokes and the attested graffiti symbols (fish, bow and arrow, sun) only, with a small tag "marks: illustration".
  - Never: blueprint/cyanotype, rubber stamps, balance scales, palm-leaf bundles, compass roses, measuring tapes, dimension lines (v5); shadow puppets, crack transitions, puppet sticks (v6); lanterns going out (v4).
- - Captions are drawn by the engine around y 1300-1500 (CAP.y 1400). Keep that band calm (no big text there); main action in y 200-1250 and 1550-1850.
+ - Captions are drawn by the engine at y ~1640 (CAPLOOK.y in kit.js; keep y 1300-1720 calm). Keep that band calm (no big text there); main action in y 200-1250 and 1550-1850.
  - Every shot: camera always moving (sh.zoom, sh.cam), something animates the whole time, no static frames. Shots 1.5-4 s each. Draw cost must stay < ~0.2 s/frame (no per-path shadowBlur/filter; cache static layers with cached()/offscreen canvases; speckle textures generated once).
 Engine: see src/main.js (shot = {id, at, draw(lt, d, t), cam:[x,y], zoom, note}), src/core/lib.js (ctx, W=1080, H=1920, clamp, lerp, seg, eo, eio, eob, rnd, TAU, circle, ell, rr),
  src/core/timing.js (L(i) line start, Le(i) line end, Wd(word, line) word start), src/art.js (lg, poly, fillP, rgba, mixc, cached, blit), src/core/kit.js.

@@ -1,5 +1,7 @@
 # PROGRESS
-Updated: 2026-11-19 13:32 UTC (scheduled run 13:08)
+Updated: 2026-11-19 14:30 UTC (scheduled run 14:08)
+v10 IN PROGRESS (14:08 run): Vatapi 642 / Pallava revenge (Pulakeshin II, Pullalur disputed, Vatapikonda; Paranjothi + Vatapi Ganapati = tradition), studio/v10-final, script+narration 93.7 s, ART 'Raking-Light Stone Relief', music gen:frost 10427 music_sim PASS (vs v5,v8,v9), desc.txt written, 15 new IPA names. 3 workers drawing shots_a/b/c.
+Sheet 14:10 UTC (19:40 IST): no Status set on any row -> nothing to publish.
 v9 Kuyili & Velu Nachiyar DONE + QA PASS (13:32 UTC 19 Nov): 'The Woman Who Walked Into the Gunpowder Store', 92.05 s, 1080x1920 30fps 2761 frames, -14.2 LUFS, -1.3 dBTP (loudnorm; raw mix was -0.9 dBTP), captions on estimated word timings (words_est) within exact line times, contact sheet checked, facts match desc sources (record vs folk song labelled, Kuyili hedged). Prev run stalled at shots WIP; this run redrew shots_a/b/c (14+9+12 shots, ~50 ms/frame), regenerated narration (+IPA "Kuyili's"). Pushed videos v/v9.mp4 (59 MB, raw URL 200). Project studio/v9-final, desc studio/v9-final/desc.txt, ART 'Ember Linocut', music gen:abyss 93061 PASS.
 Sheet 13:10 UTC (18:40 IST): no Status set on any row -> nothing to publish.
 v9 IN PROGRESS (11:08 run): Kuyili & Velu Nachiyar (record vs folk song), studio/v9-final, script+narration 92.0 s, ART "Ember Linocut", music gen:abyss 93061 music_sim PASS (vs v4-v8), desc.txt written. 3 workers drawing shots_a/b/c. Sources via search snippets (wikipedia, sivaganga.nic.in blocked for fetch).
@@ -24,4 +26,4 @@ Missing: memory /areas/aazhi-channel.md not reachable from the 03:07 UTC run.
 Scheduled task: hourly at :07 IST, lock via heartbeat line
 Approval sheet: 'AAZHI Approvals' id 1PeKpfx2zq7oCEoTtotyLLU-J3krC_T18zjU26NiKrCU https://docs.google.com/spreadsheets/d/1PeKpfx2zq7oCEoTtotyLLU-J3krC_T18zjU26NiKrCU/edit (read Status/Instagram columns before upload/post; Google Sheets default connection set)
 VOICE (user approved 2026-11-18): Kokoro voice af_heart, speed 0.9, phoneme mode. Narration is built as IPA: English text via tokenizer.phonemize, Tamil names via data/pronunciations.json (kokoro_onnx create(..., is_phonemes=True), words never split, single pass). Add every new Tamil name to the list. Channel name spoken "Aali". Captions keep English spelling. Install: pip install kokoro-onnx; models in ~/.faceless-shorts/kokoro (GitHub release files).
-heartbeat: 2026-11-19 14:10 UTC (run 14:08 active)
+heartbeat: 2026-11-19 14:30 UTC (run 14:08 active)

@@ -1,0 +1,33 @@
+{
+ "title": "The King Who Made His Enemies Carry River Water",
+ "voice": "af_heart", "speed": 0.9, "lead": 0.6, "outro": 0.5, "music": "chola",
+ "lines": [
+  {"text": "A king made his enemies carry river water.", "caps": "a king made his *enemies | carry *river water.", "gap": 0.8},
+  {"text": "All the way from the Ganges, to the Tamil country.", "caps": "all the way from the *Ganges | to the *Tamil country.", "gap": 1.0},
+  {"text": "His name was Rajendra Chola, son of the builder of Thanjavur.", "caps": "his name was *Rajendra Chola | son of the builder of *Thanjavur.", "gap": 0.9},
+  {"text": "Around the year ten twenty five, he founded a new capital.", "caps": "around the year *1025 | he founded a *new capital.", "gap": 0.9},
+  {"text": "He called it Gangaikonda Cholapuram. The city of the Chola who took the Ganga.", "caps": "*Gangaikonda Cholapuram | the city of the Chola | who took the *Ganga.", "gap": 1.0},
+  {"text": "The temple here was finished in about ten thirty five.", "caps": "the temple was finished | in about *1035.", "gap": 0.9},
+  {"text": "A royal praise inscription says defeated rulers carried Ganga water, in pots.", "caps": "a royal inscription says | defeated rulers carried *Ganga water | in *pots.", "gap": 0.9},
+  {"text": "It was poured into a new lake, called Chola Gangam. A victory pillar, made of water.", "caps": "poured into a new lake | called *Chola Gangam | a victory *pillar | made of *water.", "gap": 1.0},
+  {"text": "Historians note this is the king's own boast. No one else recorded the ceremony.", "caps": "historians note | it is the king's *own boast | no one else *recorded it.", "gap": 1.1},
+  {"text": "But the stone is real.", "caps": "but the *stone | is *real.", "gap": 1.0},
+  {"text": "Tradition says its tower was built a little lower, out of respect for his father.", "caps": "tradition says its tower | was built a little *lower | out of *respect | for his father.", "gap": 1.0},
+  {"text": "Around it, a whole city once stood. Palaces, walls, a fort.", "caps": "around it a *whole city | once stood | palaces | walls | a *fort.", "gap": 0.9},
+  {"text": "Today, only mounds, brick walls, and broken pillars remain.", "caps": "today only *mounds | brick walls | and broken *pillars remain.", "gap": 1.0},
+  {"text": "Why the city fell is unclear. Some point to Pandya revenge. Others, to raids from Delhi.", "caps": "why it fell is *unclear | some say *Pandya revenge | others | raids from *Delhi.", "gap": 1.0},
+  {"text": "Yet the temple survived, and people still worship there.", "caps": "yet the *temple survived | and people still *worship there.", "gap": 1.0},
+  {"text": "A thousand years on, the king's boast still stands in stone.", "caps": "a *thousand years on | the king's boast | still stands in *stone.", "gap": 1.3},
+  {"text": "Follow Aazhi for the next chronicle.", "caps": "Follow *Aazhi | for the next *chronicle.", "gap": 0.5}
+ ],
+ "sources": [
+  {"n":1,"title":"Gangaikonda Cholapuram (Wikipedia)","url":"https://en.wikipedia.org/wiki/Gangaikonda_Cholapuram","supports":"capital founded c. 1025 by Rajendra I; temple completed 1035; name meaning; remains (fort wall, palace, mounds); decline causes unclear (Pandya revenge, Delhi raids 1311, 1314, 1327); Ganga-water story as tradition"},
+  {"n":2,"title":"Brihadisvara Temple, Gangaikonda Cholapuram (Wikipedia)","url":"https://en.wikipedia.org/wiki/Brihadisvara_Temple,_Gangaikonda_Cholapuram","supports":"Rajendra I son of Rajaraja I; inscriptions suggest about 1035 (dates debated); tower slightly lower than Thanjavur, respect-for-father is an interpretation; active temple"},
+  {"n":3,"title":"Middle Chola Temples, Gangaikondacholapuram (WisdomLib)","url":"https://www.wisdomlib.org/south-asia/book/middle-chola-temples/d/doc210501.html","supports":"conquered rulers carried Ganga water in pots; new lake called Chola-gangam, a pillar of victory in the form of water, per Tiruvalangadu Plates; ceremony rests on the king's own praise inscription, not independent evidence"}
+ ],
+ "illustration": "All imagery is an artist's illustration; no portrait of Rajendra Chola survives and none is shown as real; no inscription text is reproduced.",
+ "uncertain": "Ganga-water ceremony (king's own boast); exact temple date (c. 1020 to 1035 debated); lower-tower-for-respect idea is interpretation; how long the city was capital; reasons for decline; the lion in the well is a later addition so it is not shown as Chola.",
+ "pending_second_source": ["temple tower height not stated in the script because only one source", "UNESCO details removed because the UNESCO page could not be fetched"],
+ "story_device": "Journey of the water pots: map of the river road from the Ganges to the Tamil country, a pot carrier's point of view, a lake filling, a tally of pots; ending on ruins at dusk",
+ "pronunciation_names": ["Rajendra","Chola","Thanjavur","Gangaikonda","Cholapuram","Aazhi","Tamil"]
+}

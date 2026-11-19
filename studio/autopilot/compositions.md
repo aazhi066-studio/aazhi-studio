@@ -1,0 +1,3 @@
+# Composition registry (do not reuse)
+ep1 Rajaraja: sky time-lapse 1004 CE build; copper pots/lamps field; shadow-less vimana; dancer; crowd wide; upper tiers close; ledger-less; end card = Aazhi plaque
+v2 (Gangaikonda) planned: pot-carrier road POV at dawn; map route Ganges to Tamil country; tiger-banner name plate; palm-leaf city ground-plan with surveyor ropes; distant city gate wide; banner-raising tally; procession ridge with ledger counter of pots; lake filling with a water-column pillar; blank ledger beside one inscribed line; macro granite chisel dust; two tower outlines compared; city plan dissolving into mounds; two arrows (south/north) over fog; temple survives dawn; end card = copper pot with ripple rings

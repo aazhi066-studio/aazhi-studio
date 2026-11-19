@@ -1,0 +1,6 @@
+# AAZHI studio state (read first)
+- This repo is the persistent store for all AAZHI work. Cloud runs start empty: add_repo aazhi066-studio/aazhi-studio (access push), clone, work in studio/, git push after every step.
+- studio/autopilot: PLAN, PROGRESS, LEARNINGS, compositions, v2/v3 scripts, tools, data/pronunciations.json
+- studio/v2-gangaikonda: engine + shots_a.js, shots_b.js done; shots_c.js MISSING; script needs the well-vs-lake rewrite (Cholagangam: Wikipedia says well, The News Minute says lake)
+- studio/ep1-rajaraja: finished episode 1 sources (rendered MP4s are not stored here)
+- Video hosting: push the finished mp4 to branch "videos" (force-push, one folder, delete after upload); public URL https://raw.githubusercontent.com/aazhi066-studio/aazhi-studio/videos/<name>.mp4 (tested raw URLs return 200)

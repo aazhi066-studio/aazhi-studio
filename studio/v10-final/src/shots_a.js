@@ -59,7 +59,7 @@ function slabImg(kind) {
     const S = ST(kind), w = W + 480, h = H + 480;
     ctx.fillStyle = pat(kind); ctx.fillRect(0, 0, w, h);
     for (let i = 0; i < 36; i++) { const x = rnd(i * 3.3 + 1) * w, y = rnd(i * 5.7 + 2) * h, r = 160 + rnd(i * 7.1) * 420, g = ctx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, rgba(i % 2 ? S.light : S.dark, 0.1)); g.addColorStop(1, rgba(S.dark, 0)); ctx.fillStyle = g; ctx.fillRect(x - r, y - r, r * 2, r * 2); }
-    ctx.fillStyle = rgba(S.dark, 0.22); ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = rgba(S.dark, 0.34); ctx.fillRect(0, 0, w, h);
   });
 }
 const bg = (kind, px = 0, py = 0) => blit(slabImg(kind), 240, 240, px, py);
@@ -74,6 +74,14 @@ const Fr = (x, y, w, h, r = 0) => { ctx.beginPath(); ctx.roundRect(x, y, w, h, r
 const Fl = (pts, w, cap = 'round') => { ctx.beginPath(); ctx.moveTo(pts[0][0], pts[0][1]); for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i][0], pts[i][1]); ctx.lineWidth = w; ctx.lineCap = cap; ctx.lineJoin = 'round'; ctx.stroke(); };
 const Se = (x, y, rx, ry, w, a0 = 0, a1 = TAU) => { ctx.beginPath(); ctx.ellipse(x, y, rx, ry, 0, a0, a1); ctx.lineWidth = w; ctx.lineCap = 'round'; ctx.stroke(); };
 const Fa = (cx, cy, r, a0, a1, w) => { ctx.beginPath(); ctx.arc(cx, cy, r, a0, a1); ctx.lineWidth = w; ctx.lineCap = 'butt'; ctx.stroke(); };
+function Ft(pts, ws) {
+  const l = [], r = [], n = pts.length;
+  for (let i = 0; i < n; i++) {
+    const a = pts[Math.max(0, i - 1)], b = pts[Math.min(n - 1, i + 1)]; let tx = b[0] - a[0], ty = b[1] - a[1]; const m = Math.hypot(tx, ty) || 1; tx /= m; ty /= m;
+    const w = ws[i] / 2; l.push([pts[i][0] - ty * w, pts[i][1] + tx * w]); r.push([pts[i][0] + ty * w, pts[i][1] - tx * w]);
+  }
+  Fp(l.concat(r.reverse())); for (let i = 1; i < n; i++) Fe(pts[i][0], pts[i][1], ws[i] / 2, ws[i] / 2);
+}
 const at = (x, y, s, fn, dir = 1) => { ctx.save(); ctx.translate(x, y); ctx.scale(s * dir, s); fn(); ctx.restore(); };
 
 // ───────────── RELIEF RENDER: cached face / shadow / rim; light offsets each frame ─────────────
@@ -84,9 +92,10 @@ function relief(key, kind, bb, fn, q = 1) {
   const f = cached(`a:${key}:f`, w, h, q, () => {
     ctx.translate(-x0, -y0); ctx.fillStyle = ctx.strokeStyle = '#000'; DET = false; fn();
     ctx.globalCompositeOperation = 'source-atop';
-    ctx.fillStyle = pat(kind); ctx.fillRect(x0, y0, w, h); ctx.fillStyle = rgba(S.light, 0.13); ctx.fillRect(x0, y0, w, h);
+    ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.fillStyle = pat(kind); ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height); ctx.fillStyle = rgba(S.light, 0.2); ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    const g = ctx.createLinearGradient(0, 0, ctx.canvas.width * 0.3, ctx.canvas.height); g.addColorStop(0, 'rgba(255,240,220,0.08)'); g.addColorStop(1, 'rgba(0,0,0,0.08)'); ctx.fillStyle = g; ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height); ctx.restore();
     DET = true;
-    ctx.save(); ctx.translate(1.4, 1.6); ctx.fillStyle = ctx.strokeStyle = rgba(S.light, 0.6); fn(); ctx.restore();
+    ctx.save(); ctx.translate(1.5 / q, 1.7 / q); ctx.fillStyle = ctx.strokeStyle = rgba(S.light, 0.6); fn(); ctx.restore();
     ctx.fillStyle = ctx.strokeStyle = rgba(S.dark, 0.72); fn();
     DET = false;
   });
@@ -94,18 +103,21 @@ function relief(key, kind, bb, fn, q = 1) {
 }
 /** draw a relief with its local (0,0) at (x, y), scale s; dep scales the cast shadow */
 function R(r, x, y, s = 1, a = 1, dep = 1) {
-  const D = LT.d * dep * s;
-  blit(r.d, r.ox, r.oy, x - LT.x * D, y - LT.y * D, s, a * 0.42);
-  blit(r.d, r.ox, r.oy, x - LT.x * D * 0.5, y - LT.y * D * 0.5, s, a * 0.5);
-  blit(r.l, r.ox, r.oy, x + LT.x * 2.6 * s, y + LT.y * 2.6 * s, s, a * 0.85 * LT.k);
+  const D = LT.d * dep;
+  blit(r.d, r.ox, r.oy, x - LT.x * D * 1.3, y - LT.y * D * 1.3, s, a * 0.4);
+  blit(r.d, r.ox, r.oy, x - LT.x * D * 0.75, y - LT.y * D * 0.75, s, a * 0.55);
+  blit(r.d, r.ox, r.oy, x - LT.x * D * 0.35, y - LT.y * D * 0.35, s, a * 0.6);
+  blit(r.l, r.ox, r.oy, x + LT.x * 3, y + LT.y * 3, s, a * LT.k);
   blit(r.f, r.ox, r.oy, x, y, s, a);
 }
+/** mirrored relief (light direction kept in screen space) */
+function Rm(r, x, y, s = 1, a = 1, dep = 1) { ctx.save(); ctx.translate(x, y); ctx.scale(-1, 1); LT.x = -LT.x; R(r, 0, 0, s, a, dep); LT.x = -LT.x; ctx.restore(); }
 /** direct (uncached) relief for small animated shapes */
 function RD(kind, fn, dep = 0.6) {
   const S = ST(kind), D = LT.d * dep;
-  ctx.save(); ctx.translate(-LT.x * D, -LT.y * D); ctx.globalAlpha *= 0.6; ctx.fillStyle = ctx.strokeStyle = S.dark; fn(); ctx.restore();
-  ctx.save(); ctx.translate(LT.x * 2.4, LT.y * 2.4); ctx.globalAlpha *= 0.85 * LT.k; ctx.fillStyle = ctx.strokeStyle = S.light; fn(); ctx.restore();
-  ctx.save(); ctx.fillStyle = ctx.strokeStyle = pat(kind); fn(); ctx.fillStyle = ctx.strokeStyle = rgba(S.light, 0.14); fn(); ctx.restore();
+  ctx.save(); ctx.translate(-LT.x * D, -LT.y * D); ctx.globalAlpha *= 0.75; ctx.fillStyle = ctx.strokeStyle = S.dark; fn(); ctx.restore();
+  ctx.save(); ctx.translate(LT.x * 2.8, LT.y * 2.8); ctx.globalAlpha *= LT.k; ctx.fillStyle = ctx.strokeStyle = S.light; fn(); ctx.restore();
+  ctx.save(); ctx.fillStyle = ctx.strokeStyle = pat(kind); fn(); ctx.fillStyle = ctx.strokeStyle = rgba(S.light, 0.2); fn(); ctx.restore();
 }
 
 // ───────────── CARVED (incised) TEXT ─────────────
@@ -186,7 +198,7 @@ function wash(a = 0.45, warm = '#FFF0D8') {
 function night(t, fx, fy, r = 1400, k = 1) {
   const fl = 0.88 + 0.12 * sin(t * 13) * sin(t * 7.3 + 1);
   const g = ctx.createRadialGradient(fx, fy, 0, fx, fy, r * fl);
-  g.addColorStop(0, '#FFD8A0'); g.addColorStop(0.35, '#E08A50'); g.addColorStop(0.7, '#5A3A3A'); g.addColorStop(1, '#151A26');
+  g.addColorStop(0, '#FFE0B0'); g.addColorStop(0.28, '#E89A60'); g.addColorStop(0.55, '#7A4A40'); g.addColorStop(0.8, '#2A2632'); g.addColorStop(1, '#12161E');
   ctx.save(); ctx.globalCompositeOperation = 'multiply'; ctx.fillStyle = g; ctx.fillRect(-400, -400, W + 800, H + 800);
   ctx.globalCompositeOperation = 'lighter'; const g2 = ctx.createRadialGradient(fx, fy, 0, fx, fy, r * 0.7); g2.addColorStop(0, `rgba(255,120,40,${0.22 * k * fl})`); g2.addColorStop(1, 'rgba(255,120,40,0)'); ctx.fillStyle = g2; ctx.fillRect(fx - r, fy - r, r * 2, r * 2);
   ctx.restore();
@@ -280,38 +292,41 @@ function staticPennant(x, y, len, hh, emb) {
 function soldier(ph = 0, o = {}) {
   const s = ph;
   if (!DET) {
-    Fl([[-1, -47], [-3 - 5 * s, -24], [-6 - 9 * s, -3]], 4.4); Fl([[1, -47], [4 + 5 * s, -24], [7 + 9 * s, -3]], 4.4);
+    Ft([[-1, -47], [-3 - 5 * s, -24], [-6 - 9 * s, -3]], [6, 3.8, 2.6]); Ft([[1, -47], [4 + 5 * s, -24], [7 + 9 * s, -3]], [6, 3.8, 2.6]);
     Fe(-6 - 9 * s + 2.4, -1.6, 4.2, 1.9); Fe(7 + 9 * s + 2.4, -1.6, 4.2, 1.9);
-    Fp([[-6, -58], [6, -58], [11, -38], [2, -42], [-9, -38]]);
-    Fp([[-5, -57], [5, -57], [9.5, -77], [3, -81], [-4, -81], [-8.5, -77]]);
+    Fp([[-6, -58], [6, -58], [8, -50], [11, -38], [2, -42], [-9, -38], [-7.5, -50]]);
+    Fp([[-4, -56], [4, -56], [5.5, -62], [9.5, -76], [6, -81.5], [-5.5, -81.5], [-8.5, -76], [-5, -62]]);
     Fr(-1.8, -87, 3.6, 9, 1.5); Fe(0.9, -91, 4.2, 5.4);
-    Fp([[-3.6, -95], [4.6, -95], [2.3, -108], [0.3, -108]]); Fe(1.3, -108.5, 1.6, 1.6);
-    Fl([[-6, -77], [-9, -64], [-5, -55]], 3.3);
-    if (o.pole) { Fl([[6, -77], [12, -67], [14, -78]], 3.3); Fr(14.2, -150, 1.8, 142); staticPennant(16, -150, 30, 15); }
-    else { Fl([[6, -77], [12, -66], [14.5, -75]], 3.3); Fp([[14.2, -8], [15.8, -8], [16.4, -118], [15, -118]]); Fp([[15.7, -133], [18.6, -121], [15.7, -115], [12.8, -121]]); Fe(-8.5, -64, 6.6, 9.6); }
+    Fp([[-3.6, -95], [4.6, -95], [3.6, -103], [2.4, -107], [0.2, -107], [-1.6, -103]]); Fe(1.3, -107.5, 1.8, 1.5);
+    Ft([[-6, -77], [-9, -66], [-5, -57]], [3.6, 2.8, 2.4]);
+    if (o.pole) { Ft([[6, -77], [12, -68], [14, -78]], [3.6, 2.8, 2.4]); Fr(14.2, -150, 1.8, 142); staticPennant(16, -150, 30, 15); }
+    else { Ft([[6, -77], [12, -67], [14.5, -75]], [3.6, 2.8, 2.4]); Fp([[14.2, -8], [15.8, -8], [16.4, -118], [15, -118]]); Fp([[15.7, -133], [18.6, -121], [15.7, -115], [12.8, -121]]); Fe(-8.5, -64, 6.6, 9.6); }
   } else {
-    Fl([[-6, -57.5], [6, -57.5]], 1.1); Fl([[-3.8, -97], [4.4, -97]], 0.9); Fl([[-3, -101], [3.4, -101]], 0.7);
+    Fl([[-6, -57.5], [6, -57.5]], 1.1); Fl([[-3.4, -97], [4.2, -97]], 0.9); Fl([[-2.6, -101], [3.4, -101]], 0.7);
     Fl([[-2, -50], [-1, -40]], 0.7); Fl([[3, -52], [6, -41]], 0.7);
-    if (o.pole) staticPennant(16, -150, 30, 15, o.emb); else Se(-8.5, -64, 4.4, 7, 0.9);
+    if (o.pole) staticPennant(16, -150, 30, 15, o.emb); else { Se(-8.5, -64, 4.4, 7, 0.9); Fe(-8.5, -64, 1.4, 1.4); }
   }
 }
 function king(o = {}) {
   if (!DET) {
-    Fl([[-2, -47], [-4, -24], [-6, -3]], 5); Fl([[2, -47], [5, -24], [8, -3]], 5); Fe(-3.6, -1.6, 4.6, 2); Fe(10.4, -1.6, 4.6, 2);
-    Fp([[-7, -59], [7, -59], [14, -33], [1, -38], [-12, -33]]); Fp([[-7, -56], [-13, -38], [-9, -37]]);
-    Fp([[-5.5, -57], [5.5, -57], [11.5, -77], [4, -82.5], [-4, -82.5], [-10.5, -77]]);
-    Fr(-2, -88, 4, 9, 1.5); Fe(0.8, -92, 4.5, 5.8);
-    Fp([[-4.6, -96], [5.8, -96], [4.8, -104], [3.4, -114], [2, -122], [-0.5, -122], [-2, -114], [-3.4, -104]]); Fe(0.75, -123.5, 2, 2);
-    Fe(-3.4, -89, 1.4, 2.6);
-    Fl([[-8.5, -76], [-14, -64], [-8, -57]], 3.7);
-    Fl([[8.5, -76], [15, -69], [17, -81]], 3.7);
+    Ft([[-2, -48], [-3.5, -24], [-5, -3]], [7, 4.2, 2.8]); Ft([[2, -48], [5, -24], [8, -3]], [7, 4.2, 2.8]); Fe(-2.6, -1.6, 4.8, 2); Fe(10.6, -1.6, 4.8, 2);
+    Fp([[-6.5, -58], [6.5, -58], [9, -50], [13, -34], [4, -38], [0.5, -33], [-5, -38], [-11.5, -34], [-8.5, -50]]);
+    Fp([[-7, -55], [-14, -40], [-10.5, -39], [-6, -50]]);
+    Fp([[-4.5, -56], [4.5, -56], [6, -62], [11, -76.5], [6.5, -82.5], [-6, -82.5], [-10, -76.5], [-5.5, -62]]);
+    Fr(-2, -88, 4, 9, 1.5); Fe(0.8, -92.5, 4.5, 5.8);
+    Fp([[-4.8, -96.5], [6, -96.5], [5.6, -104], [4.8, -111], [3.8, -116.5], [-2.2, -116.5], [-3.2, -111], [-4.2, -104]]);
+    Fe(0.8, -117, 3.4, 2.6); Fp([[-0.2, -119], [1.8, -119], [0.8, -125]]);
+    Fe(-3.4, -89, 1.4, 2.8); Fe(-3.4, -85.5, 1.5, 1.5);
+    Ft([[-8.5, -76], [-13.5, -65], [-8, -58]], [4, 3, 2.5]); Fe(-7.5, -58, 2, 1.8);
+    Ft([[8.5, -76], [15, -70], [17.4, -81]], [4, 3, 2.5]); Fe(17.6, -81.5, 2, 2.2);
     Fp([[-10, -56], [-8.6, -55], [-21, -27], [-22.6, -28.5]]); Fr(-12.5, -59, 6, 2.6, 1);
     if (o.pole !== false) Fr(16.6, -158, 1.9, 150);
   } else {
-    Fl([[-4.2, -100], [5.4, -100]], 1); Fl([[-3, -108], [4, -108]], 0.9); Fl([[-1.6, -115], [3.2, -115]], 0.8);
-    Se(1, -80, 6.5, 4.5, 0.9, 0.2, PI - 0.2); Fl([[-6.5, -58], [6.5, -58]], 1.3); Fl([[-6.8, -61], [6.8, -61]], 0.8);
-    Se(-12.4, -66, 2.2, 1.2, 0.8); Se(13.5, -71, 1.8, 1.2, 0.8);
-    Fl([[-3, -52], [-6, -36]], 0.8); Fl([[2, -52], [6, -37]], 0.8); Fl([[7, -55], [12, -36]], 0.7);
+    Fl([[-4.4, -101], [5.6, -101]], 0.9); Fl([[-3.6, -107], [5, -107]], 0.8); Fl([[-2.8, -112.5], [4.2, -112.5]], 0.7);
+    for (let i = 0; i < 4; i++) Fe(-2.6 + i * 2.4, -104, 0.6, 0.6);
+    Se(0.5, -80.5, 6.5, 4.5, 0.9, 0.2, PI - 0.2); Se(0.5, -79, 5, 6.5, 0.7, 0.4, PI - 0.4); Fl([[-6.5, -58], [6.5, -58]], 1.3); Fl([[-6.8, -61], [6.8, -61]], 0.8);
+    Se(-12, -66, 2.2, 1.2, 0.8); Se(13.3, -72, 1.8, 1.2, 0.8);
+    Fl([[-3, -52], [-6, -36]], 0.8); Fl([[2, -52], [6, -37]], 0.8); Fl([[7, -55], [11.5, -36]], 0.7); Fl([[-1, -52], [0.5, -34]], 0.6);
   }
 }
 function elephant() {
@@ -330,14 +345,18 @@ function elephant() {
 }
 function lion() {
   if (!DET) {
-    Fl([[-34, -40], [-46, -50], [-52, -64], [-46, -71]], 3.2); Fe(-45, -72, 4.2, 4.2);
-    Fl([[-28, -30], [-30, -14], [-28, -2]], 7.5); Fl([[-14, -30], [-16, -14], [-13, -2]], 7.5); Fl([[16, -32], [18, -16], [16, -2]], 7.5); Fl([[24, -38], [36, -31], [45, -39]], 7);
-    Fe(-4, -38, 34, 15); Fe(16, -42, 14, 16);
-    const pts = []; for (let i = 0; i < 20; i++) { const a = i / 20 * TAU, r = i % 2 ? 15 : 22; pts.push([28 + cos(a) * r, -54 + sin(a) * r * 1.05]); } Fp(pts);
-    Fe(38, -55, 10, 9); Fe(47, -50, 6.5, 5.5); Fp([[33, -63], [36, -71], [40, -63]]);
+    Fl([[-36, -46], [-48, -54], [-52, -68], [-45, -76]], 3.4); Fp([[-45, -72], [-50, -80], [-44, -86], [-40, -80], [-41, -74]]);
+    Ft([[-29, -38], [-27, -18], [-31, -3]], [14, 8, 6.5]); Ft([[-17, -34], [-18, -16], [-15, -3]], [10, 7, 6]); Fe(-30, -2.5, 6, 3); Fe(-14, -2.5, 6, 3);
+    Ft([[15, -36], [16, -16], [15, -3]], [11, 7.5, 6.5]); Fe(17, -2.5, 6.5, 3);
+    Ft([[24, -40], [35, -33], [43, -42]], [10, 7, 6]); Fe(44.5, -43.5, 5.5, 4.5);
+    Fe(-26, -40, 15, 16); Fp([[-30, -55], [0, -54], [16, -58], [20, -30], [0, -27], [-28, -28]]);
+    Fe(17, -44, 15, 18);
+    const pts = []; for (let i = 0; i < 26; i++) { const a = -PI * 0.95 + i / 25 * PI * 1.9, r = i % 2 ? 17 : 24 + 3 * sin(i); pts.push([27 + cos(a) * r * 0.95, -57 + sin(a) * r * 1.12]); } pts.push([18, -30]); Fp(pts);
+    Fe(36, -60, 10.5, 10); Fr(39, -61, 15, 9, 3); Fp([[40, -52], [53, -51], [51, -46], [42, -47]]); Fe(31, -70, 3.6, 4.2);
   } else {
-    for (let i = 0; i < 14; i++) { const a = i / 14 * TAU; Fl([[28 + cos(a) * 10, -54 + sin(a) * 10], [28 + cos(a) * 18, -54 + sin(a) * 18]], 1); }
-    Fl([[45, -47], [52, -47]], 0.9); Se(-6, -38, 18, 8, 0.8, 0.3, 2.6); Fl([[-20, -30], [-18, -20]], 0.8); Fl([[10, -30], [12, -20]], 0.8);
+    for (let i = 0; i < 16; i++) { const a = -PI * 0.9 + i / 15 * PI * 1.8; Fl([[27 + cos(a) * 11, -57 + sin(a) * 12], [27 + cos(a) * 20, -57 + sin(a) * 23]], 0.6); }
+    Fl([[42, -52], [53, -52.5]], 0.6); Se(-26, -40, 10, 11, 0.6, -1.2, 1.4); Fl([[-6, -48], [-4, -32]], 0.5); Fl([[2, -50], [4, -32]], 0.5);
+    Fl([[31, -58], [37, -58]], 0.6);
   }
 }
 function boar() {
@@ -380,7 +399,7 @@ function cityFront() {
 }
 const cityB = () => relief('acityB', 'sand', [-20, 20, 1020, 380], cityBack);
 const cityF = () => relief('acityF', 'sand', [-20, 180, 1020, 1250], cityFront);
-const FLAMES = [[290, 40, 1.1], [700, 40, 1.15], [120, 210, 0.75], [430, 210, 0.8], [560, 210, 0.8], [830, 210, 0.75], [110, 192, 0.7], [890, 192, 0.7], [500, 192, 0.65]];
+const FLAMES = [[290, 92, 1.25], [700, 92, 1.3], [120, 210, 0.75], [430, 210, 0.8], [560, 210, 0.8], [830, 210, 0.75], [110, 192, 0.7], [890, 192, 0.7], [500, 192, 0.65]];
 
 /** carved relief flames (animated): three tongues, dark cast shadow, gold rim, glowing face */
 function tongue(x, y, w, h, t, sd) {
@@ -461,7 +480,7 @@ function rowsImg(key, kind, w, rows, rh) {
   });
 }
 const steleR = (kind) => relief('astele' + kind, kind, [-340, -10, 340, 1010], () => stele(560, 940));
-const embR = (kind) => relief('aemb' + kind, kind, [-60, -80, 70, 10], () => emblem(kind === 'sand' ? 'boar' : 'lion'));
+const embR = (kind) => relief('aemb' + kind, kind, [-64, -86, 70, 10], () => emblem(kind === 'sand' ? 'boar' : 'lion'), 2.2);
 function drawStele(kind, x, y, s, lt, reveal, cueT) {
   R(steleR(kind), x, y, s, 1, 1.2);
   R(embR(kind), x - 4 * s, y + 230 * s, s * 2.2, 1, 0.5);
@@ -473,9 +492,9 @@ function drawStele(kind, x, y, s, lt, reveal, cueT) {
 function pennant(px, py, len, hh, t, dir, kind, emb) {
   ctx.save(); ctx.translate(px, py); ctx.scale(dir, 1);
   const pts = pennantShape(len, hh, 1, t);
-  RD(kind, () => Fp(pts), 0.5);
+  if (dir < 0) LT.x = -LT.x; RD(kind, () => Fp(pts), 0.5); if (dir < 0) LT.x = -LT.x;
   const u = 0.42, wy = sin(t * 4.2 - u * 4.5) * hh * 0.22 * u;
-  ctx.fillStyle = rgba(ST(kind).dark, 0.6); at(len * u, hh * 0.74 + wy, hh / 80, () => { DET = false; emblem(emb); });
+  ctx.fillStyle = ctx.strokeStyle = rgba(ST(kind).dark, 0.5); at(len * u, hh * 0.74 + wy, hh / 80, () => { DET = false; emblem(emb); });
   ctx.restore();
 }
 
@@ -483,26 +502,35 @@ function pennant(px, py, len, hh, t, dir, kind, emb) {
 const lichenImg = () => cached('a:lichen', 900, 900, 1, () => {
   for (let i = 0; i < 70; i++) { const cx = 100 + rnd(i * 3.1) * 700, cy = 100 + rnd(i * 5.3) * 700; for (let j = 0; j < 9; j++) { ctx.fillStyle = rgba(j % 2 ? '#7E8C56' : '#A9AE72', 0.35 + rnd(i * 7 + j) * 0.35); ctx.beginPath(); ctx.arc(cx + (rnd(i * 11 + j) - 0.5) * 60, cy + (rnd(i * 13 + j) - 0.5) * 60, 4 + rnd(i * 17 + j) * 16, 0, TAU); ctx.fill(); } }
 });
-const sandImg = () => cached('a:sanddrift', 1600, 700, 1, () => {
-  ctx.beginPath(); ctx.moveTo(0, 700); for (let x = 0; x <= 1600; x += 20) ctx.lineTo(x, 260 + sin(x / 230) * 70 + sin(x / 90 + 1) * 24); ctx.lineTo(1600, 700); ctx.closePath();
-  ctx.fillStyle = lg(0, 180, 0, 700, [[0, '#E2B27E'], [1, '#B47A50']]); ctx.fill();
-  ctx.globalCompositeOperation = 'source-atop'; for (let i = 0; i < 4000; i++) { ctx.fillStyle = rgba(i % 2 ? '#F6D2A2' : '#7A4A2C', 0.25); ctx.fillRect(rnd(i * 1.7) * 1600, 160 + rnd(i * 2.9) * 540, 2, 2); }
+const sandImg = () => cached('a:sanddrift', 1600, 1400, 1, () => {
+  ctx.beginPath(); ctx.moveTo(0, 1400); for (let x = 0; x <= 1600; x += 20) ctx.lineTo(x, 260 + sin(x / 230) * 70 + sin(x / 90 + 1) * 24); ctx.lineTo(1600, 1400); ctx.closePath();
+  ctx.fillStyle = lg(0, 180, 0, 900, [[0, '#E2B27E'], [1, '#B47A50']]); ctx.fill();
+  ctx.globalCompositeOperation = 'source-atop'; for (let i = 0; i < 6000; i++) { ctx.fillStyle = rgba(i % 2 ? '#F6D2A2' : '#7A4A2C', 0.25); ctx.fillRect(rnd(i * 1.7) * 1600, 160 + rnd(i * 2.9) * 1240, 2, 2); }
   for (let k = 0; k < 14; k++) { ctx.strokeStyle = 'rgba(120,70,40,0.25)'; ctx.lineWidth = 3; ctx.beginPath(); for (let x = 0; x <= 1600; x += 20) ctx.lineTo(x, 330 + k * 26 + sin(x / 120 + k) * 10); ctx.stroke(); }
 });
 
 // ───────────── cliffs (Badami) ─────────────
-const cliffR = () => relief('acliff', 'sand', [-40, -20, 1120, 700], () => {
+const CAVES = [[215, 330, 230, 150], [560, 250, 270, 170], [885, 370, 210, 140]];
+const cliffR = () => relief('acliff', 'sand', [-40, -40, 1120, 700], () => {
   if (!DET) {
-    Fp([[-40, 700], [-40, 120], [80, 60], [200, 90], [260, 20], [420, 40], [520, 0], [660, 30], [760, -10], [900, 50], [1000, 30], [1120, 80], [1120, 700]]);
+    Fp([[-40, 700], [-40, 210], [1120, 210], [1120, 700]]);
+    Fe(150, 190, 200, 120); Fe(520, 120, 240, 150); Fe(870, 180, 210, 130); Fe(1080, 220, 120, 90);
     return;
   }
-  for (let k = 0; k < 9; k++) { const y = 140 + k * 60; ctx.beginPath(); for (let x = -40; x <= 1120; x += 40) ctx.lineTo(x, y + sin(x / 140 + k) * 10); ctx.lineWidth = 2; ctx.stroke(); }
-  for (const [cx, cy, cw, ch] of [[230, 300, 220, 150], [560, 250, 260, 170], [880, 320, 200, 140]]) {
-    Fr(cx - cw / 2, cy - ch / 2, cw, ch, 6);
-    ctx.save(); ctx.globalCompositeOperation = 'destination-out'; for (let i = 0; i < 4; i++) Fr(cx - cw / 2 + 18 + i * (cw - 36) / 3 - 9, cy - ch / 2 + 22, 18, ch - 22, 2); ctx.restore();
-    Fr(cx - cw / 2 - 16, cy + ch / 2, cw + 32, 14, 2);
-  }
+  for (let k = 0; k < 10; k++) { const y = 110 + k * 58; ctx.beginPath(); for (let x = -40; x <= 1120; x += 40) ctx.lineTo(x, y + sin(x / 140 + k) * 12 + (k < 2 ? Math.abs(x - 520) * 0.12 : 0)); ctx.lineWidth = 2; ctx.stroke(); }
+  for (let i = 0; i < 26; i++) { const x = rnd(i * 3.3) * 1100, y = 220 + rnd(i * 4.4) * 440; Fl([[x, y], [x + 6 + rnd(i) * 10, y + 30 + rnd(i * 2) * 40]], 1.6); }
 });
+function cave(cx, cy, cw, ch) {
+  ctx.fillStyle = lg(0, cy - ch / 2, 0, cy + ch / 2, [[0, '#140604'], [1, '#3C170C']]); ctx.fillRect(cx - cw / 2, cy - ch / 2, cw, ch);
+  ctx.fillStyle = 'rgba(0,0,0,0.35)'; ctx.fillRect(cx - cw / 2, cy - ch / 2, cw, 30);
+  RD('sand', () => {
+    const pw = cw * 0.085;
+    for (let i = 1; i <= 3; i++) { const px = cx - cw / 2 + i * cw / 4; Fr(px - pw / 2, cy - ch / 2 + 14, pw, ch - 14); Fp([[px - pw * 1.2, cy - ch / 2 + 16], [px + pw * 1.2, cy - ch / 2 + 16], [px + pw * 0.5, cy - ch / 2 + 36], [px - pw * 0.5, cy - ch / 2 + 36]]); Fr(px - pw * 0.7, cy + ch / 2 - 18, pw * 1.4, 18, 2); }
+    Fr(cx - cw / 2 - 16, cy - ch / 2 - 22, cw + 32, 24, 3); Fr(cx - cw / 2 - 16, cy - ch / 2 - 22, 16, ch + 22); Fr(cx + cw / 2, cy - ch / 2 - 22, 16, ch + 22);
+    Fr(cx - cw / 2 - 20, cy + ch / 2, cw + 40, 14, 2); Fr(cx - cw / 2 - 34, cy + ch / 2 + 14, cw + 68, 14, 2);
+    for (let k = 0; k < 4; k++) Fr(cx - 50 + k * 4, cy + ch / 2 + 28 + k * 16, 100 - k * 8, 16, 2);
+  }, 0.9);
+}
 
 // ═════════════════════════════ shots ═════════════════════════════
 export function buildA(add, cue) {
@@ -516,15 +544,15 @@ export function buildA(add, cue) {
     light(90 + sin(lt * 9) * 14, 10, 1);
     ctx.save(); ctx.translate(0, 30 - lt * 22);
     bg('sand');
-    chiselReveal(lt, 0.12, 1.45, [170, 380, 740, 290], 2, () => CUT(c642(), 540, 525), SA.light);
-    R(cityB(), 40, 830, 1, 1, 0.6); R(cityF(), 40, 830, 1, 1, 1);
+    chiselReveal(lt, 0.12, 1.45, [170, 320, 740, 290], 2, () => CUT(c642(), 540, 465), SA.light);
+    R(cityB(), 40, 880, 1, 1, 0.6); R(cityF(), 40, 880, 1, 1, 1);
     ctx.restore();
-    night(lt, 540, 1250, 1500);
+    night(lt, 540, 860, 1500);
     ctx.save(); ctx.translate(0, 30 - lt * 22);
-    FLAMES.forEach(([x, y, s], i) => flames(40 + x, 830 + y, 120 * s, lt, i * 2.1, eo(seg(lt, 0.2 + i * 0.08, 0.8 + i * 0.08))));
+    FLAMES.forEach(([x, y, s], i) => flames(40 + x, 880 + y, 92 * s, lt, i * 2.1, eo(seg(lt, 0.2 + i * 0.08, 0.8 + i * 0.08))));
     ctx.restore();
     smokeW(lt, 7, 60, 1020, 900, 700, 3, 0.35); sparks(lt, 36, 40, 1040, 1100, 900, 1);
-    plaque('642 CE', 540, 790, seg(lt, 1.35, 1.7), 34, { t: lt });
+    plaque('642 CE', 540, 700, seg(lt, 1.35, 1.7), 34, { t: lt });
     vig();
   } });
   cue(0.05, 'rumble', { gain: 0.45, dur: 2 }); cue(0.14, 'chisel', { gain: 0.75, dur: 1.3 }); cue(1.38, 'pop', { gain: 0.4 });
@@ -533,7 +561,7 @@ export function buildA(add, cue) {
   add({ id: 'a2', at: tArmy, zoom: 0.05, cam: [540, 820], note: 'FRIEZE TRACK: granite army frieze (spearmen, elephants, lion banners), sun sweeps; MARCHING NORTH plaque', draw: (lt, d) => {
     const p = lt / d; light(-165 + p * 110, 11, 1);
     const ox = -60 - eio(p) * 1500;
-    ctx.save(); ctx.translate(ox * 0.25, 0); bg('gran', -100); ctx.restore();
+    ctx.save(); ctx.translate(ox * 0.1, 0); bg('gran', 60); ctx.restore();
     ctx.save(); ctx.translate(ox, 470); R(friezeBack(), 0, 0, 1, 1, 0.5); R(friezeFront(), 0, 0, 1, 1, 1.2); ctx.restore();
     wash(0.5); beam(0.15 + p * 0.8, 0.14); motes(lt, 26, 3);
     plaque('MARCHING NORTH', 540, 300, seg(lt, 0.35, 0.75), 40, { arrow: true, t: lt });
@@ -544,15 +572,15 @@ export function buildA(add, cue) {
   // a3 · the burning capital
   add({ id: 'a3', at: tIs, zoom: 0.08, cam: [540, 760], note: 'night city relief burning, carved flames, smoke + sparks; ACCOUNTS SAY plaque', draw: (lt, d, t) => {
     light(90 + sin(lt * 7) * 18 + sin(lt * 13) * 6, 12, 1);
-    const s = 1.22, ox = 540 - 500 * s - 40 + lt * 14, oy = 360;
+    const s = 1.22, ox = 540 - 500 * s - 40 + lt * 14, oy = 480;
     ctx.save(); ctx.translate(0, -lt * 10);
     bg('sand', 0, -60);
     R(cityB(), ox, oy, s, 1, 0.6); R(cityF(), ox, oy, s, 1, 1);
     ctx.restore();
-    night(lt + 3, 540, 1150, 1500, 1.2);
+    night(lt + 3, 540, 900, 1500, 1.2);
     ctx.save(); ctx.translate(0, -lt * 10);
     const grow = 1 + 0.35 * eo(seg(t, tEnemy, tEnemy + 0.8));
-    FLAMES.forEach(([x, y, sz], i) => flames(ox + x * s, oy + y * s, 150 * sz * grow, lt + 2, i * 2.1, 1));
+    FLAMES.forEach(([x, y, sz], i) => flames(ox + x * s, oy + y * s, 118 * sz * grow, lt + 2, i * 2.1, 1));
     ctx.restore();
     smokeW(lt + 2, 10, 0, 1080, 760, 800, 9, 0.45); sparks(lt + 2, 60, 0, 1080, 1100, 1000, 7);
     plaque('ACCOUNTS SAY', 540, 210, seg(t, tSaid - 0.05, tSaid + 0.3), 42, { t: lt });
@@ -589,7 +617,7 @@ export function buildA(add, cue) {
     ctx.fillStyle = 'rgba(30,10,4,0.4)'; ctx.fillRect(-30, 120, 30, 1300);
     bg('sand', 0, 0);
     CUT(cBad(), 540, 300);
-    R(cliffR(), 0, 560, 1, 1, 1.2);
+    R(cliffR(), 0, 560, 1, 1, 1.2); for (const [cx, cy, cw, ch] of CAVES) cave(cx, 560 + cy, cw, ch);
     const ly = 1210; ctx.fillStyle = lg(0, ly, 0, ly + 260, [[0, 'rgba(40,20,14,0.55)'], [1, 'rgba(40,20,14,0.2)']]); ctx.fillRect(-40, ly, 1160, 260);
     ctx.lineCap = 'round';
     for (let i = 0; i < 18; i++) { const x = (rnd(i * 2.3) * 1200 + lt * 30 * (1 + rnd(i))) % 1200 - 60, y = ly + 30 + rnd(i * 5.1) * 200, w = 30 + rnd(i * 3.3) * 60; ctx.strokeStyle = 'rgba(30,12,6,0.6)'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + w, y); ctx.stroke(); ctx.strokeStyle = 'rgba(240,170,120,0.45)'; ctx.beginPath(); ctx.moveTo(x + 2, y + 3); ctx.lineTo(x + w + 2, y + 3); ctx.stroke(); }
@@ -603,7 +631,7 @@ export function buildA(add, cue) {
 
   // a6 · REVENGE: Pallava lion in granite, fire rising
   const cRev = () => cutImg('rev', 'REVENGE', 170, 'gran');
-  const lionR = () => relief('alion', 'gran', [-60, -82, 66, 6], lion, 1);
+  const lionR = () => relief('alion', 'gran', [-62, -84, 66, 6], lion, 8.2);
   add({ id: 'a6', at: tRev, zoom: 0.1, cam: [540, 760], note: 'granite lion relief, REVENGE carved, fire light from lower right, sparks', draw: (lt, d) => {
     const p = lt / d; light(-30 + p * 80 + sin(lt * 11) * 6, 11, 1);
     const sh = Math.exp(-lt * 9) * 12;
@@ -621,7 +649,7 @@ export function buildA(add, cue) {
 
   // a7 · years earlier: a weathered boar roundel, time rewinds
   const roundR = () => relief('around', 'sand', [-380, -380, 380, 380], () => { if (!DET) Fa(0, 0, 330, 0, TAU, 44); else { Se(0, 0, 305, 305, 2); Se(0, 0, 355, 355, 2); for (let i = 0; i < 24; i++) { const a = i / 24 * TAU; Fl([[cos(a) * 312, sin(a) * 312], [cos(a) * 348, sin(a) * 348]], 2); } } });
-  const boarR = () => relief('aboar', 'sand', [-50, -70, 66, 6], boar, 1);
+  const boarR = () => relief('aboar', 'sand', [-50, -70, 66, 6], boar, 5.6);
   add({ id: 'a7', at: t2, zoom: 0.06, cam: [540, 720], note: 'EROSION reversed: weathered boar roundel, sand blows off, lichen recedes; c. 618 CE plaque', draw: (lt, d) => {
     const p = lt / d, rw = eio(seg(lt, 0.1, 1.5)); light(-60 - p * 90, 10, 1);
     bg('sand', 0, -lt * 14);
@@ -629,7 +657,7 @@ export function buildA(add, cue) {
     R(roundR(), 540, 720, 1, 1, 0.9); R(boarR(), 520, 860, 5.6, 1, 1.2);
     blit(lichenImg(), 450, 450, 540, 720, 1, 0.85 * (1 - rw));
     ctx.restore();
-    blit(sandImg(), 800, 700, 540 - rw * 1500, 1250 + rw * 120, 1, 1 - rw * 0.6);
+    blit(sandImg(), 800, 700, 540 - rw * 1500, 1330 + rw * 120, 1, 0.8 * (1 - rw * 0.7));
     for (let i = 0; i < 40; i++) { const ph = (lt * 0.9 + rnd(i * 1.3)) % 1, x = 1100 - ph * 1300, y = 700 + rnd(i * 2.9) * 700 + sin(ph * 6 + i) * 20; ctx.fillStyle = `rgba(240,200,150,${0.5 * (1 - rw * 0.7) * sin(ph * PI)})`; ctx.fillRect(x, y, 26 + rnd(i) * 40, 2.5); }
     wash(0.5); beam(0.9 - p * 0.9, 0.14);
     plaque('c. 618 CE', 540, 230, seg(lt, 0.6, 0.95), 44, { t: lt });
@@ -638,7 +666,7 @@ export function buildA(add, cue) {
   cue(t2, 'whoosh', { gain: 0.55 }); cue(t2 + 0.1, 'sizzle', { gain: 0.2, dur: 1.4 }); cue(t2 + 0.62, 'pop', { gain: 0.4 });
 
   // a8 · Pulakeshin II chiselled in red sandstone
-  const kingS = () => relief('akingS', 'sand', [-26, -162, 22, 2], () => king(), 1);
+  const kingS = () => relief('akingS', 'sand', [-26, -162, 22, 2], () => king(), 6.1);
   const nicheS = () => relief('anicheS', 'sand', [-480, -60, 480, 1180], () => niche(760, 1080));
   add({ id: 'a8', at: tPul, zoom: 0.07, cam: [540, 760], note: 'CHISEL REVEAL: Pulakeshin II sandstone king in arched niche, boar pennant; name plaque + ILLUSTRATION', draw: (lt, d, t) => {
     const p = lt / d; light(-150 + p * 100, 11, 1);
@@ -687,14 +715,13 @@ export function buildA(add, cue) {
   // a10 · Pullalur: the two armies meet on a split frieze
   add({ id: 'a10', at: t3, zoom: 0.05, cam: [540, 800], note: 'FRIEZE TRACK: sandstone boar army meets granite lion army on a split frieze; PULLALUR + NEAR KANCHI plaques', draw: (lt, d, t) => {
     const p = lt / d; light(-120 + p * 60, 11, 1);
-    const s = 0.82, ox = 40 - eio(clamp(p * 1.15)) * (1200 * s - 540 + 40);
-    ctx.save(); ctx.translate(ox * 0.3, 0);
-    ctx.save(); ctx.beginPath(); ctx.rect(-400, -300, 1200 * s - ox * 0.3 + ox + 400, H + 600); ctx.clip(); bg('sand', -200); ctx.restore();
-    ctx.save(); ctx.beginPath(); ctx.rect(1200 * s - ox * 0.3 + ox, -300, 3000, H + 600); ctx.clip(); bg('gran', 0); ctx.restore();
-    ctx.restore();
-    ctx.save(); ctx.translate(ox, 560); ctx.scale(s, s);
+    const s = 1, ox = 40 - eio(clamp(p * 1.15)) * (1200 * s - 540 + 40);
+    const sx = ox + 1200 * s;
+    ctx.save(); ctx.beginPath(); ctx.rect(-400, -300, sx + 400, H + 600); ctx.clip(); bg('sand', ox * 0.1); ctx.restore();
+    ctx.save(); ctx.beginPath(); ctx.rect(sx, -300, 3000, H + 600); ctx.clip(); bg('gran', ox * 0.1); ctx.restore();
+    ctx.save(); ctx.translate(ox, 520); ctx.scale(s, s);
     R(armies('sand'), 0, 0, 1, 1, 1.2); R(armies('gran'), 0, 0, 1, 1, 1.2);
-    ctx.fillStyle = 'rgba(20,10,6,0.55)'; ctx.fillRect(1196, -400, 8, 1800);
+    ctx.fillStyle = 'rgba(20,10,6,0.55)'; ctx.fillRect(1196, -800, 8, 2600);
     ctx.restore();
     wash(0.5); beam(0.1 + p * 0.8, 0.14); motes(lt, 22, 11);
     plaque('PULLALUR', 540, 230, seg(lt, 0.1, 0.45), 48, { t: lt });
@@ -705,7 +732,7 @@ export function buildA(add, cue) {
   cue(t3, 'whoosh', { gain: 0.4 }); for (let k = 0; k < 3; k++) cue(t3 + 0.15 + k * 0.5, 'drum', { gain: 0.5 }); cue(t3 + 0.12, 'pop', { gain: 0.4 }); cue(tKan3, 'pop', { gain: 0.3 }); cue(tMet, 'slam', { gain: 0.65 });
 
   // a11 · Mahendravarman, revealed by a sunbeam
-  const kingG = () => relief('akingG', 'gran', [-26, -162, 22, 2], () => king(), 1);
+  const kingG = () => relief('akingG', 'gran', [-26, -162, 22, 2], () => king(), 6.1);
   const nicheG = () => relief('anicheG', 'gran', [-480, -60, 480, 1180], () => niche(760, 1080));
   add({ id: 'a11', at: tPk, zoom: 0.08, cam: [540, 700], note: 'sunbeam sweep reveals granite Mahendravarman relief, mica glints, lion pennant; name plaque + ILLUSTRATION', draw: (lt, d, t) => {
     const p = lt / d, rv = eo(seg(lt, 0, 1.4)); light(-10 - p * 120, 6 + rv * 6, 0.3 + rv * 0.7);
@@ -713,7 +740,7 @@ export function buildA(add, cue) {
     ctx.save(); ctx.translate(0, -lt * 10);
     R(nicheG(), 540, 170, 1, 1, 1);
     const s = 6.1, kx = 610, ky = 1240;
-    ctx.save(); ctx.translate(kx, ky); ctx.scale(-1, 1); R(kingG(), 0, 0, s, 1, 1.3); ctx.restore();
+    Rm(kingG(), kx, ky, s, 1, 1.3);
     pennant(kx - 18.5 * s, ky - 157 * s, 200, 105, lt, -1, 'gran', 'lion');
     ctx.restore();
     ctx.save(); ctx.globalCompositeOperation = 'multiply'; ctx.fillStyle = `rgba(40,44,60,${0.75 * (1 - rv)})`; ctx.fillRect(-300, -300, W + 600, H + 600); ctx.restore();
@@ -733,10 +760,10 @@ export function buildA(add, cue) {
     ctx.save(); ctx.beginPath(); ctx.rect(-300, -300, 840, H + 600); ctx.clip(); bg('sand', -lt * 14); ctx.restore();
     ctx.save(); ctx.beginPath(); ctx.rect(540, -300, 900, H + 600); ctx.clip(); bg('gran', lt * 14); ctx.restore();
     ctx.fillStyle = 'rgba(15,8,4,0.6)'; ctx.fillRect(536, -300, 8, H + 600); ctx.fillStyle = 'rgba(255,230,200,0.25)'; ctx.fillRect(544, -300, 2, H + 600);
-    const s = 4.3, sx = Math.exp(-lt * 3) * 60;
-    R(kingS(), 250 - sx, 1220, s, 1, 1.2); pennant(250 - sx + 18.5 * s, 1220 - 157 * s, 150, 78, lt, 1, 'sand', 'boar');
-    ctx.save(); ctx.translate(830 + sx, 1220); ctx.scale(-1, 1); R(kingG(), 0, 0, s, 1, 1.2); ctx.restore(); pennant(830 + sx - 18.5 * s, 1220 - 157 * s, 150, 78, lt, -1, 'gran', 'lion');
-    chiselReveal(lt, 0.08, 0.95, [420, 230, 240, 400], 3, () => CUT(cQ(), 540, 410), GR.light);
+    const s = 5, sx = Math.exp(-lt * 3) * 60;
+    R(kingS(), 250 - sx, 1240, s, 1, 1.2); pennant(250 - sx + 18.5 * s, 1240 - 157 * s, 150, 78, lt, 1, 'sand', 'boar');
+    Rm(kingG(), 830 + sx, 1240, s, 1, 1.2); pennant(830 + sx - 18.5 * s, 1240 - 157 * s, 150, 78, lt, -1, 'gran', 'lion');
+    chiselReveal(lt, 0.08, 0.95, [420, 140, 240, 400], 3, () => CUT(cQ(), 540, 320), GR.light);
     wash(0.4);
     vig();
   } });
@@ -772,15 +799,15 @@ export function buildA(add, cue) {
   // a15 · DISPUTED
   add({ id: 'a15', at: tOther, zoom: 0.07, cam: [540, 700], note: 'both steles slide together (thud + dust), light swings, DISPUTED plaque slams between them', draw: (lt, d) => {
     light(-90 + sin(lt * 2.6) * 70, 10, 1);
-    const land = 0.28, k = lt < land ? eio(lt / land) : 1, s = 0.62;
+    const land = 0.28, k = lt < land ? eio(lt / land) : 1, s = 0.76;
     ctx.save(); ctx.beginPath(); ctx.rect(-300, -300, 840, H + 600); ctx.clip(); bg('sand'); ctx.restore();
     ctx.save(); ctx.beginPath(); ctx.rect(540, -300, 900, H + 600); ctx.clip(); bg('gran'); ctx.restore();
     ctx.fillStyle = 'rgba(15,8,4,0.6)'; ctx.fillRect(536, -300, 8, H + 600);
-    drawStele('sand', lerp(-320, 280, k), 420, s, lt, null);
-    drawStele('gran', lerp(1400, 800, k), 420, s, lt, null);
-    dustSkirt(80, 480, 1030, lt - land, 0.45); dustSkirt(600, 1000, 1030, lt - land, 0.45);
+    drawStele('sand', lerp(-320, 272, k), 470, s, lt, null);
+    drawStele('gran', lerp(1400, 808, k), 470, s, lt, null);
+    dustSkirt(60, 480, 1230, lt - land, 0.45); dustSkirt(600, 1020, 1230, lt - land, 0.45);
     const pk = seg(lt, 0.42, 0.62), sh = lt > 0.62 ? Math.exp(-(lt - 0.62) * 10) * 10 : 0;
-    ctx.save(); ctx.translate(sin(lt * 80) * sh, 0); plaque('DISPUTED', 540, 720, pk, 64, { drop: 260, rot: -0.04, t: lt }); ctx.restore();
+    ctx.save(); ctx.translate(sin(lt * 80) * sh, 0); plaque('DISPUTED', 540, 820, pk, 64, { drop: 260, rot: -0.04, t: lt }); ctx.restore();
     wash(0.45);
     vig();
   } });

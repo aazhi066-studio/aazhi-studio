@@ -464,7 +464,7 @@ export function buildA(add, cue) {
     inBottle(t, () => {
       ctx.drawImage(skyC(), 0, 0, W, H); grains(t, 50, 12, CREAM, 0.5, 300, 1300);
       strataFloor(1520);
-      [[250, 1590, 26], [430, 1610, 18], [700, 1585, 30], [850, 1612, 16]].forEach(([x, y, r], i) => pearl(x, y, r, t, 1, i * 1.7));
+      [[250, 1790, 24], [430, 1810, 18], [700, 1785, 28], [850, 1812, 16]].forEach(([x, y, r], i) => pearl(x, y, r, t, 1, i * 1.7));
       note('its name is', 540, 520, 54, AQUA, seg(t, L(1) - 0.1, L(1) + 0.3));
       sandTitle('KORKAI', 540, 760, 205, kp, t, { crumble: 1 });
       // a ripple line of sand under the title
@@ -508,7 +508,7 @@ export function buildA(add, cue) {
       sandTitle('FIRST PANDYA', 540, 900, 100, seg(t, Wd('first', 1) - 0.1, Wd('first', 1) + 0.6), t);
       sandTitle('CAPITAL', 540, 1030, 100, seg(t, Wd('capital', 1) - 0.15, Wd('capital', 1) + 0.5), t);
       pill('TRADITION', 540, 1180, 30, seg(t, Wd('pandya', 1) - 0.2, Wd('pandya', 1) + 0.2));
-      [[300, 1600, 22], [780, 1595, 26]].forEach(([x, y, r], i) => pearl(x, y, r, t, 1, i + 4));
+      [[300, 1800, 22], [780, 1795, 26]].forEach(([x, y, r], i) => pearl(x, y, r, t, 1, i + 4));
     });
     pourCover(seg(lt, d - 0.36, d), OCH, t);
   } });
@@ -555,7 +555,7 @@ export function buildA(add, cue) {
       note('lord of Korkai', 540, 920, 66, PEARL, lp);
       if (lp > 0) { const up = seg(t, Wd('lord', 2) + 0.1, Wd('lord', 2) + 0.7); ctx.strokeStyle = CORAL; ctx.lineWidth = 6; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(540 - 210 * eo(up), 975); ctx.lineTo(540 + 210 * eo(up), 975); ctx.stroke(); }
       note('the Sangam title', 540, 1070, 40, AQUA, seg(t, Wd('lord', 2) + 0.4, Wd('lord', 2) + 0.8));
-      [[330, 1605, 20], [540, 1590, 28], [760, 1608, 18]].forEach(([x, y, r], i) => pearl(x, y, r, t, 1, i * 2.2));
+      [[330, 1805, 20], [540, 1790, 26], [760, 1808, 18]].forEach(([x, y, r], i) => pearl(x, y, r, t, 1, i * 2.2));
     });
   } });
   cue(Wd('koman', 2), 'bell', { gain: 0.45, dur: 1.2 });
@@ -566,7 +566,7 @@ export function buildA(add, cue) {
     blit(uwC(), 200, 200, 0, 0);
     shafts(t, 0.4 + 0.6 * sink);
     grains(t, 60, 61, PEARL, 0.45, 0, 1550, -14);
-    fishSchool(t, 760, 9, 1, 3, 0.55);
+    fishSchool(lt + 4, 700, 11, 1, 3, 0.6); fishSchool(lt + 9, 1050, 8, -1, 7, 0.45);
     // above-water layer peeling away upward
     const sy = lerp(1150, -160, sink);
     if (sy > -150) {
@@ -577,7 +577,7 @@ export function buildA(add, cue) {
     bubbles(540, 1100, t, 18, 4, 900, 1 - sink * 0.7, 1.3);
     [[150, 1640, 0.8], [330, 1690, 1.0], [880, 1660, 0.9], [700, 1740, 0.75], [120, 1800, 0.9], [960, 1810, 1.0]].forEach(([x, y, s], i) => oyster(x, y, s, 0.08 + 0.06 * Math.sin(t * 1.3 + i), t, i));
     const op = 0.15 + 0.35 * seg(t, Wd('water', 3) - 0.3, Wd('water', 3) + 0.3);
-    oyster(540, 1760, 1.7, op, t, 9, seg(t, Wd('water', 3) - 0.3, Wd('water', 3)));
+    oyster(540, 1835, 1.5, op, t, 9, seg(t, Wd('water', 3) - 0.3, Wd('water', 3)));
     note('THE TREASURE', 540, 330, 70, CREAM, seg(t, Wd('treasure', 3) - 0.1, Wd('treasure', 3) + 0.3) * (sink > 0.6 ? 1 : 0), 'center', BIG);
     note('lay under the water', 540, 420, 58, PEARL, seg(t, Wd('under', 3) - 0.1, Wd('under', 3) + 0.3), 'center');
   } });
@@ -594,7 +594,7 @@ export function buildA(add, cue) {
     const dv = [[260, 0.55, 0.3, 0.2], [860, 0.6, 0.5, 0.55]];
     dv.forEach(([x, s, delay, seed], i) => { const p = eio(seg(lt, delay, delay + 1.9)), y = lerp(-120, 900, p); bubbles(x, y + 60 * s, t, 10, 20 + i, 900, 0.8, s); diver(x + 20 * Math.sin(t + i), y, s, Math.PI + 0.12 * Math.sin(t * 1.3 + i), t, mixc(OCH, IND, 0.45), seed); });
     // front diver
-    const p = eio(seg(lt, 0, 1.15)), dx = 620, dy = lerp(-220, 1300, p), turn = seg(lt, 1.15, 1.6);
+    const p = eio(seg(lt, 0, 1.15)), dx = 620, dy = lerp(-220, 1180, p), turn = seg(lt, 1.15, 1.6);
     bubbles(dx - 10, dy + 140, t, 18, 31, 1300, 1, 1.4);
     diver(dx + 10 * Math.sin(t * 1.4), dy, 1.25, Math.PI * (1 - 0.55 * eio(turn)) + 0.06 * Math.sin(t * 2), t, OCH, 1, seg(lt, 1.2, 1.5));
     const pr = seg(t, Wd('pearls', 3) - 0.1, Wd('pearls', 3) + 0.25);
@@ -649,7 +649,7 @@ export function buildA(add, cue) {
     inBottle(t, () => {
       ctx.drawImage(skyC(), 0, 0, W, H); grains(t, 40, 101, CREAM, 0.45, 250, 1300);
       strataFloor(1520);
-      [[280, 1600, 22], [800, 1592, 26]].forEach(([x, y, r], i) => pearl(x, y, r, t, 1, i * 3.1));
+      [[280, 1800, 22], [800, 1792, 26]].forEach(([x, y, r], i) => pearl(x, y, r, t, 1, i * 3.1));
       scroll(540, 560, 1010, lerp(30, 410, eio(seg(lt, 0.05, 0.75))), t);
       sandTitle('PERIPLUS', 540, 390, 150, seg(t, Wd('periplus', 4) - 0.2, Wd('periplus', 4) + 0.4), t);
       pill('RECORD', 330, 1160, 28, seg(lt, 0.7, 1.0));

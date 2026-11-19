@@ -1,3 +1,4 @@
 renders/
 review/
 data/*.wav
+__pycache__/

@@ -1,6 +1,6 @@
 # PROGRESS
 Updated: 2026-11-18
-Current: v1 (0zjKdLa3qQg) and v2 (2_N2dKh-SGU) uploaded UNLISTED, sheet rows 2-3 added. Now video 3 (Srivijaya fleet). STORAGE: GitHub repo aazhi066-studio/aazhi-studio (see memory)
+Current: v1 0zjKdLa3qQg, v2 2_N2dKh-SGU, v3 0kiWffItkg4 all UNLISTED, sheet rows 2-4. Next: video 4 (see PLAN.md). STORAGE: GitHub repo aazhi066-studio/aazhi-studio (see memory)
 Uploaded: none yet (ep1 ready in ~/faceless-shorts/aazhi-rajaraja/deliver)
 Rule: upload when 3 videos are finished (ep1 + 2 new). YouTube unlisted. Instagram only after user approval.
 Next command: start step 4 for video 2.

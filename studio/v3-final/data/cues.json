@@ -1,0 +1,343 @@
+{
+ "duration": 72.204,
+ "cues": [
+  {
+   "t": 0.05,
+   "type": "swell",
+   "gain": 0.8
+  },
+  {
+   "t": 0.5,
+   "type": "rumble",
+   "gain": 0.45,
+   "dur": 3.5
+  },
+  {
+   "t": 0.883,
+   "type": "pop",
+   "gain": 0.8
+  },
+  {
+   "t": 1.383,
+   "type": "bell",
+   "gain": 0.5
+  },
+  {
+   "t": 5.941,
+   "type": "whoosh",
+   "gain": 0.7
+  },
+  {
+   "t": 6.741,
+   "type": "sparkle",
+   "gain": 0.5
+  },
+  {
+   "t": 6.928,
+   "type": "pop",
+   "gain": 0.7
+  },
+  {
+   "t": 11.526,
+   "type": "swell",
+   "gain": 0.7
+  },
+  {
+   "t": 12.056,
+   "type": "pop",
+   "gain": 0.7
+  },
+  {
+   "t": 12.306,
+   "type": "sparkle",
+   "gain": 0.5
+  },
+  {
+   "t": 14.92,
+   "type": "drum",
+   "gain": 0.7
+  },
+  {
+   "t": 15.32,
+   "type": "rumble",
+   "gain": 0.6,
+   "dur": 3
+  },
+  {
+   "t": 16.354,
+   "type": "pop",
+   "gain": 0.7
+  },
+  {
+   "t": 18.947,
+   "type": "swell",
+   "gain": 0.6
+  },
+  {
+   "t": 21.095,
+   "type": "chisel",
+   "gain": 0.6
+  },
+  {
+   "t": 21.895,
+   "type": "chisel",
+   "gain": 0.55
+  },
+  {
+   "t": 22.695,
+   "type": "chisel",
+   "gain": 0.55
+  },
+  {
+   "t": 23.495,
+   "type": "chisel",
+   "gain": 0.5
+  },
+  {
+   "t": 24.355,
+   "type": "rumble",
+   "gain": 0.55,
+   "dur": 2
+  },
+  {
+   "t": 25.894,
+   "type": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 27.387,
+   "type": "thud",
+   "gain": 0.6
+  },
+  {
+   "t": 27.633,
+   "type": "tock",
+   "gain": 0.7
+  },
+  {
+   "t": 27.933,
+   "type": "tock",
+   "gain": 0.5
+  },
+  {
+   "t": 30.767,
+   "type": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 31.267,
+   "type": "swell",
+   "gain": 0.7
+  },
+  {
+   "t": 32.263,
+   "type": "bell",
+   "gain": 0.7
+  },
+  {
+   "t": 32.363,
+   "type": "sparkle",
+   "gain": 0.5
+  },
+  {
+   "t": 34.636,
+   "type": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 35.282,
+   "type": "tock",
+   "gain": 0.8
+  },
+  {
+   "t": 35.382,
+   "type": "sparkle",
+   "gain": 0.5
+  },
+  {
+   "t": 39.095,
+   "type": "slide",
+   "gain": 0.5
+  },
+  {
+   "t": 39.495,
+   "type": "thud",
+   "gain": 0.7
+  },
+  {
+   "t": 41.565,
+   "type": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 42.29,
+   "type": "tock",
+   "gain": 0.7
+  },
+  {
+   "t": 43.774,
+   "type": "slide",
+   "gain": 0.5
+  },
+  {
+   "t": 44.49,
+   "type": "thud",
+   "gain": 0.45
+  },
+  {
+   "t": 45.337,
+   "type": "slam",
+   "gain": 0.7
+  },
+  {
+   "t": 45.69,
+   "type": "thud",
+   "gain": 0.45
+  },
+  {
+   "t": 46.89,
+   "type": "thud",
+   "gain": 0.45
+  },
+  {
+   "t": 47.309,
+   "type": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 47.709,
+   "type": "tock",
+   "gain": 0.6
+  },
+  {
+   "t": 48.001,
+   "type": "slide",
+   "gain": 0.5
+  },
+  {
+   "t": 49.008,
+   "type": "bell",
+   "gain": 0.8
+  },
+  {
+   "t": 50.563,
+   "type": "whoosh",
+   "gain": 0.45
+  },
+  {
+   "t": 52.113,
+   "type": "thud",
+   "gain": 0.6
+  },
+  {
+   "t": 52.663,
+   "type": "whoosh",
+   "gain": 0.4
+  },
+  {
+   "t": 53.663,
+   "type": "pop",
+   "gain": 0.6
+  },
+  {
+   "t": 55.374,
+   "type": "swell",
+   "gain": 0.4
+  },
+  {
+   "t": 56.274,
+   "type": "tock",
+   "gain": 0.35
+  },
+  {
+   "t": 56.674,
+   "type": "tock",
+   "gain": 0.35
+  },
+  {
+   "t": 57.074,
+   "type": "tock",
+   "gain": 0.35
+  },
+  {
+   "t": 57.174,
+   "type": "thud",
+   "gain": 0.4
+  },
+  {
+   "t": 57.474,
+   "type": "tock",
+   "gain": 0.35
+  },
+  {
+   "t": 57.874,
+   "type": "tock",
+   "gain": 0.35
+  },
+  {
+   "t": 58.274,
+   "type": "tock",
+   "gain": 0.35
+  },
+  {
+   "t": 58.674,
+   "type": "tock",
+   "gain": 0.35
+  },
+  {
+   "t": 59.074,
+   "type": "tock",
+   "gain": 0.35
+  },
+  {
+   "t": 59.302,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 59.702,
+   "type": "chisel",
+   "gain": 0.5
+  },
+  {
+   "t": 60.902,
+   "type": "thud",
+   "gain": 0.5
+  },
+  {
+   "t": 63.069,
+   "type": "swell",
+   "gain": 0.7
+  },
+  {
+   "t": 63.369,
+   "type": "pop",
+   "gain": 0.6
+  },
+  {
+   "t": 65.269,
+   "type": "bell",
+   "gain": 0.5
+  },
+  {
+   "t": 67.269,
+   "type": "sparkle",
+   "gain": 0.5
+  },
+  {
+   "t": 69.327,
+   "type": "swell",
+   "gain": 0.6
+  },
+  {
+   "t": 69.727,
+   "type": "bell",
+   "gain": 0.6
+  },
+  {
+   "t": 70.427,
+   "type": "sparkle",
+   "gain": 0.8
+  }
+ ]
+}

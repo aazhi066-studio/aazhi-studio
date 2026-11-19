@@ -1,0 +1,28 @@
+{
+ "title": "The Tamil Fleet That Sailed to Srivijaya",
+ "voice": "af_heart", "speed": 0.9, "lead": 0.6, "outro": 0.5, "music": "chola",
+ "lines": [
+  {"text": "In the year ten twenty five, a Tamil fleet sailed out into the open sea.", "caps": "in the year *1025 | a *Tamil fleet sailed out | into the open *sea.", "gap": 0.9},
+  {"text": "Its target was Srivijaya, a sea power on the far side of the Bay of Bengal.", "caps": "its target was *Srivijaya | a sea power | across the *Bay of Bengal.", "gap": 0.9},
+  {"text": "The Chola emperor Rajendra had sent it.", "caps": "the Chola emperor *Rajendra | had sent it.", "gap": 1.0},
+  {"text": "Chola ships first struck Palembang, the capital, its palace and its monasteries.", "caps": "first they struck *Palembang | the capital | its palace | its *monasteries.", "gap": 0.9},
+  {"text": "An inscription at Thanjavur says the Srivijayan king was taken prisoner.", "caps": "an inscription at *Thanjavur | says the king | was taken *prisoner.", "gap": 0.9},
+  {"text": "It calls his land Kadaram, probably Kedah, on the Malay coast.", "caps": "it calls his land *Kadaram | probably *Kedah | on the Malay coast.", "gap": 1.0},
+  {"text": "Why did the Cholas go? Historians disagree.", "caps": "why did the Cholas go? | historians *disagree.", "gap": 1.0},
+  {"text": "Some say prestige, the glory of a world conqueror. Others say protecting trade with China.", "caps": "some say *prestige | others say | protecting *trade with China.", "gap": 1.0},
+  {"text": "A Chinese writer says Srivijaya forced passing ships to stop at its ports.", "caps": "a Chinese writer says | Srivijaya *forced ships | to stop at its ports.", "gap": 0.9},
+  {"text": "But he wrote about two centuries later.", "caps": "but he wrote | about *two centuries later.", "gap": 1.0},
+  {"text": "Most historians see fast raids and plunder, not lasting rule.", "caps": "most see *raids and plunder | not *lasting rule.", "gap": 1.0},
+  {"text": "Still, Srivijaya's grip on the sea trade was weakened.", "caps": "still | Srivijaya's *grip on sea trade | was *weakened.", "gap": 1.0},
+  {"text": "Our main evidence is one Chola inscription.", "caps": "our main evidence | is *one Chola inscription.", "gap": 1.1},
+  {"text": "A thousand years ago, a Tamil fleet reached across the sea, and shook a sea power.", "caps": "a *thousand years ago | a Tamil fleet *reached across the sea | and shook a *sea power.", "gap": 1.3},
+  {"text": "Follow Aazhi for the next chronicle.", "caps": "Follow *Aazhi | for the next *chronicle.", "gap": 0.5}
+ ],
+ "sources": [
+  {"n":1,"title":"Chola invasion of Srivijaya (Wikipedia)","url":"https://en.wikipedia.org/wiki/Chola_invasion_of_Srivijaya","supports":"1025-1026 naval invasions under Rajendra I; Palembang sacked incl. palace and monasteries; king captured per Thanjavur inscription; motives debated (prestige or trade with China); mostly raids and plunder, no lasting control; Srivijaya weakened; evidence mostly Chola inscriptions"},
+  {"n":2,"title":"Lord of the ocean (The Week, 2020)","url":"https://www.theweek.in/theweek/cover/2020/12/17/lord-of-the-ocean.html","supports":"expedition 1025 CE; Palembang ransacked; only one inscription (Thanjavur) marks it; names Kadaram linked to Kedah; Zhao Rukuo, 13th century, says Srivijaya forced ships to call at its ports; motives debated; Malay marriage account is from a different tradition"}
+ ],
+ "illustration": "All imagery is an artist's illustration; ship and fleet designs are generic and not drawn from a surviving Chola ship (none survives); no portrait of any king; no inscription text reproduced.",
+ "uncertain": "motives; whether Kadaram is Kedah; whether the campaign was raid or conquest; claims about fleet size, ports counted, elephants or weapons are omitted because single or weak sources; Malay Annals marriage story omitted; Chinese writer is about two centuries after the event.",
+ "story_device": "Night navigation by monsoon stars: a map of the Bay of Bengal crossing, ship's wake and star compass, port-by-port ledger of harbours dropping to a single inscription slab; ending on a harbour at dawn (must differ from ep1 and ep2)"
+}

@@ -82,3 +82,4 @@ heartbeat: 2026-11-20T13:09:57Z (13:07 UTC run: idle by plan - 18:39 IST is befo
 heartbeat: 2026-11-20T14:08:29Z (14:07 UTC run = 19:38 IST: publish run, lock taken)
 heartbeat: 2026-11-20T14:11:01Z (14:07 run: publishing Video 1, lock held)
 heartbeat: 2026-11-20T14:17:00Z (14:07 UTC run finished: Video 1 published YT+IG+FB; lock free)
+heartbeat: 2026-11-20T15:09:40Z (15:07 UTC run = 20:38 IST: analytics study, lock taken)

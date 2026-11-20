@@ -1,5 +1,5 @@
 # PROGRESS
-UPLOAD LOG (rolling 24h, UTC publishedAt): prev 19 Nov 02:08:12, 02:11:00, 02:22:48, 02:28:20, 02:28:30. 20 Nov: v4 1dxvgzc6rcU 02:09:28, v5 4kNn6imKGlI 02:12:00
+UPLOAD LOG (rolling 24h, UTC publishedAt): prev 19 Nov 02:08:12, 02:11:00, 02:22:48, 02:28:20, 02:28:30. 20 Nov: v4 1dxvgzc6rcU 02:09:28, v5 4kNn6imKGlI 02:12:00, v6 La0NQNPP5co 02:23:45
 Run 01:07 UTC 20 Nov (06:37 IST): sheet unchanged (rows 2-4 approved, IG yes), YT quota still full until >= 02:30 UTC, publish window not yet (06:30 UTC). No v15 started (11 finished videos waiting in queue). Hourly WhatsApp sent. Memory /areas/aazhi-channel.md still not reachable.
 v14 Hunt for Noses DONE + QA PASS (00:53 UTC 20 Nov): 'The War Remembered for Cut Noses | Madurai vs Mysore, 1656', 95.6 s, 1080x1920 30fps 2869 frames, -14.3 LUFS, -3.8 dBTP (same recipe), joins 24/48/72 s seamless, captions match word timings, contact sheet checked (symbolic only), facts match desc sources (OLD ACCOUNTS SAY / THEY SAY / LEGEND / SAID TO BE). Pushed videos v/v14.mp4 (88 MB). Project studio/v14-final, ART 'Ganjifa Round Cards' (41 shots: A15 B14 C12), music gen:abyss 14233 PASS. Queue position 11.
 v14 IN PROGRESS (00:40 UTC 20 Nov, same run): 'hunt for noses' Madurai vs Mysore c.1656 (Tirumala Nayak, Kanthirava Narasaraja, Hampaiya, Sethupathi 25,000, king's nose = LEGEND), studio/v14-final, script+narration 95.7 s, ART 'Ganjifa Round Cards', music gen:abyss 14233 PASS (vs v9-v13), 9 new IPA names. 3 workers drawing shots_a/b/c (stub files committed first).
@@ -57,3 +57,4 @@ heartbeat: 2026-11-20T00:52:23Z (00:07 UTC run finished v13+v14; lock free)
 heartbeat: 2026-11-20T01:09:03Z (01:07 UTC run: status only, lock free)
 heartbeat: 2026-11-20T02:08:16Z (02:07 UTC run: lock taken, uploads at >= 02:30 UTC)
 heartbeat: 2026-11-20T02:12:21Z (02:07 run: v4,v5 uploaded; v6 at >=02:23:30, v7/v8 at >=02:29)
+heartbeat: 2026-11-20T02:24:07Z (v6 uploaded)

@@ -91,8 +91,8 @@ function noseLine() {
   ctx.lineWidth = 8; ctx.strokeStyle = G.brown; ctx.lineCap = 'round'; ctx.stroke();
 }
 function blackPatch(p = 1) {           // the nose painted over in black (p = how far the brush has gone)
-  const n = 9, m = Math.ceil(n * clamp(p));
-  for (let k = 0; k < m; k++) { const u = k / (n - 1); const x = lerp(-6, 18, u) + Math.sin(k * 2.1) * 6, y = lerp(-86, 46, u); E(x, y, 40 + rnd(k) * 8, 30 + rnd(k + 3) * 6, 0.3); ctx.fillStyle = G.black; ctx.fill(); }
+  const n = 8, m = Math.ceil(n * clamp(p));
+  for (let k = 0; k < m; k++) { const u = k / (n - 1); const x = lerp(0, 16, Math.sin(u * 2.4)) + Math.sin(k * 2.1) * 3, y = lerp(-78, 40, u); E(x, y, 27 + rnd(k) * 5, 20 + rnd(k + 3) * 4, 0.3); ctx.fillStyle = G.black; ctx.fill(); }
 }
 function pFace(black) {
   ground(G.indigo, 11);
@@ -113,7 +113,7 @@ function sackBody() {
 function pSack(emb) {
   ground(G.saff, 21, 'rgba(200,64,30,0.5)');
   sackBody(); ink(G.sack, 4);
-  ctx.save(); sackBody(); ctx.clip(); ctx.fillStyle = G.sackD; E(130, 120, 120, 170); ctx.fill(); ctx.restore();
+  ctx.save(); sackBody(); ctx.clip(); ctx.fillStyle = G.sackD; E(130, 120, 120, 170); ctx.fill(); ctx.restore(); sackBody(); ink(null, 4);
   ctx.strokeStyle = 'rgba(60,36,14,0.55)'; ctx.lineWidth = 4;
   for (const [a, b, c] of [[-40, -120, -110], [10, -110, 20], [50, -120, 110]]) { ctx.beginPath(); ctx.moveTo(a, b); ctx.quadraticCurveTo(c * 1.3, 60, c, 240); ctx.stroke(); }
   ctx.beginPath(); ctx.moveTo(-62, -140); ctx.lineTo(-118, -232); ctx.quadraticCurveTo(0, -256, 118, -232); ctx.lineTo(62, -140); ctx.closePath(); ink(G.sackD);
@@ -161,12 +161,20 @@ function pBowed() {
   ground(G.ivory, 51, 'rgba(200,64,30,0.45)');
   ctx.beginPath(); ctx.rect(-360, 180, 720, 200); ink(G.saff);
   for (let k = 0; k < 14; k++) dot(-300 + k * 46, 210, 5, G.verm);
-  ctx.beginPath(); ctx.moveTo(150, 182); ctx.bezierCurveTo(150, 40, 80, -60, -10, -40); ctx.bezierCurveTo(-90, -20, -110, 60, -110, 182); ctx.closePath(); ink(G.indigo);
-  stroke2([[-60, 30], [-150, 110], [-200, 176]], 26, G.skin);
-  head(-150, 60, 44, 54, 0.6);
-  E(-120, 14, 24, 22); ink(G.black);
-  RR(-40, 120, 170, 18, 6); ink(G.gold);
-  for (let k = 0; k < 4; k++) dot(20 + k * 30, -10 + k * 20, 5);
+  // a tall standing figure (vermilion robe, spear) looms over a figure kneeling with head bowed to the ground
+  ctx.beginPath(); ctx.moveTo(150, -150); ctx.lineTo(230, -150); ctx.lineTo(262, 182); ctx.lineTo(120, 182); ctx.closePath(); ink(G.verm);
+  RR(140, 10, 100, 18, 6); ink(G.gold);
+  head(190, -196, 34, 42);
+  E(190, -232, 40, 18); ink(G.white);
+  stroke2([[110, -300], [110, 182]], 7, G.brown);
+  ctx.beginPath(); ctx.moveTo(98, -300); ctx.lineTo(110, -344); ctx.lineTo(122, -300); ctx.closePath(); ink(G.black, 2);
+  stroke2([[160, -120], [112, -60]], 18, G.skin);
+  // kneeling figure
+  ctx.beginPath(); ctx.moveTo(60, 182); ctx.bezierCurveTo(70, 60, 0, 0, -70, 30); ctx.bezierCurveTo(-120, 54, -130, 120, -120, 182); ctx.closePath(); ink(G.indigo);
+  stroke2([[-80, 80], [-170, 150], [-250, 172]], 20, G.skin);
+  head(-150, 140, 40, 46, 1.1);
+  E(-118, 112, 20, 18); ink(G.black);
+  for (let k = 0; k < 4; k++) dot(-30 + k * 22, 50 + k * 18, 4.5);
 }
 function flame(x, y, s = 1, f = 0) {
   ctx.beginPath(); ctx.moveTo(x, y); ctx.bezierCurveTo(x - 30 * s, y - 20 * s, x - 14 * s + f, y - 70 * s, x + f * 1.5, y - 104 * s); ctx.bezierCurveTo(x + 14 * s + f, y - 70 * s, x + 30 * s, y - 20 * s, x, y); ink(G.saff, 3);
@@ -323,11 +331,11 @@ function onCard(x, y, R, fn, rot = 0) {
 function crackleImg() {
   return cached('bCrackle', 720, 720, 1, () => {
     ctx.translate(360, 360); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
-    for (let i = 0; i < 110; i++) {
+    for (let i = 0; i < 70; i++) {
       let a = rnd(i * 5.3) * TAU, r = Math.sqrt(rnd(i * 2.9 + 1)) * 330, x = Math.cos(a) * r, y = Math.sin(a) * r, dir = rnd(i + 0.7) * TAU;
       const pts = [[x, y]];
       for (let k = 0; k < 7 + Math.floor(rnd(i * 1.1) * 7); k++) { dir += (rnd(i * 13 + k) - 0.5) * 1.6; x += Math.cos(dir) * (14 + rnd(i + k * 3) * 26); y += Math.sin(dir) * (14 + rnd(i * 7 + k) * 26); pts.push([x, y]); }
-      for (const [w, c, ox] of [[2.2, 'rgba(255,240,210,0.35)', 1.5], [1.6, 'rgba(30,18,8,0.85)', 0]]) {
+      for (const [w, c, ox] of [[2, 'rgba(255,240,210,0.3)', 1.5], [1.3, 'rgba(30,18,8,0.6)', 0]]) {
         ctx.beginPath(); pts.forEach((p, j) => (j ? ctx.lineTo(p[0] + ox, p[1] + ox) : ctx.moveTo(p[0] + ox, p[1] + ox))); ctx.lineWidth = w; ctx.strokeStyle = c; ctx.stroke();
       }
     }
@@ -337,7 +345,7 @@ function crackle(x, y, R, p, rot = 0) {
   if (p <= 0) return;
   onCard(x, y, R, () => {
     ctx.fillStyle = `rgba(70,58,44,${0.42 * p})`; ctx.fillRect(-360, -360, 720, 720);
-    ctx.globalAlpha = clamp(p * 1.3); ctx.drawImage(crackleImg(), -360, -360, 720, 720);
+    ctx.globalAlpha = clamp(p) * 0.85; ctx.drawImage(crackleImg(), -360, -360, 720, 720);
   }, rot);
 }
 
@@ -359,11 +367,11 @@ function baizeImg() {
   });
 }
 function poolImg() {
-  return cached('bPool', 540, 960, 0.25, () => { const g = ctx.createRadialGradient(270, 340, 10, 270, 380, 420); g.addColorStop(0, 'rgba(255,200,120,0.5)'); g.addColorStop(1, 'rgba(255,200,120,0)'); ctx.fillStyle = g; ctx.fillRect(0, 0, 540, 960); });
+  return cached('bPool', 540, 960, 0.25, () => { const g = ctx.createRadialGradient(270, 360, 10, 270, 400, 262); g.addColorStop(0, 'rgba(255,200,120,0.5)'); g.addColorStop(1, 'rgba(255,200,120,0)'); ctx.fillStyle = g; ctx.fillRect(0, 0, 540, 960); });
 }
 function table(t, dim = 0) {
   const c = baizeImg(); ctx.drawImage(c, -BX, -BY, BW, BH);
-  const p = poolImg(); ctx.globalAlpha = 0.32 + 0.05 * Math.sin(t * 7.3) + 0.03 * Math.sin(t * 17.1); ctx.drawImage(p, 0, 0, W, H * 0.9); ctx.globalAlpha = 1;
+  const p = poolImg(); ctx.globalAlpha = 0.32 + 0.05 * Math.sin(t * 7.3) + 0.03 * Math.sin(t * 17.1); ctx.drawImage(p, -60, -40, W + 120, H * 0.95); ctx.globalAlpha = 1;
   if (dim > 0) { ctx.fillStyle = `rgba(6,10,8,${dim})`; ctx.fillRect(-BX, -BY, BW, BH); }
 }
 /** a cream score-slip label; p = pop-in progress */
@@ -480,7 +488,7 @@ export function buildB(add, cue) {
   }
   S({ id: 'b5', at: tPun, cam: [540, 800], zoom: 0.05, note: 'row: card 1 flips to a dagger, card 2 to a bowed figure; camera pans',
     draw(lt, d, t) {
-      ctx.save(); const px = lerp(150, -60, eio(clamp(lt / d))); ctx.translate(px, 0);
+      ctx.save(); const px = lerp(85, -85, eio(clamp(lt / d))); ctx.translate(px, 0);
       table(t); drawRow(t, 165, 820, t < tHum ? 0 : 1);
       ctx.restore();
     } });
@@ -527,7 +535,7 @@ export function buildB(add, cue) {
   S({ id: 'b9', at: tSeth, cam: [540, 700], zoom: 0.04, note: 'push-in through the Sethupathi card (figure with conch banner); RAMNAD',
     draw(lt, d, t) {
       table(t);
-      const u = eio(clamp(lt / d)), R = lerp(380, 820, u), cx = lerp(540, 560, u), cy = lerp(700, 800, u);
+      const u = eio(clamp(lt / d)), R = lerp(380, 780, u), cx = lerp(540, 600, u), cy = lerp(700, 480, u);
       flipCard('sethu', cx, cy, R, seg(t, tSeth - 0.05, tSeth + 0.35), { base: 400, q: 2, rot: lerp(-0.04, 0.02, u) });
       // banner flutter: a row of moving gold glints along the pennant
       if (t > tSeth + 0.35) onCard(cx, cy, R, () => { for (let k = 0; k < 5; k++) { const ph = (t * 1.6 + k / 5) % 1; dot(lerp(-50, -205, ph), -186 + Math.sin(ph * 9 + t * 4) * 14, 4, `rgba(255,241,190,${Math.sin(ph * Math.PI)})`); } }, lerp(-0.04, 0.02, u));
@@ -588,7 +596,6 @@ export function buildB(add, cue) {
     draw(lt, d, t) {
       table(t);
       put('mysore', 540, 470, 290, { rot: Math.sin(t * 0.7) * 0.02 });
-      slip('MYSORE', 790, 735, 42, 0.07, seg(t, tMys, tMys + 0.35));
       const adv = eio(seg(t, tMys + 0.3, tAcc + 0.1));
       [1150, 1030, 910].forEach((y, r) => {
         const t0 = tMarch + r * 0.15, u = eo(seg(t, t0, t0 + 0.7)), dir = r % 2 ? 1 : -1;
@@ -597,6 +604,7 @@ export function buildB(add, cue) {
           put('fish', x, yy, 58, { rot: Math.sin(t * 2 + i) * 0.06 });
         }
       });
+      slip('MYSORE', 790, 735, 42, 0.07, seg(t, tMys, tMys + 0.35));
     } });
   cue(tMarch, 'slide', { gain: 0.4, pan: -0.3 }); cue(tMarch + 0.2, 'slide', { gain: 0.4, pan: 0.3 }); cue(tMys, 'pop', { gain: 0.4 }); cue(tMys + 0.3, 'drum', { gain: 0.4, dur: 1.2 });
 
@@ -604,7 +612,7 @@ export function buildB(add, cue) {
   S({ id: 'b14', at: tAcc, cam: [540, 760], zoom: 0.05, note: 'pull back out of the face card to the table; a fish-tagged sack card slides in; the nose is blacked out; ACCOUNTS SAY',
     draw(lt, d, t) {
       table(t);
-      const u = eio(seg(t, tAcc, tAcc + 1.2)), R = lerp(1150, 330, u), cx = lerp(540, 370, u), cy = lerp(760, 600, u), rot = lerp(0.04, -0.05, u);
+      const u = eio(seg(t, tAcc, tAcc + 1.0)), R = lerp(950, 330, u), cx = lerp(540, 370, u), cy = lerp(380, 600, u), rot = lerp(0.04, -0.05, u);
       const [sx, sy, sr] = dealPos(t, tAcc + 0.6, 0.55, [1400, 1000, 2], [770, 960, 0.1]);
       put('face', cx, cy, R, { base: 400, q: 2, rot });
       onCard(cx, cy, R, () => blackPatch(seg(t, tNoses, tNoses + 0.45)), rot);

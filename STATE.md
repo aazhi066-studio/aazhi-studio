@@ -1,3 +1,4 @@
+Run 16:07 UTC 20 Nov (21:38 IST): idle by plan. YT quota 5/5 until 21 Nov 02:10 UTC (next upload v9 Kuyili); publish + analytics study already done today (next publish Video 2 Gangaikonda at run >= 13:30 UTC 21 Nov); production paused until v10 uploaded. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
 Run 15:07 UTC 20 Nov (20:38 IST): analytics study done (Windsor 2 calls): too little data (1 public video, analytics lag to 17 Nov, 0 views), nothing changed; see LEARNINGS.md. Quota full till 21 Nov 02:10 UTC (next upload v9 Kuyili); publish done today (next: Video 2 Gangaikonda at run >= 13:30 UTC 21 Nov); production paused until v10 uploaded. No Zapier calls.
 # AAZHI studio state (read first)
 - This repo is the persistent store for all AAZHI work. Cloud runs start empty: add_repo aazhi066-studio/aazhi-studio (access push), clone, work in studio/, git push after every step.

@@ -54,3 +54,4 @@ heartbeat: 2026-11-20T00:48:31Z
 heartbeat: 2026-11-20T00:52:05Z
 heartbeat: 2026-11-20T00:52:23Z (00:07 UTC run finished v13+v14; lock free)
 heartbeat: 2026-11-20T01:09:03Z (01:07 UTC run: status only, lock free)
+heartbeat: 2026-11-20T02:08:16Z (02:07 UTC run: lock taken, uploads at >= 02:30 UTC)

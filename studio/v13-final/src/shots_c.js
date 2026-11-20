@@ -243,7 +243,7 @@ function soldierParts(o = {}) {
   P.push({ path: bar(-34, -262, 32, -138, 9), fill: BELT, back: false, lw: 1.5 }, { path: bar(34, -262, -32, -138, 9), fill: BELT, back: false, lw: 1.5 });
   P.push({ path: prr(-9, -284, 18, 20, 3), fill: SKIN }, { path: pc(0, -300, 24), fill: o.skin ?? SKIN });
   if (o.hat === 'shako') P.push({ path: pp([[-22, -318], [22, -318], [25, -368], [-25, -368]]), fill: '#18161A' }, { path: pe(8, -318, 30, 6), fill: '#18161A' }, { path: pc(0, -352, 6), fill: GOLD, back: false, lw: 1.5 });
-  else P.push({ path: prr(-26, -366, 52, 52, 10), fill: '#1E1A1A' }, { path: pe(0, -316, 36, 8), fill: '#1E1A1A' }, { path: pc(0, -338, 8), fill: CREAM, back: false, lw: 1.5 });
+  else P.push({ path: prr(-26, -366, 52, 52, 10), fill: '#1E1A1A' }, { path: pe(0, -316, 36, 8), fill: '#1E1A1A' }, { path: pc(0, -336, 6), fill: OCH, back: false, lw: 1.2 });
   if (o.musket) P.push({ path: bar(48, -140, 58, -400, 7), fill: WOOD, back: false, lw: 1.5 });
   if (o.aim) { P.push({ path: bar(-20, -236, 200, -250, 9), fill: WOOD }); P.push({ path: bar(-40, -256, 40, -238, 18), fill: coat }); P.push({ path: bar(40, -230, 90, -244, 16), fill: coat }); }
   return P;
@@ -442,7 +442,7 @@ const jaliImg = () => flat('cJali', OW, 720, () => {
   ctx.globalCompositeOperation = 'destination-out'; for (const x of xs) { ar(x)(); ctx.fill(); } ctx.globalCompositeOperation = 'source-over';
   for (const x of xs) {
     ctx.save(); ar(x)(); ctx.clip(); ctx.strokeStyle = '#B08A50'; ctx.lineWidth = 7;
-    for (let k = -14; k <= 14; k++) { line([[x + k * 30, 100], [x + k * 30 + 600, 700]], '#B08A50', 6); line([[x + k * 30 + 200, 100], [x + k * 30 - 400, 700]], '#B08A50', 6); }
+    for (let k = -12; k <= 12; k++) { line([[x + k * 56, 100], [x + k * 56 + 600, 700]], '#B08A50', 4); line([[x + k * 56 + 200, 100], [x + k * 56 - 400, 700]], '#B08A50', 4); }
     ctx.restore(); ar(x)(); ctx.strokeStyle = INK; ctx.lineWidth = 4; ctx.stroke(); ar(x)(); ctx.strokeStyle = OCH; ctx.lineWidth = 3; ctx.save(); ctx.translate(-8, 0); ctx.stroke(); ctx.restore();
   }
   ctx.fillStyle = MAR; ctx.fillRect(0, 0, OW, 40); ctx.strokeStyle = INK; ctx.lineWidth = 3; ctx.strokeRect(0, 0, OW, 40); ctx.strokeRect(0, 0, OW, 720);
@@ -515,12 +515,11 @@ export function buildC(add, cue) {
     draw(lt, d, t) {
       const x = slideX(lt, 0, 0.9, OX0 - 260, 500), y = FLOOR + 30 + Math.sin(lt * 15) * 5;
       frame(t, () => {
-        drawBd('night'); wired(moonImg(), 85, 85, lerp(760, 820, lt / d), 430 - Math.sin(lt / d * 1.2) * 30, 1);
+        drawBd('night'); wired(moonImg(), 85, 85, lerp(250, 300, lt / d), 520 - Math.sin(lt / d * 1.2) * 30, 1);
         blit(grassImg('N'), 500, 180, 540 + lt * -20, 1050, 1); drawFloor(0.4);
         rod(x - 160, y - 60, OX0 - 80, y - 60);
         ctx.save(); ctx.translate(x, y); ctx.rotate(Math.sin(lt * 15) * 0.02 + wob(lt, 0, 0.9)); blit(riderImg(true), 190, 405, 0, 0, 1.05); ctx.restore();
-        hang(lt, 0.55, 'COL. GILLESPIE', 700, 470, 40);
-      }, { iris: [x + 10, y - 220, lerp(30, 340, eo(seg(lt, 0.15, 0.9))), 0.7], lights: 0.8 });
+      }, { iris: [x + 10, y - 220, lerp(30, 340, eo(seg(lt, 0.15, 0.9))), 0.7], lights: 0.8, front: () => hang(lt, 0.55, 'COL. GILLESPIE', 690, 450, 40) });
     } });
   cue(t10, 'whoosh', { gain: 0.35 }); cue(t10 + 0.1, 'slide', { gain: 0.3, pan: -0.4 }); cue(t10 + 0.3, 'drum', { gain: 0.25 }); cue(t10 + 0.6, 'pop', { gain: 0.3 });
 
@@ -625,7 +624,7 @@ export function buildC(add, cue) {
   cue(tAbout, 'zip', { gain: 0.35 }); cue(tAbout + 0.6, 'pop', { gain: 0.35 });
 
   // c7 ─ firing line: flashes and smoke; WITHOUT TRIAL
-  const FIRE = [[200, 1070, 0.62], [300, 1110, 0.68], [150, 1150, 0.75], [260, 1190, 0.8]];
+  const FIRE = [[300, 1070, 0.62], [400, 1110, 0.68], [250, 1150, 0.75], [350, 1190, 0.8]];
   add({ id: 'c7', at: tShot, cam: [460, 860], zoom: 0.08, note: 'dim dawn; a line of four blue-grey card soldiers aiming right from the left wing; cut-paper starbursts pop at the muzzles one after another, cotton smoke rolls across an empty right half; WITHOUT TRIAL card',
     draw(lt, d, t) {
       let fl = 0;
@@ -639,7 +638,7 @@ export function buildC(add, cue) {
           burst(lt, tf, mx + 16, my, 0.3 * s / 0.7); cotton(lt, tf, mx + 40, my, 6, 120, 31 + i, 70, 0.8, 3);
           if (lt > tf) fl = Math.max(fl, 1 - (lt - tf) / 0.25);
         });
-        hang(lt, tWithout - tShot + 0.1, 'WITHOUT TRIAL', 720, 470, 44);
+        hang(lt, tWithout - tShot + 0.1, 'WITHOUT TRIAL', 640, 450, 44);
       }, { flash: fl * 0.5, lights: 0.6 + 0.3 * fl, veil: 'rgba(16,14,30,0.3)' });
     } });
   for (let i = 0; i < 4; i++) cue(tShot + 0.35 + i * 0.12, 'thud', { gain: 0.4, pan: -0.5 }); cue(tWithout + 0.1, 'pop', { gain: 0.3 });
@@ -655,8 +654,7 @@ export function buildC(add, cue) {
         blit(benchImg(), 320, 345, bx, 1110, 0.95);
         rod(sx - 40, 1000, OX0 - 80, 1000);
         ctx.save(); ctx.translate(sx, 1130); ctx.rotate(wob(lt, 0.1, 0.6)); blit(sepoyImg(), 80, 420, 0, 0, 0.95); ctx.restore();
-        hang(lt, 0.15, 'AFTER TRIALS', 540, 360, 46);
-      }, { iris: [sx, 950, lerp(520, 210, eio(seg(lt, 0.4, 1.4))), 0.55], lights: 0.85 });
+      }, { iris: [sx, 950, lerp(520, 210, eio(seg(lt, 0.4, 1.4))), 0.55], lights: 0.85, front: () => hang(lt, 0.15, 'AFTER TRIALS', 560, 430, 46) });
     } });
   cue(t12, 'slide', { gain: 0.3, pan: 0.5 }); cue(t12 + 0.1, 'slide', { gain: 0.25, pan: -0.5 }); cue(t12 + 0.2, 'pop', { gain: 0.3 }); cue(tSome, 'tock', { gain: 0.45 });
 
@@ -704,7 +702,7 @@ export function buildC(add, cue) {
         const hx = slideX(lt, 0, 0.5, OX1 + 300, 790);
         rod(hx + 120, 900, OX1 + 80, 900); blit(headImg(), 220, 545, hx, 1160, 0.95);
         const mp = eo(seg(lt, wd + 0.25, wd + 0.65));
-        if (mp > 0) { const mx = hx - 120, my = 1160 - 425 * 0.95; ctx.save(); ctx.globalAlpha = mp; rr(mx - 6, my - 30 * mp, 12, 60 * mp, 5); ctx.fillStyle = '#F2E6CF'; ctx.fill(); ctx.strokeStyle = INK; ctx.lineWidth = 2; ctx.stroke(); circle(mx, my + 34, 6 * mp, '#C0262A'); ctx.restore(); }
+        if (mp > 0) { const mx = hx - 116, my = 1160 - 375 * 0.95; ctx.save(); ctx.globalAlpha = mp; rr(mx - 6, my - 30 * mp, 12, 60 * mp, 5); ctx.fillStyle = '#F2E6CF'; ctx.fill(); ctx.strokeStyle = INK; ctx.lineWidth = 2; ctx.stroke(); circle(mx, my + 34, 6 * mp, '#C0262A'); ctx.restore(); }
         // the hat slides off to the left wing
         const ax = lerp(slideX(lt, 0, 0.4, OX0 - 200, 260), OX0 - 260, eio(seg(lt, wd, wd + 0.5)));
         rod(ax - 60, 1000, OX0 - 80, 1000); blit(hatImg(), 140, 410, ax, 1130, 0.85);
@@ -724,9 +722,9 @@ export function buildC(add, cue) {
       frame(t, () => {
         drawBd('sea');
         blit(waveImg(0), 550, 160, 540 + Math.sin(t * 1.4) * 30, 960, 1);
-        const sx = lerp(520, 920, eio(seg(lt, 0.3, d))), sy = 1010 + Math.sin(t * 2.2) * 8;
+        const sx = lerp(330, 700, eio(seg(lt, 0.3, d))), sy = 1010 + Math.sin(t * 2.2) * 8;
         rod(sx + 200, sy - 80, OX1 + 120, sy - 80);
-        ctx.save(); ctx.translate(sx, sy); ctx.rotate(Math.sin(t * 2.2 + 1) * 0.04); blit(shipImg(), 280, 580, 0, 0, 0.78); ctx.restore();
+        ctx.save(); ctx.translate(sx, sy); ctx.rotate(Math.sin(t * 2.2 + 1) * 0.04); blit(shipImg(), 280, 580, 0, 0, 0.72); ctx.restore();
         blit(waveImg(1), 550, 160, 540 - Math.sin(t * 1.6) * 36, 1060, 1);
         blit(waveImg(2), 550, 160, 540 + Math.sin(t * 1.9 + 1) * 40, 1170, 1);
         hang(lt, tRecalled - t13, 'RECALLED', 360, 450, 56);
@@ -760,10 +758,9 @@ export function buildC(add, cue) {
       const ix = 540 + Math.sin(lt * 1.6) * 260, ir = lerp(260, 150, seg(lt, 2, d));
       frame(t, () => {
         drawBd('palace'); drawFloor(0.3);
-        [[230, 0, 0.9], [420, 1, 0.85], [650, 2, 0.88], [840, 3, 0.82]].forEach(([x, k, s], i) => { ctx.save(); ctx.translate(x + Math.sin(t * 0.9 + i) * 6, 1090); ctx.rotate(Math.sin(t * 1.1 + i * 2) * 0.015); blit(veilImg(k), 85, 345, 0, 0, s); ctx.restore(); });
+        [[250, 0, 1.15], [480, 1, 1.1], [610, 2, 1.12], [830, 3, 1.08]].forEach(([x, k, s], i) => { ctx.save(); ctx.translate(x + Math.sin(t * 0.9 + i) * 6, 1100); ctx.rotate(Math.sin(t * 1.1 + i * 2) * 0.015); blit(veilImg(k), 85, 345, 0, 0, s); ctx.restore(); });
         blit(jaliImg(), 0, 0, OX0, 440, 1);
-        hang(lt, tNot - tWhether - 0.15, 'NOT CLEAR', 540, 360, 62);
-      }, { iris: [ix, 800, ir, 0.6], lights: 0.85 });
+      }, { iris: [ix, 800, ir, 0.5], lights: 0.85, front: () => hang(lt, tNot - tWhether - 0.15, 'NOT CLEAR', 540, 440, 62) });
     } });
   cue(tWhether, 'heartbeat', { gain: 0.25 }); cue(tNot - 0.15, 'pop', { gain: 0.4 });
 
@@ -795,8 +792,7 @@ export function buildC(add, cue) {
           const img = pbImg(lab, 72); blit(img, img.width / img._q / 2, img.height / img._q / 2, x, y, 1);
         }
         if (lt > 0.7 && lt < fg - 0.2) { const p = seg(lt, 0.7, 1.4); for (let k = 0; k < 14 * p; k++) { const xx = lerp(370, 710, k / 14); circle(xx, 640, 5, 'rgba(240,230,200,0.85)'); } }
-        hang(lt, fg, 'FORGOTTEN', 540, 380, 64);
-      }, { lights: 1 - g * 0.6, lvi: (i) => (1 - seg(lt, fg - 0.4 + i * 0.12, fg - 0.25 + i * 0.12) * 0.9) * (1 - g * 0.2), veil: `rgba(40,36,34,${g * 0.55})` });
+      }, { front: () => hang(lt, fg, 'FORGOTTEN', 540, 430, 64), lights: 1 - g * 0.6, lvi: (i) => (1 - seg(lt, fg - 0.4 + i * 0.12, fg - 0.25 + i * 0.12) * 0.9) * (1 - g * 0.2), veil: `rgba(40,36,34,${g * 0.55})` });
     } });
   cue(tHalf, 'slide', { gain: 0.3, pan: -0.5 }); cue(tHalf + 0.25, 'slide', { gain: 0.3, pan: 0.5 }); cue(tEarly, 'tock', { gain: 0.25 }); cue(tForgot, 'pop', { gain: 0.35 }); cue(tForgot + 0.2, 'swell', { gain: 0.2 });
 
@@ -807,7 +803,7 @@ export function buildC(add, cue) {
       frame(t, () => {
         drawBd('day'); blit(fortImg('D'), 460, 590, 540, FLOOR - 30, 0.92); drawFloor(0);
       }, { curtain: cp, lights: 0.5 + 0.5 * seg(lt, 0, 0.8), veil: 'rgba(40,36,34,0.5)',
-        front: () => { hang(lt, tAazhi - tFollow - 0.1, 'AAZHI', 540, 560, 120); hang(lt, tAazhi - tFollow + 0.35, 'FOLLOW', 540, 860, 60); } });
+        front: () => { hang(lt, tAazhi - tFollow + 0.35, 'FOLLOW', 540, 860, 60); hang(lt, tAazhi - tFollow - 0.1, 'AAZHI', 540, 560, 120); } });
     } });
   cue(tFollow, 'whoosh', { gain: 0.45 }); cue(tFollow + 0.7, 'thud', { gain: 0.4 }); cue(tAazhi - 0.1, 'pop', { gain: 0.45 }); cue(tAazhi + 0.35, 'pop', { gain: 0.35 }); cue(tAazhi + 0.6, 'bell', { gain: 0.3 });
 }

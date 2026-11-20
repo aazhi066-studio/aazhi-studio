@@ -1,4 +1,5 @@
 # PROGRESS
+Run 01:07 UTC 20 Nov (06:37 IST): sheet unchanged (rows 2-4 approved, IG yes), YT quota still full until >= 02:30 UTC, publish window not yet (06:30 UTC). No v15 started (11 finished videos waiting in queue). Hourly WhatsApp sent. Memory /areas/aazhi-channel.md still not reachable.
 v14 Hunt for Noses DONE + QA PASS (00:53 UTC 20 Nov): 'The War Remembered for Cut Noses | Madurai vs Mysore, 1656', 95.6 s, 1080x1920 30fps 2869 frames, -14.3 LUFS, -3.8 dBTP (same recipe), joins 24/48/72 s seamless, captions match word timings, contact sheet checked (symbolic only), facts match desc sources (OLD ACCOUNTS SAY / THEY SAY / LEGEND / SAID TO BE). Pushed videos v/v14.mp4 (88 MB). Project studio/v14-final, ART 'Ganjifa Round Cards' (41 shots: A15 B14 C12), music gen:abyss 14233 PASS. Queue position 11.
 v14 IN PROGRESS (00:40 UTC 20 Nov, same run): 'hunt for noses' Madurai vs Mysore c.1656 (Tirumala Nayak, Kanthirava Narasaraja, Hampaiya, Sethupathi 25,000, king's nose = LEGEND), studio/v14-final, script+narration 95.7 s, ART 'Ganjifa Round Cards', music gen:abyss 14233 PASS (vs v9-v13), 9 new IPA names. 3 workers drawing shots_a/b/c (stub files committed first).
 v13 Vellore Mutiny DONE + QA PASS (00:33 UTC 20 Nov): 'The Night Soldiers Rose Inside a Tamil Fort, 51 Years Before 1857', 115.7 s, 1080x1920 30fps 3471 frames, -14.2 LUFS, -4.2 dBTP (mix.wav -14.7 -> 192 kHz volume +0.8 dB + alimiter 0.60 -> AAC 192k), segment joins (29/58/87 s) seamless, captions match word timings, contact sheet checked (faceless card figures, violence only as toppling cards/flashes/smoke), facts match desc sources (ACCOUNTS SAY / RUMOUR / NOT CLEAR / approx numbers). Pushed videos v/v13.mp4 (86 MB). Project studio/v13-final, ART 'Paper Theatre' (48 shots: A16 B15 C17), music gen:ember 13469 PASS. Workers ~15 min, render 4 segments ~2.5 min. Queue position 10 (after v12).
@@ -52,3 +53,4 @@ heartbeat: 2026-11-20T00:46:17Z
 heartbeat: 2026-11-20T00:48:31Z
 heartbeat: 2026-11-20T00:52:05Z
 heartbeat: 2026-11-20T00:52:23Z (00:07 UTC run finished v13+v14; lock free)
+heartbeat: 2026-11-20T01:09:03Z (01:07 UTC run: status only, lock free)

@@ -83,3 +83,4 @@ heartbeat: 2026-11-20T14:08:29Z (14:07 UTC run = 19:38 IST: publish run, lock ta
 heartbeat: 2026-11-20T14:11:01Z (14:07 run: publishing Video 1, lock held)
 heartbeat: 2026-11-20T14:17:00Z (14:07 UTC run finished: Video 1 published YT+IG+FB; lock free)
 heartbeat: 2026-11-20T15:09:40Z (15:07 UTC run = 20:38 IST: analytics study, lock taken)
+heartbeat: 2026-11-20T15:10:05Z (15:07 UTC run finished: analytics study = too little data; lock free)

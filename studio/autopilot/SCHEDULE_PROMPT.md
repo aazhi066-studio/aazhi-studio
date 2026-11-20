@@ -2,7 +2,7 @@
 
 Autopilot, continue. FIRST read memory /areas/aazhi-channel.md (rules, voice, IPA list, sheet id, Zapier limits). The repo aazhi066-studio/aazhi-studio is attached with push access: git pull, read STATE.md and studio/autopilot/PROGRESS.md, push after every step; finished mp4s go to branch `videos` (v/<name>.mp4) and are used through https://raw.githubusercontent.com/aazhi066-studio/aazhi-studio/videos/v/<name>.mp4 (it can take up to a minute to appear; retry with ?t=N).
 
-LOCK: PROGRESS.md has "heartbeat: <UTC>" refreshed every 10 minutes; if under 25 minutes old another run is active: send only the hourly WhatsApp status and stop.
+LOCK: PROGRESS.md has "heartbeat: <UTC>" refreshed every 10 minutes; if under 25 minutes old another run is active: just stop (no Zapier calls).
 
 TOPICS: Tamil history only, dark / secret / forgotten / little-known angles (Sangam era, Pandya, Pallava, Chera, Nayak, Maratha Thanjavur, lost ports, forgotten battles, famines, mysteries, engineering, women rulers, colonial-era Tamil episodes). Legend vs record clearly labelled. Every video needs 2 checkable sources, hedged claims, no invented portraits/quotes/inscription text.
 VOICE: Kokoro af_heart speed 0.9 in IPA phoneme mode, tools/voice_ph.py + data/pronunciations.json (add IPA for every new Tamil name). Never split a name.

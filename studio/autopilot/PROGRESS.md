@@ -1,3 +1,4 @@
+Run 05:07 UTC 20 Nov (10:38 IST): idle by plan. YT quota 5/5 until 21 Nov 02:10 UTC (next: v9 Kuyili); publish only at run >= 13:30 UTC (19:00 IST, one approved video, oldest first = Video 1 Rajaraja); production paused until v10 uploaded; analytics study at first run after 20:00 IST. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
 Run 04:07 UTC 20 Nov (09:37 IST): idle by plan. YT quota 5/5 until 21 Nov 02:10 UTC (next: v9 Kuyili); publish only at run >= 13:30 UTC (19:00 IST); production paused until v10 uploaded; analytics study at first run after 20:00 IST. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
 Run 03:07 UTC 20 Nov (08:37 IST): sheet unchanged (rows 2-4 approved IG yes; rows 5-9 v4-v8 no status), YT quota 5/5 until 21 Nov 02:10 UTC, publish window not yet (06:30 UTC). No v15 started (v13+v14 already finished today = daily goal met; 6 rendered videos queued). Hourly WhatsApp sent. Memory /areas/aazhi-channel.md still not reachable.
 Run 02:07 UTC 20 Nov (07:37 IST): uploaded v4-v8 unlisted (sheet rows 5-9, WhatsApp after each). Remaining UPLOAD QUEUE: v9 Kuyili, v10 Vatapi, v11 Muziris, v12 Serfoji II, v13 Vellore 1806, v14 Hunt for Noses (upload from 21 Nov 02:10 UTC). No v15 started (6 rendered videos still waiting for quota; backlog > 1 day). Publish: Video 1 at first run >= 06:30 UTC 20 Nov, Video 2 at >= 13:30 UTC. Memory /areas/aazhi-channel.md still not reachable. Tip: get exact upload times via YouTube GET videos?part=snippet (publishedAt).
@@ -65,3 +66,4 @@ heartbeat: 2026-11-20T02:30:40Z (02:07 run finished: v4-v8 uploaded; lock free)
 heartbeat: 2026-11-20T03:07:00Z (03:07 UTC run: lock taken, status/sheet check)
 heartbeat: 2026-11-20T03:08:11Z (03:07 UTC run: status only; lock free)
 heartbeat: 2026-11-20T04:07:55Z (04:07 UTC run: idle by plan; lock free)
+heartbeat: 2026-11-20T05:08:36Z (05:07 UTC run: idle by plan; lock free)

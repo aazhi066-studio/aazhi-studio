@@ -226,8 +226,8 @@ const floorImg = () => cached('aFloor', OW, 160, 1, () => {
   ctx.fillStyle = 'rgba(0,0,0,0.4)'; ctx.fillRect(0, 0, OW, 6);
 });
 const wingImg = (v) => cut('Wing' + v, 330, 900, 165, 860, () => {
-  const fol = v === 'n' ? ['#22304A', '#2C3C5A', '#1A2640'] : ['#46643A', '#5E7E44', '#3A5430'], hb = [-200, -900, 200, 20];
-  pt(Pg([[-22, 0], [22, 0], [12, -420], [-8, -420]]), v === 'n' ? '#2E2228' : '#5A3A26', { h: 1.3, ha: 0.3, hb });
+  const fol = v === 'n' ? ['#22304A', '#2C3C5A', '#1A2640'] : v === 's' ? ['#3A1A22', '#4A2228', '#2E141A'] : ['#46643A', '#5E7E44', '#3A5430'], hb = [-200, -900, 200, 20];
+  pt(Pg([[-22, 0], [22, 0], [12, -420], [-8, -420]]), v !== 'd' ? '#2E2228' : '#5A3A26', { h: 1.3, ha: 0.3, hb });
   [[-30, -520, 110, 90], [60, -600, 90, 80], [-60, -650, 80, 70], [20, -720, 100, 80], [-10, -440, 90, 60], [80, -480, 60, 50]].forEach(([x, y, rx, ry], i) => pt(E(x, y, rx, ry), fol[i % 3], { h: 0.7 + i * 0.3, ha: 0.28, hb }));
 });
 const moonImg = () => cut('Moon', 180, 180, 90, 90, () => { pt(E(0, 0, 62, 62), C.moon, { h: 0.6, ha: 0.1, hb: [-80, -80, 80, 80], lw: 3 }); ctx.save(); E(0, 0, 62, 62)(); ctx.clip(); ctx.fillStyle = 'rgba(160,140,100,0.35)'; ctx.beginPath(); ctx.arc(26, -6, 70, 0, TAU); ctx.fill(); ctx.restore(); pt(E(-18, -14, 10, 8), '#E0CFA6', { lw: 1.5 }); pt(E(10, 20, 7, 6), '#E0CFA6', { lw: 1.5 }); }, { m: 4 });
@@ -292,7 +292,7 @@ const crowdImg = (k) => cut('Crowd' + k, 1000, 300, 500, 280, () => {
     if (i % 6 === 2) { ctx.lineWidth = 2.5; ctx.beginPath(); ctx.moveTo(x - 16 * s, -h + 30 * s); ctx.lineTo(x - 20 * s, -h - 110 * s); ctx.stroke(); pt(Pg([[x - 20 * s, -h - 110 * s], [x + 40 * s, -h - 92 * s], [x - 19 * s, -h - 70 * s]]), i % 12 === 2 ? C.ochre : '#8C2A20', { lw: 2 }); }
   }
   pt(Fn(() => { ctx.moveTo(-500, 0); ctx.lineTo(-500, -60); for (let x = -500; x <= 500; x += 50) ctx.quadraticCurveTo(x + 25, -80 - rnd(x) * 20, x + 50, -60); ctx.lineTo(500, 0); }), k ? '#3A1A12' : '#4A2418', { h: 0.4, ha: 0.3, hb });
-});
+}, { m: 2.5, edge: '#B98E66' });
 const burstImg = () => cut('Burst', 260, 260, 130, 130, () => { pt(() => star(0, 0, 110, 42, 12, 0.1), C.flash, { lw: 3 }); pt(() => star(0, 0, 60, 26, 9, 0.4), C.fl, { lw: 2 }); }, { m: 3, shadow: false });
 function burst(x, y, tt, s = 1) { if (tt < 0 || tt > 0.5) return; put(burstImg(), x, y, eob(clamp(tt / 0.12)) * s, tt * 0.6, 1 - seg(tt, 0.22, 0.5)); }
 const puffImg = () => cached('aPuff', 220, 170, 1, () => { ctx.filter = 'blur(3px)'; for (const [x, y, r, c] of [[80, 100, 52, '#CFC8BC'], [130, 90, 58, '#E8E2D6'], [100, 66, 44, '#F2EEE4'], [150, 110, 40, '#D9D2C6']]) { ctx.fillStyle = c; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); } });
@@ -388,7 +388,7 @@ function headPath() {
 }
 const headImg = () => cut('Head', 620, 820, 300, 780, () => {
   const hb = [-300, -760, 300, 20];
-  pt(Fn(() => { ctx.moveTo(-160, 0); ctx.lineTo(-150, -60); ctx.lineTo(110, -60); ctx.lineTo(120, 0); }), C.cred, { h: 0.9, ha: 0.2, hb });
+  pt(Fn(() => { ctx.moveTo(-280, 0); ctx.bezierCurveTo(-270, -80, -200, -120, -110, -124); ctx.lineTo(80, -124); ctx.bezierCurveTo(170, -120, 240, -80, 250, 0); }), C.cred, { h: 0.9, ha: 0.2, hb }); pt(Pg([[-60, -124], [40, -124], [60, -60], [0, -20], [-80, -60]]), C.ochre, { lw: 2.5 });
   pt(headPath, C.skin, { h: 0.5, ha: 0.14, hb, lw: 4 });
   pt(Fn(() => { ctx.moveTo(-205, -262); ctx.bezierCurveTo(-270, -380, -250, -600, -80, -680); ctx.bezierCurveTo(60, -740, 180, -670, 196, -570); ctx.bezierCurveTo(120, -615, 0, -610, -70, -560); ctx.bezierCurveTo(-130, -500, -150, -380, -130, -300); }), C.hair, { h: 0.3, ha: 0.25, hb, lw: 4 });
   pt(E(-24, -420, 24, 38), '#6A4229', { lw: 3 });
@@ -429,14 +429,13 @@ export function buildA(add, cue) {
     S12 = Wd('rumour', 3) - 0.06, S13 = Wd('soldiers', 3) - 0.08, S14 = L(4) - 0.08, S15 = Wd('accounts', 4) - 0.06, S16 = Wd('and', 4) - 0.1;
 
   // 1857 scene: dusk backdrop, two crowd ground rows bobbing, smoke puffs, gun flashes
-  const scene1857 = (lt, d, t) => {
-    const u = lt / Math.max(d, 1);
+  const scene1857 = (u, t) => {
     blit(bdDusk(), 0, 0, OX0 - 20 + (0.5 - u) * 10, OY0);
     for (let i = 0; i < 5; i++) { const ph = (t * 0.12 + i / 5) % 1; puff(200 + i * 170 + ph * 60, 760 - ph * 260, 0.8 + ph * 0.8, 0.45 * sin(ph * PI)); }
     blit(floorImg(), 0, 0, OX0, FLOOR - 160);
     put(crowdImg(0), 540 + (0.5 - u) * 24, 1010 + sin(t * 5) * 5, 0.92);
     put(crowdImg(1), 520 + (0.5 - u) * 44, 1130 + sin(t * 5 + 1.6) * 6, 1.12);
-    put(wingImg('n'), OX0 + 18, FLOOR - 100); put(wingImg('n'), OX1 - 18, FLOOR - 100, 1, 0, 1, -1);
+    put(wingImg('s'), OX0 + 18, FLOOR - 100); put(wingImg('s'), OX1 - 18, FLOOR - 100, 1, 0, 1, -1);
   };
 
   // a1 · the curtain rises on a dusk stage: the great revolt of 1857, a crowd of card sepoys with flags, puffs, flashes
@@ -444,7 +443,7 @@ export function buildA(add, cue) {
     const B = [[2.1, 380, 760], [2.35, 700, 720], [2.65, 520, 800], [2.9, 820, 790]];
     shot('a1', 0, 'curtain rises on a dusk paper stage: 1857 crowd ground rows with flags, cotton smoke, gun-flash starbursts', [540, 780], 0.06, (lt, d, t) => {
       stage(lt, t, { lvl: 0.6 + 0.4 * eo(seg(lt, 0, 0.8)), curt: eio(seg(lt, 0.15, 1.45)) }, () => {
-        scene1857(lt, 3.05, t);
+        scene1857(lt / d, t);
         for (const [t0, x, y] of B) burst(x, y, lt - t0, 0.6);
       });
     });
@@ -456,7 +455,7 @@ export function buildA(add, cue) {
   {
     const xs = [300, 470, 640];
     shot('a2', S2, 'book fold back 51 years: night stage pops up, three sepoy flats slide in from the left wing on rods, ILLUSTRATION card', [540, 820], 0.05, (lt, d, t) => {
-      if (lt < 0.55) { const f = 1 - eio(seg(lt, 0.05, 0.55)); stage(lt, t, { fold: f, lvl: 1 }, () => scene1857(lt + 3.05, 6, t)); return; }
+      if (lt < 0.55) { const f = 1 - eio(seg(lt, 0.05, 0.55)); stage(lt, t, { fold: f, lvl: 1 }, () => scene1857(1 + lt / (S2 - 0), t)); return; }
       const f = eob(seg(lt, 0.55, 1.05));
       stage(lt, t, { fold: f, lvl: 0.75, night: 0.08 }, () => {
         nightSet(lt, d, t, { moonP: 0.3 + 0.05 * lt / d });
@@ -527,8 +526,8 @@ export function buildA(add, cue) {
           moonP: 0.2 + 0.6 * eio(lt / d), mid: (px) => { put(fortImg(), 540 + px(16), 1090, 0.7); put(moatImg(), 540 + px(28) + sin(t * 1.5) * 10, FLOOR - 26, 0.85); },
         });
         for (let i = 0; i < 6; i++) { const ph = (t * 0.06 + i / 6) % 1; puff(OX0 + ph * OW, 640 + sin(i * 2) * 60, 1.4, 0.14 * sin(ph * PI)); }
+        bill('10 JULY 1806', 540, 400, lt - tc, 1.15);
       });
-      ctx.save(); ctx.beginPath(); ctx.rect(OX0, OY0, OW, FLOOR - OY0); ctx.clip(); bill('10 JULY 1806', 540, 400, lt - tc, 1.15); ctx.restore();
     });
     cue(S6 + 0.1, 'swell', { gain: 0.3, dur: 1.5 }); cue(S6 + tc + 0.35, 'plop', { gain: 0.45 }); cue(Wd('eighteen', 1), 'bell', { gain: 0.3 });
   }
@@ -622,7 +621,7 @@ export function buildA(add, cue) {
 
   // a12 · rumour: a giant hat, RUMOUR card, cotton-wool whispers drift in, the iris closes on the badge; two animal flats slide in
   {
-    const tB = Wd('badge', 3) - 0.1 - S12, tL = Wd('leather', 3) - S12, tA = Wd('animals', 3) - 0.15 - S12;
+    const tB = Wd('badge', 3) - 0.1 - S12, tL = Wd('leather', 3) - S12, tA = Wd('from', 3) - 0.3 - S12;
     shot('a12', S12, 'giant new hat on a dark drop, RUMOUR card, cotton whisper puffs drift in, iris closes on the badge; cow and pig flats slide in', [540, 760], 0.06, (lt, d, t) => {
       stage(lt, t, { lvl: 0.55 }, () => {
         plainSet(lt, d);
@@ -630,7 +629,7 @@ export function buildA(add, cue) {
         put(hatImg('N'), hx, hy, s, sin(t * 1.2) * 0.012);
         for (let i = 0; i < 6; i++) { const side = i % 2 ? 1 : -1, ph = clamp((lt - i * 0.12) / 2.2); puff(540 + side * lerp(520, 200, eo(ph)), 560 + i * 60 + sin(t * 2 + i) * 14, 0.7 + ph * 0.4, 0.5 * sin(ph * PI)); }
         if (lt > tL) { const g = 0.5 + 0.5 * sin((lt - tL) * 10); ctx.strokeStyle = `rgba(255,214,140,${0.5 * g})`; ctx.lineWidth = 6; ctx.beginPath(); ctx.arc(bxy[0], bxy[1], 13 * s + 10 + g * 6, 0, TAU); ctx.stroke(); }
-        iris(bxy[0], bxy[1], lerp(600, 165, eio(seg(lt, tB, tB + 0.5))), 0.86);
+        iris(bxy[0], bxy[1] + 40, lerp(620, 280, eio(seg(lt, tB, tB + 0.5))), 0.8);
         if (lt > tA) {
           const [cx, cw] = slide(lt, tA, 0.5, OX0 - 260, 280), [qx, qw] = slide(lt, tA + 0.12, 0.5, OX1 + 220, 800);
           ctx.save(); ctx.globalCompositeOperation = 'lighter'; blit(glowImg(), 120, 120, cx, 1150, 2.4, 0.3); blit(glowImg(), 120, 120, qx, 1160, 2.1, 0.3); ctx.restore();
@@ -668,7 +667,7 @@ export function buildA(add, cue) {
       const c = eio(seg(lt, tP - 0.1, tP + 0.4));
       stage(lt, t, { lvl: lerp(0.6, 0.3, c), night: lerp(0.05, 0.35, c) }, () => {
         daySet(lt, d);
-        xs.forEach((x, i) => { put(fig('sep'), x, 1196, 1, sin(t * 2 + i) * 0.008); put(hatImg('N'), x + 60, 1214, 1.2, 1.35 + i * 0.3); });
+        xs.forEach((x, i) => { put(fig('sep'), x, 1196, 1, sin(t * 2 + i) * 0.008); put(hatImg('N'), x + 74, 1206, 1.05, 0.22 + i * 0.12); });
         const [ox, wob] = slide(lt, 0.15, 0.6, OX1 + 220, 800);
         rod(ox + 60, 1190, 1); put(fig('off'), ox, 1196, 1.06, wob, 1, -1);
         if (c > 0) { const g = ctx.createRadialGradient(390, 860, 60, 390, 860, 420); g.addColorStop(0, `rgba(190,210,255,${0.18 * c})`); g.addColorStop(1, 'rgba(190,210,255,0)'); ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.fillStyle = g; ctx.fillRect(OX0, OY0, OW, 1000); ctx.restore(); }
@@ -679,13 +678,13 @@ export function buildA(add, cue) {
 
   // a15 · accounts say two were flogged: ACCOUNTS SAY card, two sepoys in a narrowing spot, a cord swish and a paper crack-burst
   {
-    const tF = Wd('flogged', 4) - S15, xs = [440, 610];
+    const tF = Wd('flogged', 4) - S15, xs = [380, 670];
     shot('a15', S15, 'ACCOUNTS SAY card; two bowed sepoy flats in a narrowing limelight; a cord swishes in from the wing, paper crack-burst, the flats jolt', [530, 780], 0.08, (lt, d, t) => {
       stage(lt, t, { lvl: 0.4, night: 0.15 }, () => {
         plainSet(lt, d);
         const jolt = lt > tF ? sin((lt - tF) * 30) * Math.exp(-(lt - tF) * 5) * 0.06 : 0;
-        xs.forEach((x, i) => { rod(x - 50, 1188, -1); put(fig('sepBare'), x, 1196, 1.3, -0.035 + jolt * (i ? -1 : 1)); put(hatImg('O'), x - 0.035 * 414 * 1.3, 1196 - 414 * 1.3, 1.3, -0.035 + jolt); });
-        iris(525, 850, lerp(560, 330, eio(seg(lt, 0.6, 1.1))), 0.88);
+        xs.forEach((x, i) => { const r = -0.035 + jolt * (i ? -1 : 1); rod(x - 50, 1188, -1); put(fig('sepBare'), x, 1196, 1.3, r); put(hatImg('O'), x + 414 * 1.3 * sin(r), 1196 - 414 * 1.3 * cos(r), 1.3, r); });
+        iris(525, 850, lerp(620, 430, eio(seg(lt, 0.6, 1.1))), 0.88);
         const w = seg(lt, tF - 0.18, tF + 0.05);
         if (w > 0 && lt < tF + 0.45) {
           const a = 1 - seg(lt, tF + 0.15, tF + 0.45), tx = lerp(OX1 + 40, 700, eo(w)), ty = lerp(500, 760, eo(w));
@@ -700,7 +699,7 @@ export function buildA(add, cue) {
 
   // a16 · thrown out: the two flats are yanked off into the left wing on their rods, their hats drop and stay; half-drop curtain
   {
-    const xs = [440, 610];
+    const xs = [380, 670];
     shot('a16', S16, 'the two sepoy flats are yanked off into the left wing on their rods, hats drop to the empty stage, half-drop curtain falls', [540, 760], 0.06, (lt, d, t) => {
       const cd = eio(seg(lt, 1.5, 2.3));
       stage(lt, t, { lvl: lerp(0.45, 0.25, cd), night: 0.15, curt: 1 - 0.5 * cd, sway: 0.6 }, () => {
@@ -708,10 +707,10 @@ export function buildA(add, cue) {
         xs.forEach((x0, i) => {
           const p = eio(seg(lt, 0.25 + i * 0.06, 0.85 + i * 0.06)), x = lerp(x0, OX0 - 320, p), rot = -0.035 + p * -0.2 + (p > 0 && p < 1 ? sin(p * PI) * 0.1 : 0);
           rod(x - 50, 1188, -1); put(fig('sepBare'), x, 1196, 1.3, rot);
-          const hp = seg(lt, 0.25 + i * 0.06, 0.75 + i * 0.06), hx = x0 - 18 + hp * 40 * (i ? 1 : -1), hy = lerp(1196 - 414 * 1.3, 1210, hp * hp), hr = -0.035 + hp * (i ? 1.4 : -1.2);
+          const hp = seg(lt, 0.25 + i * 0.06, 0.75 + i * 0.06), hx = x0 - 18 + hp * 40 * (i ? 1 : -1), hy = lerp(1196 - 414 * 1.3, 1204, hp * hp), hr = -0.035 + hp * (i ? 0.35 : -0.3);
           put(hatImg('O'), hx, hy, 1.3, hr);
         });
-        iris(525, 850, lerp(330, 470, eo(seg(lt, 0.6, 1.4))), 0.86);
+        iris(525, 850, lerp(430, 520, eo(seg(lt, 0.6, 1.4))), 0.86);
       });
     });
     cue(S16 + 0.25, 'whoosh', { gain: 0.55, pan: -0.6 }); cue(S16 + 0.72, 'thud', { gain: 0.35 }); cue(S16 + 0.8, 'tock', { gain: 0.3 }); cue(S16 + 1.5, 'whoosh', { gain: 0.35, dur: 0.8 });

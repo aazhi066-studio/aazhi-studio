@@ -35,3 +35,4 @@ Scheduled task: hourly at :07 IST, lock via heartbeat line
 Approval sheet: 'AAZHI Approvals' id 1PeKpfx2zq7oCEoTtotyLLU-J3krC_T18zjU26NiKrCU https://docs.google.com/spreadsheets/d/1PeKpfx2zq7oCEoTtotyLLU-J3krC_T18zjU26NiKrCU/edit (read Status/Instagram columns before upload/post; Google Sheets default connection set)
 VOICE (user approved 2026-11-18): Kokoro voice af_heart, speed 0.9, phoneme mode. Narration is built as IPA: English text via tokenizer.phonemize, Tamil names via data/pronunciations.json (kokoro_onnx create(..., is_phonemes=True), words never split, single pass). Add every new Tamil name to the list. Channel name spoken "Aali". Captions keep English spelling. Install: pip install kokoro-onnx; models in ~/.faceless-shorts/kokoro (GitHub release files).
 heartbeat: 2026-11-19 23:36 UTC (scheduled run 23:07 finished v12; lock free)
+heartbeat: 2026-11-20T00:08:18Z (scheduled run 00:07 UTC 20 Nov, v13 starting)

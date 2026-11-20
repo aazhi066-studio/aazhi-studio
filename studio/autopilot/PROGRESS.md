@@ -78,3 +78,4 @@ heartbeat: 2026-11-20T10:08:00Z (10:07 UTC run: idle by plan - quota full till 2
 heartbeat: 2026-11-20T11:08:47Z (11:07 UTC run: idle by plan - quota full till 21 Nov 02:10 UTC, production paused, publish at 19:00 IST run; lock free)
 heartbeat: 2026-11-20T12:09:55Z (12:07 UTC run: idle by plan - quota full till 21 Nov 02:10 UTC, production paused, publish at 19:00 IST run; lock free)
 heartbeat: 2026-11-20T13:09:57Z (13:07 UTC run: idle by plan - 18:39 IST is before the 19:00 IST publish window, quota full till 21 Nov 02:10 UTC, production paused; lock free)
+heartbeat: 2026-11-20T14:08:29Z (14:07 UTC run = 19:38 IST: publish run, lock taken)

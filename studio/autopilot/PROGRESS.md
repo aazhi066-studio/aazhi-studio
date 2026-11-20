@@ -87,3 +87,4 @@ heartbeat: 2026-11-20T15:10:05Z (15:07 UTC run finished: analytics study = too l
 heartbeat: 2026-11-20T16:08:38Z (16:07 UTC run = 21:38 IST: idle by plan - quota full till 21 Nov 02:10 UTC, publish + analytics already done today, production paused; lock free)
 heartbeat: 2026-11-20T17:07:52Z (17:07 UTC run = 22:37 IST: idle by plan - quota full till 21 Nov 02:10 UTC, publish + analytics done today, production paused; lock free)
 heartbeat: 2026-11-20T18:07:35Z (18:07 UTC run = 23:37 IST: idle by plan - quota full till 21 Nov 02:10 UTC, publish + analytics done today, production paused; lock free)
+heartbeat: 2026-11-20T19:07:26Z (19:07 UTC run = 00:37 IST 21 Nov: idle by plan - quota full till 21 Nov 02:10 UTC (next upload v9 Kuyili), publish only at run >= 13:30 UTC 21 Nov (Video 2 Gangaikonda), analytics at first run after 20:00 IST, production paused; lock free)

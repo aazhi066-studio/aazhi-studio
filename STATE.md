@@ -5,4 +5,5 @@
 - studio/ep1-rajaraja: finished episode 1 sources (rendered MP4s are not stored here)
 - Video hosting: push the finished mp4 to branch "videos" (force-push, one folder, delete after upload); public URL https://raw.githubusercontent.com/aazhi066-studio/aazhi-studio/videos/<name>.mp4 (tested raw URLs return 200)
 - Exact upload times + quota: see top of studio/autopilot/PROGRESS.md (UPLOAD LOG).
+Run 13:07 UTC 20 Nov (18:39 IST): idle by plan. Before 19:00 IST publish window (next run 14:07 UTC = 19:37 IST publishes Video 1 Rajaraja, oldest approved); YT quota 5/5 until 21 Nov 02:10 UTC; production paused until v10 uploaded. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
 Run 10:07 UTC 20 Nov (15:37 IST): idle by plan. YT quota 5/5 until 21 Nov 02:10 UTC (next: v9 Kuyili); publish only at run >= 13:30 UTC (19:00 IST, one approved video, oldest first = Video 1 Rajaraja); production paused until v10 uploaded; analytics study at first run after 20:00 IST. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.

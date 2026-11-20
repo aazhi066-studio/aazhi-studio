@@ -1,0 +1,110 @@
+{
+ "duration": 115.723,
+ "lines": [
+  {
+   "text": "Fifty one years before the great revolt of eighteen fifty seven, Indian soldiers rose against the British inside a Tamil fort.",
+   "caps": "*51 years | before | the revolt | of *1857 | Indian *soldiers | *rose | inside | a *Tamil fort.",
+   "start": 0.6,
+   "end": 8.814,
+   "i": 0
+  },
+  {
+   "text": "The fort was Vellore. The night was the tenth of July, eighteen oh six.",
+   "caps": "the fort | was *Vellore | the *night | was *10 July | *1806.",
+   "start": 9.514,
+   "end": 14.011,
+   "i": 1
+  },
+  {
+   "text": "It began with a uniform. In eighteen oh five, new orders for the Company's sepoys banned marks on the forehead, and told them to shave their beards.",
+   "caps": "it began | with a *uniform | in *1805 | new *orders | for the *sepoys | *no marks | on the *forehead | *shave | the *beards.",
+   "start": 14.611,
+   "end": 23.825,
+   "i": 2
+  },
+  {
+   "text": "Then came a new round hat. Rumour said its badge was made of leather from animals the soldiers would never touch.",
+   "caps": "then | a new *round hat | *rumour said | its *badge | was *leather | from animals | they would | *never touch.",
+   "start": 24.425,
+   "end": 31.351,
+   "i": 3
+  },
+  {
+   "text": "Men who refused were punished. Accounts say two of them were flogged and thrown out of the army.",
+   "caps": "men who *refused | were *punished | accounts say | two were | *flogged | and thrown *out.",
+   "start": 31.95,
+   "end": 37.556,
+   "i": 4
+  },
+  {
+   "text": "Inside the same fort lived the family of Tipu Sultan, held there since his death in seventeen ninety nine.",
+   "caps": "inside | the same fort | the *family | of *Tipu Sultan | *held there | since *1799.",
+   "start": 38.256,
+   "end": 44.902,
+   "i": 5
+  },
+  {
+   "text": "The day before, one of his daughters was married, and many guests came into the fort.",
+   "caps": "the day | *before | one of his | *daughters | was *married | many *guests | came in.",
+   "start": 45.502,
+   "end": 50.209,
+   "i": 6
+  },
+  {
+   "text": "A little after two in the morning, the sepoys struck. Many British soldiers of the sixty ninth regiment were killed as they slept.",
+   "caps": "after *2 AM | the sepoys | *struck | British soldiers | of the *69th | *killed | as they *slept.",
+   "start": 50.809,
+   "end": 58.618,
+   "i": 7
+  },
+  {
+   "text": "Accounts count fourteen officers and about a hundred and fifteen men dead. The flag of Mysore was raised over the fort.",
+   "caps": "*14 officers | about *115 | men *dead | the flag | of *Mysore | was *raised.",
+   "start": 59.218,
+   "end": 66.55,
+   "i": 8
+  },
+  {
+   "text": "But word got out, and reached the British cavalry at Arcot, about twenty five kilometres away.",
+   "caps": "but *word | got *out | it reached | *Arcot | about *25 km | *away.",
+   "start": 67.25,
+   "end": 73.024,
+   "i": 9
+  },
+  {
+   "text": "Colonel Rollo Gillespie rode ahead with a few horsemen. Then the guns came, and blasted open the gate.",
+   "caps": "Colonel | *Rollo Gillespie | rode *ahead | then | the *guns came | *blasted | open the *gate.",
+   "start": 73.624,
+   "end": 80.108,
+   "i": 10
+  },
+  {
+   "text": "Within hours, the rising was crushed. Around three hundred and fifty sepoys were killed. About a hundred are said to have been shot without trial.",
+   "caps": "within *hours | it was *crushed | around *350 | sepoys *killed | about *100 | said to be | shot without *trial.",
+   "start": 80.708,
+   "end": 89.443,
+   "i": 11
+  },
+  {
+   "text": "After trials, some were tied to cannon and blown away. Others were shot or hanged. And the new dress orders were withdrawn.",
+   "caps": "after *trials | some | *blown from cannon | others | *shot | or *hanged | the dress orders | *withdrawn.",
+   "start": 90.143,
+   "end": 97.589,
+   "i": 12
+  },
+  {
+   "text": "The Governor of Madras and the army chief were recalled. Tipu's family was sent to Calcutta. Whether they planned the rising is still not clear.",
+   "caps": "the *Governor | and army *chief | *recalled | Tipu's family | sent to *Calcutta | did they *plan it | still *not clear.",
+   "start": 98.189,
+   "end": 106.802,
+   "i": 13
+  },
+  {
+   "text": "The fort still stands. Its night of rebellion, half a century early, is mostly forgotten. Follow Aazhi for more.",
+   "caps": "the fort | still *stands | its night | of *rebellion | half a century | *early | mostly *forgotten | follow *Aazhi.",
+   "start": 107.502,
+   "end": 114.723,
+   "i": 14
+  }
+ ]
+}

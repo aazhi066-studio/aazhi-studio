@@ -11,3 +11,7 @@
 - Public videos: 2 (Video 1, Video 2); total views 2.
 - Verdict: TOO LITTLE DATA (< 3 public videos, < 500 views). Nothing changed: topics, hooks, length, pacing, captions and publish time (19:36 IST) stay.
 - Next study: first run after 20:00 IST on 22 Nov (15:07 UTC), and before starting v15.
+
+## Pre-v15 check 2026-11-21 19:15 UTC (00:45 IST 22 Nov), Windsor.ai YouTube (1 call, last_30dT per-video)
+- Rows: 2 (Video 1 Rajaraja 1 view, Video 2 Gangaikonda 1 view; avg view 60 s each; 0 subs/likes/comments). Analytics lag 2-3 days.
+- Verdict: TOO LITTLE DATA. Nothing big changed; v15 follows the 21 Nov RETENTION RULES (hook lock, 45-65 s, dark/contested topic, end question).

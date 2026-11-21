@@ -138,3 +138,5 @@ heartbeat: 2026-11-21T19:18:40Z (v15 shots_c done)
 heartbeat: 2026-11-21T19:19:35Z (v15 shots_a done; waiting for shots_b)
 heartbeat: 2026-11-21T19:21:10Z (v15 shots merged, CHECK OK, mix built, rendering 4 segments)
 heartbeat: 2026-11-21T19:22:37Z (v15 done + pushed to videos; lock free)
+v16 IN PROGRESS (19:30 UTC run 21 Nov): Nandi Kalambakam curse-poem legend vs record (Pallava Nandivarman III), studio/v16-final, script+narration 58.9 s (164 words, hook 'Can a poem kill a king?'), ART 'Soot-Etched Palm Leaves', music gen:tide 16249, 5 new IPA names. 3 workers drawing shots_a/b/c (stubs committed).
+heartbeat: 2026-11-21T19:24:28Z (v16 workers starting)

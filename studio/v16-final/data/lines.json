@@ -1,0 +1,75 @@
+{
+ "duration": 58.884,
+ "lines": [
+  {
+   "text": "Can a poem kill a king?",
+   "caps": "can a *poem | kill a *king?",
+   "start": 0.15,
+   "end": 1.491,
+   "i": 0
+  },
+  {
+   "text": "A Tamil legend says one did. The king was the Pallava ruler Nandivarman the Third, in the eight hundreds.",
+   "caps": "a Tamil *legend | says one *did | the *Pallava | *Nandivarman | the *Third | 800s *CE.",
+   "start": 1.841,
+   "end": 8.915,
+   "i": 1
+  },
+  {
+   "text": "His half brothers, the story goes, fought him for the throne, and lost.",
+   "caps": "his half *brothers | the *story goes | *fought him | and *lost.",
+   "start": 9.365,
+   "end": 13.351,
+   "i": 2
+  },
+  {
+   "text": "So one of them turned to words.",
+   "caps": "so one | turned to *words.",
+   "start": 13.801,
+   "end": 15.404,
+   "i": 3
+  },
+  {
+   "text": "He wrote a poem praising the king, the Nandi Kalambakam, but hid a curse inside its verses, called aram.",
+   "caps": "a *poem | praising the *king | *Nandi | *Kalambakam | a *curse | inside | called *aram.",
+   "start": 15.854,
+   "end": 22.448,
+   "i": 4
+  },
+  {
+   "text": "The king loved poetry. The legend says he sat to hear it under a row of pavilions.",
+   "caps": "he *loved | poetry | the *legend says | a row of | *pavilions.",
+   "start": 22.898,
+   "end": 28.181,
+   "i": 5
+  },
+  {
+   "text": "With every verse, a pavilion caught fire. He moved to the next, and the next.",
+   "caps": "every *verse | a pavilion | caught *fire | the *next | and the *next.",
+   "start": 28.631,
+   "end": 33.137,
+   "i": 6
+  },
+  {
+   "text": "When the last verse ended, the story says, the king burned with it.",
+   "caps": "the *last verse | the story *says | the king | *burned.",
+   "start": 33.587,
+   "end": 37.269,
+   "i": 7
+  },
+  {
+   "text": "Now the record. The poem is real, and praises a real Nandivarman, victor at Tellaru. But no inscription tells of a cursed death, and scholars doubt a brother wrote it.",
+   "caps": "now the *record | the poem | is *real | victor at *Tellaru | no *inscription | a *cursed death? | scholars *doubt | a brother *wrote it.",
+   "start": 37.819,
+   "end": 49.294,
+   "i": 8
+  },
+  {
+   "text": "Murder by poetry, or a story to explain how a king died? Tell me below. Then look again: the poem survived. The king did not.",
+   "caps": "murder by *poetry? | or a *story? | tell me *below | look *again | the poem *survived | the king | did *not.",
+   "start": 49.794,
+   "end": 58.084,
+   "i": 9
+  }
+ ]
+}

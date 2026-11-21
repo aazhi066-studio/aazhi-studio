@@ -1,0 +1,61 @@
+{
+ "title": "The Poem That Killed a King? | Nandi Kalambakam Curse #shorts",
+ "voice": "af_heart",
+ "speed": 0.9,
+ "lead": 0.15,
+ "outro": 0.5,
+ "music": "gen:tide",
+ "music_seed": 16249,
+ "lines": [
+  {
+   "text": "Can a poem kill a king?",
+   "caps": "can a *poem | kill a *king?",
+   "gap": 0.35
+  },
+  {
+   "text": "A Tamil legend says one did. The king was the Pallava ruler Nandivarman the Third, in the eight hundreds.",
+   "caps": "a Tamil *legend | says one *did | the *Pallava | *Nandivarman | the *Third | 800s *CE.",
+   "gap": 0.45
+  },
+  {
+   "text": "His half brothers, the story goes, fought him for the throne, and lost.",
+   "caps": "his half *brothers | the *story goes | *fought him | and *lost.",
+   "gap": 0.45
+  },
+  {
+   "text": "So one of them turned to words.",
+   "caps": "so one | turned to *words.",
+   "gap": 0.45
+  },
+  {
+   "text": "He wrote a poem praising the king, the Nandi Kalambakam, but hid a curse inside its verses, called aram.",
+   "caps": "a *poem | praising the *king | *Nandi | *Kalambakam | a *curse | inside | called *aram.",
+   "gap": 0.45
+  },
+  {
+   "text": "The king loved poetry. The legend says he sat to hear it under a row of pavilions.",
+   "caps": "he *loved | poetry | the *legend says | a row of | *pavilions.",
+   "gap": 0.45
+  },
+  {
+   "text": "With every verse, a pavilion caught fire. He moved to the next, and the next.",
+   "caps": "every *verse | a pavilion | caught *fire | the *next | and the *next.",
+   "gap": 0.45
+  },
+  {
+   "text": "When the last verse ended, the story says, the king burned with it.",
+   "caps": "the *last verse | the story *says | the king | *burned.",
+   "gap": 0.55
+  },
+  {
+   "text": "Now the record. The poem is real, and praises a real Nandivarman, victor at Tellaru. But no inscription tells of a cursed death, and scholars doubt a brother wrote it.",
+   "caps": "now the *record | the poem | is *real | victor at *Tellaru | no *inscription | a *cursed death? | scholars *doubt | a brother *wrote it.",
+   "gap": 0.5
+  },
+  {
+   "text": "Murder by poetry, or a story to explain how a king died? Tell me below. Then look again: the poem survived. The king did not.",
+   "caps": "murder by *poetry? | or a *story? | tell me *below | look *again | the poem *survived | the king | did *not.",
+   "gap": 0.3
+  }
+ ]
+}

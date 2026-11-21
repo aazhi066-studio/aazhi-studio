@@ -1,4 +1,5 @@
 Run 13:07 UTC 21 Nov (18:37 IST): idle by plan (before 19:00 IST publish window). Next run 14:07 UTC publishes Video 2 Gangaikonda; analytics at first run >= 14:30 UTC; upload v10 Vatapi at first run >= 18:30 UTC; production paused until v10 uploaded. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
+PUBLISH IN PROGRESS 21 Nov 14:1x UTC Video 2 Gangaikonda: YT fF8fHqk3-vc PUBLIC (PUT 200), FB Page video 1162639736240561 OK, IG 1st try errored "still processing (180)" -> retrying.
 Run 12:07 UTC 21 Nov (17:37 IST): idle by plan. v9 uploaded today (1/5 rolling); next upload v10 Vatapi at first run >= 18:30 UTC 21 Nov; publish Video 2 Gangaikonda at first run >= 13:30 UTC 21 Nov; analytics at first run >= 14:30 UTC; production paused until v10 uploaded. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
 Run 11:07 UTC 21 Nov (16:37 IST): idle by plan. v9 uploaded today (1/5 rolling); next upload v10 Vatapi at first run >= 18:30 UTC 21 Nov; publish Video 2 Gangaikonda at first run >= 13:30 UTC 21 Nov; analytics at first run >= 14:30 UTC; production paused until v10 uploaded. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
 Run 09:07 UTC 21 Nov (14:37 IST): idle by plan. v9 uploaded today (1/5 rolling); next upload v10 Vatapi at first run >= 18:30 UTC 21 Nov; publish Video 2 Gangaikonda at first run >= 13:30 UTC 21 Nov; analytics at first run >= 14:30 UTC; production paused until v10 uploaded. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
@@ -114,3 +115,4 @@ heartbeat: 2026-11-21T11:07:58Z (11:07 UTC run = 16:37 IST 21 Nov: idle by plan;
 heartbeat: 2026-11-21T12:08:00Z (12:07 UTC run = 17:37 IST 21 Nov: idle by plan; no Zapier calls; lock free)
 heartbeat: 2026-11-21T13:08:01Z (13:07 UTC run = 18:37 IST 21 Nov: idle by plan; no Zapier calls; lock free)
 heartbeat: 2026-11-21T14:08:25Z (14:07 UTC run = 19:37 IST 21 Nov: PUBLISH run for Video 2 Gangaikonda starting; lock TAKEN)
+heartbeat: 2026-11-21T14:09:51Z (14:07 UTC run: publishing Video 2; lock TAKEN)

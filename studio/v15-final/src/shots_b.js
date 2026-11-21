@@ -312,16 +312,16 @@ export function buildB(add, cue) {
   cue(tPun, 'slam', { gain: 0.3 });
 
   // b3 ─ THE crown floats across the darkness, the lamp carrying it
-  add({ id: 'b3', at: T5, cam: [540, 700], zoom: 0.08, note: 'the crown floats across the dark corridor',
+  add({ id: 'b3', at: T5, cam: [540, 800], zoom: 0.08, note: 'the crown floats across the dark corridor',
     draw(lt, d, t) {
       const p = lt / d, scroll = lt * 260;
       blit(wallImg(), 0, 0, 0, 0);
-      const cx = lerp(170, 900, eio(p)), cy = 700 + Math.sin(lt * 2.6) * 30, rot = Math.sin(lt * 1.9) * 0.12;
+      const cx = lerp(220, 860, eio(p)), cy = 840 + Math.sin(lt * 2.6) * 30, rot = Math.sin(lt * 1.9) * 0.12;
       const fx = cx - 170, fy = cy + 260;
       warm(fx, fy, 560, 0.4 * flick(t));
       // crown's own shadow on the wall
       ctx.save(); ctx.translate(cx + (cx - fx) * 0.35, cy + 40); ctx.rotate(rot); blit(crownSil(), 80, 205, 0, 0, 2.3, 0.55); ctx.restore();
-      for (let k = 0; k < 3; k++) { const px = ((k * 520 - scroll) % 1560 + 1560) % 1560 - 240; blit(pillarImg(), 100, 1300, px, 1300, 1.0, 0.8); }
+      for (let k = 0; k < 3; k++) { const px = ((k * 520 - scroll) % 1560 + 1560) % 1560 - 240; blit(pillarImg(), 100, 1300, px, 1300, 1.0, 0.4); }
       crown(cx, cy, 1.9, rot, 0.6 + 0.4 * Math.sin(t * 6));
       // red thread trailing the crown back into darkness
       thread(cx - 60, cy - 30, cx - 700, cy + 120, 120, 1, 4);
@@ -356,14 +356,14 @@ export function buildB(add, cue) {
   add({ id: 'b5', at: tNot, cam: [700, 760], zoom: 0.08, note: 'younger brother stays dark at the side; red thread dangles',
     draw(lt, d, t) {
       blit(wallImg(), 0, 0, 0, 0);
-      const fx = lerp(480, 170, eio(lt / d)), fy = 820 + Math.sin(lt * 2) * 20;
+      const fx = lerp(600, 110, eio(lt / d)), fy = 620 + Math.sin(lt * 2) * 20;
       warm(fx, fy, 520, 0.42 * flick(t));
       const ux = 320, yx = 900, s = 1.02;
       wallShadow(figImg('u', 'S'), 250, 740, ux, 1250, s, fx, 0.7);
       figure('u', ux, 1250, s, fx); crown(ux, 1250 + HEADTOP.u * s, 0.64, 0, 0.6);
       figure('y', yx, 1250, s * 0.98, fx);
       oilLamp(fx, fy, 0.55, t, 5);
-      dark(fx + 40, fy - 80, 520);
+      dark(fx + 60, fy + 120, 560);
       // the passed-over brother: only a faint ghost edge survives the dark
       blit(figImg('y', 'L'), 250, 740, yx, 1250, s * 0.98, 0.12 + 0.05 * Math.sin(t * 3));
       const sw = Math.sin(lt * 2.2) * 30, ex = yx - 60 + sw, ey = 760 + Math.sin(lt * 1.7) * 14;
@@ -423,13 +423,13 @@ export function buildB(add, cue) {
       const p = eio(clamp(lt / d)), fx = lerp(330, 760, p), fy = lerp(1160, 820, p);
       warm(fx, fy, 640, 0.42 * flick(t));
       blit(templeImg(), 0, 0, 0, 0);
-      ctx.save(); ctx.globalAlpha = 0.6; ctx.fillStyle = '#000'; ctx.fillRect(240 + (540 - fx) * 0.08, 400, 640, 820); ctx.restore();
-      blit(slabImg(), SLAB_W / 2, SLAB_H, 540, 1190, 0.98);
+      ctx.save(); ctx.globalAlpha = 0.6; ctx.fillStyle = '#000'; ctx.fillRect(250 + (540 - fx) * 0.08, 480, 600, 760); ctx.restore();
+      blit(slabImg(), SLAB_W / 2, SLAB_H, 540, 1235, 0.92);
       oilLamp(fx, fy, 0.6, t, 8);
       smoke(fx, fy - 50, t, 5, '235,210,170', 0.07, 50, 300);
       dark(lerp(fx, 540, 0.4), lerp(fy, 760, 0.5), 820);
       molten('UDAIYARKUDI', 540, 205, 104, t, tUdai);
-      molten('INSCRIPTION', 540, 310, 60, t, tUdai + 0.3);
+      molten('INSCRIPTION', 540, 310, 60, t, tInsc + 0.1);
       ash(t, 8);
     } });
 

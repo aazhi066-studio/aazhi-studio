@@ -102,5 +102,5 @@ heartbeat: 2026-11-21T02:07:34Z (02:07 UTC run = 07:37 IST 21 Nov: lock taken, u
 heartbeat: 2026-11-21T05:08:13Z (05:07 UTC run = 10:37 IST 21 Nov: lock taken; 02:07 run stalled after lock with no upload logged - verifying v9 before upload)
 heartbeat: 2026-11-21T05:09:49Z (05:07 UTC run finished: v9 Kuyili uploaded Q0XknUMpU8Q + sheet row 10 + WhatsApp; lock free)
 heartbeat: 2026-11-21T06:08:08Z (06:07 UTC run = 11:37 IST 21 Nov: idle by plan; no Zapier calls; lock free)
-heartbeat: 2026-11-21T08:06:57Z (08:07 UTC run = 13:37 IST 21 Nov: idle by plan; no Zapier calls; lock free)
 heartbeat: 2026-11-21T07:07:47Z (07:07 UTC run = 12:37 IST 21 Nov: idle by plan - v9 uploaded today, next upload v10 Vatapi at first run >= 18:30 UTC, publish Video 2 Gangaikonda at run >= 13:30 UTC, analytics >= 14:30 UTC, production paused; no Zapier calls; lock free)
+heartbeat: 2026-11-21T08:06:57Z (08:07 UTC run = 13:37 IST 21 Nov: idle by plan; no Zapier calls; lock free)

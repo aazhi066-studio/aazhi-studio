@@ -275,12 +275,12 @@ export function buildA(add, cue) {
 
   // a1 · 0 → "prince": lamp flame jerks across a black corridor, the crown lies tipped on the stone floor in the lamp pool
   cue(0, 'slam', { gain: 1 }); cue(0, 'heartbeat', { gain: 0.9 }); cue(Wd('murdered', 0), 'heartbeat', { gain: 0.7 }); cue(0.05, 'rumble', { gain: 0.5, dur: 1.2 });
-  add({ id: 'a1', at: 0, cam: [560, 1080], zoom: 0.34, note: 'lamp jerks across black corridor; THE crown tipped on the floor; red flash at 0',
+  add({ id: 'a1', at: 0, cam: [600, 1080], zoom: 0.34, note: 'lamp jerks across black corridor; THE crown tipped on the floor; red flash at 0',
     draw(lt, d, t) {
       const k = eo(seg(lt, 0, 0.55)), lx = lerp(-60, 700, k) + 30 * sin(lt * 31) * (1 - k), ly = 1010 + 40 * sin(lt * 9) - 60 * k;
       bg(CORR(), -60 * lt);
-      ctx.fillStyle = 'rgba(0,0,0,0.6)'; ctx.beginPath(); ctx.ellipse(560, 1172, 230, 30, 0, 0, TAU); ctx.fill();
-      crown(560, 1150, 1.45, -1.38 + 0.03 * sin(lt * 4), 0.6); // tipped on its side
+      ctx.fillStyle = 'rgba(0,0,0,0.6)'; ctx.beginPath(); ctx.ellipse(680, 1172, 230, 30, 0, 0, TAU); ctx.fill();
+      crown(680, 1150, 1.45, -1.38 + 0.03 * sin(lt * 4), 0.6); // tipped on its side
       warm(lx, ly, 620, 0.32);
       lampMask(lx, ly, 560 * fl(t));
       oilLamp(lx - 44, ly, t, 1.1);

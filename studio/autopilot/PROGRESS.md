@@ -133,3 +133,4 @@ v15 IN PROGRESS (19:07 UTC run 21 Nov): Aditya Karikalan murder c.969 (Udaiyarku
 heartbeat: 2026-11-21T19:12:49Z (v15 workers starting)
 heartbeat: 2026-11-21T19:14:31Z (v15 line 4 hedged 'it seems', narration 51.5 s; desc.txt written; workers drawing)
 heartbeat: 2026-11-21T19:18:40Z (v15 shots_c done)
+heartbeat: 2026-11-21T19:19:35Z (v15 shots_a done; waiting for shots_b)

@@ -1,3 +1,4 @@
+Run 20:07 UTC 21 Nov (01:37 IST 22 Nov): idle by plan. IST 22 Nov already has its upload (v10 Vatapi 19:08 UTC) and 2 finished videos (v15, v16). Next: publish Video 3 Srivijaya at first run >= 13:30 UTC 22 Nov; analytics at first run >= 14:30 UTC 22 Nov; upload v11 Muziris + start v17 at first run >= 18:30 UTC 22 Nov. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
 Run 17:07 UTC 21 Nov (22:37 IST): idle by plan. Next: upload v10 Vatapi at first run >= 18:30 UTC 21 Nov; production paused until v10 uploaded; publish Video 3 Srivijaya at first run >= 13:30 UTC 22 Nov. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
 Run 15:07 UTC 21 Nov (20:37 IST): analytics study done (Windsor 2 calls): 2 public videos, 2 views total -> TOO LITTLE DATA, nothing changed (see LEARNINGS.md). Next: upload v10 Vatapi at first run >= 18:30 UTC 21 Nov; production paused until v10 uploaded; publish Video 3 Srivijaya at first run >= 13:30 UTC 22 Nov. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
 Run 13:07 UTC 21 Nov (18:37 IST): idle by plan (before 19:00 IST publish window). Next run 14:07 UTC publishes Video 2 Gangaikonda; analytics at first run >= 14:30 UTC; upload v10 Vatapi at first run >= 18:30 UTC; production paused until v10 uploaded. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
@@ -146,3 +147,4 @@ heartbeat: 2026-11-21T19:25:18Z (v16 desc written; workers drawing)
 heartbeat: 2026-11-21T19:32:37Z (v16 shots_a done; no fade-in at t=0)
 heartbeat: 2026-11-21T19:37:24Z (v16 merged CHECK OK, sheet checked, mix -15.1 LUFS, rendering)
 heartbeat: 2026-11-21T19:38:55Z (run finished: v10 uploaded, v15+v16 done; lock free)
+heartbeat: 2026-11-21T20:08:21Z (20:07 UTC run = 01:37 IST 22 Nov: idle by plan; no Zapier calls; lock free)

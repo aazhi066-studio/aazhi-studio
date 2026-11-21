@@ -15,3 +15,6 @@
 ## Pre-v15 check 2026-11-21 19:15 UTC (00:45 IST 22 Nov), Windsor.ai YouTube (1 call, last_30dT per-video)
 - Rows: 2 (Video 1 Rajaraja 1 view, Video 2 Gangaikonda 1 view; avg view 60 s each; 0 subs/likes/comments). Analytics lag 2-3 days.
 - Verdict: TOO LITTLE DATA. Nothing big changed; v15 follows the 21 Nov RETENTION RULES (hook lock, 45-65 s, dark/contested topic, end question).
+
+## New-video log (retention rules)
+- v15 Aditya Karikalan (finished 21 Nov): hook line 'Who murdered the crown prince of the Cholas?' (question, 8 words, spoken at 0.15 s with red flash + crown on floor), length 51.5 s (133 words), topic type: palace murder / disputed culprit (Chola, contested), end: 'Who do you think gave the order? Now watch who wore the crown next.' Art 'Lamplit Bronze & Red Thread', music gen:dust 15781. First-8-s cuts every ~1.1-1.7 s.

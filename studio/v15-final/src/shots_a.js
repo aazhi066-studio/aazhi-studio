@@ -279,8 +279,8 @@ export function buildA(add, cue) {
     draw(lt, d, t) {
       const k = eo(seg(lt, 0, 0.55)), lx = lerp(-60, 700, k) + 30 * sin(lt * 31) * (1 - k), ly = 1010 + 40 * sin(lt * 9) - 60 * k;
       bg(CORR(), -60 * lt);
-      ctx.fillStyle = 'rgba(0,0,0,0.6)'; ctx.beginPath(); ctx.ellipse(560, 1172, 170, 26, 0, 0, TAU); ctx.fill();
-      crown(560, 1160, 1.05, -1.38 + 0.03 * sin(lt * 4), 0.6); // tipped on its side
+      ctx.fillStyle = 'rgba(0,0,0,0.6)'; ctx.beginPath(); ctx.ellipse(560, 1172, 230, 30, 0, 0, TAU); ctx.fill();
+      crown(560, 1150, 1.45, -1.38 + 0.03 * sin(lt * 4), 0.6); // tipped on its side
       warm(lx, ly, 620, 0.32);
       lampMask(lx, ly, 560 * fl(t));
       oilLamp(lx - 44, ly, t, 1.1);
@@ -334,7 +334,7 @@ export function buildA(add, cue) {
       lampMask(lx, 760, 760 * fl(t));
       oilLamp(lx, ly, t, 1.1);
       engraved('ADITYA KARIKALAN', 540, 1236, 62, seg(lt, 0.05, 0.35));
-      ctx.save(); ctx.globalAlpha = 0.85 * seg(lt, 0.3, 0.5); ctx.fillStyle = 'rgba(7,3,2,0.7)'; ctx.fillRect(56, 150, 250, 50); K.label('ILLUSTRATION', 181, 176, 28, B.ash); ctx.restore();
+      ctx.save(); ctx.globalAlpha = 0.85 * seg(lt, 0.3, 0.5); ctx.fillStyle = 'rgba(7,3,2,0.7)'; ctx.fillRect(60, 150, 330, 62); K.label('ILLUSTRATION', 225, 182, 36, B.ash); ctx.restore();
       ash(t, 22, 4, 0.4); floorDark();
       flash(lt, 0, 0.5);
     } });
@@ -348,10 +348,10 @@ export function buildA(add, cue) {
       blit(tint('athrS', THRONE(), 320, 740, '#000'), 320, 740, 540 + (540 - lx) * 0.35, 1150, 1.25, 0.6, 1.4);
       warm(lx, ly, 760, 0.3);
       blit(THRONE(), 320, 740, 540, 1180, 1.05);
-      const hy = 360 + 14 * sin(lt * 3.2);
-      K.glow(540, hy - 90, 260, '255,190,110', 0.35);
-      crown(540, hy, 1.0, 0.04 * sin(lt * 2.4), 0.8 + 0.2 * sin(t * 9));
       lampMask(lerp(lx, 540, 0.4), 760, 820 * fl(t));
+      const hy = 400 + 14 * sin(lt * 3.2);
+      K.glow(540, hy - 90, 280, '255,170,90', 0.4);
+      crown(540, hy, 1.0, 0.04 * sin(lt * 2.4), 0.8 + 0.2 * sin(t * 9));
       oilLamp(lx, ly, t, 1.1);
       tag('HEIR TO THE THRONE', 540, 1250, 44, seg(lt, 0.15, 0.45));
       ash(t, 26, 5, 0.4); floorDark();
@@ -441,7 +441,7 @@ export function buildA(add, cue) {
       lampMask(lx - 120, 760, 840 * fl(t));
       oilLamp(lx, ly, t, 1.1);
       const tv = lt - (Wd('vira', 2) - T8) + 0.15;
-      if (tv > 0) { ctx.fillStyle = 'rgba(7,3,2,0.55)'; ctx.fillRect(-100, 140, W + 200, 230); molten('avp', 'VIRA PANDYA', 150, 540, 250, seg(tv, 0, 0.6), seg(tv, 0.6, 1.1), t); }
+      if (tv > 0) { ctx.fillStyle = 'rgba(7,3,2,0.55)'; ctx.fillRect(-100, 140, W + 200, 230); molten('avp', 'VIRA PANDYA', 118, 540, 250, seg(tv, 0, 0.6), seg(tv, 0.6, 1.1), t); }
       tag('PANDYA KING', 540, 1250, 44, seg(lt, 0.1, 0.4));
       ash(t, 22, 9, 0.4); floorDark();
       flash(lt, 0, 0.45);
@@ -485,7 +485,7 @@ export function buildA(add, cue) {
       wallShadow(PRINCE_SIL(), 180, 860, 600, 1180, 1.12, lx, ly, 0.85 * (1 - seg(lt, 0.4, d * 0.9)));
       warm(lx, ly, 700 * gut, 0.3 * gut);
       // the empty spot: a faint ring of ash on the floor where he stood
-      ctx.strokeStyle = 'rgba(233,223,207,0.25)'; ctx.lineWidth = 4; ctx.beginPath(); ctx.ellipse(600, 1190, 150, 22, 0, 0, TAU); ctx.stroke();
+      ctx.strokeStyle = 'rgba(233,223,207,0.45)'; ctx.lineWidth = 5; ctx.beginPath(); ctx.ellipse(600, 1190, 150, 22, 0, 0, TAU); ctx.stroke();
       ctx.fillStyle = 'rgba(0,0,0,0.5)'; ctx.beginPath(); ctx.ellipse(600, 1190, 140, 18, 0, 0, TAU); ctx.fill();
       lampMask(lx + 140, 860, 760 * gut);
       smoke(lx, ly - 70, t, 6, '200,180,160', 0.18, 70, 600);

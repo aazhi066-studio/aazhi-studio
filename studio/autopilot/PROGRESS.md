@@ -142,3 +142,4 @@ v16 IN PROGRESS (19:30 UTC run 21 Nov): Nandi Kalambakam curse-poem legend vs re
 heartbeat: 2026-11-21T19:24:28Z (v16 workers starting)
 heartbeat: 2026-11-21T19:25:18Z (v16 desc written; workers drawing)
 heartbeat: 2026-11-21T19:32:37Z (v16 shots_a done; no fade-in at t=0)
+heartbeat: 2026-11-21T19:37:24Z (v16 merged CHECK OK, sheet checked, mix -15.1 LUFS, rendering)

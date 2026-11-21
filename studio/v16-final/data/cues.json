@@ -1,0 +1,686 @@
+{
+ "duration": 58.884,
+ "cues": [
+  {
+   "t": 0,
+   "type": "slam",
+   "gain": 1
+  },
+  {
+   "t": 0,
+   "type": "heartbeat",
+   "gain": 0.9
+  },
+  {
+   "t": 0.02,
+   "type": "sizzle",
+   "gain": 0.7,
+   "dur": 0.8
+  },
+  {
+   "t": 0.751,
+   "type": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 0.801,
+   "type": "heartbeat",
+   "gain": 0.9
+  },
+  {
+   "t": 1.661,
+   "type": "heartbeat",
+   "gain": 0.7
+  },
+  {
+   "t": 1.841,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 2.465,
+   "type": "slam",
+   "gain": 0.7
+  },
+  {
+   "t": 3.02,
+   "type": "slide",
+   "gain": 0.7
+  },
+  {
+   "t": 3.575,
+   "type": "heartbeat",
+   "gain": 0.6
+  },
+  {
+   "t": 4.199,
+   "type": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 4.249,
+   "type": "chisel",
+   "gain": 0.8,
+   "dur": 0.75
+  },
+  {
+   "t": 4.962,
+   "type": "tock",
+   "gain": 0.8
+  },
+  {
+   "t": 4.999,
+   "type": "slide",
+   "gain": 0.5
+  },
+  {
+   "t": 5.863,
+   "type": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 5.913,
+   "type": "chisel",
+   "gain": 0.6,
+   "dur": 0.4
+  },
+  {
+   "t": 6.363,
+   "type": "tock",
+   "gain": 0.5
+  },
+  {
+   "t": 7.32,
+   "type": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 7.37,
+   "type": "chisel",
+   "gain": 0.8,
+   "dur": 0.75
+  },
+  {
+   "t": 8.144,
+   "type": "slide",
+   "gain": 0.55
+  },
+  {
+   "t": 8.42,
+   "type": "tock",
+   "gain": 0.5
+  },
+  {
+   "t": 9.365,
+   "type": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 9.365,
+   "type": "chisel",
+   "gain": 0.6,
+   "dur": 0.3
+  },
+  {
+   "t": 9.665,
+   "type": "chisel",
+   "gain": 0.6,
+   "dur": 0.3
+  },
+  {
+   "t": 9.808,
+   "type": "tock",
+   "gain": 0.6
+  },
+  {
+   "t": 9.965,
+   "type": "chisel",
+   "gain": 0.6,
+   "dur": 0.3
+  },
+  {
+   "t": 10.265,
+   "type": "chisel",
+   "gain": 0.6,
+   "dur": 0.3
+  },
+  {
+   "t": 10.472,
+   "type": "slam",
+   "gain": 0.5
+  },
+  {
+   "t": 11.303,
+   "type": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 11.353,
+   "type": "rumble",
+   "gain": 0.6,
+   "dur": 0.8
+  },
+  {
+   "t": 12.053,
+   "type": "slam",
+   "gain": 0.8
+  },
+  {
+   "t": 12.103,
+   "type": "drum",
+   "gain": 0.6
+  },
+  {
+   "t": 12.631,
+   "type": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 12.797,
+   "type": "slam",
+   "gain": 0.5
+  },
+  {
+   "t": 13.081,
+   "type": "thud",
+   "gain": 1
+  },
+  {
+   "t": 13.801,
+   "type": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 14.001,
+   "type": "chisel",
+   "gain": 0.6,
+   "dur": 1.6
+  },
+  {
+   "t": 14.885,
+   "type": "heartbeat",
+   "gain": 0.7
+  },
+  {
+   "t": 15.285,
+   "type": "swell",
+   "gain": 0.4,
+   "dur": 0.6
+  },
+  {
+   "t": 15.854,
+   "type": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 15.934,
+   "type": "chisel",
+   "gain": 0.6,
+   "dur": 1.4
+  },
+  {
+   "t": 16.71,
+   "type": "slide",
+   "gain": 0.3
+  },
+  {
+   "t": 16.854,
+   "type": "chisel",
+   "gain": 0.4,
+   "dur": 0.8
+  },
+  {
+   "t": 17.995,
+   "type": "whoosh",
+   "gain": 0.55
+  },
+  {
+   "t": 18.045,
+   "type": "slide",
+   "gain": 0.6,
+   "dur": 0.6
+  },
+  {
+   "t": 18.295,
+   "type": "bell",
+   "gain": 0.35
+  },
+  {
+   "t": 19.346,
+   "type": "heartbeat",
+   "gain": 0.7
+  },
+  {
+   "t": 19.346,
+   "type": "whoosh",
+   "gain": 0.35
+  },
+  {
+   "t": 20.196,
+   "type": "heartbeat",
+   "gain": 0.7
+  },
+  {
+   "t": 21.046,
+   "type": "heartbeat",
+   "gain": 0.7
+  },
+  {
+   "t": 21.856,
+   "type": "heartbeat",
+   "gain": 0.8
+  },
+  {
+   "t": 21.883,
+   "type": "thud",
+   "gain": 0.7
+  },
+  {
+   "t": 22.556,
+   "type": "heartbeat",
+   "gain": 0.6
+  },
+  {
+   "t": 22.898,
+   "type": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 23.098,
+   "type": "bell",
+   "gain": 0.3
+  },
+  {
+   "t": 24.433,
+   "type": "slide",
+   "gain": 0.6
+  },
+  {
+   "t": 24.833,
+   "type": "thud",
+   "gain": 0.8
+  },
+  {
+   "t": 24.983,
+   "type": "chisel",
+   "gain": 0.55,
+   "dur": 1.2
+  },
+  {
+   "t": 26.235,
+   "type": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 26.285,
+   "type": "chisel",
+   "gain": 0.5,
+   "dur": 1.8
+  },
+  {
+   "t": 28.631,
+   "type": "whoosh",
+   "gain": 0.45
+  },
+  {
+   "t": 29.071,
+   "type": "bell",
+   "gain": 0.5
+  },
+  {
+   "t": 30.12,
+   "type": "sizzle",
+   "gain": 0.7,
+   "dur": 1
+  },
+  {
+   "t": 30.22,
+   "type": "rumble",
+   "gain": 0.5,
+   "dur": 1.4
+  },
+  {
+   "t": 30.644,
+   "type": "whoosh",
+   "gain": 0.4
+  },
+  {
+   "t": 31.663,
+   "type": "bell",
+   "gain": 0.45
+  },
+  {
+   "t": 31.763,
+   "type": "sizzle",
+   "gain": 0.6,
+   "dur": 0.8
+  },
+  {
+   "t": 32.258,
+   "type": "whoosh",
+   "gain": 0.45
+  },
+  {
+   "t": 32.338,
+   "type": "bell",
+   "gain": 0.31,
+   "pan": -0.17500000000000002
+  },
+  {
+   "t": 32.388,
+   "type": "sizzle",
+   "gain": 0.35,
+   "dur": 0.4
+  },
+  {
+   "t": 32.558,
+   "type": "rumble",
+   "gain": 0.6,
+   "dur": 1.6
+  },
+  {
+   "t": 32.598,
+   "type": "bell",
+   "gain": 0.33999999999999997,
+   "pan": -0.0625
+  },
+  {
+   "t": 32.648,
+   "type": "sizzle",
+   "gain": 0.35,
+   "dur": 0.4
+  },
+  {
+   "t": 32.858,
+   "type": "bell",
+   "gain": 0.37,
+   "pan": 0.04999999999999999
+  },
+  {
+   "t": 32.908,
+   "type": "sizzle",
+   "gain": 0.35,
+   "dur": 0.4
+  },
+  {
+   "t": 33.118,
+   "type": "bell",
+   "gain": 0.4,
+   "pan": 0.16249999999999998
+  },
+  {
+   "t": 33.168,
+   "type": "sizzle",
+   "gain": 0.35,
+   "dur": 0.4
+  },
+  {
+   "t": 33.378,
+   "type": "bell",
+   "gain": 0.43,
+   "pan": 0.275
+  },
+  {
+   "t": 33.428,
+   "type": "sizzle",
+   "gain": 0.35,
+   "dur": 0.4
+  },
+  {
+   "t": 33.638,
+   "type": "bell",
+   "gain": 0.45999999999999996,
+   "pan": 0.38749999999999996
+  },
+  {
+   "t": 33.688,
+   "type": "sizzle",
+   "gain": 0.35,
+   "dur": 0.4
+  },
+  {
+   "t": 33.838,
+   "type": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 33.938,
+   "type": "rumble",
+   "gain": 0.7,
+   "dur": 2
+  },
+  {
+   "t": 34.23,
+   "type": "bell",
+   "gain": 0.6
+  },
+  {
+   "t": 34.638,
+   "type": "sizzle",
+   "gain": 0.5,
+   "dur": 1.2
+  },
+  {
+   "t": 35.95,
+   "type": "sizzle",
+   "gain": 0.7,
+   "dur": 1.4
+  },
+  {
+   "t": 36.334,
+   "type": "slam",
+   "gain": 1
+  },
+  {
+   "t": 36.384,
+   "type": "rumble",
+   "gain": 0.8,
+   "dur": 1.4
+  },
+  {
+   "t": 37.819,
+   "type": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 37.869,
+   "type": "slide",
+   "gain": 0.5
+  },
+  {
+   "t": 38.222,
+   "type": "bell",
+   "gain": 0.8
+  },
+  {
+   "t": 38.974,
+   "type": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 39.374,
+   "type": "thud",
+   "gain": 0.6
+  },
+  {
+   "t": 39.631,
+   "type": "tock",
+   "gain": 0.7
+  },
+  {
+   "t": 41.177,
+   "type": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 41.227,
+   "type": "chisel",
+   "gain": 0.7,
+   "dur": 1.1
+  },
+  {
+   "t": 42.077,
+   "type": "slide",
+   "gain": 0.35
+  },
+  {
+   "t": 42.516,
+   "type": "drum",
+   "gain": 0.6
+  },
+  {
+   "t": 43.873,
+   "type": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 43.973,
+   "type": "chisel",
+   "gain": 0.6,
+   "dur": 0.8
+  },
+  {
+   "t": 44.173,
+   "type": "heartbeat",
+   "gain": 0.5
+  },
+  {
+   "t": 44.53,
+   "type": "thud",
+   "gain": 0.7
+  },
+  {
+   "t": 45.839,
+   "type": "heartbeat",
+   "gain": 0.6
+  },
+  {
+   "t": 46.812,
+   "type": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 47.062,
+   "type": "tock",
+   "gain": 0.6
+  },
+  {
+   "t": 47.549,
+   "type": "slide",
+   "gain": 0.3
+  },
+  {
+   "t": 48.086,
+   "type": "pop",
+   "gain": 0.6
+  },
+  {
+   "t": 49.794,
+   "type": "whoosh",
+   "gain": 0.6
+  },
+  {
+   "t": 49.844,
+   "type": "sizzle",
+   "gain": 0.35,
+   "dur": 3.6
+  },
+  {
+   "t": 49.994,
+   "type": "heartbeat",
+   "gain": 0.7
+  },
+  {
+   "t": 50.794,
+   "type": "heartbeat",
+   "gain": 0.6
+  },
+  {
+   "t": 50.957,
+   "type": "whoosh",
+   "gain": 0.4
+  },
+  {
+   "t": 51.107,
+   "type": "bell",
+   "gain": 0.5
+  },
+  {
+   "t": 51.957,
+   "type": "heartbeat",
+   "gain": 0.5
+  },
+  {
+   "t": 52.757,
+   "type": "heartbeat",
+   "gain": 0.5
+  },
+  {
+   "t": 53.661,
+   "type": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 53.711,
+   "type": "slam",
+   "gain": 0.5
+  },
+  {
+   "t": 53.811,
+   "type": "tock",
+   "gain": 0.45
+  },
+  {
+   "t": 54.081,
+   "type": "tock",
+   "gain": 0.45
+  },
+  {
+   "t": 54.351,
+   "type": "tock",
+   "gain": 0.45
+  },
+  {
+   "t": 54.621,
+   "type": "tock",
+   "gain": 0.45
+  },
+  {
+   "t": 54.786,
+   "type": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 54.986,
+   "type": "slide",
+   "gain": 0.4
+  },
+  {
+   "t": 56.13,
+   "type": "bell",
+   "gain": 0.7
+  },
+  {
+   "t": 56.835,
+   "type": "whoosh",
+   "gain": 0.4
+  },
+  {
+   "t": 56.935,
+   "type": "sizzle",
+   "gain": 0.6,
+   "dur": 1.2
+  },
+  {
+   "t": 57.284,
+   "type": "swell",
+   "gain": 0.6,
+   "dur": 1.6
+  },
+  {
+   "t": 57.885,
+   "type": "slam",
+   "gain": 0.6
+  }
+ ]
+}

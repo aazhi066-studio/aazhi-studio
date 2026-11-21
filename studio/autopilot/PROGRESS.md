@@ -132,3 +132,4 @@ heartbeat: 2026-11-21T19:11:29Z (v15 script+narration 51.0 s; writing ART.md)
 v15 IN PROGRESS (19:07 UTC run 21 Nov): Aditya Karikalan murder c.969 (Udaiyarkudi inscription, Uttama suspicion DISPUTED), studio/v15-final, script+narration 51.0 s (131 words, hook 'Who murdered the crown prince of the Cholas?'), ART 'Lamplit Bronze & Red Thread', music gen:dust 15781 music_sim PASS (vs v11-v14), 8 new IPA names. 3 workers drawing shots_a/b/c (stubs committed).
 heartbeat: 2026-11-21T19:12:49Z (v15 workers starting)
 heartbeat: 2026-11-21T19:14:31Z (v15 line 4 hedged 'it seems', narration 51.5 s; desc.txt written; workers drawing)
+heartbeat: 2026-11-21T19:18:40Z (v15 shots_c done)

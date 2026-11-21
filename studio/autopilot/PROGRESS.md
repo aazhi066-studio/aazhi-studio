@@ -117,3 +117,4 @@ heartbeat: 2026-11-21T13:08:01Z (13:07 UTC run = 18:37 IST 21 Nov: idle by plan;
 heartbeat: 2026-11-21T14:08:25Z (14:07 UTC run = 19:37 IST 21 Nov: PUBLISH run for Video 2 Gangaikonda starting; lock TAKEN)
 heartbeat: 2026-11-21T14:09:51Z (14:07 UTC run: publishing Video 2; lock TAKEN)
 heartbeat: 2026-11-21T14:14:09Z (14:07 UTC run = 19:37 IST 21 Nov: published Video 2; lock free)
+heartbeat: 2026-11-21T15:07:57Z (15:07 UTC run = 20:37 IST 21 Nov: analytics study; lock TAKEN)

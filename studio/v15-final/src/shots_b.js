@@ -285,7 +285,7 @@ export function buildB(add, cue) {
       drawTally(lt, 0.08, b1span);
       // pillars lit from the orbiting flame (their shadows swing opposite)
       for (const px of [70, 1010]) { ctx.save(); ctx.globalAlpha = 0.5; ctx.translate(px, 1250); ctx.transform(1, 0, (px - fx) / 1400, 1, 0, 0); ctx.fillStyle = '#000'; ctx.fillRect(-60 + (px - fx) * 0.2, -1100, 120, 1100); ctx.restore(); blit(pillarImg(), 100, 1300, px, 1250); }
-      oilLamp(fx, fy, 0.55, t, 1);
+      oilLamp(fx, fy, 0.8, t, 1);
       smoke(fx, fy - 40, t, 5, '235,210,170', 0.08, 50, 260);
       dark(fx, fy, 640);
       ash(t, 1);
@@ -300,7 +300,7 @@ export function buildB(add, cue) {
       drawTally(99, 0, 0, 0.35);
       for (let i = 0; i < 4; i++) {
         const x = -220 + (lt * 520 + i * 300) % 1600 - 100;
-        const s = 1.15 + 0.5 * Math.max(0, 1 - Math.abs(x - fx) / 600);
+        const s = 0.78 + 0.32 * Math.max(0, 1 - Math.abs(x - fx) / 600);
         hooded(x, 1250, s, lt, 0.85, i * 0.5);
       }
       oilLamp(fx, fy, 0.75, t, 2);
@@ -321,10 +321,10 @@ export function buildB(add, cue) {
       warm(fx, fy, 560, 0.4 * flick(t));
       // crown's own shadow on the wall
       ctx.save(); ctx.translate(cx + (cx - fx) * 0.35, cy + 40); ctx.rotate(rot); blit(crownSil(), 80, 205, 0, 0, 2.3, 0.55); ctx.restore();
+      for (let k = 0; k < 3; k++) { const px = ((k * 520 - scroll) % 1560 + 1560) % 1560 - 240; blit(pillarImg(), 100, 1300, px, 1300, 1.0, 0.8); }
       crown(cx, cy, 1.9, rot, 0.6 + 0.4 * Math.sin(t * 6));
       // red thread trailing the crown back into darkness
       thread(cx - 60, cy - 30, cx - 700, cy + 120, 120, 1, 4);
-      for (let k = 0; k < 3; k++) { const px = ((k * 520 - scroll) % 1560 + 1560) % 1560 - 240; blit(pillarImg(), 100, 1300, px, 1300, 1.12); }
       oilLamp(fx, fy, 0.6, t, 3);
       dark(fx + 60, fy - 160, 600);
       ash(t, 3);
@@ -356,14 +356,14 @@ export function buildB(add, cue) {
   add({ id: 'b5', at: tNot, cam: [700, 760], zoom: 0.08, note: 'younger brother stays dark at the side; red thread dangles',
     draw(lt, d, t) {
       blit(wallImg(), 0, 0, 0, 0);
-      const fx = lerp(620, 160, eio(lt / d)), fy = 820 + Math.sin(lt * 2) * 20;
+      const fx = lerp(480, 170, eio(lt / d)), fy = 820 + Math.sin(lt * 2) * 20;
       warm(fx, fy, 520, 0.42 * flick(t));
-      const ux = 330, yx = 840, s = 1.02;
+      const ux = 320, yx = 900, s = 1.02;
       wallShadow(figImg('u', 'S'), 250, 740, ux, 1250, s, fx, 0.7);
       figure('u', ux, 1250, s, fx); crown(ux, 1250 + HEADTOP.u * s, 0.64, 0, 0.6);
       figure('y', yx, 1250, s * 0.98, fx);
       oilLamp(fx, fy, 0.55, t, 5);
-      dark(fx, fy - 60, 640);
+      dark(fx + 40, fy - 80, 520);
       // the passed-over brother: only a faint ghost edge survives the dark
       blit(figImg('y', 'L'), 250, 740, yx, 1250, s * 0.98, 0.12 + 0.05 * Math.sin(t * 3));
       const sw = Math.sin(lt * 2.2) * 30, ex = yx - 60 + sw, ey = 760 + Math.sin(lt * 1.7) * 14;
@@ -417,7 +417,7 @@ export function buildB(add, cue) {
 
   // b8 ─ temple wall, granite slab in rising lamp light; UDAIYARKUDI INSCRIPTION
   cue(tInsc, 'chisel', { gain: 0.35 }); cue(tUdai, 'sizzle', { gain: 0.3 });
-  add({ id: 'b8', at: tDid, cam: [540, 760], zoom: 0.08, note: 'granite slab in lamp light; UDAIYARKUDI INSCRIPTION (molten)',
+  add({ id: 'b8', at: tDid, cam: [540, 560], zoom: 0.08, note: 'granite slab in lamp light; UDAIYARKUDI INSCRIPTION (molten)',
     draw(lt, d, t) {
       blit(wallImg(), 0, 0, 0, 0);
       const p = eio(clamp(lt / d)), fx = lerp(330, 760, p), fy = lerp(1160, 820, p);

@@ -1,5 +1,5 @@
 {
- "duration": 51.025,
+ "duration": 51.5,
  "lines": [
   {
    "text": "Who murdered the crown prince of the Cholas?",
@@ -30,45 +30,45 @@
    "i": 3
   },
   {
-   "text": "And for years, nobody was punished.",
-   "caps": "for *years | nobody | was *punished.",
+   "text": "And for years, it seems, nobody was punished.",
+   "caps": "for *years | it *seems | nobody | was *punished.",
    "start": 16.705,
-   "end": 18.833,
+   "end": 19.309,
    "i": 4
   },
   {
    "text": "Later, the crown went to a cousin, Uttama Chola, not to Aditya's younger brother.",
    "caps": "the *crown | went to | a *cousin | *Uttama Chola | not his *brother.",
-   "start": 19.283,
-   "end": 24.612,
+   "start": 19.759,
+   "end": 25.087,
    "i": 5
   },
   {
    "text": "Only when that brother ruled as Rajaraja the First did an inscription at Udaiyarkudi name the killers, royal officers, and take their families' lands.",
    "caps": "only when | *Rajaraja | *ruled | an *inscription | *Udaiyarkudi | named the *killers | royal *officers | lands *taken.",
-   "start": 25.062,
-   "end": 35.08,
+   "start": 25.537,
+   "end": 35.556,
    "i": 6
   },
   {
    "text": "So who sent them? Some historians suspect Uttama Chola. Others say there is no proof, and point to Pandya revenge.",
    "caps": "who *sent them? | some *suspect | *Uttama | others | no *proof | Pandya *revenge?",
-   "start": 35.58,
-   "end": 42.827,
+   "start": 36.056,
+   "end": 43.303,
    "i": 7
   },
   {
    "text": "The stone names the hands. It never names the mind.",
    "caps": "the stone | names the *hands | never | the *mind.",
-   "start": 43.327,
-   "end": 46.353,
+   "start": 43.803,
+   "end": 46.829,
    "i": 8
   },
   {
    "text": "Who do you think gave the order? Now watch who wore the crown next.",
    "caps": "who gave | the *order? | now *watch | who wore | the *crown.",
-   "start": 46.853,
-   "end": 50.225,
+   "start": 47.329,
+   "end": 50.7,
    "i": 9
   }
  ]

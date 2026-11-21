@@ -7,25 +7,55 @@
  "music": "gen:dust",
  "music_seed": 15781,
  "lines": [
-  {"text": "Who murdered the crown prince of the Cholas?",
-   "caps": "who *murdered | the crown *prince?", "gap": 0.35},
-  {"text": "Around nine sixty nine, Aditya Karikalan, heir to the throne, was killed.",
-   "caps": "around *969 | *Aditya | *Karikalan | *heir | was *killed.", "gap": 0.45},
-  {"text": "Chola records boast he had already killed the Pandya king, Vira Pandya, in battle.",
-   "caps": "Chola *records | boast | he had *killed | the *Pandya king | in *battle.", "gap": 0.45},
-  {"text": "Then he was gone. No record says exactly how.",
-   "caps": "then he was *gone | no record | says *how.", "gap": 0.45},
-  {"text": "And for years, nobody was punished.",
-   "caps": "for *years | nobody | was *punished.", "gap": 0.45},
-  {"text": "Later, the crown went to a cousin, Uttama Chola, not to Aditya's younger brother.",
-   "caps": "the *crown | went to | a *cousin | *Uttama Chola | not his *brother.", "gap": 0.45},
-  {"text": "Only when that brother ruled as Rajaraja the First did an inscription at Udaiyarkudi name the killers, royal officers, and take their families' lands.",
-   "caps": "only when | *Rajaraja | *ruled | an *inscription | *Udaiyarkudi | named the *killers | royal *officers | lands *taken.", "gap": 0.5},
-  {"text": "So who sent them? Some historians suspect Uttama Chola. Others say there is no proof, and point to Pandya revenge.",
-   "caps": "who *sent them? | some *suspect | *Uttama | others | no *proof | Pandya *revenge?", "gap": 0.5},
-  {"text": "The stone names the hands. It never names the mind.",
-   "caps": "the stone | names the *hands | never | the *mind.", "gap": 0.5},
-  {"text": "Who do you think gave the order? Now watch who wore the crown next.",
-   "caps": "who gave | the *order? | now *watch | who wore | the *crown.", "gap": 0.3}
+  {
+   "text": "Who murdered the crown prince of the Cholas?",
+   "caps": "who *murdered | the crown *prince?",
+   "gap": 0.35
+  },
+  {
+   "text": "Around nine sixty nine, Aditya Karikalan, heir to the throne, was killed.",
+   "caps": "around *969 | *Aditya | *Karikalan | *heir | was *killed.",
+   "gap": 0.45
+  },
+  {
+   "text": "Chola records boast he had already killed the Pandya king, Vira Pandya, in battle.",
+   "caps": "Chola *records | boast | he had *killed | the *Pandya king | in *battle.",
+   "gap": 0.45
+  },
+  {
+   "text": "Then he was gone. No record says exactly how.",
+   "caps": "then he was *gone | no record | says *how.",
+   "gap": 0.45
+  },
+  {
+   "text": "And for years, it seems, nobody was punished.",
+   "caps": "for *years | it *seems | nobody | was *punished.",
+   "gap": 0.45
+  },
+  {
+   "text": "Later, the crown went to a cousin, Uttama Chola, not to Aditya's younger brother.",
+   "caps": "the *crown | went to | a *cousin | *Uttama Chola | not his *brother.",
+   "gap": 0.45
+  },
+  {
+   "text": "Only when that brother ruled as Rajaraja the First did an inscription at Udaiyarkudi name the killers, royal officers, and take their families' lands.",
+   "caps": "only when | *Rajaraja | *ruled | an *inscription | *Udaiyarkudi | named the *killers | royal *officers | lands *taken.",
+   "gap": 0.5
+  },
+  {
+   "text": "So who sent them? Some historians suspect Uttama Chola. Others say there is no proof, and point to Pandya revenge.",
+   "caps": "who *sent them? | some *suspect | *Uttama | others | no *proof | Pandya *revenge?",
+   "gap": 0.5
+  },
+  {
+   "text": "The stone names the hands. It never names the mind.",
+   "caps": "the stone | names the *hands | never | the *mind.",
+   "gap": 0.5
+  },
+  {
+   "text": "Who do you think gave the order? Now watch who wore the crown next.",
+   "caps": "who gave | the *order? | now *watch | who wore | the *crown.",
+   "gap": 0.3
+  }
  ]
 }

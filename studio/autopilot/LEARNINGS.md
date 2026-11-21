@@ -18,3 +18,4 @@
 
 ## New-video log (retention rules)
 - v15 Aditya Karikalan (finished 21 Nov): hook line 'Who murdered the crown prince of the Cholas?' (question, 8 words, spoken at 0.15 s with red flash + crown on floor), length 51.5 s (133 words), topic type: palace murder / disputed culprit (Chola, contested), end: 'Who do you think gave the order? Now watch who wore the crown next.' Art 'Lamplit Bronze & Red Thread', music gen:dust 15781. First-8-s cuts every ~1.1-1.7 s.
+- v16 Nandi Kalambakam (finished 21 Nov UTC / 22 Nov IST): hook 'Can a poem kill a king?' (question, 6 words, at 0.15 s over a burning leaf + red flash), length 58.9 s (164 words), topic type: curse legend vs record (Pallava, disputed authorship), end: 'Murder by poetry, or a story...? Tell me below. Then look again: the poem survived. The king did not.' Art 'Soot-Etched Palm Leaves', music gen:tide 16249.

@@ -25,7 +25,7 @@ function draw(t) {
   ctx.globalAlpha = 1; ctx.letterSpacing = '0px';
 
   // fade from / to black on the first and last 0.25 s
-  const fade = Math.min(clamp(t / 0.06), clamp((T.dur - t) / 0.35));
+  const fade = clamp((T.dur - t) / 0.35);
   if (fade < 1) { ctx.fillStyle = '#000'; ctx.globalAlpha = 1 - fade; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1; }
   drawCaption(t);
 }

@@ -153,3 +153,4 @@ heartbeat: 2026-11-21T20:08:21Z (20:07 UTC run = 01:37 IST 22 Nov: idle by plan;
 heartbeat: 2026-11-21T22:08:20Z (22:07 UTC run = 03:37 IST 22 Nov: idle by plan; no Zapier calls; lock free)
 heartbeat: 2026-11-21T23:08:03Z (23:07 UTC run = 04:37 IST 22 Nov: idle by plan - daily goal 2 met (v15+v16), next upload v11 Muziris at run >= 18:30 UTC 22 Nov, publish Video 3 Srivijaya at run >= 13:30 UTC 22 Nov; no Zapier calls; lock free)
 heartbeat: 2026-11-22T00:07:49Z (00:07 UTC run = 05:37 IST 22 Nov: idle by plan - daily goal 2 met (v15+v16), next publish Video 3 Srivijaya at run >= 13:30 UTC 22 Nov, analytics after 14:30 UTC, upload v11 Muziris at run >= 18:30 UTC 22 Nov; no Zapier calls; lock free)
+heartbeat: 2026-11-22T01:07:21Z (01:07 UTC run = 06:37 IST 22 Nov: idle by plan - daily goal 2 met (v15+v16), next publish Video 3 Srivijaya at run >= 13:30 UTC 22 Nov, analytics after 14:30 UTC, upload v11 Muziris at run >= 18:30 UTC 22 Nov; no Zapier calls; lock free)

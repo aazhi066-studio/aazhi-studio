@@ -330,9 +330,9 @@ export function buildB(add, cue) {
   // b1 — ring of plates swinging like a carousel
   add({ id: 'b1', at: t1, cam: [540, 700], zoom: 0.08, note: 'ring of copper plates spins round the bronze ring, Pandya fish seal; TWO CENTURIES LATER', draw(lt, d, t) {
     bg(t); motes(t, 26, 1);
-    glow(540, 760, 620, '224,138,78', 0.16);
+    glow(540, 820, 700, '224,138,78', 0.2);
     const spin = 0.35 + lt * 1.5 + 0.25 * sin(lt * 2.2);
-    carousel(540, 860, 1.05 + 0.04 * sin(lt), spin, t);
+    carousel(540, 900, 1.45 + 0.05 * sin(lt), spin, t);
     tag('TWO CENTURIES LATER', 540, 230, { size: 52, ...pop(lt, 0.15) });
     calm();
   } });
@@ -394,7 +394,7 @@ export function buildB(add, cue) {
     const bx = ballX(lt);
     for (let i = 0; i < PX.length; i++) {
       const x = PX[i], f = eo(seg(lt, hitAt(x), hitAt(x) + 0.32)), ang = 1.42 * f + 0.06 * sin(PI * seg(lt, hitAt(x) + 0.32, hitAt(x) + 0.5)), ghost = lerp(1, 0.2, seg(bx, x + 140, x + 380));
-      ctx.save(); ctx.translate(x + 46 + 30 * f, LEDGE); ctx.rotate(ang); blit(pinC(), 116, 252, 0, 0, 1, ghost); ctx.restore();
+      ctx.save(); ctx.translate(x + 60 + 30 * f, LEDGE); ctx.rotate(ang); blit(pinC(), 116, 252, 0, 0, 1.3, ghost); ctx.restore();
     }
     // ink trail behind the ball, pooling over the fallen kings
     const tw = Math.max(0, bx + 40);
@@ -407,7 +407,7 @@ export function buildB(add, cue) {
     ctx.beginPath(); ctx.arc(bx, by, BR, 0, TAU); ctx.fillStyle = K.ink; ctx.fill(); ctx.strokeStyle = K.hot; ctx.lineWidth = 7; ctx.stroke();
     ctx.strokeStyle = '#FF9A3C'; ctx.lineWidth = 4; for (let j = 0; j < 3; j++) { const a = rot + j * 2.1; ctx.beginPath(); ctx.moveTo(bx + cos(a) * 14, by + sin(a) * 14); ctx.lineTo(bx + cos(a + 0.4) * 52, by + sin(a + 0.4) * 52); ctx.stroke(); }
     ctx.beginPath(); ctx.arc(bx - 22, by - 26, 14, 0, TAU); ctx.fillStyle = 'rgba(160,170,190,0.35)'; ctx.fill();
-    for (let i = 0; i < PX.length; i++) sparks(PX[i] + 20, LEDGE - 120, lt - hitAt(PX[i]), 30 + i * 9, 8, 420);
+    for (let i = 0; i < PX.length; i++) sparks(PX[i] + 20, LEDGE - 160, lt - hitAt(PX[i]), 30 + i * 9, 8, 420);
     tag('IT SAYS', 540, 250, { size: 48, ...pop(lt, 0.1) });
     calm();
   } });

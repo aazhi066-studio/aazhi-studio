@@ -340,7 +340,7 @@ export function buildC(add, cue) {
         blit(monkDone('cJdone', jainPlate, jainRel, JAIN_D), PLW / 2, PLH / 2, jx, lerp(720, 740, eo(seg(lt, 0, 0.45))), js, 0.8);
         const bx = lerp(1300, 700, eo(seg(lt, 0, 0.4))) + Math.sin(lt) * 6;
         monkPanel(buddPlate, buddRel, BUDD_D, bx, 700, 0.8, seg(lt, 0.25, 1.05), seg(lt, 0.85, 1.3));
-        ctx.save(); ctx.beginPath(); ctx.roundRect(bx - 282, 338, 564, 724, 40); ctx.clip(); ink(Math.PI / 2, lerp(250, -700, eio(seg(lt, 0.1, 0.95))), lt, 8, 0.8); ctx.restore();
+        ctx.save(); ctx.beginPath(); ctx.roundRect(bx - 282, 338, 564, 724, 40); ctx.clip(); ink(Math.PI / 2, lerp(110, -700, eo(seg(lt, 0.05, 0.9))), lt, 8, 0.8); ctx.restore();
         tag('JAIN?', 250, 1050, 40, 1, { still: true, a: 0.85 });
         tag('BUDDHIST?', 700, 1165, 66, seg(lt, 0.12, 0.34));
         dust(lt, 22, 7, '170,190,220', 0.3);
@@ -491,7 +491,7 @@ export function buildC(add, cue) {
         }
         ctx.strokeStyle = lg(cx - 60, cy - 60, cx + 60, cy + 60, [[0, '#E6B070'], [1, '#6A3A16']]); ctx.lineWidth = 22; ctx.beginPath(); ctx.arc(cx, cy, 50, 0, TAU); ctx.stroke();
         blit(sealImg(), 110, 110, cx, cy + 4, 0.75);
-        ink(0, lerp(450, -1300, eio(seg(lt, 0, 0.9))), lt, 12, 1.2);
+        ink(0, lerp(60, -1300, eio(seg(lt, 0, 0.75))), lt, 12, 1.2);
         // rewind chevrons
         const cp = 0.6 + 0.4 * Math.sin(lt * 10);
         ctx.fillStyle = `rgba(224,138,78,${cp})`; for (const ox of [-10, 50]) { poly([[540 - ox, 150], [540 - ox - 54, 180], [540 - ox, 210]]); ctx.fill(); }

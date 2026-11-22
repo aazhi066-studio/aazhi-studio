@@ -350,8 +350,8 @@ export function buildB(add, cue) {
     if (lt > 0.4) {
       ctx.save(); ctx.translate(px + off * c, py); ctx.scale(c, 1); ctx.globalAlpha = seg(lt, 0.4, 0.55);
       panel(150, -170, 285, 340);
-      ctx.translate(292, 8); const k = seg(lt, 0.6, d - 0.25);
-      raised(FISH2.fills, seg(lt, d - 0.5, d - 0.1)); punch(FISH2.pts, k, 6);
+      ctx.translate(292, 8);
+      raised(FISH2.fills, seg(lt, d - 0.5, d - 0.1)); punch(FISH2.pts, seg(lt, 0.6, d - 0.25), 6);
       ctx.restore();
       const k = seg(lt, 0.6, d - 0.25), hp = FISH2.pts[Math.min(FISH2.pts.length - 1, Math.floor(k * FISH2.pts.length))], hx = px + off * c + 292 + hp[0], hy = py + 8 + hp[1];
       if (lt > 0.5) { sparks(hx, hy, lastStrike(lt, S2), Math.floor((lt - lastStrike(lt, S2)) * 50), 12, 480); hammer(hx, hy, hamAng(lt, S2), 0.8); }

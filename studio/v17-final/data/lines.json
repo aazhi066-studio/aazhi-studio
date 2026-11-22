@@ -1,5 +1,5 @@
 {
- "duration": 56.765,
+ "duration": 56.862,
  "lines": [
   {
    "text": "Who erased three hundred years of Tamil history?",
@@ -30,38 +30,38 @@
    "i": 3
   },
   {
-   "text": "About two centuries after them, a Pandya copper plate grant, found at Velvikudi, calls the Kalabhra a Kali king, who drove out countless great kings.",
+   "text": "About two centuries after them, a Pandya copper plate grant, the Velvikudi grant, calls the Kalabhra a Kali king, who drove out countless great kings.",
    "caps": "two *centuries later | a Pandya | *copper plate | *Velvikudi | a *Kali king | drove out | *countless kings.",
    "start": 18.353,
-   "end": 27.988,
+   "end": 28.086,
    "i": 4
   },
   {
    "text": "Then, it says, the Pandya Kadungon took the land back, late in the five hundreds.",
    "caps": "then | it *says | *Kadungon | took it *back | late *500s CE.",
-   "start": 28.438,
-   "end": 33.745,
+   "start": 28.536,
+   "end": 33.843,
    "i": 5
   },
   {
    "text": "So for a long time, historians called it a dark age.",
    "caps": "so historians | called it | a *dark *age.",
-   "start": 34.195,
-   "end": 37.589,
+   "start": 34.293,
+   "end": 37.686,
    "i": 6
   },
   {
    "text": "Now the doubt. Some scholars think the Kalabhras may have backed Jain and Buddhist monks, and that Tamil writing may have kept growing in these years.",
    "caps": "now the *doubt | some *scholars | *Jain | and *Buddhist | Tamil *writing | kept *growing?",
-   "start": 38.039,
-   "end": 46.856,
+   "start": 38.136,
+   "end": 46.954,
    "i": 7
   },
   {
    "text": "Wreckers of Tamil country, or kings written out by the winners? Tell me below. Then watch the start again, and ask who was holding the pen.",
    "caps": "*wreckers? | or written out | by the *winners? | tell me *below | watch *again | who held | the *pen?",
-   "start": 47.356,
-   "end": 55.965,
+   "start": 47.454,
+   "end": 56.062,
    "i": 8
   }
  ]

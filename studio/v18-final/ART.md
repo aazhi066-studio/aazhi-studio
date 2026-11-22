@@ -1,7 +1,7 @@
 # v18 Why did the British exile a Tamil rebel's son? (Maruthu brothers 1801, the Penang exiles) - ART DIRECTION "Tide-Stained Manifest" (new to the channel)
 Story (hedged, matches desc.txt): 1801, Sivaganga: the Maruthu brothers (Periya and Chinna Maruthu) rose against the East India Company. In June 1801 a proclamation was pasted on the walls of Srirangam temple and Trichy fort calling people to rise. By autumn the revolt was crushed. On 24 October 1801 the brothers were hanged at Tiruppattur fort; accounts say sons and followers died with them. Not everyone was killed: about 73 prisoners (some say 72) were shipped to Penang (Prince of Wales Island, off Malaya). Among them, accounts say, was Duraisamy, the young son of Chinna Maruthu. One study (Journal of Asian Studies, "Bandits and Kings") says the exiles were kept alongside convicts and fought to keep their rank and dignity. What became of most of them is barely recorded. End: question + rewatch line.
 Script: script.json; line times data/lines.json; word times data/words.json (L(i), Le(i), Wd(word, line) from src/core/timing.js; ALWAYS use these, never hard-coded seconds).
-Line starts (s): 0:0.15 1:3.423 2:11.314 3:19.014 4:21.307 5:28.442 6:30.37 7:37.187 8:42.014 9:48.507 10:51.704 end 58.99
+Line starts (s): 0:0.15 1:3.423 2:11.314 3:19.014 4:21.307 5:28.442 6:30.37 7:37.187 8:43.304 9:49.797 10:52.993 end 60.28
 Line texts:
  0 "Why did the British exile a Tamil rebel's son?"
  1 "Sivaganga, eighteen oh one. The Maruthu brothers, Periya and Chinna Maruthu, rose against the East India Company."
@@ -10,7 +10,7 @@ Line texts:
  4 "In late October, the brothers were hanged at Tiruppattur fort. Accounts say sons and followers died with them."
  5 "But not everyone was killed."
  6 "About seventy three prisoners, some say seventy two, were put on a ship to Penang, an island off Malaya."
- 7 "Among them, accounts say, was Duraisamy, the young son of Chinna Maruthu."
+ 7 "Among them, accounts say, was Duraisamy, the young son of Chinna Maruthu, or of his brother."
  8 "One study says the exiles were kept alongside convicts there, and fought to keep their rank and dignity."
  9 "What became of most of them is barely recorded."
  10 "Mercy, or a punishment worse than the rope? Tell me below. Then watch again, and count who never came home."

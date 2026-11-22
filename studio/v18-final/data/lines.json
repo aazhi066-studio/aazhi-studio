@@ -1,5 +1,5 @@
 {
- "duration": 58.99,
+ "duration": 60.28,
  "lines": [
   {
    "text": "Why did the British exile a Tamil rebel's son?",
@@ -51,31 +51,31 @@
    "i": 6
   },
   {
-   "text": "Among them, accounts say, was Duraisamy, the young son of Chinna Maruthu.",
-   "caps": "among them | accounts say | *Duraisamy | Chinna Maruthu's | *young *son.",
+   "text": "Among them, accounts say, was Duraisamy, the young son of Chinna Maruthu, or of his brother.",
+   "caps": "among them | accounts say | *Duraisamy | a *young *son | of Chinna Maruthu | or his *brother?",
    "start": 37.187,
-   "end": 41.564,
+   "end": 42.854,
    "i": 7
   },
   {
    "text": "One study says the exiles were kept alongside convicts there, and fought to keep their rank and dignity.",
    "caps": "one *study | kept with | *convicts | fighting for | *rank | and *dignity.",
-   "start": 42.014,
-   "end": 48.057,
+   "start": 43.304,
+   "end": 49.347,
    "i": 8
   },
   {
    "text": "What became of most of them is barely recorded.",
    "caps": "what became | of *most | is *barely | *recorded.",
-   "start": 48.507,
-   "end": 51.204,
+   "start": 49.797,
+   "end": 52.493,
    "i": 9
   },
   {
    "text": "Mercy, or a punishment worse than the rope? Tell me below. Then watch again, and count who never came home.",
    "caps": "*mercy? | or *worse | than the rope? | tell me *below | watch *again | who never | came *home?",
-   "start": 51.704,
-   "end": 58.19,
+   "start": 52.993,
+   "end": 59.48,
    "i": 10
   }
  ]

@@ -118,7 +118,7 @@ function lab(txt, x, y, size, p, onDark = false) {
   const u = eo(clamp((p - 0.1) / 0.3)); ctx.fillStyle = WAX; ctx.fillRect(-w / 2, size * 0.5, w * u, Math.max(4, size * 0.08));
   ctx.restore(); ctx.letterSpacing = '0px';
 }
-const tag = (txt, x, y, p) => lab(txt, x, y, 30, p);
+const tag = (txt, x, y, p) => lab(txt, x, y, 34, p);
 
 // ───────────── wax seal slam (device 3) ─────────────
 const sealImg = () => cached('aSeal', 260, 300, 1, () => {   // brass seal seen from above-ish: handle + face
@@ -365,13 +365,13 @@ function sheet(x, y, s, rot, u, t, seed, flut = 0.5) {
 }
 
 // ───────────── ledger tally (device 2) ─────────────
-const TX = 690, TY0 = 300, TROW = 96;   // tally column on the cleared page strip
+const TX = 690, TY0 = 310, TROW = 110;   // tally column on the cleared page strip
 function tally(n, t) {
   ctx.strokeStyle = INK; ctx.lineWidth = 5; ctx.lineCap = 'round'; const full = Math.floor(n), part = n - full; let nib = null;
   ctx.beginPath();
   for (let i = 0; i <= full && i < 80; i++) {
     const p = i < full ? 1 : part; if (p <= 0) break; const g = Math.floor(i / 5), j = i % 5, row = Math.floor(g / 3), col = g % 3, gx = TX + col * 98, gy = TY0 + row * TROW;
-    let a, b; if (j < 4) { a = [gx + j * 17 + (rnd(i) - 0.5) * 3, gy - 26]; b = [gx + j * 17 + 2, gy + 26]; } else { a = [gx - 10, gy + 18]; b = [gx + 66, gy - 18]; }
+    let a, b; if (j < 4) { a = [gx + j * 18 + (rnd(i) - 0.5) * 3, gy - 32]; b = [gx + j * 18 + 2, gy + 32]; } else { a = [gx - 10, gy + 18]; b = [gx + 66, gy - 18]; }
     const e = [lerp(a[0], b[0], p), lerp(a[1], b[1], p)]; ctx.moveTo(a[0], a[1]); ctx.lineTo(e[0], e[1]); if (i === full || p < 1) nib = e; else nib = e;
   }
   ctx.stroke();
@@ -411,7 +411,7 @@ export function buildA(add, cue) {
   add({ id: 'a0_hook', at: s0, cam: [540, 820], zoom: 0.14, note: 'hook: indigo wash bloom races across, ship pitching on night sea, red wax seal slam at 0.0',
     draw(lt, d, t) {
       teak(); page(1);
-      bloom(230, 420, 160 + eo(clamp(lt / 0.9)) * 1150, 1, t, () => sea(t), DEEP);
+      bloom(380, 700, 440 + eo(clamp(lt / 0.8)) * 1000, 1, t, () => sea(t), DEEP);
       inWin(() => { const r2 = 60 + eo(clamp((lt - 0.25) / 0.8)) * 260; if (lt > 0.25) { bloomPath(820, 360, r2, 4, t); ctx.fillStyle = 'rgba(14,28,58,0.12)'; ctx.fill(); } });
       specks(t, 24, 3);
       sealSlam(830, 1120, lt - 0.06, 0.9);
@@ -462,7 +462,7 @@ export function buildA(add, cue) {
     draw(lt, d, t) {
       teak(); page(5, true, -0.01);
       lab('SIVAGANGA, 1801', 520, 230, 66, lt - 0.05);
-      tally(clamp(lt / d) * 14, t);
+      tally(clamp(lt / d) * 22, t);
       specks(t, 10, 11, '43,29,20', 0.25);
     } });
   cue(s4, 'slide', { gain: 0.5 }); for (let i = 0; i < 5; i++) cue(s4 + 0.15 + i * 0.22, 'tock', { gain: 0.35, pan: 0.4 }); cue(tOne, 'pop', { gain: 0.5 });
@@ -487,8 +487,8 @@ export function buildA(add, cue) {
         blit(broImg(), 450, 1120, 540 + pan, 1440, 1.25); blit(granImg(), 0, 0, 0, 0, 1, 0.5); });
       winEdge();
       tag('ILLUSTRATION', 850, 1230, 1);
-      lab('PERIYA', 300 + pan, 230, 64, lt);
-      lab('CHINNA', 780 + pan, 230, 64, t - tChinna);
+      lab('PERIYA', clamp(300 + pan, 210, 870), 230, 64, lt);
+      lab('CHINNA', clamp(780 + pan, 210, 870), 230, 64, t - tChinna);
     } });
   cue(s6, 'pop', { gain: 0.6, pan: -0.4 }); cue(tChinna, 'pop', { gain: 0.6, pan: 0.4 });
 
@@ -538,7 +538,7 @@ export function buildA(add, cue) {
       teak(); page(10);
       bloom(540, 900, 220 + eo(clamp(lt / 0.5)) * 1100, 13, t, () => { blit(templeImg(), 0, 0, 0, 0);
         sheet(330, 840, 0.68, -0.04, lt - 0.0, t, 2, 0.6); sheet(560, 830, 0.68, 0.03, lt - 0.3, t, 3, 0.7); sheet(790, 845, 0.68, -0.02, t - tSri, t, 4, 0.6); }, MID, 0.3);
-      lab('SRIRANGAM', 540, 250, 64, t - tSri);
+      lab('SRIRANGAM', 540, 250, 64, t - tSri, true);
     } });
   cue(s10 + 0.13, 'thud', { gain: 0.6, pan: -0.4 }); cue(s10 + 0.43, 'thud', { gain: 0.6 }); cue(tSri + 0.13, 'thud', { gain: 0.6, pan: 0.4 });
 
@@ -548,7 +548,7 @@ export function buildA(add, cue) {
       teak(); page(11);
       bloom(520, 900, 260 + eo(clamp(lt / 0.4)) * 1100, 14, t, () => { blit(fortImg(), 0, 0, 0, 0);
         sheet(520, 720, 0.78, 0.02, t - tTri, t, 5, 0.6); sheet(330, 740, 0.62, -0.05, lt - 0.0, t, 6, 0.5); }, DEEP, 0.3);
-      lab('TRICHY FORT', 540, 250, 64, t - tTri - 0.05);
+      lab('TRICHY FORT', 540, 250, 64, t - tTri - 0.05, true);
     } });
   cue(s11 + 0.13, 'thud', { gain: 0.6, pan: -0.3 }); cue(tTri + 0.13, 'slam', { gain: 0.6 });
 
@@ -571,7 +571,7 @@ export function buildA(add, cue) {
     draw(lt, d, t) {
       const k = eio(clamp(lt / 0.6)), y = lerp(-80, 1288, k), sag = lerp(160, 0, eo(clamp(lt / 0.75)));
       ctx.save(); ropePath(y, sag, t); ctx.lineTo(1200, 2100); ctx.lineTo(-120, 2100); ctx.closePath(); ctx.clip(); teak(); page(11); fortScene(lt + (s13 - s12), t); ctx.restore();
-      ctx.save(); ropePath(y, sag, t); ctx.lineTo(1200, -300); ctx.lineTo(-120, -300); ctx.closePath(); ctx.clip(); tallyPage(t, 14 + clamp(lt / d) * 26); leaves(t); ctx.restore();
+      ctx.save(); ropePath(y, sag, t); ctx.lineTo(1200, -300); ctx.lineTo(-120, -300); ctx.closePath(); ctx.clip(); tallyPage(t, 22 + clamp(lt / d) * 26); leaves(t); ctx.restore();
       rope(y, sag + (lt > 0.6 ? 4 * sin(t * 40) * clamp(1 - (lt - 0.6) / 0.5) : 0), t);
       lab('SIVAGANGA, 1801', 520, 230, 66, 1);
     } });
@@ -580,7 +580,7 @@ export function buildA(add, cue) {
   // a14 · CRUSHED: red ink strikes through the rows, the seal slams, the label stamps in
   add({ id: 'a14_crushed', at: s14, cam: [540, 700], zoom: 0.12, note: 'red strike-through races across the ledger rows, wax seal slams, CRUSHED',
     draw(lt, d, t) {
-      tallyPage(t, 40); leaves(t + (s14 - s13));
+      tallyPage(t, 48); leaves(t + (s14 - s13));
       rope(1288, 0, t);
       strike(eo(clamp(lt / 0.5)));
       lab('CRUSHED', 540, 232, 104, lt - 0.05);

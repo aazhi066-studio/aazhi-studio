@@ -1,3 +1,4 @@
+Run 18:07 UTC 22 Nov (23:37 IST): idle by plan (before 18:30 UTC upload threshold). Publish (Video 3) and analytics already done today. Next: upload v11 Muziris + start v17 at first run >= 18:30 UTC 22 Nov (the 19:07 UTC run); publish Video 4 Lake Nyos at first run >= 13:30 UTC 23 Nov. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
 Run 17:07 UTC 22 Nov (22:37 IST): idle by plan. Publish (Video 3) and analytics already done today. Next: upload v11 Muziris + start v17 at first run >= 18:30 UTC 22 Nov; publish Video 4 Lake Nyos at first run >= 13:30 UTC 23 Nov. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
 Run 15:07 UTC 22 Nov (20:37 IST): analytics study done (Windsor 1 call + 1 field-name error): 3 public videos, 10 views total -> TOO LITTLE DATA, nothing changed (LEARNINGS.md). Next: upload v11 Muziris + start v17 at first run >= 18:30 UTC 22 Nov; publish Video 4 Lake Nyos at first run >= 13:30 UTC 23 Nov. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
 Run 13:07 UTC 22 Nov (18:37 IST 22 Nov): idle by plan (before 19:00 IST publish window). IST 22 Nov upload (v10) and 2 finished videos (v15, v16) already done. Next: publish Video 3 Srivijaya at first run >= 13:30 UTC 22 Nov (the 14:07 UTC run); analytics at first run >= 14:30 UTC 22 Nov; upload v11 Muziris + start v17 at first run >= 18:30 UTC 22 Nov. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
@@ -184,3 +185,4 @@ heartbeat: 2026-11-22T14:14:06Z (14:07 UTC run done; lock released)
 heartbeat: 2026-11-22T15:07:52Z (15:07 UTC run = 20:37 IST 22 Nov: analytics study; lock TAKEN)
 heartbeat: 2026-11-22T15:08:17Z (15:07 UTC run done: analytics study = too little data; lock free)
 heartbeat: 2026-11-22T16:09:00Z (16:07 UTC run = 21:37 IST: idle by plan; lock free)
+heartbeat: 2026-11-22T18:08:30Z (18:07 UTC run = 23:37 IST: idle by plan; lock free)

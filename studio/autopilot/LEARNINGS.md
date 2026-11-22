@@ -30,3 +30,8 @@
 - Rows: 3, unchanged from the 15:10 UTC study (Video 2 4 views avg 60 s, Video 1 2 views avg 60 s, Video 3 4 views avg 30 s / 51.5%). Total 10 views.
 - Verdict: TOO LITTLE DATA. Nothing big changed; v17 follows the 21 Nov RETENTION RULES.
 - v17 Kalabhras (finished 22 Nov UTC / 23 Nov IST): hook 'Who erased three hundred years of Tamil history?' (question, 8 words, at 0.15 s over ink flooding a red-hot copper plate), length 56.9 s (153 words), topic type: erased dynasty / history written by the winners (Kalabhra 'dark age', contested label), end: 'Wreckers of Tamil country, or kings written out by the winners? Tell me below. Then watch the start again, and ask who was holding the pen.' Art 'Hammered Copper & Ink Erasure', music gen:frost 17389.
+
+## Pre-v18 check 2026-11-22 20:10 UTC (01:40 IST 23 Nov), Windsor.ai YouTube (1 call, last_30dT per-video)
+- Rows: 3, unchanged (Video 2 4 views avg 60 s, Video 1 2 views avg 60 s, Video 3 4 views avg 30 s / 51.5%). Total 10 views.
+- Verdict: TOO LITTLE DATA. Nothing big changed; v18 follows the 21 Nov RETENTION RULES.
+- v18 Maruthu/Penang exiles (finished 22 Nov UTC / 23 Nov IST): hook 'Why did the British exile a Tamil rebel's son?' (question, 9 words, at 0.15 s over a ship pitching on a night sea + red wax seal slam), length 60.3 s (156 words), topic type: colonial-era punishment / exile, disputed details (73 vs 72 exiles, Duraisamy's father disputed), end: 'Mercy, or a punishment worse than the rope? Tell me below. Then watch again, and count who never came home.' Art 'Tide-Stained Manifest', music gen:ember.

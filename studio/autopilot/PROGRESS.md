@@ -205,3 +205,4 @@ heartbeat: 2026-11-22T20:07:24Z (20:07 UTC run = 01:37 IST 23 Nov: lock TAKEN; v
 v18 IN PROGRESS (20:07 UTC run 22 Nov = IST 23 Nov, 2nd video of the day): Maruthu brothers 1801 + Penang exiles (73/72 shipped, Duraisamy hedged 'accounts say'), studio/v18-final, script+narration 59.0 s (152 words, hook 'Why did the British exile a Tamil rebel's son?'), ART 'Tide-Stained Manifest', music gen:ember 18521 PASS (vs v14-v17), 6 new IPA names. Pre-v18 Windsor check: too little data (3 public, 10 views, unchanged). 3 workers drawing shots_a/b/c (stubs committed).
 heartbeat: 2026-11-22T20:11:24Z (v18 workers starting; lock held)
 heartbeat: 2026-11-22T20:13:35Z (v18 workers drawing; line 7 hedged; lock held)
+heartbeat: 2026-11-22T20:22:46Z (20:07 UTC run: v18 in production; lock held)

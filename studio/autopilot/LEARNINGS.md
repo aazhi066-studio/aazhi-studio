@@ -25,3 +25,8 @@
 - Public videos: 3; total views 10 (YouTube Analytics; v1's 768 views from the earlier upload are not in this channel report window).
 - Verdict: TOO LITTLE DATA (< 500 views; per-video samples of 2-4 views are noise). Nothing big changed: the 21 Nov RETENTION RULES stay in force for new videos; publish time 19:36 IST stays.
 - Next study: first run after 20:00 IST on 23 Nov (15:07 UTC), and before starting v17 (field ids: video, video_title, views, estimated_minutes_watched, average_view_duration, average_view_percentage, subscribers_gained, likes, comments).
+
+## Pre-v17 check 2026-11-22 19:15 UTC (00:45 IST 23 Nov), Windsor.ai YouTube (1 call, last_30dT per-video)
+- Rows: 3, unchanged from the 15:10 UTC study (Video 2 4 views avg 60 s, Video 1 2 views avg 60 s, Video 3 4 views avg 30 s / 51.5%). Total 10 views.
+- Verdict: TOO LITTLE DATA. Nothing big changed; v17 follows the 21 Nov RETENTION RULES.
+- v17 Kalabhras (in production 22 Nov UTC / 23 Nov IST): hook 'Who erased three hundred years of Tamil history?' (question, 8 words, at 0.15 s over ink flooding a red-hot copper plate), length 56.8 s narration (153 words), topic type: erased dynasty / history written by the winners (Kalabhra 'dark age', contested label), end: 'Wreckers of Tamil country, or kings written out by the winners? Tell me below. Then watch the start again, and ask who was holding the pen.' Art 'Hammered Copper & Ink Erasure', music gen:frost 17389.

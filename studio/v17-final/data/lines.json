@@ -1,0 +1,68 @@
+{
+ "duration": 56.765,
+ "lines": [
+  {
+   "text": "Who erased three hundred years of Tamil history?",
+   "caps": "who *erased | 300 *years | of Tamil *history?",
+   "start": 0.15,
+   "end": 2.829,
+   "i": 0
+  },
+  {
+   "text": "After about the two hundreds, records of the Cheras, Cholas and Pandyas grow thin.",
+   "caps": "after the *200s CE | the *Cheras | *Cholas | *Pandyas | grow *thin.",
+   "start": 3.179,
+   "end": 8.536,
+   "i": 1
+  },
+  {
+   "text": "In their place stand rulers called the Kalabhras. Where they came from, nobody can say for sure.",
+   "caps": "in their *place | the *Kalabhras | where from? | *nobody | knows for *sure.",
+   "start": 8.936,
+   "end": 14.713,
+   "i": 2
+  },
+  {
+   "text": "And most of what we know was written by their enemies.",
+   "caps": "most of it | written by | their *enemies.",
+   "start": 15.113,
+   "end": 17.903,
+   "i": 3
+  },
+  {
+   "text": "About two centuries after them, a Pandya copper plate grant, found at Velvikudi, calls the Kalabhra a Kali king, who drove out countless great kings.",
+   "caps": "two *centuries later | a Pandya | *copper plate | *Velvikudi | a *Kali king | drove out | *countless kings.",
+   "start": 18.353,
+   "end": 27.988,
+   "i": 4
+  },
+  {
+   "text": "Then, it says, the Pandya Kadungon took the land back, late in the five hundreds.",
+   "caps": "then | it *says | *Kadungon | took it *back | late *500s CE.",
+   "start": 28.438,
+   "end": 33.745,
+   "i": 5
+  },
+  {
+   "text": "So for a long time, historians called it a dark age.",
+   "caps": "so historians | called it | a *dark *age.",
+   "start": 34.195,
+   "end": 37.589,
+   "i": 6
+  },
+  {
+   "text": "Now the doubt. Some scholars think the Kalabhras may have backed Jain and Buddhist monks, and that Tamil writing may have kept growing in these years.",
+   "caps": "now the *doubt | some *scholars | *Jain | and *Buddhist | Tamil *writing | kept *growing?",
+   "start": 38.039,
+   "end": 46.856,
+   "i": 7
+  },
+  {
+   "text": "Wreckers of Tamil country, or kings written out by the winners? Tell me below. Then watch the start again, and ask who was holding the pen.",
+   "caps": "*wreckers? | or written out | by the *winners? | tell me *below | watch *again | who held | the *pen?",
+   "start": 47.356,
+   "end": 55.965,
+   "i": 8
+  }
+ ]
+}

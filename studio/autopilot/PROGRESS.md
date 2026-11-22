@@ -190,3 +190,5 @@ heartbeat: 2026-11-22T18:08:30Z (18:07 UTC run = 23:37 IST: idle by plan; lock f
 heartbeat: 2026-11-22T19:08:54Z (19:07 UTC run = 00:37 IST 23 Nov: uploading v11 Muziris + v17; lock TAKEN)
 heartbeat: 2026-11-22T19:09:24Z (uploading v11 Muziris; lock held)
 heartbeat: 2026-11-22T19:10:40Z (v11 upload+sheet+WhatsApp done; starting v17)
+v17 IN PROGRESS (19:07 UTC run 22 Nov): Kalabhras 'dark age' / erased dynasty (Velvikudi plates written by enemies, origin unknown, DISPUTED dark-age label), studio/v17-final, script+narration 56.8 s (153 words, hook 'Who erased three hundred years of Tamil history?'), ART 'Hammered Copper & Ink Erasure', music gen:frost 17389 PASS (vs v13-v16), 7 new IPA names. Pre-v17 Windsor check: too little data (3 public, 10 views). 3 workers drawing shots_a/b/c (stubs committed).
+heartbeat: 2026-11-22T19:13:40Z (v17 workers starting)

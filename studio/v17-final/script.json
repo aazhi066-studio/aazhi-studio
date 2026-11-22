@@ -1,0 +1,29 @@
+{
+ "title": "Who Erased 300 Years of Tamil History? | The Kalabhras #shorts",
+ "voice": "af_heart",
+ "speed": 0.9,
+ "lead": 0.15,
+ "outro": 0.5,
+ "music": "gen:frost",
+ "music_seed": 17389,
+ "lines": [
+  {"text": "Who erased three hundred years of Tamil history?",
+   "caps": "who *erased | 300 *years | of Tamil *history?", "gap": 0.35},
+  {"text": "After about the two hundreds, records of the Cheras, Cholas and Pandyas grow thin.",
+   "caps": "after the *200s CE | the *Cheras | *Cholas | *Pandyas | grow *thin.", "gap": 0.4},
+  {"text": "In their place stand rulers called the Kalabhras. Where they came from, nobody can say for sure.",
+   "caps": "in their *place | the *Kalabhras | where from? | *nobody | knows for *sure.", "gap": 0.4},
+  {"text": "And most of what we know was written by their enemies.",
+   "caps": "most of it | written by | their *enemies.", "gap": 0.45},
+  {"text": "About two centuries after them, a Pandya copper plate grant, found at Velvikudi, calls the Kalabhra a Kali king, who drove out countless great kings.",
+   "caps": "two *centuries later | a Pandya | *copper plate | *Velvikudi | a *Kali king | drove out | *countless kings.", "gap": 0.45},
+  {"text": "Then, it says, the Pandya Kadungon took the land back, late in the five hundreds.",
+   "caps": "then | it *says | *Kadungon | took it *back | late *500s CE.", "gap": 0.45},
+  {"text": "So for a long time, historians called it a dark age.",
+   "caps": "so historians | called it | a *dark *age.", "gap": 0.45},
+  {"text": "Now the doubt. Some scholars think the Kalabhras may have backed Jain and Buddhist monks, and that Tamil writing may have kept growing in these years.",
+   "caps": "now the *doubt | some *scholars | *Jain | and *Buddhist | Tamil *writing | kept *growing?", "gap": 0.5},
+  {"text": "Wreckers of Tamil country, or kings written out by the winners? Tell me below. Then watch the start again, and ask who was holding the pen.",
+   "caps": "*wreckers? | or written out | by the *winners? | tell me *below | watch *again | who held | the *pen?", "gap": 0.3}
+ ]
+}

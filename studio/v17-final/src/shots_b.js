@@ -385,7 +385,7 @@ export function buildB(add, cue) {
   cue(t4, 'slam', { gain: 0.9 }); cue(t4 + 0.02, 'sizzle', { gain: 0.7, dur: 1.3 }); cue(t4 + 0.4, 'pop', { gain: 0.3 });
 
   // b5 — red-hot ink ball knocks a row of crowned kings down like pins
-  const PX = Array.from({ length: 7 }, (_, i) => 230 + i * 105), LEDGE = 1060, BR = 70;
+  const PX = Array.from({ length: 7 }, (_, i) => 200 + i * 116), LEDGE = 1060, BR = 70;
   const ballX = (lt) => lerp(-140, 1240, seg(lt, 0.12, 1.75)), hitAt = (x) => 0.12 + ((x - 95 + 140) / 1380) * 1.63;
   add({ id: 'b5', at: t5, cam: [540, 900], zoom: 0.07, note: 'red-hot ink ball rolls along a copper ledge, small crowned kings fall like pins and sink in ink; IT SAYS', draw(lt, d, t) {
     bg(t);
@@ -394,7 +394,7 @@ export function buildB(add, cue) {
     const bx = ballX(lt);
     for (let i = 0; i < PX.length; i++) {
       const x = PX[i], f = eo(seg(lt, hitAt(x), hitAt(x) + 0.32)), ang = 1.42 * f + 0.06 * sin(PI * seg(lt, hitAt(x) + 0.32, hitAt(x) + 0.5)), ghost = lerp(1, 0.2, seg(bx, x + 140, x + 380));
-      ctx.save(); ctx.translate(x + 60 + 30 * f, LEDGE); ctx.rotate(ang); blit(pinC(), 116, 252, 0, 0, 1.3, ghost); ctx.restore();
+      ctx.save(); ctx.translate(x + 60 + 30 * f, LEDGE); ctx.rotate(ang); blit(pinC(), 116, 252, 0, 0, 1.15, ghost); ctx.restore();
     }
     // ink trail behind the ball, pooling over the fallen kings
     const tw = Math.max(0, bx + 40);

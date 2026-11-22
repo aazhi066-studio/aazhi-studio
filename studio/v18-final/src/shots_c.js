@@ -274,7 +274,7 @@ const worseImg = () => cached('cworse', W, 1400, 1, () => {
 function knot(x, y, t, tight = 0) {
   const sw = Math.sin(t * 1.3) * 0.04;
   ctx.save(); ctx.translate(x, y); ctx.rotate(sw);
-  ctx.save(); ctx.rotate(Math.PI / 2); blit(ropeImg(), 0, 20, 0, 0, 1, 1, 0.8); ctx.restore();
+  ctx.save(); ctx.beginPath(); ctx.rect(-30, -40, 60, 380); ctx.clip(); ctx.rotate(Math.PI / 2); blit(ropeImg(), 0, 20, 0, 0, 1, 1, 0.8); ctx.restore();
   // coils
   for (let k = 0; k < 6; k++) { ctx.fillStyle = k % 2 ? TAN : '#A3875A'; ctx.beginPath(); ctx.roundRect(-20, 330 + k * 16, 40, 16, 6); ctx.fill(); ctx.strokeStyle = INK; ctx.lineWidth = 2; ctx.stroke(); }
   // loop tightening
@@ -443,7 +443,7 @@ export function buildC(add, cue) {
   // split scene (used by c9 and c10)
   const drawSplit = (lt, t, rightP, tight) => {
     ctx.save(); ctx.beginPath(); ctx.rect(IX0, IY0, 540 - IX0, IY1 - IY0); ctx.clip();
-    ctx.translate(-420, 0); blit(nightImg(), 0, 0, 0, 0); ctx.translate(420, 0);
+    ctx.translate(-330, 0); blit(nightImg(), 0, 0, 0, 0); ctx.translate(330, 0);
     drawShip(310, 960, 0.6, t); waves(985, t, IX0, 540, 10); ctx.restore();
     bloom(() => { blit(worseImg(), 0, 0, 0, 0); knot(800, 172, t, tight); crows(t, 780, 930, 7, 3, clamp(rightP * 1.4 - 0.2)); }, 780, 700, lerp(40, 900, eo(rightP)), 9, t, [540, IY0, IX1, IY1]);
   };
@@ -453,7 +453,7 @@ export function buildC(add, cue) {
     bloom(() => drawSplit(lt, t, rp, eo(clamp((t - tRope) / 0.4))), 310, 700, lerp(60, 1300, eo(clamp(lt / 0.7))), 2, t, [IX0, IY0, 540, IY1]);
     if (rp > 0) drawSplit(lt, t, rp, eo(clamp((t - tRope) / 0.4)));
     // rope divider pulled down
-    const rd = eo(clamp(lt / 0.35)); ctx.save(); ctx.beginPath(); ctx.rect(IX0, IY0 - 40, IX1 - IX0, IY1 - IY0 + 40); ctx.clip(); ctx.translate(540, IY0 - 30); ctx.rotate(Math.PI / 2); blit(ropeImg(), 0, 20, -1600 + rd * (IY1 - IY0 + 1660), 0, 1, 1, 0.9); ctx.restore();
+    const rd = eo(clamp(lt / 0.35)); ctx.save(); ctx.beginPath(); ctx.rect(IX0, IY0 - 40, IX1 - IX0, IY1 - IY0 + 40); ctx.clip(); ctx.translate(540, IY0 - 30); ctx.rotate(Math.PI / 2); blit(ropeImg(), 0, 20, -1600 + rd * (IY1 - IY0 + 60), 0, 1, 1, 0.9); ctx.restore();
     tag('MERCY?', 310, 260, appear(lt, 0.1), { size: 64, col: WHITE });
     tag('OR WORSE?', 770, 260, appear(t, tOr + 0.1), { size: 60, col: WHITE });
   } });

@@ -174,3 +174,7 @@ heartbeat: 2026-11-22T08:07:02Z (08:07 UTC run = 13:37 IST 22 Nov: idle by plan;
 heartbeat: 2026-11-22T14:08:30Z (14:07 UTC run = 19:37 IST 22 Nov: PUBLISH run for Video 3 Srivijaya; lock taken)
 YT PUBLIC -OXGm_74tFM 14:09:17 UTC (PUT 200)
 FB video 1047080628407751 14:10 UTC; IG 1st try 14:10 errored still processing (180), retry after ~200 s
+PUBLISH DONE 22 Nov 14:14 UTC (19:4x IST) Video 3 Srivijaya: YT -OXGm_74tFM PUBLIC (PUT 200, 1st try), FB Page Aazhi06 video 1047080628407751, IG reel media 18649399849008937 (1st IG try 14:09 errored "still processing (180)", retried ~14:14 OK after 200 s wait; check @aazhi for a possible duplicate reel from the 1st try). File v/v3b.mp4. Sheet row 4 Run note = PUBLISHED. WhatsApp "published" sent. Zapier calls this run: sheet read 1, YT PUT 1, FB 1, IG 2, sheet update 1, WhatsApp 1.
+SHEET 14:08 UTC 22 Nov: row 5 Video 4 Lake Nyos (1dxvgzc6rcU, off-genre) is now Status 'approved', IG yes (no notes) -> next publish = Video 4 Lake Nyos at first run >= 13:30 UTC 23 Nov (oldest approved unpublished). Rows 6-11 (v5-v10) no status.
+Next: analytics study at the 15:07 UTC run (first run after 20:00 IST); upload v11 Muziris + start v17 at first run >= 18:30 UTC 22 Nov.
+heartbeat: 2026-11-22T14:14:06Z (14:07 UTC run done; lock released)

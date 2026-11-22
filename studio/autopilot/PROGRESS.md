@@ -194,3 +194,4 @@ v17 IN PROGRESS (19:07 UTC run 22 Nov): Kalabhras 'dark age' / erased dynasty (V
 heartbeat: 2026-11-22T19:13:40Z (v17 workers starting)
 heartbeat: 2026-11-22T19:14:24Z (v17 workers drawing; lock held)
 heartbeat: 2026-11-22T19:25:45Z (v17 shots WIP committed; workers still drawing; lock held)
+heartbeat: 2026-11-22T19:28:21Z (v17 shots_a done (12 shots); waiting for b, c)

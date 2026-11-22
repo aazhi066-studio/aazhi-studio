@@ -284,7 +284,7 @@ function king(x, y, s, t, dis = 1, seed = 0) {
   // ink sheet eats the right side, masked to the figure's own silhouette (one scratch canvas, reused)
   const KI = kingImg(); if (!KSCR) { KSCR = document.createElement('canvas'); KSCR.width = KI.width; KSCR.height = KI.height; KSCR._q = 1; }
   const c = KSCR.getContext('2d'), prev = ctx; c.setTransform(1, 0, 0, 1, 0, 0); c.globalCompositeOperation = 'source-over'; c.clearRect(0, 0, KSCR.width, KSCR.height);
-  setCtx(c); c.save(); c.translate(280 + 220 - 250 * dis, 0); c.rotate(PI / 2); inkPour(-40, 1040, 0, t * 0.8, seed, 0.7, 700); c.restore(); setCtx(prev);
+  setCtx(c); c.save(); c.translate(280 + 220 - 250 * dis, 0); c.rotate(PI / 2); inkPour(-40, 1040, 0, t * 0.8, seed, 0.35, 700); c.restore(); setCtx(prev);
   c.globalCompositeOperation = 'destination-in'; c.drawImage(KI, 0, 0); c.globalCompositeOperation = 'source-over';
   blit(KSCR, 280, 970, x, y, s);
   for (let i = 0; i < 4; i++) { const yy = y - s * (120 + i * 220 + rnd(seed + i) * 60), xx = x + s * (150 + rnd(seed + i * 2) * 40) + sin(t * 1.3 + i * 2) * 6 * s;
@@ -318,7 +318,7 @@ export function buildA(add, cue) {
     ctx.save(); ctx.translate(540, 0); ctx.rotate(0.1); inkPour(-900, 900, edge, t, 2, 1.2); ctx.restore();
     for (let i = 0; i < 5; i++) { const x = 180 + i * 180, y = edge + 30 + (x - 540) * 0.1, age = (lt * 1.7 + rnd(i + 4)) % 0.6; if (y > 500 && y < 1030) sparks(x, y, age, i + 3, 8, 0.6); }
     smoke(380, edge + 20, t, 5, '200,212,228', 0.16, 60, 340); smoke(720, edge + 60, t + 1, 5, '200,212,228', 0.16, 60, 340);
-    K.glow(540, 760, 900, '255,74,26', 0.9 * (1 - eo(seg(lt, 0, 0.35)))); flash(0.25 * (1 - eo(seg(lt, 0, 0.25)))); flash(0.15 * (1 - seg(lt, 0, 0.1)), '255,224,160');
+    K.glow(540, 760, 900, '255,74,26', 0.7 * (1 - eo(seg(lt, 0, 0.3)))); flash(0.18 * (1 - eo(seg(lt, 0, 0.2)))); flash(0.15 * (1 - seg(lt, 0, 0.1)), '255,224,160');
     tag('WHO ERASED THEM?', 540, 1215, 64, 1, pop(lt, 0.12));
   } });
 
@@ -408,7 +408,7 @@ export function buildA(add, cue) {
     MEDS.forEach((m, i) => { const pr = i === 2 ? seg(lt, 0, 0.35) : 1, sink = 60 * eio(seg(g, 0.3, 1));
       if (g < 0.4) K.glow(m.x, m.y + 40, 220, '224,138,78', 0.22 * (1 - g / 0.4));
       medallion(m, m.x, m.y + 40 + sink, 1 - 0.08 * g, pr, eio(seg(g, 0.05, 0.6)), eo(seg(g, 0, 0.45)), t);
-      if (g < 0.5) tag(m.name, m.x, m.y + 200, 36, 1 - g * 2); });
+      if (t < tGrow) tag(m.name, m.x, m.y + 200, 36, 1 - seg(t, tGrow - 0.15, tGrow)); });
     const edge = lerp(-200, 1060, eio(seg(g, 0.25, 1)));
     if (g > 0.25) { ctx.save(); ctx.translate(560, 0); ctx.rotate(-0.06); inkPour(-800, 800, edge, t, 5, 1.1); ctx.restore();
       MEDS.forEach((m) => { const cov = seg(edge - (m.y + 40), 0, 160); if (cov > 0) { ctx.beginPath(); ctx.arc(m.x, m.y + 40 + 60 * eio(seg(g, 0.3, 1)), 118, 0, TAU); ctx.strokeStyle = `rgba(224,138,78,${0.22 * cov})`; ctx.lineWidth = 3; ctx.stroke(); } }); }

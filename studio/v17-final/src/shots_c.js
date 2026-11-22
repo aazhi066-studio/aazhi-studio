@@ -340,7 +340,7 @@ export function buildC(add, cue) {
         blit(monkDone('cJdone', jainPlate, jainRel, JAIN_D), PLW / 2, PLH / 2, jx, lerp(720, 740, eo(seg(lt, 0, 0.45))), js, 0.8);
         const bx = lerp(1300, 700, eo(seg(lt, 0, 0.4))) + Math.sin(lt) * 6;
         monkPanel(buddPlate, buddRel, BUDD_D, bx, 700, 0.8, seg(lt, 0.25, 1.05), seg(lt, 0.85, 1.3));
-        ctx.save(); ctx.beginPath(); ctx.rect(bx - 290, 300, 580, 800); ctx.clip(); ink(-Math.PI / 2 + Math.PI, lerp(-600, 1300, eio(seg(lt, 0.1, 0.95))), lt, 8, 0.8); ctx.restore();
+        ctx.save(); ctx.beginPath(); ctx.roundRect(bx - 282, 338, 564, 724, 40); ctx.clip(); ink(Math.PI / 2, lerp(250, -700, eio(seg(lt, 0.1, 0.95))), lt, 8, 0.8); ctx.restore();
         tag('JAIN?', 250, 1050, 40, 1, { still: true, a: 0.85 });
         tag('BUDDHIST?', 700, 1165, 66, seg(lt, 0.12, 0.34));
         dust(lt, 22, 7, '170,190,220', 0.3);
@@ -356,9 +356,8 @@ export function buildC(add, cue) {
     add({ id: 'c4', at: t4, cam: [540, 680], zoom: 0.08, note: 'TAMIL WRITING?: rows of abstract marks hammered into a plate; TAMIL WRITING?, MAY HAVE',
       draw(lt, d) {
         bg(lt + 9);
-        blit(smallPlate('cTWa', 860, 400, 5, 3, 0.5), 440, 210, 520, 470, 1); // back plates
-        blit(smallPlate('cTWb', 860, 400, 5, 5, 0.3), 440, 210, 565, 560, 1);
-        ctx.fillStyle = 'rgba(11,11,13,0.45)'; ctx.fillRect(0, 230, W, 420);
+        blit(smallPlate('cTWa', 860, 400, 5, 3, 0.5), 440, 210, 520, 470, 1, 0.55); // back plates
+        blit(smallPlate('cTWb', 860, 400, 5, 5, 0.3), 440, 210, 565, 560, 1, 0.7);
         const px = 540, py = 720;
         const blank = smallPlate('cTW0', PW, PH, 0, 9, 0), full = smallPlate('cTW1', PW, PH, rows, 9, 0);
         blit(blank, PW / 2 + 10, PH / 2 + 10, px, py, 1);
@@ -401,7 +400,7 @@ export function buildC(add, cue) {
   const divider = (t) => { ctx.strokeStyle = '#B4552A'; ctx.lineWidth = 6; const P = []; for (let y = -50; y <= 1340; y += 40) P.push([540 + Math.sin(y * 0.03 + t) * 5 + (rnd(y) - 0.5) * 8, y]); pl(P); ctx.strokeStyle = 'rgba(255,210,166,0.5)'; ctx.lineWidth = 2; pl(P); };
   const leftHalf = (lt, strike, armA) => {
     ctx.save(); ctx.beginPath(); ctx.rect(-100, -100, 640, 1440); ctx.clip();
-    const g = ctx.createLinearGradient(0, 1300, 0, 500); g.addColorStop(0, 'rgba(255,74,26,0.55)'); g.addColorStop(1, 'rgba(255,74,26,0)'); ctx.fillStyle = g; ctx.fillRect(-100, 500, 640, 840);
+    const g = ctx.createLinearGradient(0, 1320, 0, 500); g.addColorStop(0, 'rgba(255,74,26,0)'); g.addColorStop(0.15, 'rgba(255,74,26,0.5)'); g.addColorStop(1, 'rgba(255,74,26,0)'); ctx.fillStyle = g; ctx.fillRect(-100, 500, 640, 820);
     K.glow(300, 820, 380, '255,74,26', 0.22 + 0.06 * Math.sin(lt * 9));
     K.embers(lt, 16, 5, '255,154,60');
     // floor plate (cracks after the strike)
@@ -472,7 +471,7 @@ export function buildC(add, cue) {
         tag('TELL ME BELOW', 540, 1120, 62, seg(lt, 0.05, 0.27));
         // punched arrow (repousse dots) bouncing down
         const ay = 1205 + Math.abs(Math.sin(lt * 6)) * 18, ap = seg(lt, 0.2, 0.6);
-        const A = [[-26, 0], [26, 0], [26, 40], [56, 40], [0, 96], [-56, 40], [-26, 40]], D = resample([A], 15).map(([x, y]) => [540 + x, ay + y]);
+        const A = [[-36, 0], [36, 0], [36, 50], [76, 50], [0, 112], [-76, 50], [-36, 50]], D = resample([A], 15).map(([x, y]) => [540 + x, ay + y]);
         ctx.fillStyle = lg(0, ay, 0, ay + 96, [[0, '#E08A4E'], [1, '#6E2E14']]); ctx.globalAlpha = ap; poly(A.map(([x, y]) => [540 + x, ay + y])); ctx.fill(); ctx.globalAlpha = 1;
         punchDots(D, ap);
       } });
@@ -492,7 +491,7 @@ export function buildC(add, cue) {
         }
         ctx.strokeStyle = lg(cx - 60, cy - 60, cx + 60, cy + 60, [[0, '#E6B070'], [1, '#6A3A16']]); ctx.lineWidth = 22; ctx.beginPath(); ctx.arc(cx, cy, 50, 0, TAU); ctx.stroke();
         blit(sealImg(), 110, 110, cx, cy + 4, 0.75);
-        ink(0, lerp(900, -1300, eio(seg(lt, 0.05, 1.3))), lt, 12, 1.2);
+        ink(0, lerp(450, -1300, eio(seg(lt, 0, 0.9))), lt, 12, 1.2);
         // rewind chevrons
         const cp = 0.6 + 0.4 * Math.sin(lt * 10);
         ctx.fillStyle = `rgba(224,138,78,${cp})`; for (const ox of [-10, 50]) { poly([[540 - ox, 150], [540 - ox - 54, 180], [540 - ox, 210]]); ctx.fill(); }
@@ -516,23 +515,23 @@ export function buildC(add, cue) {
         K.glow(tipX, tipY + 300, 420, '74,106,138', 0.12);
         // the ink splash (spreads after the hit)
         if (lt > hit) {
-          const a = lt - hit, r = 40 + 330 * eo(clamp(a / 1.2)) + a * 30, hx = 560, hy = 880;
-          ctx.beginPath(); for (let i = 0; i <= 48; i++) { const an = (i / 48) * TAU, rr = r * (1 + 0.09 * Math.sin(an * 5 + lt * 3) + 0.05 * Math.sin(an * 11 - lt * 4) + 0.12 * rnd(i % 48)); ctx.lineTo(hx + Math.cos(an) * rr, hy + Math.sin(an) * rr * 0.62); }
+          const a = lt - hit, r = 40 + 250 * eo(clamp(a / 1.2)) + a * 40, hx = 560, hy = 880;
+          ctx.beginPath(); for (let i = 0; i <= 48; i++) { const an = (i / 48) * TAU, rr = r * (1 + 0.08 * Math.sin(an * 5 + lt * 3) + 0.04 * Math.sin(an * 11 - lt * 4)); ctx.lineTo(hx + Math.cos(an) * rr, hy + Math.sin(an) * rr * 0.62); }
           ctx.closePath(); ctx.fillStyle = INK; ctx.fill(); ctx.strokeStyle = INKE; ctx.lineWidth = 5; ctx.stroke();
           ctx.strokeStyle = `rgba(255,210,166,${0.5 * (1 - clamp(a / 0.8))})`; ctx.lineWidth = 3; ctx.beginPath(); ctx.ellipse(hx, hy, r * 1.25, r * 0.78, 0, 0, TAU); ctx.stroke();
           ctx.fillStyle = INK; for (let i = 0; i < 12; i++) { const an = -Math.PI * (0.1 + rnd(i) * 0.8), v = 300 + rnd(i * 2) * 400, x = hx + Math.cos(an) * v * a * (i % 2 ? 1 : -1), y = hy + Math.sin(an) * v * a + 1600 * a * a; if (y < hy + 60) { ctx.beginPath(); ctx.arc(x, y, 5 + rnd(i) * 8, 0, TAU); ctx.fill(); } }
         }
-        pen(tipX, tipY, 0.05 + Math.sin(lt * 1.1) * 0.03, 1);
+        pen(tipX, tipY, 0.05 + Math.sin(lt * 1.1) * 0.03, 1.5);
         // the drop: swells at the nib, falls onto the plates on "pen"
-        if (lt < hit - fall) { const g = seg(lt, 0.5, hit - fall); ctx.fillStyle = INK; ctx.beginPath(); ctx.arc(tipX, tipY + 8 + g * 14, 6 + g * 14, 0, TAU); ctx.fill(); }
-        else if (lt < hit) { const f = (lt - (hit - fall)) / fall, y = lerp(tipY + 22, 880, f * f); ctx.fillStyle = INK; ctx.beginPath(); ctx.ellipse(lerp(tipX, 560, f), y, 18, 24 + f * 10, 0, 0, TAU); ctx.fill(); ctx.fillStyle = INKE; ctx.beginPath(); ctx.arc(lerp(tipX, 560, f) - 6, y - 8, 5, 0, TAU); ctx.fill(); }
+        if (lt < hit - fall) { const g = seg(lt, 0.5, hit - fall); ctx.fillStyle = INK; ctx.beginPath(); ctx.arc(tipX, tipY + 8 + g * 14, 6 + g * 14, 0, TAU); ctx.fill(); ctx.strokeStyle = 'rgba(255,190,140,0.55)'; ctx.lineWidth = 2; ctx.stroke(); }
+        else if (lt < hit) { const f = (lt - (hit - fall)) / fall, y = lerp(tipY + 22, 880, f * f); ctx.fillStyle = INK; ctx.beginPath(); ctx.ellipse(lerp(tipX, 560, f), y, 18, 24 + f * 10, 0, 0, TAU); ctx.fill(); ctx.strokeStyle = 'rgba(255,190,140,0.6)'; ctx.lineWidth = 2.5; ctx.stroke(); ctx.fillStyle = INKE; ctx.beginPath(); ctx.arc(lerp(tipX, 560, f) - 6, y - 8, 5, 0, TAU); ctx.fill(); }
         else { const g = seg(lt, hit + 0.2, d); ctx.fillStyle = INK; ctx.beginPath(); ctx.arc(tipX, tipY + 6 + g * 10, 5 + g * 9, 0, TAU); ctx.fill(); }
         tag('WHO HELD THE PEN?', 540, 1150, 64, seg(lt, 0.12, 0.34));
         // AAZHI mark stamped into a small copper bar
         const ak = seg(lt, hit + 0.5, hit + 0.75);
-        if (ak > 0) { ctx.save(); ctx.translate(540, 1262); const s = lerp(1.4, 1, eo(ak)); ctx.scale(s, s); ctx.globalAlpha = clamp(ak * 3);
+        if (ak > 0) { ctx.save(); ctx.translate(540, 1262); const s = lerp(1.4, 1.3, eo(ak)); ctx.scale(s, s); ctx.globalAlpha = clamp(ak * 3);
           ctx.fillStyle = lg(-110, -26, 110, 26, [[0, '#E08A4E'], [0.45, '#B4552A'], [1, '#6E2E14']]); ctx.beginPath(); ctx.roundRect(-110, -27, 220, 54, 8); ctx.fill(); ctx.strokeStyle = 'rgba(255,210,166,0.6)'; ctx.lineWidth = 2; ctx.stroke();
-          ctx.font = '700 36px Caladea'; ctx.letterSpacing = '10px'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = 'rgba(255,220,180,0.55)'; ctx.fillText('AAZHI', 6, 4); ctx.fillStyle = '#3A1606'; ctx.fillText('AAZHI', 5, 2);
+          ctx.font = '700 36px Caladea'; ctx.letterSpacing = '10px'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = 'rgba(255,230,200,0.8)'; ctx.fillText('AAZHI', 6.5, 4.5); ctx.fillStyle = '#2A0E04'; ctx.fillText('AAZHI', 5, 2);
           ctx.letterSpacing = '0px'; ctx.restore(); }
         dust(lt, 24, 13, '170,190,220', 0.3);
       } });

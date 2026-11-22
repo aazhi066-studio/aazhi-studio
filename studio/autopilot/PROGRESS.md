@@ -1,4 +1,4 @@
-UPLOAD 22 Nov 19:09:46 UTC: v11 Muziris n4AntZuE2pw unlisted (https://youtu.be/n4AntZuE2pw). Rolling 24h uploads: 1/5 (v11). Sheet row + WhatsApp: pending.
+UPLOAD 22 Nov 19:09:46 UTC: v11 Muziris n4AntZuE2pw unlisted (https://youtu.be/n4AntZuE2pw). Rolling 24h uploads: 1/5 (v11). Sheet row 12 added (Video 11 Muziris, IG Yes), WhatsApp uploaded sent. Zapier calls: YT upload 1, sheet add 1, WhatsApp 1. UPLOAD QUEUE next: v12 Serfoji II at first run >= 18:30 UTC 23 Nov, then v13, v14, v15, v16.
 Run 18:07 UTC 22 Nov (23:37 IST): idle by plan (before 18:30 UTC upload threshold). Publish (Video 3) and analytics already done today. Next: upload v11 Muziris + start v17 at first run >= 18:30 UTC 22 Nov (the 19:07 UTC run); publish Video 4 Lake Nyos at first run >= 13:30 UTC 23 Nov. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
 Run 17:07 UTC 22 Nov (22:37 IST): idle by plan. Publish (Video 3) and analytics already done today. Next: upload v11 Muziris + start v17 at first run >= 18:30 UTC 22 Nov; publish Video 4 Lake Nyos at first run >= 13:30 UTC 23 Nov. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
 Run 15:07 UTC 22 Nov (20:37 IST): analytics study done (Windsor 1 call + 1 field-name error): 3 public videos, 10 views total -> TOO LITTLE DATA, nothing changed (LEARNINGS.md). Next: upload v11 Muziris + start v17 at first run >= 18:30 UTC 22 Nov; publish Video 4 Lake Nyos at first run >= 13:30 UTC 23 Nov. No Zapier calls. Memory /areas/aazhi-channel.md still not reachable.
@@ -189,3 +189,4 @@ heartbeat: 2026-11-22T16:09:00Z (16:07 UTC run = 21:37 IST: idle by plan; lock f
 heartbeat: 2026-11-22T18:08:30Z (18:07 UTC run = 23:37 IST: idle by plan; lock free)
 heartbeat: 2026-11-22T19:08:54Z (19:07 UTC run = 00:37 IST 23 Nov: uploading v11 Muziris + v17; lock TAKEN)
 heartbeat: 2026-11-22T19:09:24Z (uploading v11 Muziris; lock held)
+heartbeat: 2026-11-22T19:10:40Z (v11 upload+sheet+WhatsApp done; starting v17)

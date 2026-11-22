@@ -178,3 +178,4 @@ PUBLISH DONE 22 Nov 14:14 UTC (19:4x IST) Video 3 Srivijaya: YT -OXGm_74tFM PUBL
 SHEET 14:08 UTC 22 Nov: row 5 Video 4 Lake Nyos (1dxvgzc6rcU, off-genre) is now Status 'approved', IG yes (no notes) -> next publish = Video 4 Lake Nyos at first run >= 13:30 UTC 23 Nov (oldest approved unpublished). Rows 6-11 (v5-v10) no status.
 Next: analytics study at the 15:07 UTC run (first run after 20:00 IST); upload v11 Muziris + start v17 at first run >= 18:30 UTC 22 Nov.
 heartbeat: 2026-11-22T14:14:06Z (14:07 UTC run done; lock released)
+heartbeat: 2026-11-22T15:07:52Z (15:07 UTC run = 20:37 IST 22 Nov: analytics study; lock TAKEN)

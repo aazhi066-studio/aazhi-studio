@@ -173,3 +173,4 @@ heartbeat: 2026-11-22T07:07:01Z (07:07 UTC run = 12:37 IST 22 Nov: idle by plan;
 heartbeat: 2026-11-22T08:07:02Z (08:07 UTC run = 13:37 IST 22 Nov: idle by plan; no Zapier calls; lock free)
 heartbeat: 2026-11-22T14:08:30Z (14:07 UTC run = 19:37 IST 22 Nov: PUBLISH run for Video 3 Srivijaya; lock taken)
 YT PUBLIC -OXGm_74tFM 14:09:17 UTC (PUT 200)
+FB video 1047080628407751 14:10 UTC; IG 1st try 14:10 errored still processing (180), retry after ~200 s

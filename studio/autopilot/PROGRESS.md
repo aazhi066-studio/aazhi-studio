@@ -186,3 +186,4 @@ heartbeat: 2026-11-22T15:07:52Z (15:07 UTC run = 20:37 IST 22 Nov: analytics stu
 heartbeat: 2026-11-22T15:08:17Z (15:07 UTC run done: analytics study = too little data; lock free)
 heartbeat: 2026-11-22T16:09:00Z (16:07 UTC run = 21:37 IST: idle by plan; lock free)
 heartbeat: 2026-11-22T18:08:30Z (18:07 UTC run = 23:37 IST: idle by plan; lock free)
+heartbeat: 2026-11-22T19:08:54Z (19:07 UTC run = 00:37 IST 23 Nov: uploading v11 Muziris + v17; lock TAKEN)

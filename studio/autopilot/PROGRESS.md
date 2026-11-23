@@ -234,3 +234,4 @@ heartbeat: 2026-11-23T13:11:08Z (13:07 UTC run = 18:39 IST 23 Nov: idle by plan 
 heartbeat: 2026-11-23T14:10:25Z (14:07 UTC run = 19:40 IST 23 Nov: PUBLISH run for Video 4 Lake Nyos; lock TAKEN)
 YT PUBLIC 1dxvgzc6rcU 14:12:04 UTC (PUT 200, 1st try)
 heartbeat: 2026-11-23T14:12:04Z (publishing Video 4; lock held)
+FB video 2573051379850524 14:12 UTC; IG 1st try errored (wrong account id), 2nd try with IG id 17841414857582076 errored still processing (180); retry after ~200 s

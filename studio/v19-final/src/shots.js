@@ -1,4 +1,4 @@
-// EPISODE 18 · THE PENANG EXILES (MARUTHU BROTHERS)
+// EPISODE 19 · TWO ENDINGS (PANDYA CIVIL WAR)
 import { buildA } from './shots_a.js';
 import { buildB } from './shots_b.js';
 import { buildC } from './shots_c.js';

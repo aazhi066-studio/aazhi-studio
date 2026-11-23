@@ -47,3 +47,8 @@
 - Rows: 4, unchanged from the 15:12 UTC study (Video 1 847 views 34.4%; Videos 2-4 4-8 views, 51-79%). Videos 2-4 samples are still noise; no retention-rule video is public yet.
 - Verdict: no new evidence; nothing changed beyond the 21 Nov RETENTION RULES. v19 follows them.
 - v19 Pandya civil war (finished 23 Nov UTC / 24 Nov IST): hook 'Whose head was nailed to the gates of Madurai?' (question, 9 words, at 0.15 s over a charcoal gate with empty spikes + red slash + crows), length 55.2 s (145 words), topic type: rival records / two kingdoms claim the same war (Pandya-Lanka-Chola, contested), end: 'A hero's welcome, or a head on a gate? Tell me below. Then watch again, and see which story cracks first.'
+
+## Pre-v20 check 2026-11-23 20:10 UTC (01:40 IST 24 Nov), Windsor.ai YouTube (1 call, last_30dT per-video)
+- Rows: 4, unchanged (Video 1 847 views 34.4%; Videos 2-4 4-8 views, 51-79%). No retention-rule video public yet.
+- Verdict: no new evidence; nothing changed beyond the 21 Nov RETENTION RULES. v20 follows them.
+- v20 Puli Thevar (finished 23 Nov UTC / 24 Nov IST): hook 'How did a chained rebel vanish inside a temple?' (question, 9 words, at 0.15 s over a glowing chain snapping in front of a moonlit iron temple), length 59.9 s (153 words), topic type: disputed death / legend vs record vs cover-up theory (palayakkarar vs Company, 1750s-1767), end: 'Miracle, escape, or cover-up? Tell me below. Then watch again, and listen for the chains.' Art 'Forged Iron & Rust', music gen:abyss 20743.

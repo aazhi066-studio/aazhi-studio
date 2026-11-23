@@ -258,3 +258,4 @@ heartbeat: 2026-11-23T19:29:08Z (19:07 UTC run finished: v12 uploaded, v19 done;
 heartbeat: 2026-11-23T20:08:28Z (20:07 UTC run: v20 starting)
 heartbeat: 2026-11-23T20:13:03Z (20:07 UTC run: v20 Puli Thevar script+voice done, shot workers starting)
 heartbeat: 2026-11-23T20:14:24Z (20:07 UTC run: v20 workers A/B/C running; music gen:abyss 20743 music_sim PASS; desc written)
+heartbeat: 2026-11-23T20:22:50Z (20:07 UTC run: v20 shots_c done, A/B running)

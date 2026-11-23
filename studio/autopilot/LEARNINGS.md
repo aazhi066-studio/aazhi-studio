@@ -42,3 +42,8 @@
 - What the data does support: Video 1 (long, ~100 s, slow plaque-style opening) keeps only ~34% (avg 35 s); this matches the 21 Nov RETENTION RULES evidence. The shorter Videos 2-4 hold 51-79% of their length on tiny samples, consistent with the 45-65 s length rule.
 - Changes: nothing new beyond the 21 Nov RETENTION RULES (they already target these numbers: hook lock, 45-65 s, dark/contested topics, end question). Publish time 19:36 IST unchanged (no hourly data). Finished/uploaded videos not touched. Targets stay: stayed-to-watch > 60%, avg % viewed > 60%.
 - Next study: first run after 20:00 IST on 24 Nov (15:07 UTC), and before starting v19 (18:30 UTC run today). Watch for the first retention-rule video going public to start comparing hook styles.
+
+## Pre-v19 check 2026-11-23 19:25 UTC (00:55 IST 24 Nov), Windsor.ai YouTube (1 call, last_30dT per-video)
+- Rows: 4, unchanged from the 15:12 UTC study (Video 1 847 views 34.4%; Videos 2-4 4-8 views, 51-79%). Videos 2-4 samples are still noise; no retention-rule video is public yet.
+- Verdict: no new evidence; nothing changed beyond the 21 Nov RETENTION RULES. v19 follows them.
+- v19 Pandya civil war (in production 23 Nov UTC / 24 Nov IST): hook 'Whose head was nailed to the gates of Madurai?' (question, 9 words, at 0.15 s over a charcoal gate with empty spikes + red slash + crows), length 55.2 s (145 words), topic type: rival records / two kingdoms claim the same war (Pandya-Lanka-Chola, contested), end: 'A hero's welcome, or a head on a gate? Tell me below. Then watch again, and see which story cracks first.'

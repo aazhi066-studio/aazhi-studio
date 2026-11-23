@@ -1,0 +1,75 @@
+{
+ "duration": 55.189,
+ "lines": [
+  {
+   "text": "Whose head was nailed to the gates of Madurai?",
+   "caps": "whose *head | was *nailed | to the *gates | of *Madurai?",
+   "start": 0.15,
+   "end": 2.54,
+   "i": 0
+  },
+  {
+   "text": "Around eleven sixty nine, two Pandya princes fought for the throne of Madurai.",
+   "caps": "around *1169 | two *Pandya | *princes | fought for | the *throne",
+   "start": 2.89,
+   "end": 7.474,
+   "i": 1
+  },
+  {
+   "text": "One of them, Parakrama Pandya, begged Lanka for help. Accounts say he was killed before it came.",
+   "caps": "*Parakrama | *Pandya | begged *Lanka | for help | accounts say | *killed | before it came",
+   "start": 7.874,
+   "end": 13.844,
+   "i": 2
+  },
+  {
+   "text": "The Lankan king Parakramabahu sent his general, Lankapura, across the sea.",
+   "caps": "king *Parakramabahu | sent his *general | *Lankapura | across the *sea",
+   "start": 14.244,
+   "end": 18.952,
+   "i": 3
+  },
+  {
+   "text": "Lanka's chronicle, the Culavamsa, says he won battle after battle, put the dead prince's son on the throne, and sailed home a hero.",
+   "caps": "the *Culavamsa | says he *won | battle after *battle | the son | on the *throne | home a *hero",
+   "start": 19.352,
+   "end": 27.769,
+   "i": 4
+  },
+  {
+   "text": "But Chola stone inscriptions tell a different ending.",
+   "caps": "but *Chola | *stone | inscriptions | a *different | *ending",
+   "start": 28.219,
+   "end": 31.081,
+   "i": 5
+  },
+  {
+   "text": "They say king Rajadhiraja the Second sent an army, and the heads of Lankapura and another general were nailed to the gates of Madurai.",
+   "caps": "king *Rajadhiraja | *II | sent an *army | the *heads | of *Lankapura | *nailed | to the *gates",
+   "start": 31.531,
+   "end": 40.204,
+   "i": 6
+  },
+  {
+   "text": "Each side carved its own victory.",
+   "caps": "each side | *carved | its *own | *victory",
+   "start": 40.654,
+   "end": 42.498,
+   "i": 7
+  },
+  {
+   "text": "Historians still argue over the dates, and over whose record bent the truth.",
+   "caps": "historians | still *argue | the *dates | whose record | *bent | the *truth",
+   "start": 42.898,
+   "end": 47.313,
+   "i": 8
+  },
+  {
+   "text": "A hero's welcome, or a head on a gate? Tell me below. Then watch again, and see which story cracks first.",
+   "caps": "a *hero's | *welcome | or a *head | on a *gate? | tell me *below | watch *again | which story *cracks",
+   "start": 47.763,
+   "end": 54.289,
+   "i": 9
+  }
+ ]
+}

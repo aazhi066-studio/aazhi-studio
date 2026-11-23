@@ -1,0 +1,61 @@
+{
+ "title": "Whose Head Was Nailed to Madurai's Gates? | Pandya Civil War, 1169 #shorts",
+ "voice": "af_heart",
+ "speed": 0.9,
+ "lead": 0.15,
+ "outro": 0.5,
+ "music": "gen:frost",
+ "music_seed": 31877,
+ "lines": [
+  {
+   "text": "Whose head was nailed to the gates of Madurai?",
+   "caps": "whose *head | was *nailed | to the *gates | of *Madurai?",
+   "gap": 0.35
+  },
+  {
+   "text": "Around eleven sixty nine, two Pandya princes fought for the throne of Madurai.",
+   "caps": "around *1169 | two *Pandya | *princes | fought for | the *throne",
+   "gap": 0.4
+  },
+  {
+   "text": "One of them, Parakrama Pandya, begged Lanka for help. Accounts say he was killed before it came.",
+   "caps": "*Parakrama | *Pandya | begged *Lanka | for help | accounts say | *killed | before it came",
+   "gap": 0.4
+  },
+  {
+   "text": "The Lankan king Parakramabahu sent his general, Lankapura, across the sea.",
+   "caps": "king *Parakramabahu | sent his *general | *Lankapura | across the *sea",
+   "gap": 0.4
+  },
+  {
+   "text": "Lanka's chronicle, the Culavamsa, says he won battle after battle, put the dead prince's son on the throne, and sailed home a hero.",
+   "caps": "the *Culavamsa | says he *won | battle after *battle | the son | on the *throne | home a *hero",
+   "gap": 0.45
+  },
+  {
+   "text": "But Chola stone inscriptions tell a different ending.",
+   "caps": "but *Chola | *stone | inscriptions | a *different | *ending",
+   "gap": 0.45
+  },
+  {
+   "text": "They say king Rajadhiraja the Second sent an army, and the heads of Lankapura and another general were nailed to the gates of Madurai.",
+   "caps": "king *Rajadhiraja | *II | sent an *army | the *heads | of *Lankapura | *nailed | to the *gates",
+   "gap": 0.45
+  },
+  {
+   "text": "Each side carved its own victory.",
+   "caps": "each side | *carved | its *own | *victory",
+   "gap": 0.4
+  },
+  {
+   "text": "Historians still argue over the dates, and over whose record bent the truth.",
+   "caps": "historians | still *argue | the *dates | whose record | *bent | the *truth",
+   "gap": 0.45
+  },
+  {
+   "text": "A hero's welcome, or a head on a gate? Tell me below. Then watch again, and see which story cracks first.",
+   "caps": "a *hero's | *welcome | or a *head | on a *gate? | tell me *below | watch *again | which story *cracks",
+   "gap": 0.4
+  }
+ ]
+}

@@ -243,3 +243,4 @@ heartbeat: 2026-11-23T14:16:46Z (14:07 UTC run done: Video 4 published; lock fre
 heartbeat: 2026-11-23T16:09:03Z (16:07 UTC run = 21:38 IST 23 Nov: idle by plan; no Zapier calls; lock free)
 heartbeat: 2026-11-23T17:07:41Z (17:07 UTC run = 22:37 IST 23 Nov: idle by plan; no Zapier calls; lock free)
 heartbeat: 2026-11-23T18:07:08Z (18:07 UTC run = 23:37 IST 23 Nov: idle by plan; no Zapier calls; lock free)
+heartbeat: 2026-11-23T19:08:30Z (19:07 UTC run = 00:37 IST 24 Nov: lock taken; uploading v12 Serfoji II, then v19)

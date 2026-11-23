@@ -221,3 +221,4 @@ heartbeat: 2026-11-22T23:08:30Z (23:07 UTC run = 04:37 IST 23 Nov: idle by plan;
 heartbeat: 2026-11-23T00:07:28Z (00:07 UTC run = 05:37 IST 23 Nov: idle by plan; next publish Video 4 Lake Nyos at run >= 13:30 UTC, analytics >= 14:30 UTC, upload v12 Serfoji II + start v19 at run >= 18:30 UTC; no Zapier calls; lock free)
 heartbeat: 2026-11-23T03:07:52Z (03:07 UTC run = 08:37 IST 23 Nov: idle by plan; no Zapier calls; lock free)
 heartbeat: 2026-11-23T04:07:21Z (04:07 UTC run = 09:37 IST 23 Nov: idle by plan; no Zapier calls; lock free)
+heartbeat: 2026-11-23T06:08:12Z (06:07 UTC run = 11:37 IST 23 Nov: idle by plan; next publish Video 4 Lake Nyos at run >= 13:30 UTC, analytics >= 14:30 UTC, upload v12 Serfoji II + start v19 at run >= 18:30 UTC; no Zapier calls; lock free)

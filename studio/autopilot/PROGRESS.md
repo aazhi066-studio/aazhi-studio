@@ -231,3 +231,4 @@ heartbeat: 2026-11-23T06:08:12Z (06:07 UTC run = 11:37 IST 23 Nov: idle by plan;
 heartbeat: 2026-11-23T07:09:39Z (07:07 UTC run = 12:37 IST 23 Nov: idle by plan; no Zapier calls; lock free)
 heartbeat: 2026-11-23T08:10:30Z (08:07 UTC run = 13:37 IST 23 Nov: idle by plan; no Zapier calls; lock free)
 heartbeat: 2026-11-23T13:11:08Z (13:07 UTC run = 18:39 IST 23 Nov: idle by plan - before 13:30 UTC publish window (Video 4 Lake Nyos at next run >= 13:30 UTC), analytics >= 14:30 UTC, upload v12 Serfoji II + start v19 at run >= 18:30 UTC; no Zapier calls; memory /areas/aazhi-channel.md still not reachable; lock free)
+heartbeat: 2026-11-23T14:10:25Z (14:07 UTC run = 19:40 IST 23 Nov: PUBLISH run for Video 4 Lake Nyos; lock TAKEN)

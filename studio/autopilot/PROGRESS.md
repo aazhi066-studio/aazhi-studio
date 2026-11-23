@@ -248,3 +248,4 @@ heartbeat: 2026-11-23T19:08:30Z (19:07 UTC run = 00:37 IST 24 Nov: lock taken; u
 heartbeat: 2026-11-23T19:10:20Z (19:07 UTC run: v12 uploaded; starting v19)
 heartbeat: 2026-11-23T19:14:41Z (19:07 UTC run: v19 shots swarm starting)
 heartbeat: 2026-11-23T19:16:08Z (19:07 UTC run: v19 shots workers running)
+heartbeat: 2026-11-23T19:22:43Z (19:07 UTC run: v19 shots_c done, A/B running)

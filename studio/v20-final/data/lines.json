@@ -1,0 +1,82 @@
+{
+ "duration": 59.919,
+ "lines": [
+  {
+   "text": "How did a chained rebel vanish inside a temple?",
+   "caps": "how did a | *chained | *rebel | *vanish | inside a *temple?",
+   "start": 0.15,
+   "end": 2.865,
+   "i": 0
+  },
+  {
+   "text": "In the seventeen fifties, Puli Thevar of Nerkattumseval refused to pay tribute to the Nawab and the British.",
+   "caps": "in the *1750s | *Puli *Thevar | of *Nerkattumseval | *refused | to pay *tribute | the *Nawab | and the *British",
+   "start": 3.215,
+   "end": 10.123,
+   "i": 1
+  },
+  {
+   "text": "Accounts say Yusuf Khan's cannon pounded his fort for weeks. In seventeen sixty one, it fell.",
+   "caps": "accounts say | *Yusuf *Khan's | *cannon | *pounded | his *fort | in *1761 | it *fell",
+   "start": 10.523,
+   "end": 16.662,
+   "i": 2
+  },
+  {
+   "text": "Puli Thevar slipped away. When Yusuf Khan himself was hanged, he came back and took the fort again.",
+   "caps": "*Puli *Thevar | *slipped away | *Yusuf *Khan | himself | was *hanged | he came *back | took the fort *again",
+   "start": 17.062,
+   "end": 22.676,
+   "i": 3
+  },
+  {
+   "text": "Around seventeen sixty seven, British troops under Campbell took it again.",
+   "caps": "around *1767 | *British | troops | under *Campbell | took it *again",
+   "start": 23.076,
+   "end": 27.23,
+   "i": 4
+  },
+  {
+   "text": "And here, the story splits.",
+   "caps": "and here | the story | *splits",
+   "start": 27.68,
+   "end": 29.162,
+   "i": 5
+  },
+  {
+   "text": "A legend says he was captured, and asked to pray one last time at the temple in Sankarankovil.",
+   "caps": "a *legend says | he was *captured | asked to *pray | one *last time | at the temple | in *Sankarankovil",
+   "start": 29.612,
+   "end": 35.421,
+   "i": 6
+  },
+  {
+   "text": "Guards outside heard iron crack. Inside, they found only broken chains. He was never seen again.",
+   "caps": "guards *outside | heard iron *crack | inside | only *broken | *chains | never *seen | *again",
+   "start": 35.821,
+   "end": 42.343,
+   "i": 7
+  },
+  {
+   "text": "School history books say something plainer: he escaped, and died in exile.",
+   "caps": "school *history | books say | something *plainer | he *escaped | and *died | in *exile",
+   "start": 42.793,
+   "end": 47.151,
+   "i": 8
+  },
+  {
+   "text": "Others suspect the vanishing tale covered up a quiet execution. None of it is proven.",
+   "caps": "others *suspect | the *vanishing | tale | *covered up | a quiet *execution | none of it | is *proven",
+   "start": 47.551,
+   "end": 53.093,
+   "i": 9
+  },
+  {
+   "text": "Miracle, escape, or cover-up? Tell me below. Then watch again, and listen for the chains.",
+   "caps": "*miracle | *escape | or *cover-up? | tell me *below | watch *again | listen for | the *chains",
+   "start": 53.543,
+   "end": 59.02,
+   "i": 10
+  }
+ ]
+}

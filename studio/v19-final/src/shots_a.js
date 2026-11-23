@@ -332,7 +332,7 @@ export function buildA(add, cue) {
         charcoal([[X(x), Y(ty - 10)], [X(x + 18), Y(ty + 36)], [X(x), Y(ty + 52)], [X(x - 18), Y(ty + 36)], [X(x), Y(ty - 10)]], eo(seg(lt, 0.05 + (i - 3) * 0.06, 0.45)), 9, REDc, 0.95, i);
         charcoal(lp(X(x + 8), Y(ty + 60), X(x + 8), Y(400), 14), eo(seg(lt, 0.2, 0.6)), 6, REDc, 0.8, i + 9); }
       crows(lt * 0.8 + 0.12, [[X(SPK[3][0]), Y(SPK[3][1])], [X(SPK[5][0]), Y(SPK[5][1])], [X(SPK[4][0]), Y(SPK[4][1])]], 4, 17, 0.8);
-      qmark(X(SPK[4][0]), Y(60), 260, seg(lt, Wd('madurai', 0) - T1 - 0.1, Wd('madurai', 0) - T1 + 0.35));
+      qmark(X(SPK[4][0]), 290, 240, seg(lt, Wd('madurai', 0) - T1 - 0.1, Wd('madurai', 0) - T1 + 0.35));
       specks(lt, 25, 3, CHc, 0.5);
       calm(1260);
     } });
@@ -535,7 +535,7 @@ export function buildA(add, cue) {
       const MX = MADU[0], MY = MADU[1] + 100;
       ctx.fillStyle = RED; ctx.beginPath(); ctx.arc(MX, MY, 14, 0, TAU); ctx.fill();
       lab('MADURAI', MX, MY - 56, 44, 1);
-      for (let i = 0; i < 4; i++) { const f = clamp(rp * 1.3 - i * 0.16); if (f <= 0) continue; const idx = Math.min(R.length - 1, Math.floor(f * (R.length - 1))), [x, y] = R[idx], s = 1.0 - i * 0.1, bob = sin(lt * 6 + i) * 4;
+      for (let i = 0; i < 4; i++) { const f = clamp(rp - i * 0.17); if (f <= 0) continue; const idx = Math.min(R.length - 1, Math.floor(f * (R.length - 1))), [x, y] = R[idx], s = 1.0 - i * 0.1, bob = sin(lt * 6 + i) * 4;
         ctx.save(); ctx.translate(x + 20 + i * 18, y + bob - i * 10); ctx.scale(s, s);
         fillP([[-34, 0], [34, 0], [24, 16], [-24, 16]], CH); charcoal(lp(0, 0, 0, -78, 4), 1, 4, CHc, 0.95, i); fillP([[3, -74], [3, -6], [50, -6]], TEAL); fillP([[-3, -64], [-3, -6], [-34, -6]], 'rgba(62,140,138,0.75)');
         ctx.restore(); }

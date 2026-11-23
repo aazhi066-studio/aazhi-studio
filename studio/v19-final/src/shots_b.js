@@ -38,6 +38,8 @@ function charcoal(pts, p = 1, w = 6, col = '28,26,24', a = 0.85, seed = 1) {
 }
 
 // ───────────── small helpers ─────────────
+/** charcoal draw-on that stays invisible until it has started (charcoal() always draws 2 points) */
+const drawOn = (pts, p, ...r) => { if (p > 0.03) charcoal(pts, p, ...r); };
 const pop = (lt, t0, d = 0.3) => (lt < t0 ? 0 : eob(clamp((lt - t0) / d)));
 const lineP = (x0, y0, x1, y1, n = 16) => { const o = []; for (let i = 0; i <= n; i++) o.push([lerp(x0, x1, i / n), lerp(y0, y1, i / n)]); return o; };
 const pathP = (P, step = 18) => { const o = []; for (let i = 0; i < P.length - 1; i++) { const [x0, y0] = P[i], [x1, y1] = P[i + 1], n = Math.max(1, Math.ceil(Math.hypot(x1 - x0, y1 - y0) / step));
@@ -76,7 +78,7 @@ function nicks(x0, x1, y, seed, col = COAL, a = 0.8) {
   while (x < x1 - 8 && k < 50) { const f = rnd(seed * 17 + k), g = rnd(seed * 23 + k);
     ctx.beginPath(); if (g < 0.4) { ctx.moveTo(x, y - 14); ctx.lineTo(x + 7, y - 14); ctx.lineTo(x + 3, y + 14); }
     else if (g < 0.7) { ctx.moveTo(x, y - 12); ctx.lineTo(x + 16, y + 2); ctx.lineTo(x + 2, y + 12); ctx.lineTo(x + 8, y); }
-    else { ctx.moveTo(x, y + 12); ctx.lineTo(x + 6, y - 12); ctx.lineTo(x + 14, y + 12); ctx.lineTo(x + 7, y + 4); }
+    else { ctx.moveTo(x, y - 3); ctx.lineTo(x + 18, y - 6); ctx.lineTo(x + 16, y + 2); ctx.lineTo(x + 2, y + 4); }
     ctx.closePath(); ctx.fill(); x += 14 + f * 14; if (f > 0.88) x += 26; k++; }
 }
 
@@ -160,7 +162,7 @@ function crow(x, y, s = 1, f = 0, fold = 0, dir = 1) {
 /** a chalk/pastel question mark drawn on (p) */
 function qmark(x, y, s, p, rgb = RED, w = 16) {
   const P = arcP(x, y - 70 * s, 52 * s, -PI * 0.95, PI * 0.45, 22).concat(lineP(x + 52 * s * cos(PI * 0.45), y - 70 * s + 52 * s * sin(PI * 0.45), x, y + 20 * s, 6));
-  charcoal(P, clamp(p / 0.85), w, rgb, 0.95, 77);
+  drawOn(P, clamp(p / 0.85), w, rgb, 0.95, 77);
   if (p > 0.9) { ctx.fillStyle = `rgba(${rgb},0.95)`; ctx.beginPath(); ctx.arc(x, y + 66 * s, 11 * s, 0, TAU); ctx.fill(); }
 }
 
@@ -271,10 +273,10 @@ const shipC = () => cached('bship', 560, 500, 1, () => {
   charcoal(lineP(282, 50, 40, 350, 16), 1, 2, COAL, 0.6, 100); charcoal(lineP(282, 50, 530, 335, 16), 1, 2, COAL, 0.6, 101);
 });
 // sea band: hatched water + wave squiggles, 1300 x 460
-const seaC = () => cached('bsea', 1300, 460, 1, () => {
-  ctx.fillStyle = 'rgba(28,26,24,0.1)'; ctx.fillRect(0, 0, 1300, 460);
-  for (let r = 0; r < 30; r++) { const y = 6 + r * r * 0.5; charcoal(lineP(0, y, 1300, y + (rnd(r) - 0.5) * 8, 40), 1, 2 + r * 0.12, COAL, 0.25 + r * 0.012, 110 + r); }
-  for (let i = 0; i < 40; i++) squig(rnd(i) * 1200, rnd(i) * 1200 + 120, 30 + rnd(i + 4) * 420, i + 120, COAL, 0.35, 2, 4);
+const seaC = () => cached('bsea', 1300, 410, 1, () => {
+  const g = ctx.createLinearGradient(0, 0, 0, 410); g.addColorStop(0, 'rgba(28,26,24,0.1)'); g.addColorStop(0.8, 'rgba(28,26,24,0.08)'); g.addColorStop(1, 'rgba(28,26,24,0)'); ctx.fillStyle = g; ctx.fillRect(0, 0, 1300, 410);
+  for (let r = 0; r < 26; r++) { const y = 6 + r * r * 0.56; charcoal(lineP(0, y, 1300, y + (rnd(r) - 0.5) * 8, 40), 1, 2 + r * 0.12, COAL, (0.25 + r * 0.012) * (r > 21 ? (26 - r) / 5 : 1), 110 + r); }
+  for (let i = 0; i < 40; i++) squig(rnd(i) * 1200, rnd(i) * 1200 + 120, 30 + rnd(i + 4) * 330, i + 120, COAL, 0.35, 2, 4);
   for (let i = 0; i < 10; i++) charcoal(lineP(rnd(i + 30) * 1200, 20 + rnd(i + 40) * 300, rnd(i + 30) * 1200 + 80, 22 + rnd(i + 40) * 300, 6), 1, 3, CHALK, 0.4, 130 + i);
 });
 // king: tall faceless crowned silhouette, red pastel sash and hem, sceptre. origin feet (280, 1090)
@@ -340,8 +342,8 @@ const gateC = () => cached('bgate', 900, 1230, 1, () => {
 });
 const gS = (X, Y, s) => (lx, ly) => [X + (lx - 450) * s, Y + (ly - 1220) * s];
 function spikeRed(T, s, p, seed) { // red pastel outline around an empty spike, in screen space via T
-  const x = SPX(seed), P = [[x - 20, SPB + 6], [x - 8, SPT + 20], [x, SPT - 16], [x + 8, SPT + 20], [x + 20, SPB + 6]].map(([a, b]) => T(a, b));
-  charcoal(pathP(P, 8), p, 10 * s + 3, RED, 0.95, 190 + seed);
+  const x = SPX(seed), P = [[x - 24, SPB + 4], [x - 12, SPT + 24], [x, SPT - 22], [x + 12, SPT + 24], [x + 24, SPB + 4]].map(([a, b]) => T(a, b));
+  drawOn(pathP(P, 8), p, 7, RED, 0.95, 190 + seed);
 }
 // fallen helmet: conical iron helmet with brim, chalk glints, red pastel band. origin centre (190, 170)
 const helmC = () => cached('bhelm', 380, 300, 1, () => {
@@ -352,7 +354,6 @@ const helmC = () => cached('bhelm', 380, 300, 1, () => {
   charcoal(lineP(190, 30, 190, 4, 4), 1, 8, COAL, 0.95, 203);
   roughRect(50, 192, 280, 36, 3, 204); ctx.fillStyle = '#2E2A26'; ctx.fill(); charcoal(lineP(56, 204, 324, 204, 14), 1, 7, RED, 0.9, 205);
   charcoal(rectP(50, 192, 280, 36, 20), 1, 4, COAL, 0.9, 206);
-  for (const x of [80, 300]) { roughRect(x - 18, 226, 36, 60, 3, x); ctx.fillStyle = '#3A3530'; ctx.fill(); }
 });
 
 // ═════════════════════════ SHOTS ═════════════════════════
@@ -366,13 +367,13 @@ export function buildB(add, cue) {
   add({ id: 'b1', at: t1, zoom: 0.08, cam: [540, 760], note: "LANKA'S RECORD header, teal-tied chronicle bundle smudge-revealed, CULAVAMSA SAYS",
     draw(lt, d) {
       bg(-lt * 10, 0, TEAL, 0.06); edge(26, TEAL); edge(1048, TEAL, 0.4);
-      header("LANKA'S RECORD", 540, 150, TEAL, seg(lt, 0, 0.45));
-      const p = eio(seg(lt, 0.1, 1.1)), X = 540 + lt * 8, Y = 770;
+      header("LANKA'S RECORD", 540, 150, TEAL, 0.15 + 0.85 * seg(lt, 0, 0.4));
+      const p = 0.12 + 0.88 * eo(seg(lt, 0, 0.9)), X = 540 + lt * 8, Y = 770;
       ctx.save(); const fx = wipeX(80, 1020, 380, 1150, p, 3); blit(chronC(), 380, 290, X, Y, 1.18); ctx.restore();
       if (p > 0 && p < 1) { smear(fx, 380, fx + 30, 1150, 80, 0.1); specks(fx - 40, fx + 40, 1000, lt, 16, 4, 260); }
       // the stick redraws the top edge, then chalk scribbles a highlight
-      charcoal(lineP(X - 330, Y - 210, X + 330, Y - 215, 30), seg(lt, 0.9, 1.5), 6, COAL, 0.8, 9);
-      charcoal(pathP([[X - 300, Y + 230], [X + 320, Y + 236]], 16), seg(lt, 1.2, 1.8), 10, TEAL, 0.8, 10);
+      drawOn(lineP(X - 330, Y - 210, X + 330, Y - 215, 30), seg(lt, 0.9, 1.5), 6, COAL, 0.8, 9);
+      drawOn(pathP([[X - 300, Y + 230], [X + 320, Y + 236]], 16), seg(lt, 1.2, 1.8), 10, TEAL, 0.8, 10);
       specks(200, 900, 1180, lt, 10, 8, 120);
       hedge4(lt, true);
       burst(X - 170, Y - 130, lt - 1.1, 180, 5, 30);
@@ -386,27 +387,28 @@ export function buildB(add, cue) {
     draw(lt, d, t) {
       bg(lt * 12, 0, TEAL, 0.06); edge(26, TEAL);
       header("LANKA'S RECORD", 540, 150, TEAL); hedge4(lt);
-      const dx = 20 - lt * 14, oy = MAP.y; blit(mapC(), 0, 0, dx, oy, 1);
-      const M = (x, y) => [dx + x, oy + y];
+      const ms = 0.94, dx = 40 - lt * 14, oy = MAP.y; blit(mapC(), 0, 0, dx, oy, ms);
+      const M = (x, y) => [dx + x * ms, oy + y * ms];
       // landing beach dot + start
       const L0 = M(610, 640); ctx.fillStyle = `rgba(${TEAL},0.95)`; ctx.beginPath(); ctx.arc(L0[0], L0[1], 12, 0, TAU); ctx.fill();
       ARW.forEach(([a, b], i) => {
         const p = seg(t, HITS[i] - 0.12, HITS[i] + 0.25); if (p <= 0) return;
-        const A = M(...a), B = M(...b); charcoal(lineP(A[0], A[1], B[0], B[1], 14), p, 16, TEAL, 0.95, 30 + i);
-        if (p >= 1) { const an = Math.atan2(B[1] - A[1], B[0] - A[0]); for (const s of [-1, 1]) charcoal(lineP(B[0], B[1], B[0] - cos(an + s * 0.5) * 44, B[1] - sin(an + s * 0.5) * 44, 5), 1, 12, TEAL, 0.95, 40 + i + s);
+        const A = M(...a), B = M(...b), an = Math.atan2(B[1] - A[1], B[0] - A[0]), Bs = [B[0] - cos(an) * 30, B[1] - sin(an) * 30];
+        drawOn(lineP(A[0], A[1], Bs[0], Bs[1], 14), p, 11, TEAL, 0.95, 30 + i);
+        if (p >= 1) { ctx.beginPath(); ctx.moveTo(B[0] + cos(an) * 8, B[1] + sin(an) * 8); ctx.lineTo(B[0] - cos(an - 0.5) * 50, B[1] - sin(an - 0.5) * 50); ctx.lineTo(B[0] - cos(an + 0.5) * 50, B[1] - sin(an + 0.5) * 50); ctx.closePath(); ctx.fillStyle = `rgba(${TEAL},0.95)`; ctx.fill();
           const px = (A[0] + B[0]) / 2, py = (A[1] + B[1]) / 2 + 40, q = seg(t, HITS[i] + 0.2, HITS[i] + 0.4);
           charcoal(lineP(px - 22, py - 22, px + 22, py + 22, 6), q, 7, COAL, 0.9, 50 + i); charcoal(lineP(px + 22, py - 22, px - 22, py + 22, 6), q, 7, COAL, 0.9, 60 + i); }
         burst(B[0], B[1], t - HITS[i] - 0.2, 150, 11 + i, 26);
       });
       // tally on an erased patch in the open sea (eraser streak first)
-      const ex = dx + 790, ey = oy + 160, ep = eo(seg(lt, 0.05, 0.4));
+      const ex = dx + 760, ey = oy + 160, ep = eo(seg(lt, 0.05, 0.4));
       if (ep > 0) { ctx.save(); ctx.beginPath(); ctx.rect(ex - 150, ey - 90, 300 * ep, 180); ctx.clip(); roughRect(ex - 140, ey - 75, 280, 150, 8, 70); ctx.fillStyle = 'rgba(214,209,199,0.95)'; ctx.fill(); ctx.restore();
         for (let i = 0; i < 6; i++) { const cx = ex - 150 + 300 * ep - rnd(i) * 40; ctx.fillStyle = `rgba(${LIGHT},0.8)`; ctx.fillRect(cx, ey - 70 + rnd(i + 5) * 150 + lt * 20, 5, 4); } }
       const nT = HITS.filter((h) => t > h).length + (t > tb2 + 0.25 ? 1 : 0) + (t > tb2 + 0.42 ? 1 : 0);
       for (let i = 0; i < Math.min(4, nT); i++) charcoal(lineP(ex - 90 + i * 34, ey - 50, ex - 96 + i * 34, ey + 50, 8), 1, 11, TEAL, 0.95, 80 + i);
-      if (nT >= 5) charcoal(lineP(ex - 120, ey + 40, ex + 40, ey - 40, 10), seg(t, tb2 + 0.42, tb2 + 0.55), 10, TEAL, 0.95, 85);
+      if (nT >= 5) drawOn(lineP(ex - 120, ey + 40, ex + 40, ey - 40, 10), seg(t, tb2 + 0.42, tb2 + 0.55), 10, TEAL, 0.95, 85);
       const [mx, my] = M(...MAP.mad); tag('MADURAI', mx, my - 56, 38, { u: COAL, sc: pop(lt, 0.2) });
-      tag('VICTORY', mx + 40, my + 330, 66, { u: TEAL, sc: pop(t, tb2 + 0.35, 0.35), rot: -0.05 });
+      tag('VICTORY', mx - 60, my + 180, 60, { u: TEAL, sc: pop(t, tb2 + 0.35, 0.35), rot: -0.05 });
     } });
   cue(t2, 'slide', { gain: 0.4 }); HITS.forEach((h, i) => { cue(h, 'drum', { gain: 0.55 }); cue(h + 0.2, 'thud', { gain: 0.45 + i * 0.05 }); }); cue(tb2 + 0.35, 'pop', { gain: 0.45 });
 
@@ -421,12 +423,12 @@ export function buildB(add, cue) {
       if (p < 1) smear(160, lerp(1250, 330, p), 920, lerp(1250, 330, p) + 10, 70, 0.08);
       const seatY = Y + (430 - 720) * s + 8, land = eob(seg(t, tson - 0.35, tthr + 0.05));
       // teal halo scribbles on after landing
-      charcoal(arcP(X, seatY - 300, 150, -PI * 0.6, PI * 1.4, 40), seg(t, tthr, tthr + 0.6), 10, TEAL, 0.75, 21);
+      drawOn(arcP(X, seatY - 300, 150, -PI * 0.6, PI * 1.4, 40), seg(t, tthr, tthr + 0.6), 10, TEAL, 0.75, 21);
       const py = lerp(seatY - 520, seatY, land), pa = seg(t, tson - 0.4, tson - 0.2);
       if (pa > 0) { blit(princeC(), 110, 300, X, py, 1.25, pa);
         if (land < 0.98) specks(X - 80, X + 80, py, lt, 10, 9, 160); }
       burst(X, seatY, t - tthr - 0.02, 230, 23, 34);
-      tag('ILLUSTRATION', 880, 1290, 24, { col: 'coal', a: 0.85 });
+      tag('ILLUSTRATION', 900, 330, 24, { col: 'coal', a: 0.85 });
     } });
   cue(t3, 'whoosh', { gain: 0.45 }); cue(tthr, 'thud', { gain: 0.6 }); cue(tthr + 0.05, 'sparkle', { gain: 0.3 });
 
@@ -505,7 +507,7 @@ export function buildB(add, cue) {
           for (let i = 0; i < 8; i++) { const a = -PI * 0.2 - rnd(i + Math.floor(lt * 12)) * PI * 0.6, r = 10 + rnd(i * 3 + Math.floor(lt * 12)) * 40; ctx.fillStyle = `rgba(${RED},0.9)`; ctx.fillRect(cx + cos(a) * r, cy + sin(a) * r, 4, 4); }
           specks(cx - 20, cx + 20, cy, lt, 6, 13, 150); }
         // "a different ending": red pastel scribble ring round the last rows
-        charcoal(arcP(X, Y - 150 * s, 250, -PI * 0.1, PI * 1.9, 40, 90), seg(t, tdiff, tdiff + 0.5), 9, RED, 0.85, 62);
+        drawOn(arcP(X, Y - 150 * s, 250, -PI * 0.1, PI * 1.9, 40, 90), seg(t, tdiff, tdiff + 0.5), 9, RED, 0.85, 62);
       });
       seam(sx);
     } });
@@ -517,13 +519,13 @@ export function buildB(add, cue) {
     draw(lt, d, t) {
       ctx.fillStyle = Z.wall; ctx.fillRect(-300, -300, W + 600, H + 600); redPaper(lt * 10); edge(28, RED); edge(1050, RED);
       header('CHOLA RECORD', 540, 150, RED); hedge6(lt);
-      for (let i = 0; i < 3; i++) charcoal(arcP(540, 760, 300 + i * 50, PI * (1.05 + i * 0.1) + lt * 0.12, PI * (1.95 - i * 0.05) + lt * 0.12, 30), seg(lt, 0.3 + i * 0.12, 0.9 + i * 0.12), 12 - i * 2, RED, 0.7 - i * 0.12, 70 + i);
-      const X = 540, Y = 1250, s = 0.82, p = eio(seg(lt, 0, 0.75));
+      for (let i = 0; i < 3; i++) drawOn(arcP(540, 760, 300 + i * 50, PI * (1.05 + i * 0.1) + lt * 0.12, PI * (1.95 - i * 0.05) + lt * 0.12, 30), seg(lt, 0.3 + i * 0.12, 0.9 + i * 0.12), 12 - i * 2, RED, 0.7 - i * 0.12, 70 + i);
+      const X = 540, Y = 1195, s = 0.78, p = eio(seg(lt, 0, 0.75));
       ctx.save(); const fy = wipeYup(200, 880, 320, 1270, p, 11); blit(kingC(), 280, 1090, X, Y, s); ctx.restore();
       if (p < 1) { smear(220, fy, 860, fy + 10, 80, 0.1); specks(260, 820, fy, lt, 14, 15, 200); }
       tag('ILLUSTRATION', 900, 330, 24, { a: 0.85 });
-      const lp = pop(t, traj + 0.1, 0.35); tag('RAJADHIRAJA II', 540, 1285, 54, { u: RED, sc: lp ? 0.7 + 0.3 * lp : 0, a: lp ? 1 : 0, col: 'chalk' });
-      burst(540, 1285, t - traj - 0.1, 220, 71, 30);
+      const lp = pop(t, traj + 0.1, 0.35); tag('RAJADHIRAJA II', 540, 1238, 54, { u: RED, sc: lp ? 0.7 + 0.3 * lp : 0, a: lp ? 1 : 0 });
+      burst(540, 1238, t - traj - 0.1, 220, 71, 30);
     } });
   cue(t7, 'rumble', { gain: 0.45 }); cue(t7 + 0.05, 'whoosh', { gain: 0.4 }); cue(traj + 0.1, 'slam', { gain: 0.55 });
 
@@ -533,26 +535,26 @@ export function buildB(add, cue) {
       ctx.fillStyle = Z.wall; ctx.fillRect(-300, -300, W + 600, H + 600); redPaper(-lt * 14); edge(28, RED);
       header('CHOLA RECORD', 540, 150, RED); hedge6(lt);
       smear(-50, 690, 1130, 700, 40, 0.06);
-      const ROWS = [[700, 0.62, 0.55], [920, 0.82, 0.8], [1200, 1.05, 1]];
+      const ROWS = [[690, 0.62, 0.55], [905, 0.82, 0.8], [1170, 1.02, 1]];
       ROWS.forEach(([y, s, a], r) => { const gap = 120 * s, off = (lt * 150 * s + r * 37) % gap, n = Math.ceil(1200 / gap) + 2;
         charcoal(lineP(-40, y + 4, 1120, y + 6, 30), 1, 6 * s, COAL, 0.5 * a, 90 + r);
         for (let i = -1; i < n; i++) { const x = i * gap + off - 40, k = (Math.floor((lt * 4 + i + r) % 2) + 2) % 2, bob = sin(lt * 12 + i + r) * 3 * s;
           blit(spearC(k), 55, 290, x, y + bob, s, a); }
         for (let i = 0; i < 6; i++) { const ph = (lt * 0.9 + i / 6 + r * 0.3) % 1; ctx.fillStyle = `rgba(${COAL},${0.12 * (1 - ph) * a})`; ctx.beginPath(); ctx.arc((i * 211 + r * 90 + lt * 80) % 1150 - 40, y - ph * 40, 18 + ph * 40 * s, 0, TAU); ctx.fill(); }
       });
-      charcoal(pathP([[60, 1270], [520, 1262], [1010, 1270]], 20), seg(lt, 0.2, 1.2), 12, RED, 0.8, 99);
+      drawOn(pathP([[60, 1225], [520, 1218], [1010, 1225]], 20), seg(lt, 0.2, 1.2), 12, RED, 0.8, 99);
     } });
   cue(t8, 'whoosh', { gain: 0.4 }); for (let i = 0; i < 4; i++) cue(t8 + 0.15 + i * 0.45, 'drum', { gain: 0.5 });
 
   // b9 — the gate of Madurai: crows lift, two empty spikes outlined in red
   const tlp = Wd('lankapura', 6), tgen = Wd('general', 6);
-  add({ id: 'b9', at: t9, zoom: 0.2, cam: [540, 520], note: 'Madurai gate, push to spike row, crows lift off, two EMPTY spikes outlined in red pastel, MADURAI on lintel',
+  add({ id: 'b9', at: t9, zoom: 0.15, cam: [540, 700], note: 'Madurai gate, push to spike row, crows lift off, two EMPTY spikes outlined in red pastel, MADURAI on lintel',
     draw(lt, d, t) {
       ctx.fillStyle = Z.wall; ctx.fillRect(-300, -300, W + 600, H + 600); redPaper(0);
       hedge6(lt, 150);
-      const s = 0.86, X = 540, Y = 1275 + lt * 10, T = gS(X, Y, s);
+      const s = 0.78, X = 540, Y = 1180 + lt * 8, T = gS(X, Y, s);
       blit(gateC(), 450, 1220, X, Y, s);
-      smear(-40, 250, 300, 220, 120, 0.1); smear(800, 230, 1140, 260, 120, 0.1);
+      smear(-40, 330, 160, 300, 50, 0.08); smear(930, 310, 1140, 330, 50, 0.08);
       const [lx, ly] = T(450, 344); tag('MADURAI', lx, ly, 40, { col: 'chalk', sc: pop(lt, 0.15) });
       spikeRed(T, s, eo(seg(t, tlp - 0.05, tlp + 0.35)), EMPTY[0]); spikeRed(T, s, eo(seg(t, tgen - 0.05, tgen + 0.35)), EMPTY[1]);
       for (const [i, tt] of [[EMPTY[0], tlp], [EMPTY[1], tgen]]) { const [bx, by] = T(SPX(i), SPT); burst(bx, by, t - tt - 0.3, 110, 80 + i, 20); }
@@ -575,9 +577,9 @@ export function buildB(add, cue) {
       const lp = pop(lt, 0.03, 0.3); tag('NAILED TO THE GATES', 540, 262, 62, { u: RED, sc: lp ? 0.7 + 0.3 * lp : 0, a: lp ? 1 : 0 });
       burst(540, 262, lt - 0.03, 300, 91, 40);
       // helmet tumbles in from the right and settles on its side
-      const hp = eo(seg(lt, 0.15, 1.0)), hx = lerp(1180, 850, hp), hrot = lerp(-4.4, -1.35, hp), hy = 1110 - Math.abs(sin(hp * PI * 2.2)) * 60 * (1 - hp);
+      const hp = eo(seg(lt, 0.15, 1.0)), hx = lerp(1180, 850, hp), hrot = lerp(-6.6, -0.42, hp), hy = 1110 - Math.abs(sin(hp * PI * 2.2)) * 60 * (1 - hp);
       ctx.save(); ctx.translate(hx, hy); ctx.rotate(hrot); blit(helmC(), 190, 170, 0, 0, 0.75); ctx.restore();
-      if (hp > 0.98) charcoal(arcP(hx, hy + 10, 150, -PI * 0.2, PI * 1.75, 36, 100), seg(lt, 1.05, 1.5), 8, RED, 0.85, 402);
+      if (hp > 0.98) drawOn(arcP(hx, hy + 10, 150, -PI * 0.2, PI * 1.75, 36, 100), seg(lt, 1.05, 1.5), 8, RED, 0.85, 402);
       specks(hx - 60, hx + 60, hy + 40, lt, 8, 17, 50);
       qmark(860, 760, 1.3, seg(t, tmad, tmad + 0.5), RED, 18);
       const cu = lt * 0.6; crow(1150 - cu * 900, 520 - sin(cu * 3) * 40, 0.8, lt * 20, 0, -1);

@@ -58,7 +58,7 @@ function hatch(x0, y0, x1, y1, gap = 14, a = 0.25, col = CHc, w = 2, ang = 1, se
 function smudge(x0, y0, x1, y1, w, a = 0.5, p = 1, col = CHc) {
   if (p <= 0) return; const x = lerp(x0, x1, p), y = lerp(y0, y1, p);
   ctx.lineCap = 'round';
-  for (const [k, f] of [[1, 0.18], [0.7, 0.22], [0.42, 0.3]]) { ctx.strokeStyle = `rgba(${col},${a * f})`; ctx.lineWidth = w * k; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x, y); ctx.stroke(); }
+  for (let i = 0; i < 7; i++) { const k = 1 - i * 0.13, f = 0.1; ctx.strokeStyle = `rgba(${col},${a * f})`; ctx.lineWidth = w * k; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x, y); ctx.stroke(); }
 }
 /** label: Caladea 700 caps, draw-on reveal left->right, short pastel underline */
 function lab(text, x, y, size, p = 1, o = {}) {
@@ -319,7 +319,6 @@ export function buildA(add, cue) {
       crows(lt + 0.05, src, 9, 3);
       burst(lt, 540, 330, 90, 4, 700); burst(lt - 0.05, 300, 700, 30, 9, 400); burst(lt - 0.05, 800, 640, 30, 11, 400);
       ctx.restore();
-      calm(1290);
     } });
 
   // a2 · empty spikes close-up: red pastel outlines, last crows lift off, red "?"
@@ -478,13 +477,13 @@ export function buildA(add, cue) {
       ctx.save(); ctx.beginPath();
       for (let b = 0; b < nb; b++) { const f = clamp(ep * nb - b); if (f <= 0) break; const y = top + b * 92, l2r = b % 2 === 0, w = 520 * f, x0 = l2r ? 290 : 810 - w;
         ctx.roundRect(x0, y, w, bandH, 50); hx = l2r ? x0 + w : x0; hy = y + bandH / 2; }
-      ctx.clip(); ctx.drawImage(P, 0, 0); ctx.fillStyle = 'rgba(214,209,199,0.55)'; ctx.fillRect(0, 0, W, 1300); ctx.restore();
-      if (ep > 0 && ep < 1) { ctx.fillStyle = 'rgba(206,200,190,0.97)'; ctx.beginPath(); ctx.ellipse(hx, hy, 62, 48, 0.3, 0, TAU); ctx.fill();
-        charcoal(ap(hx, hy, 60, 0, TAU, 20, 46), 1, 4, CHc, 0.35, 7); }
-      for (let i = 0; i < 26; i++) { const by = top + (i % nb) * 92 + 50, bx = 300 + rnd(i * 3) * 500; if (by > hy + 10 && ep < 1) continue;
+      ctx.clip(); ctx.drawImage(P, 0, 0); ctx.fillStyle = 'rgba(214,209,199,0.16)'; ctx.fillRect(0, 0, W, 1300); ctx.restore();
+      if (ep > 0 && ep < 1) { for (let i = 0; i < 9; i++) { const a = i / 9 * TAU + lt * 3, rr2 = 34 + rnd(i + 3) * 18; ctx.fillStyle = 'rgba(214,208,198,0.95)'; ctx.beginPath(); ctx.arc(hx + cos(a) * 22, hy + sin(a) * 16, rr2, 0, TAU); ctx.fill(); }
+        ctx.fillStyle = 'rgba(120,114,106,0.35)'; ctx.beginPath(); ctx.ellipse(hx + 8, hy + 14, 40, 22, 0.2, 0, TAU); ctx.fill(); }
+      for (let i = 0; i < 14; i++) { const by = top + (i % nb) * 92 + 50, bx = 300 + rnd(i * 3) * 500; if (by > hy + 10 && ep < 1) continue;
         ctx.fillStyle = 'rgba(90,86,80,0.7)'; ctx.beginPath(); ctx.ellipse(bx, by, 7, 3, rnd(i), 0, TAU); ctx.fill(); }
       // falling crown
-      const cf = seg(lt, 0.15, 1.0), cy = lerp(370, 1150, cf * cf), crot = cf * 2.2 + (cf >= 1 ? sin(lt * 9) * 0.05 * Math.exp(-(lt - 1) * 4) : 0);
+      const cf = seg(lt, 0.15, 1.0), cy = lerp(370, 1150, cf * cf), crot = cf * 0.7 + (cf >= 1 ? sin(lt * 9) * 0.05 * Math.exp(-(lt - 1) * 4) : 0);
       ctx.save(); ctx.translate(545 + cf * 60, cy); ctx.rotate(crot); ctx.scale(0.95, 0.95);
       fillP([[-52, 40], [-54, -44], [-32, -10], [-16, -80], [0, -26], [16, -80], [32, -10], [54, -44], [52, 40]], CH);
       charcoal(lp(-54, 34, 54, 34, 8), 1, 6, CHALKc, 0.7, 2); ctx.restore();
@@ -519,24 +518,24 @@ export function buildA(add, cue) {
       charcoal(lp(-40, 1120, 1120, 1110, 40), 1, 5, CHc, 0.7, 81);
       for (let i = 0; i < 9; i++) { const x = 60 + i * 120 + ((lt * 30) % 120), y = 1100 - (i % 2) * 22, s = 0.7 + rnd(i) * 0.5; charcoal(lp(x, y - 70 * s, x, y + 8, 4), 1, 3, CHc, 0.8, 90 + i); fillP([[x + 2, y - 66 * s], [x + 2, y - 8], [x + 42 * s, y - 8]], TEAL); }
       const k = eo(seg(lt, 0, 0.5));
-      blit(genImg(), 230, 980, 540, lerp(1330, 1250, k), 1.08);
+      blit(genImg(), 230, 980, 540, lerp(1330, 1250, k), 0.96);
       burst(lt - (Wd('lankapura', 3) - T12), 540, 340, 50, 51, 460, TEALc);
       lab('LANKAPURA', 540, 200, 96, seg(lt, Wd('lankapura', 3) - T12 - 0.1, Wd('lankapura', 3) - T12 + 0.35), { ul: TEALc, back: 'rgba(207,202,192,0.8)' });
-      lab('GENERAL', 540, 300, 44, seg(lt, 0.05, 0.4), { col: 'rgba(28,26,24,0.85)' });
+      lab('GENERAL', 540, 292, 44, seg(lt, 0.05, 0.4), { col: 'rgba(28,26,24,0.85)' });
       calm(1270);
     } });
 
   // a14 · Palk Strait map: teal sails cross the dotted route toward the mainland
   cue(T13, 'whoosh', { gain: 0.5 }); cue(T13 + 0.15, 'swell', { gain: 0.5 }); cue(Wd('sea', 3), 'pop', { gain: 0.5 });
   add({ id: 'a14', at: T13, cam: [600, 700], zoom: 0.12, note: 'charcoal Palk Strait map, teal sails cross the dotted route, PALK STRAIT, MADURAI dot',
-    draw(lt, d) {
+    draw(lt) {
       paper(); blit(mapImg(), 0, 0, 0, 100, 1);
-      const R = SEA_ROUTE.map(([x, y]) => [x, y + 100]), rp = eio(seg(lt, 0, d * 0.8));
+      const R = SEA_ROUTE.map(([x, y]) => [x, y + 100]), rp = eio(seg(lt, 0, (L(4) - T13) * 0.85));
       ctx.save(); ctx.setLineDash([6, 22]); charcoal(R, rp, 9, CHc, 0.95, 5); ctx.restore();
       const MX = MADU[0], MY = MADU[1] + 100;
       ctx.fillStyle = RED; ctx.beginPath(); ctx.arc(MX, MY, 14, 0, TAU); ctx.fill();
       lab('MADURAI', MX, MY - 56, 44, 1);
-      for (let i = 0; i < 4; i++) { const f = clamp(rp - i * 0.09); if (f <= 0) continue; const idx = Math.min(R.length - 1, Math.floor(f * (R.length - 1))), [x, y] = R[idx], s = 1.0 - i * 0.1, bob = sin(lt * 6 + i) * 4;
+      for (let i = 0; i < 4; i++) { const f = clamp(rp * 1.3 - i * 0.16); if (f <= 0) continue; const idx = Math.min(R.length - 1, Math.floor(f * (R.length - 1))), [x, y] = R[idx], s = 1.0 - i * 0.1, bob = sin(lt * 6 + i) * 4;
         ctx.save(); ctx.translate(x + 20 + i * 18, y + bob - i * 10); ctx.scale(s, s);
         fillP([[-34, 0], [34, 0], [24, 16], [-24, 16]], CH); charcoal(lp(0, 0, 0, -78, 4), 1, 4, CHc, 0.95, i); fillP([[3, -74], [3, -6], [50, -6]], TEAL); fillP([[-3, -64], [-3, -6], [-34, -6]], 'rgba(62,140,138,0.75)');
         ctx.restore(); }

@@ -288,3 +288,5 @@ heartbeat: 2026-11-24T12:10:09Z (12:07 UTC run = 17:39 IST 24 Nov: idle by plan;
 heartbeat: 2026-11-24T11:09:15Z (11:07 UTC run = 16:39 IST 24 Nov: idle by plan; next publish check >= 13:30 UTC, analytics >= 14:30 UTC, upload v13 + start v21 >= 18:30 UTC; no Zapier calls; lock free)
 heartbeat: 2026-11-24T08:09:40Z (08:07 UTC run = 13:39 IST 24 Nov: idle by plan; next publish check >= 13:30 UTC, analytics >= 14:30 UTC, upload v13 + start v21 >= 18:30 UTC; no Zapier calls; memory /areas/aazhi-channel.md still not reachable; lock free)
 heartbeat: 2026-11-24T14:10:26Z (14:07 UTC run = 19:38 IST 24 Nov: PUBLISH check run (sheet read once); lock TAKEN)
+SHEET 14:1x UTC 24 Nov (publish run, 1 Zapier read): no approved unpublished rows (rows 2-5 PUBLISHED; rows 6-12 v5-v11 no status; row 13 v12 'Pending') -> nothing published today. No other Zapier calls.
+heartbeat: 2026-11-24T14:10:53Z (14:07 UTC run done: publish check, nothing approved; next analytics >= 14:30 UTC, upload v13 + start v21 >= 18:30 UTC; lock free)

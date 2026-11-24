@@ -143,7 +143,7 @@ function goldTitle(txt, size = 110, pal = 'gold', maxW = 880) {
   });
   img._cx = pw / 2; img._cy = ph / 2; return img;
 }
-function sonarTitle(txt, size = 110, col = '65,255,154', maxW = 880) {
+function sonarTitle(txt, size = 110, col = '65,255,154', maxW = 800) {
   let font = `900 ${size}px Inter`, ls = Math.round(size * 0.05) + 'px', tw = measure(txt, font, ls);
   if (tw > maxW) { size = Math.floor(size * maxW / tw); font = `900 ${size}px Inter`; ls = Math.round(size * 0.05) + 'px'; tw = measure(txt, font, ls); }
   const pw = Math.ceil(tw + size * 1.2), ph = Math.ceil(size * 2);
@@ -287,15 +287,15 @@ function bathyImg() {
 }
 const GA0 = 240, depthAt = (y) => (y - GA0) / 40, yAtDepth = (m) => GA0 + m * 40;
 function gaugeImg() {
-  return cached('bGauge', 200, 1300, 1, () => { const c = ctx; c.fillStyle = 'rgba(1,10,6,0.55)'; c.fillRect(0, GA0 - 30, 64, 1240 - GA0 + 60);
-    c.strokeStyle = 'rgba(65,255,154,0.8)'; c.lineWidth = 3; c.beginPath(); c.moveTo(60, GA0 - 20); c.lineTo(60, 1250); c.stroke();
-    c.font = '700 22px Inter'; c.fillStyle = 'rgba(65,255,154,0.85)'; c.textBaseline = 'middle';
-    for (let m = 0; m <= 25; m++) { const y = yAtDepth(m), big = m % 5 === 0; c.lineWidth = big ? 3 : 1.5; c.beginPath(); c.moveTo(60, y); c.lineTo(60 - (big ? 26 : 12), y); c.stroke(); if (big && m) c.fillText(`-${m} m`, 70, y); }
+  return cached('bGauge', 200, 1300, 1, () => { const c = ctx; c.fillStyle = 'rgba(1,10,6,0.55)'; c.fillRect(0, GA0 - 30, 112, 1240 - GA0 + 60);
+    c.strokeStyle = 'rgba(65,255,154,0.8)'; c.lineWidth = 3; c.beginPath(); c.moveTo(110, GA0 - 20); c.lineTo(110, 1250); c.stroke();
+    c.font = '700 22px Inter'; c.fillStyle = 'rgba(65,255,154,0.85)'; c.textBaseline = 'middle'; c.textAlign = 'right';
+    for (let m = 0; m <= 25; m++) { const y = yAtDepth(m), big = m % 5 === 0; c.lineWidth = big ? 3 : 1.5; c.beginPath(); c.moveTo(110, y); c.lineTo(110 - (big ? 24 : 12), y); c.stroke(); if (big && m) c.fillText(`-${m} m`, 80, y); }
   });
 }
 function gauge(m, t) { const c = ctx; blit(gaugeImg(), 0, 0, 0, 0); const y = yAtDepth(clamp(m, 0, 25));
-  c.beginPath(); c.moveTo(62, y); c.lineTo(86, y - 12); c.lineTo(86, y + 12); c.closePath(); c.fillStyle = '#41FF9A'; c.fill(); K.glow(66, y, 34, '65,255,154', 0.5);
-  c.font = '900 26px Inter'; c.fillStyle = '#B8FFD8'; c.textBaseline = 'middle'; c.fillText(`${m.toFixed(1)} m`, 92, y); }
+  c.beginPath(); c.moveTo(112, y); c.lineTo(136, y - 12); c.lineTo(136, y + 12); c.closePath(); c.fillStyle = '#41FF9A'; c.fill(); K.glow(116, y, 34, '65,255,154', 0.5);
+  c.font = '900 26px Inter'; c.fillStyle = '#B8FFD8'; c.textBaseline = 'middle'; c.textAlign = 'left'; c.fillText(`-${m.toFixed(1)} m`, 142, y); }
 function diverPts() { const P = [];
   const pl = (pts, close = true, sp = 7) => { const n = pts.length; for (let i = 0; i < (close ? n : n - 1); i++) { const a = pts[i], b = pts[(i + 1) % n], l = Math.hypot(b[0] - a[0], b[1] - a[1]); for (let s = 0; s < l; s += sp) P.push([lerp(a[0], b[0], s / l), lerp(a[1], b[1], s / l)]); } };
   pl(ellPts(-135, 0, 24, 24, 0, 18)); pl(ellPts(-20, 8, 98, 30, 0.04, 40)); pl([[-75, -50], [70, -44], [70, -22], [-75, -26]]);
@@ -345,7 +345,7 @@ export function buildB(add, cue) {
       leafLay(kingImg(), KING_OX, KING_OY, kx, ky, ks, p, 5, 36); glint(kingImg(), KING_OX, KING_OY, kx, ky, ks, seg(lt, 1.05, 1.9));
       flakes(kx + 140, ky - 600, lt - 1.0, 14, 9, 160, 2.6, 500);
       slam(goldTitle('A GRIEVING KING', 92), 540, 290, t - Wd('grieving', 4));
-      poemTag(t); put(tagImg('ILLUSTRATION', 'gold', 19), 948, 220, 1, 0.85);
+      poemTag(t); put(tagImg('ILLUSTRATION', 'gold', 19), 900, 222, 1, 0.85);
     } });
   cue(L(4) + 1.05, 'sparkle', { gain: 0.35 }); cue(Wd('grieving', 4), 'whoosh', { gain: 0.3 });
 
@@ -381,7 +381,7 @@ export function buildB(add, cue) {
   // b3 · THE WARNING · the sea goddess rises
   add({ id: 'b3', at: L(5), cam: [540, 760], zoom: 0.08, note: 'sea goddess of wave curls with crown, faceless, glowing outline; THE WARNING',
     draw(lt, d, t) { const c = ctx; lacq();
-      const rise = eo(clamp(lt / 0.9)), gx = 540, gy = 1240 + (1 - rise) * 120, gs = 0.98;
+      const rise = eo(clamp(lt / 0.9)), gx = 540, gy = 1250 + (1 - rise) * 120, gs = 0.87;
       for (let i = 0; i < 5; i++) { const r = 160 + i * 110 + (lt * 60) % 110; c.beginPath(); c.arc(gx, gy - 830 * gs, r, 0, TAU); c.strokeStyle = `rgba(150,235,255,${0.12 * rise * (1 - i / 5)})`; c.lineWidth = 2; c.stroke(); }
       K.glow(gx, gy - 830 * gs, 380, '150,235,255', 0.16 * rise);
       blit(goddessGlow(), GOD_OX, GOD_OY, gx, gy, gs, rise * (0.7 + 0.3 * sin(t * 5)));
@@ -397,7 +397,7 @@ export function buildB(add, cue) {
     draw(lt, d, t) { const c = ctx; lacq(); const tD = Wd('drowns', 5), kD = t - tD, lunge = eo(clamp(kD / 0.5));
       blit(cityImg(), 0, CITY_OY, 0, 1160, 1); glint(cityImg(), 0, CITY_OY, 0, 1160, 1, seg(lt, 0.1, 0.9), 0.5);
       if (kD > 0) { c.fillStyle = `rgba(216,67,46,${0.22 * Math.max(0, 1 - kD / 0.4)})`; c.fillRect(-100, -100, W + 200, SAFE + 100); }
-      const wx = lerp(-560, -380, eio(clamp(lt / 1.2))) + lunge * 260, wyy = lerp(1500, 1240, eo(clamp(lt / 0.9))) - lunge * 60;
+      const wx = lerp(-560, -380, eio(clamp(lt / 1.2))) + lunge * 170, wyy = lerp(1500, 1240, eo(clamp(lt / 0.9))) - lunge * 60;
       blit(waveImg(), 0, 1000, wx, wyy, 1.05, 1);
       flakes(540, 760, kD, 30, 31, 600); flakes(300, 900, kD - 0.08, 18, 37, 460); flakes(870, 880, kD - 0.12, 18, 43, 460);
       waterline(1185 - lunge * 40, t, '6,20,40', 0.92, -0.04 * lunge);
@@ -436,9 +436,9 @@ export function buildB(add, cue) {
   // b7 · RECORD (waterline wipes off the top; sonar register)
   const OM = TAU / 2.6;
   const sonarBase = (lt, a0, t, m) => { sonar(); blit(bathyImg(), 0, 0, 0, 0); K.glow(540, 1250, 260, '65,255,154', 0.14); gauge(m, t); };
-  add({ id: 'b7', at: L(7), cam: [540, 760], zoom: 0.07, note: 'waterline wipes off the top into the sonar register; RECORD; bathymetry, depth gauge, sweep',
+  add({ id: 'b7', at: L(7), cam: [60, 760], zoom: 0.07, note: 'waterline wipes off the top into the sonar register; RECORD; bathymetry, depth gauge, sweep',
     draw(lt, d, t) { const c = ctx; const y = lerp(560, -120, eio(clamp(lt / 0.4)));
-      sonarBase(lt, 0, t, lerp(0, 4, eo(clamp(lt / d))));
+      sonarBase(lt, 0, t, lerp(6, 7.5, eo(clamp(lt / d))));
       blit(cityDots(), 0, CITY_OY, 0, 1160, 1, 0.9 * (1 - clamp(lt / 0.6)));
       const ang = -PI - 0.3 + lt * OM; sweepC(540, 1250, ang, 1300, 0.4);
       const ridge = []; for (let x = 100; x <= 1000; x += 12) ridge.push([x, 1150 - 40 * sin(x * 0.006) - 18 * sin(x * 0.021)]);
@@ -450,25 +450,25 @@ export function buildB(add, cue) {
 
   // b8 · 1980s · DIVERS
   const tDiv = Wd('divers', 7);
-  const DIVERS = [[300, 640, 0.95, 0.35], [700, 820, 1.05, 0.3], [430, 1010, 0.8, 0.4]];
-  add({ id: 'b8', at: tNine, cam: [560, 820], zoom: 0.06, note: '1980s counts up; DIVERS as sonar-dot outlines with tanks descending; bubbles; depth gauge follows',
+  const DIVERS = [[420, 640, 0.9, 0.35], [760, 830, 0.95, 0.3], [520, 1020, 0.78, 0.4]];
+  add({ id: 'b8', at: tNine, cam: [60, 820], zoom: 0.06, note: '1980s counts up; DIVERS as sonar-dot outlines with tanks descending; bubbles; depth gauge follows',
     draw(lt, d, t) { const c = ctx; const kD = t - tDiv, dd = eo(clamp(kD / 1.4));
-      sonarBase(lt, 0, t, 4 + 4 * dd);
+      sonarBase(lt, 0, t, 7.5 + 3 * eo(clamp(lt / d)));
       const ang = -PI + 0.2 + lt * OM; sweepC(540, 1250, ang, 1300, 0.38);
-      DIVERS.forEach(([x, y, s, rot], i) => { const k = kD - i * 0.12; if (k < 0) return; const e = eo(clamp(k / 0.5)), px = x - 120 + k * 40 + (1 - e) * -60, py = y - 120 + k * 46 + sin(t * 2 + i) * 6;
+      DIVERS.forEach(([x, y, s, rot], i) => { const k = t - tNine - 0.3 - i * 0.3; if (k < 0) return; const e = eo(clamp(k / 0.5)), px = x - 60 + k * 30 + (1 - e) * -60, py = y - 120 + k * 40 + sin(t * 2 + i) * 6;
         const b = Math.max(ret(ang, Math.atan2(py - 1250, px - 540), OM, 0.55), 0.55); put(Object.assign(diverImg(), { _cx: 230, _cy: 90 }), px, py, s, e * b, rot);
         if (k < 0.5) ping(px, py, k, 160);
         for (let j = 0; j < 5; j++) { const bk = (t * 0.8 + j / 5 + i * 0.3) % 1, bx = px - 135 * s * cos(rot) + sin(bk * 9 + j) * 10, by = py - 135 * s * sin(rot) - 30 - bk * 220; c.beginPath(); c.arc(bx, by, 4 + j % 3 * 2, 0, TAU); c.strokeStyle = `rgba(150,255,200,${0.7 * (1 - bk) * e})`; c.lineWidth = 2; c.stroke(); } });
-      const kN = t - Wd('nineteen', 7), yr = 1900 + 10 * Math.floor(8 * eo(clamp(kN / 0.55)));
-      slam(sonarTitle(`${yr}s`, 150), 540, 300, kN); if (kN > 0.55 && kN < 0.7) ping(540, 300, kN - 0.55, 360);
+      const kN = t - Wd('nineteen', 7), yr = 1900 + 10 * Math.floor(8 * eo(clamp(kN / 0.22)));
+      slam(sonarTitle(`${yr}s`, 150), 540, 300, kN); if (kN > 0.35 && kN < 1.6) ping(540, 300, kN - 0.35, 360);
       slam(sonarTitle('DIVERS', 96), 540, 450, kD);
     } });
-  cue(Wd('nineteen', 7), 'tock', { gain: 0.4 }); cue(Wd('nineteen', 7) + 0.55, 'pop', { gain: 0.4 }); cue(tDiv, 'bubbles', { gain: 0.45 });
+  cue(Wd('nineteen', 7), 'tock', { gain: 0.4 }); cue(Wd('nineteen', 7) + 0.35, 'pop', { gain: 0.4 }); cue(tDiv, 'bubbles', { gain: 0.45 });
 
   // b9 · STONE STRUCTURES · OFF PUHAR
   const SD = structDots(), OM9 = TAU / 2.2;
-  add({ id: 'b9', at: tStone, cam: [540, 860], zoom: 0.07, note: 'sweep builds stone structures (rectangles, walls, U-shape) out of returns; STONE STRUCTURES; OFF PUHAR; depth gauge',
-    draw(lt, d, t) { const c = ctx; sonarBase(lt, 0, t, 8 + 3 * eio(clamp(lt / d)));
+  add({ id: 'b9', at: tStone, cam: [60, 860], zoom: 0.07, note: 'sweep builds stone structures (rectangles, walls, U-shape) out of returns; STONE STRUCTURES; OFF PUHAR; depth gauge',
+    draw(lt, d, t) { const c = ctx; sonarBase(lt, 0, t, 13.5 + 1.5 * eio(clamp(lt / d)));
       const ang = -PI - 0.15 + lt * OM9; sweepC(540, 1250, ang, 1300, 0.42);
       for (const p of SD) { const b = ret(ang, p.phi, OM9, p.s ? 0.38 : 0.06); if (b <= 0.01) continue;
         if (p.s) { c.globalAlpha = b * 0.25; c.fillStyle = '#41FF9A'; c.fillRect(p.x - 5, p.y - 5, 10, 10); c.globalAlpha = b; c.fillStyle = b > 0.7 ? '#D8FFE8' : '#41FF9A'; c.fillRect(p.x - 2, p.y - 2, 4, 4); }

@@ -1,0 +1,489 @@
+{
+ "duration": 54.836,
+ "cues": [
+  {
+   "t": 0,
+   "type": "slam",
+   "gain": 1
+  },
+  {
+   "t": 0.05,
+   "type": "whoosh",
+   "gain": 0.8
+  },
+  {
+   "t": 0.1,
+   "type": "rumble",
+   "gain": 0.7,
+   "dur": 1.4
+  },
+  {
+   "t": 0.944,
+   "type": "swell",
+   "gain": 0.6,
+   "dur": 0.8
+  },
+  {
+   "t": 1.044,
+   "type": "bubbles",
+   "gain": 0.5
+  },
+  {
+   "t": 1.064,
+   "type": "pop",
+   "gain": 0.35
+  },
+  {
+   "t": 1.739,
+   "type": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 1.839,
+   "type": "slam",
+   "gain": 0.9
+  },
+  {
+   "t": 1.889,
+   "type": "sparkle",
+   "gain": 0.5
+  },
+  {
+   "t": 2.884,
+   "type": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 2.904,
+   "type": "thud",
+   "gain": 0.7
+  },
+  {
+   "t": 2.984,
+   "type": "sparkle",
+   "gain": 0.4
+  },
+  {
+   "t": 2.984,
+   "type": "tock",
+   "gain": 0.35
+  },
+  {
+   "t": 4.131,
+   "type": "swell",
+   "gain": 0.45,
+   "dur": 0.9
+  },
+  {
+   "t": 4.251,
+   "type": "thud",
+   "gain": 0.6
+  },
+  {
+   "t": 5.143,
+   "type": "sparkle",
+   "gain": 0.45
+  },
+  {
+   "t": 6.159,
+   "type": "whoosh",
+   "gain": 0.4
+  },
+  {
+   "t": 6.239,
+   "type": "slam",
+   "gain": 0.7
+  },
+  {
+   "t": 7.819,
+   "type": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 7.839,
+   "type": "thud",
+   "gain": 0.6
+  },
+  {
+   "t": 7.969,
+   "type": "sparkle",
+   "gain": 0.35
+  },
+  {
+   "t": 9.391,
+   "type": "thud",
+   "gain": 0.5
+  },
+  {
+   "t": 10.332,
+   "type": "thud",
+   "gain": 0.5
+  },
+  {
+   "t": 10.632,
+   "type": "tock",
+   "gain": 0.3
+  },
+  {
+   "t": 10.832,
+   "type": "tock",
+   "gain": 0.3
+  },
+  {
+   "t": 11.965,
+   "type": "thud",
+   "gain": 0.5
+  },
+  {
+   "t": 13.182,
+   "type": "whoosh",
+   "gain": 0.5
+  },
+  {
+   "t": 13.682,
+   "type": "slide",
+   "gain": 0.4
+  },
+  {
+   "t": 13.825,
+   "type": "slam",
+   "gain": 0.7
+  },
+  {
+   "t": 13.875,
+   "type": "sparkle",
+   "gain": 0.35
+  },
+  {
+   "t": 14.953,
+   "type": "rumble",
+   "gain": 0.6,
+   "dur": 1.4
+  },
+  {
+   "t": 15.053,
+   "type": "bubbles",
+   "gain": 0.4
+  },
+  {
+   "t": 15.253,
+   "type": "pop",
+   "gain": 0.4
+  },
+  {
+   "t": 16.353,
+   "type": "pop",
+   "gain": 0.35
+  },
+  {
+   "t": 16.682,
+   "type": "whoosh",
+   "gain": 0.3
+  },
+  {
+   "t": 17.553,
+   "type": "sparkle",
+   "gain": 0.35
+  },
+  {
+   "t": 18.944,
+   "type": "bell",
+   "gain": 0.35
+  },
+  {
+   "t": 19.244,
+   "type": "plop",
+   "gain": 0.22
+  },
+  {
+   "t": 19.494,
+   "type": "plop",
+   "gain": 0.22
+  },
+  {
+   "t": 19.894,
+   "type": "plop",
+   "gain": 0.22
+  },
+  {
+   "t": 20.135,
+   "type": "slam",
+   "gain": 0.5
+  },
+  {
+   "t": 20.194,
+   "type": "plop",
+   "gain": 0.22
+  },
+  {
+   "t": 20.533,
+   "type": "thud",
+   "gain": 0.55
+  },
+  {
+   "t": 21.488,
+   "type": "swell",
+   "gain": 0.45
+  },
+  {
+   "t": 22.707,
+   "type": "whoosh",
+   "gain": 0.35
+  },
+  {
+   "t": 23.114,
+   "type": "slam",
+   "gain": 0.55
+  },
+  {
+   "t": 23.811,
+   "type": "whoosh",
+   "gain": 0.35
+  },
+  {
+   "t": 24.159,
+   "type": "rumble",
+   "gain": 0.6,
+   "dur": 1.4
+  },
+  {
+   "t": 25.256,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 26.46,
+   "type": "bubbles",
+   "gain": 0.5
+  },
+  {
+   "t": 26.51,
+   "type": "sparkle",
+   "gain": 0.3
+  },
+  {
+   "t": 27.904,
+   "type": "slam",
+   "gain": 0.6
+  },
+  {
+   "t": 28.404,
+   "type": "plop",
+   "gain": 0.3
+  },
+  {
+   "t": 29.137,
+   "type": "whoosh",
+   "gain": 0.4
+  },
+  {
+   "t": 29.417,
+   "type": "tock",
+   "gain": 0.45
+  },
+  {
+   "t": 30.97,
+   "type": "tock",
+   "gain": 0.4
+  },
+  {
+   "t": 31.32,
+   "type": "pop",
+   "gain": 0.4
+  },
+  {
+   "t": 32.07,
+   "type": "bubbles",
+   "gain": 0.45
+  },
+  {
+   "t": 33.109,
+   "type": "tock",
+   "gain": 0.45
+  },
+  {
+   "t": 34.209,
+   "type": "pop",
+   "gain": 0.3
+  },
+  {
+   "t": 34.759,
+   "type": "tock",
+   "gain": 0.4
+  },
+  {
+   "t": 36.014,
+   "type": "bubbles",
+   "gain": 0.3
+  },
+  {
+   "t": 37.697,
+   "type": "rumble",
+   "gain": 0.45,
+   "dur": 1.4
+  },
+  {
+   "t": 37.847,
+   "type": "plop",
+   "gain": 0.25,
+   "pan": 0.2
+  },
+  {
+   "t": 38.197,
+   "type": "plop",
+   "gain": 0.25,
+   "pan": 0.2
+  },
+  {
+   "t": 38.41,
+   "type": "swell",
+   "gain": 0.5
+  },
+  {
+   "t": 38.46,
+   "type": "bubbles",
+   "gain": 0.35
+  },
+  {
+   "t": 38.547,
+   "type": "plop",
+   "gain": 0.25,
+   "pan": 0.2
+  },
+  {
+   "t": 39.187,
+   "type": "swell",
+   "gain": 0.4,
+   "dur": 1.2
+  },
+  {
+   "t": 39.287,
+   "type": "tock",
+   "gain": 0.35
+  },
+  {
+   "t": 40.417,
+   "type": "tock",
+   "gain": 0.3
+  },
+  {
+   "t": 40.737,
+   "type": "tock",
+   "gain": 0.3
+  },
+  {
+   "t": 41.057,
+   "type": "tock",
+   "gain": 0.3
+  },
+  {
+   "t": 41.377,
+   "type": "tock",
+   "gain": 0.3
+  },
+  {
+   "t": 42.012,
+   "type": "pop",
+   "gain": 0.45
+  },
+  {
+   "t": 42.888,
+   "type": "tock",
+   "gain": 0.35
+  },
+  {
+   "t": 44.033,
+   "type": "zip",
+   "gain": 0.4
+  },
+  {
+   "t": 45.125,
+   "type": "pop",
+   "gain": 0.45
+  },
+  {
+   "t": 45.717,
+   "type": "tock",
+   "gain": 0.3
+  },
+  {
+   "t": 46.758,
+   "type": "thud",
+   "gain": 0.7
+  },
+  {
+   "t": 46.758,
+   "type": "slam",
+   "gain": 0.35
+  },
+  {
+   "t": 47.906,
+   "type": "whoosh",
+   "gain": 0.45,
+   "pan": -0.3
+  },
+  {
+   "t": 48.056,
+   "type": "sparkle",
+   "gain": 0.35
+  },
+  {
+   "t": 48.52,
+   "type": "whoosh",
+   "gain": 0.45,
+   "pan": 0.3
+  },
+  {
+   "t": 48.67,
+   "type": "bubbles",
+   "gain": 0.3
+  },
+  {
+   "t": 49.525,
+   "type": "whoosh",
+   "gain": 0.45,
+   "pan": -0.2
+  },
+  {
+   "t": 49.675,
+   "type": "pop",
+   "gain": 0.35
+  },
+  {
+   "t": 50.362,
+   "type": "pop",
+   "gain": 0.45
+  },
+  {
+   "t": 50.809,
+   "type": "plop",
+   "gain": 0.4
+  },
+  {
+   "t": 51.159,
+   "type": "tock",
+   "gain": 0.3
+  },
+  {
+   "t": 51.647,
+   "type": "sparkle",
+   "gain": 0.4
+  },
+  {
+   "t": 53.043,
+   "type": "swell",
+   "gain": 0.55,
+   "dur": 1.5
+  },
+  {
+   "t": 53.093,
+   "type": "bubbles",
+   "gain": 0.35
+  },
+  {
+   "t": 53.143,
+   "type": "pop",
+   "gain": 0.35
+  }
+ ]
+}

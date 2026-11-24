@@ -140,10 +140,10 @@ export function buildC(add, cue) {
     PP.screen(t, { hot: [540, 820] });
     PP.stageFrame(t); PP.lampEdge();
     const a = dt - c5;
-    rodPlacard('1054?', 400, 1700, 1000, -0.05 + 0.08 * sin(t * 3.2), pop(lt, a - 0.05), 110, PAL.ochre, PAL.leather);
-    rodPlacard('1052?', 700, 1700, 640, 0.05 - 0.08 * sin(t * 3.0 + 1), pop(lt, a + 0.3), 110, PAL.ochre, PAL.leather);
+    rodPlacard('1054?', 400, 1700, 1000, -0.05 + 0.08 * sin(t * 3.2), pop(lt, 0.05), 110, PAL.ochre, PAL.leather);
+    rodPlacard('1052?', 700, 1700, 640, 0.05 - 0.08 * sin(t * 3.0 + 1), pop(lt, a), 110, PAL.ochre, PAL.leather);
   } });
-  cue(c5, 'slide', { gain: 0.35 }); cue(dt - 0.05, 'tock', { gain: 0.7 }); cue(dt + 0.3, 'tock', { gain: 0.7 });
+  cue(c5, 'slide', { gain: 0.35 }); cue(c5 + 0.05, 'tock', { gain: 0.7 }); cue(dt, 'tock', { gain: 0.7 });
 
   // ── c6 · the place: map, wobbling pins, DEBATED ──────────────────
   const c6 = Wd('place', 9), deb = Wd('debated', 9);

@@ -1,4 +1,4 @@
-heartbeat: 2026-11-25T19:08Z (run 19:08 UTC 25 Nov active)
+heartbeat: 2026-11-25T19:18Z (run 19:08 UTC 25 Nov active: v23 shots)
 Run 19:08 UTC 25 Nov (00:38 IST 26 Nov): v8b Mangammal FIX UPLOADED unlisted l8wOiRDzK30 at 19:09:28 UTC (https://www.youtube.com/watch?v=l8wOiRDzK30). Upload for IST 26 Nov done (rolling 24h: 2 - v13 16:10, v8b 19:09). Sheet row 9 updated (link l8wOiRDzK30, Status Pending, Run note FIXED). WhatsApp 'uploaded' sent. Video 8 needs re-approval before it can be published. Zapier calls so far: YT upload 1, sheet update 1, WhatsApp 1. Next: v23.
 heartbeat: 2026-11-25T18:10Z (run 18:08 UTC 25 Nov finished; lock free)
 Run 18:08 UTC 25 Nov (23:38 IST 25 Nov): idle by plan. IST 25 Nov upload 1/1 (v13), publish 1/1 (Video 6), analytics done, production 2/2 (v21, v22). Zapier calls this run: 0. Next: v8b Mangammal FIX upload (update row 9) + v23 at first run >= 18:30 UTC 25 Nov (IST 26 Nov; pre-v23 Windsor check); publish Video 7 Korkai at first run >= 13:30 UTC 26 Nov. Memory /areas/aazhi-channel.md still not reachable.

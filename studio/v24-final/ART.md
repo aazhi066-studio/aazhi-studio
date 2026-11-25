@@ -12,8 +12,8 @@ Shared kit: src/glass.js (import * as G from './glass.js'). Read it fully first.
 ...draw scene inside... G.glassTop(t, r); then tags/titles on top (tags may sit over the frame edge). panel() clips, glassTop() restores:
 ALWAYS pair them. Timing: L(i), Le(i), Wd(word, line) from ./core/timing.js (never hard-coded absolute seconds except small offsets).
 Cache heavy statics via cached()/blit() from ./art.js. Library: ./core/lib.js (ctx, W, H, clamp, lerp, seg, eo, eio, eob, rnd, TAU, line, circle, ell, rr).
-Line times (s): 0 0.15-2.956 | 1 3.306-8.425 | 2 8.825-13.262 | 3 13.662-17.626 | 4 18.026-20.894 | 5 21.294-26.004 | 6 26.404-30.153 | 7 30.553-33.835 | 8 34.285-39.577 | 9 39.977-44.673 | 10 45.123-49.902 | 11 50.352-55.843 | end 56.743
- 0 "Did a king blow up his own palace, and his family?"
+Line times (s): 0 0.15-2.443 | 1 2.793-7.913 | 2 8.313-12.75 | 3 13.15-17.114 | 4 17.514-20.382 | 5 20.782-25.492 | 6 25.892-29.641 | 7 30.041-33.323 | 8 33.773-39.065 | 9 39.465-44.161 | 10 44.611-49.39 | 11 49.84-55.331 | end 56.231
+ 0 "Did a king blow up his palace, and family?"
  1 "Thanjavur, sixteen seventy three. Vijayaraghava Nayak had ruled for decades."
  2 "Accounts say Chokkanatha, the Nayak of Madurai, asked to marry his daughter."
  3 "The old king refused. The army of Madurai marched on Thanjavur."

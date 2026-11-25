@@ -8,8 +8,8 @@
  "music_seed": 24683,
  "lines": [
   {
-   "text": "Did a king blow up his own palace, and his family?",
-   "caps": "did a *king | *blow *up | his own *palace | and his *family?",
+   "text": "Did a king blow up his palace, and family?",
+   "caps": "did a *king | *blow *up | his *palace | and *family?",
    "gap": 0.35
   },
   {

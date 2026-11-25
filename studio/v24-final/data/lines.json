@@ -1,88 +1,88 @@
 {
- "duration": 56.743,
+ "duration": 56.231,
  "lines": [
   {
-   "text": "Did a king blow up his own palace, and his family?",
-   "caps": "did a *king | *blow *up | his own *palace | and his *family?",
+   "text": "Did a king blow up his palace, and family?",
+   "caps": "did a *king | *blow *up | his *palace | and *family?",
    "start": 0.15,
-   "end": 2.956,
+   "end": 2.443,
    "i": 0
   },
   {
    "text": "Thanjavur, sixteen seventy three. Vijayaraghava Nayak had ruled for decades.",
    "caps": "*Thanjavur | *1673 | *Vijayaraghava *Nayak | ruled for *decades",
-   "start": 3.306,
-   "end": 8.425,
+   "start": 2.793,
+   "end": 7.913,
    "i": 1
   },
   {
    "text": "Accounts say Chokkanatha, the Nayak of Madurai, asked to marry his daughter.",
    "caps": "accounts say | *Chokkanatha | the Nayak of *Madurai | asked to *marry | his *daughter",
-   "start": 8.825,
-   "end": 13.262,
+   "start": 8.313,
+   "end": 12.75,
    "i": 2
   },
   {
    "text": "The old king refused. The army of Madurai marched on Thanjavur.",
    "caps": "the old king | *refused | the army of *Madurai | *marched | on *Thanjavur",
-   "start": 13.662,
-   "end": 17.626,
+   "start": 13.15,
+   "end": 17.114,
    "i": 3
   },
   {
    "text": "The walls were breached. The city was about to fall.",
    "caps": "the *walls | were *breached | the city | was about to *fall",
-   "start": 18.026,
-   "end": 20.894,
+   "start": 17.514,
+   "end": 20.382,
    "i": 4
   },
   {
    "text": "A history written in nineteen twenty four says the palace was packed with gunpowder.",
    "caps": "a *history | written in *1924 | says the *palace | was packed with | *gunpowder",
-   "start": 21.294,
-   "end": 26.004,
+   "start": 20.782,
+   "end": 25.492,
    "i": 5
   },
   {
    "text": "The royal women were gathered inside, so no enemy could take them.",
    "caps": "the *royal *women | were *gathered *inside | so no enemy | could *take them",
-   "start": 26.404,
-   "end": 30.153,
+   "start": 25.892,
+   "end": 29.641,
    "i": 6
   },
   {
    "text": "Then it was blown up. The king rode out with his son, and fell.",
    "caps": "then it was | *blown *up | the king | *rode *out | with his *son | and *fell",
-   "start": 30.553,
-   "end": 33.835,
+   "start": 30.041,
+   "end": 33.323,
    "i": 7
   },
   {
    "text": "But the traveller Manucci tells it differently. He says the attackers set the palace on fire.",
    "caps": "but the traveller | *Manucci | tells it *differently | the *attackers | set the palace | on *fire",
-   "start": 34.285,
-   "end": 39.577,
+   "start": 33.773,
+   "end": 39.065,
    "i": 8
   },
   {
    "text": "Even the king's death is disputed. Killed in battle, or captured and beheaded?",
    "caps": "even the king's *death | is *disputed | *killed in battle | or *captured | and *beheaded?",
-   "start": 39.977,
-   "end": 44.673,
+   "start": 39.465,
+   "end": 44.161,
    "i": 9
   },
   {
    "text": "Within about three years, the Marathas took Thanjavur from both Nayak houses.",
    "caps": "within about | *three *years | the *Marathas | took *Thanjavur | from *both | Nayak houses",
-   "start": 45.123,
-   "end": 49.902,
+   "start": 44.611,
+   "end": 49.39,
    "i": 10
   },
   {
    "text": "A father's choice, or an enemy's fire? Tell me below. Watch again, and watch the windows.",
    "caps": "a father's *choice | or an enemy's *fire? | tell me *below | watch *again | watch the *windows",
-   "start": 50.352,
-   "end": 55.843,
+   "start": 49.84,
+   "end": 55.331,
    "i": 11
   }
  ]

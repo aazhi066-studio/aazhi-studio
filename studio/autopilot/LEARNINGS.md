@@ -69,3 +69,9 @@
 - Rows: 7. Video 1 911 views 35.1%; Video 2 66 views 74.3%, 17 likes; Video 3 Srivijaya now 98 views (+93) 48.0%, 13 likes; Video 4 9 views 49.3%; Videos 5-7 2-3 views (owner/test). No retention-rule video public yet.
 - Verdict: no new evidence on hook styles; nothing changed. Video 3's push confirms war/conquest topics can get traffic, consistent with picking a battle topic next.
 - v22 Koppam (started 24 Nov UTC / 25 Nov IST): hook 'A Chola emperor died on his war elephant. Who won?' (claim + question, 10 words, concrete act: emperor killed on his elephant; over an arrow volley + rearing elephant + red flash), length ~58.2 s (147 words), topic type: forgotten battle / one-sided record vs debate (Chola inscriptions vs a later Chalukya record; date and place disputed). End: 'Victory, or a defeat rewritten? Tell me below. Then watch again, and watch the arrows.' Art 'Leather Shadow Puppets', music gen:ember 22391 (music_sim PASS).
+
+## Study 2026-11-25 15:20 UTC (20:50 IST), Windsor.ai YouTube (1 call, last_30dT per-video)
+- Rows: 7 (analytics lag ~2-3 days). Video 1 Rajaraja 911 views, 35.1% viewed, avg 35.8 s, +11 subs, 23 likes, 5 comments, 5 shares. Video 2 Gangaikonda 66 views, 74.3%, 17 likes. Video 3 Srivijaya 98 views, 48.0%, 13 likes. Video 4 Lake Nyos 9 views, 49.3%. Video 5 Kallanai (public 24 Nov) 3 views, Video 6 Buckingham (public 25 Nov) 2 views, Video 7 Korkai (unlisted) 2 views: owner/test + lag, ignored.
+- Unchanged vs the pre-v22 check. Total public views ~1,089 over 6 public videos, but only 3 have a usable sample and none is a retention-rule video (v15+ not public yet).
+- Verdict: no new evidence; nothing changed. Concrete-act hooks (Video 2, 74-80%) still beat monument/slow openers (Video 1, 35%); keep RETENTION RULES + the 24 Nov concrete-act note. Publish time 19:36 IST unchanged (no hourly data).
+- Next study: first run after 20:00 IST 26 Nov (>= 14:30 UTC), plus a pre-video check before v23.

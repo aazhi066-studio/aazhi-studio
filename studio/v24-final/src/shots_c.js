@@ -100,6 +100,12 @@ function travellerExtras(x, y, s) {
   ctx.fillStyle = '#6A4020'; ctx.fillRect(18, -96, 66, 18); circle(51, -76, 6, P.gilt);
   ctx.restore();
 }
+// two-line gilt foil label (G.title per line), a = brightness
+function label2(lines, x, y, size, p, a, t) {
+  if (p <= 0) return; ctx.save(); ctx.globalAlpha *= 0.35 + 0.65 * a;
+  lines.forEach((ln, i) => G.title(ln, x, y + i * size * 1.05 + Math.sin(t * 2 + i) * 3, size, p));
+  ctx.restore();
+}
 function rewindIcon(x, y, a) {
   if (a <= 0) return; ctx.save(); ctx.globalAlpha *= a;
   for (const dx of [0, 46]) { ctx.beginPath(); ctx.moveTo(x + dx, y - 30); ctx.lineTo(x + dx - 46, y); ctx.lineTo(x + dx, y + 30); ctx.closePath(); ctx.fillStyle = P.gilt; ctx.fill(); ctx.strokeStyle = P.ink; ctx.lineWidth = 5; ctx.stroke(); }
@@ -294,8 +300,8 @@ export function buildC(add, cue) {
     lineCrack(r.x, r.x + r.w, 880, crackP, 21, 46);
     if (crackP > 0.3) G.crack(540, 880, seg(crackP, 0.3, 1), 13, { n: 6, len: 380, lw: 3 });
     G.glassTop(t, r);
-    G.tag('KILLED IN BATTLE?', 300, 240, { size: 26, sc: 0.75 + 0.25 * hiL, col: hiL > 0.5 ? P.gilt : P.giltDk });
-    G.tag('CAPTURED?', 780, 240, { size: 32, sc: 0.75 + 0.25 * hiR, col: hiR > 0.5 ? P.gilt : P.giltDk });
+    label2(['KILLED', 'IN BATTLE?'], 300, 250, 54, clamp((base + lt) / 0.35), 0.45 + 0.55 * hiL, t);
+    label2(['CAPTURED?'], 780, 290, 64, clamp((base + lt - 0.25) / 0.35), 0.45 + 0.55 * hiR, t);
   };
   add({ id: 'c9b', at: killed, cam: [300, 880], zoom: 0.08, note: 'split panel, left lit: KILLED IN BATTLE? gilt crown tumbles down among crossed spears', draw(lt, d, t) {
     splitScene(lt, t, 0, eo(seg(lt, 0, 0.3)), 0.1, 0);
@@ -365,26 +371,26 @@ export function buildC(add, cue) {
     half(-1, r, () => {
       ctx.fillStyle = lg(0, r.y, 0, r.y + r.h, [[0, P.green], [1, '#0A2414']]); ctx.fillRect(r.x, r.y, 480, r.h);
       G.foil(r.x, r.y, 480, 500, t, 10, 4);
-      G.palace(300, 1000, 0.5, { lit: 1, dark: 0.2, t });
-      windows(300, 1000, 0.5, (k) => ({ col: mixc(P.greenHi, P.fireHi, 0.3 + 0.3 * Math.sin(t * 8 + k)), g: 0.8, gc: P.greenHi }));
-      ctx.fillStyle = '#0A2414'; ctx.fillRect(r.x, 1000, 480, 500); line([[r.x, 1000], [540, 1000]], P.ink, 6);
-      G.keg(190, 1200, 0.95, { glow: 1, t }); G.keg(330, 1210, 0.95, { glow: 1, t: t + 0.4 }); G.keg(260, 1095, 0.85, { glow: 1, t: t + 0.9 });
+      G.palace(300, 1040, 0.55, { lit: 1, dark: 0.2, t });
+      windows(300, 1040, 0.55, (k) => ({ col: mixc(P.greenHi, P.fireHi, 0.3 + 0.3 * Math.sin(t * 8 + k)), g: 0.8, gc: P.greenHi }));
+      ctx.fillStyle = '#0A2414'; ctx.fillRect(r.x, 1040, 480, 500); line([[r.x, 1040], [540, 1040]], P.ink, 6);
+      G.keg(180, 1330, 1.25, { glow: 1, t }); G.keg(370, 1340, 1.25, { glow: 1, t: t + 0.4 }); G.keg(275, 1190, 1.1, { glow: 1, t: t + 0.9 });
     });
     half(1, r, () => {
       ctx.fillStyle = lg(0, r.y, 0, r.y + r.h, [[0, P.vermil], [1, '#3A0A08']]); ctx.fillRect(540, r.y, 480, r.h);
-      G.puffs(790, 700, t, 5, 0.6, 5);
-      G.palace(790, 1000, 0.5, { lit: 1, dark: 0.2, burn: 1, t });
-      ctx.fillStyle = '#3A0A08'; ctx.fillRect(540, 1000, 480, 500); line([[540, 1000], [1020, 1000]], P.ink, 6);
-      for (let i = 0; i < 3; i++) torch(640 + i * 140, 1440, 330 + (i % 2) * 60, (i - 1) * 0.25 + Math.sin(t * 2 + i) * 0.06, t, i * 4, 0.3);
+      G.puffs(790, 740, t, 5, 0.6, 5);
+      G.palace(790, 1040, 0.55, { lit: 1, dark: 0.2, burn: 1, t });
+      ctx.fillStyle = '#3A0A08'; ctx.fillRect(540, 1040, 480, 500); line([[540, 1040], [1020, 1040]], P.ink, 6);
+      for (let i = 0; i < 3; i++) torch(640 + i * 140, 1460, 300 + (i % 2) * 70, (i - 1) * 0.25 + Math.sin(t * 2 + i) * 0.06, t, i * 4, 0.3);
     });
     dim(-1, r, 0.5 * (1 - hL)); dim(1, r, 0.5 * (1 - hR));
     divider(r, t);
     G.glassTop(t, r);
     const qs = eob(clamp((lt - 0.05) / 0.35));
-    ctx.save(); ctx.translate(540, 760); ctx.scale(qs, qs); circle(0, 0, 92, P.ink); circle(0, 0, 84, P.night); ctx.restore();
-    qmark(540, 770, 170 * qs, Math.sin(t * 3) * 0.12, qs);
-    pop("A FATHER'S CHOICE?", 300, 260, lt, Math.max(0, fath - t11 - 0.1), { size: 26, col: P.greenHi, ink: P.cream });
-    pop("AN ENEMY'S FIRE?", 780, 260, lt, enemy - t11 - 0.1, { size: 26, col: P.vermil, ink: P.cream });
+    ctx.save(); ctx.translate(540, 820); ctx.scale(qs, qs); circle(0, 0, 92, P.ink); circle(0, 0, 84, P.night); ctx.restore();
+    qmark(540, 830, 170 * qs, Math.sin(t * 3) * 0.12, qs);
+    label2(["A FATHER'S", 'CHOICE?'], 296, 260, 50, clamp((lt - Math.max(0, fath - t11 - 0.15)) / 0.4), 0.4 + 0.6 * Math.max(hL, 0.55 * (hR > 0 ? 1 : 0)), t);
+    label2(["AN ENEMY'S", 'FIRE?'], 784, 260, 50, clamp((lt - (enemy - t11 - 0.15)) / 0.4), 0.4 + 0.6 * hR, t);
   } });
   cue(t11, 'bell', { gain: 0.5 }); cue(fath, 'pop', { gain: 0.5, pan: -0.4 }); cue(enemy, 'pop', { gain: 0.5, pan: 0.4 }); cue(enemy + 0.1, 'whoosh', { gain: 0.4, pan: 0.4 });
 

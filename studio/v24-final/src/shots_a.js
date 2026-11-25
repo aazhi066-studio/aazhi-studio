@@ -79,8 +79,8 @@ function familyScene(t, lt, sx = 0, sy = 0) {
   ctx.fillStyle = lg(0, top, 0, bot, [[0, P.fire], [0.55, mixc(P.fireHi, P.fire, 0.3 * fl)], [1, P.vermil]]); ctx.fillRect(ax - hw, top - 60, hw * 2, bot - top + 80);
   glow(ax, 900, 420, P.fireHi, 0.55 + 0.25 * fl);
   // three veiled women, cut-out silhouettes, standing together
-  veiled(ax - 170, bot, 1.55, '#3A1A28', Math.sin(t * 1.3)); veiled(ax + 170, bot, 1.55, '#3A1A28', Math.sin(t * 1.1 + 1));
-  veiled(ax, bot + 10, 1.85, '#2A1220', Math.sin(t * 1.2 + 2));
+  veiled(ax - 205, bot, 1.3, '#3A1A28', Math.sin(t * 1.3)); veiled(ax + 205, bot, 1.3, '#3A1A28', Math.sin(t * 1.1 + 1));
+  veiled(ax, bot + 10, 1.6, '#2A1220', Math.sin(t * 1.2 + 2));
   // lattice mullions
   line([[ax - 110, top], [ax - 110, bot]], rgba(P.ink, 0.55), 8); line([[ax + 110, top], [ax + 110, bot]], rgba(P.ink, 0.55), 8);
   ctx.restore();
@@ -173,7 +173,6 @@ export function buildA(add, cue) {
       sun(540, lerp(900, 640, eo(clamp(lt / 1.2))), 190, t);
       G.foil(80, 130, 920, 400, t, 18, 3);
       G.palace(540, 1960 - 60 * k, 1.5, { lit: 0.4, t });
-      G.banner(534, 1960 - 60 * k - 880 * 1.5, 0.9, P.green, t);
       G.banner(110, 1960 - 60 * k - 400 * 1.5, 0.8, P.green, t + 1); G.banner(860, 1960 - 60 * k - 400 * 1.5, 0.8, P.green, t + 2);
       G.title('1673', 540, 330, 230, seg(lt, 0.0, 1.2));
       G.glassTop(t, r);
@@ -246,17 +245,17 @@ export function buildA(add, cue) {
       G.palace(300, 1100, 0.42, { lit: 0.3, t }); G.palace(780, 1100, 0.42, { lit: 0.3, t });
       G.banner(298, 1100 - 880 * 0.42, 0.35, P.vermil, t); G.banner(778, 1100 - 880 * 0.42, 0.35, P.green, t + 1);
       ctx.fillStyle = mixc(P.ochre, P.vermilDk, 0.25); ctx.fillRect(60, 1100, 480, 340); ctx.fillStyle = '#6E7F3A'; ctx.fillRect(540, 1100, 480, 340); line([[0, 1100], [W, 1100]], P.ink, 6);
-      G.person(170, 1270, 0.85, { kind: 'king', robe: P.vermil, p: seg(lt, 0, 0.5) });
-      G.person(910, 1270, 0.85, { kind: 'king', robe: P.green, dir: -1, p: seg(lt, 0, 0.5) });
+      G.person(170, 1270, 1.05, { kind: 'king', robe: P.vermil, p: seg(lt, 0, 0.5) });
+      G.person(910, 1270, 1.05, { kind: 'king', robe: P.green, dir: -1, p: seg(lt, 0, 0.5) });
       // divider mullion
       ctx.fillStyle = P.teakDk; ctx.fillRect(526, 110, 28, 1330); line([[524, 110], [524, 1440]], P.gilt, 4); line([[556, 110], [556, 1440]], P.gilt, 4);
       // rider with the tray crossing left -> right
       const rx = lerp(120, 900, eio(clamp(lt / (d + 0.2)))), g = lt * 16;
-      G.rider(rx, 1430, 0.62, { robe: P.vermil, gallop: g, shield: P.vermil });
-      tray(rx + 30, 1430 - 470 * 0.62 + Math.sin(g) * 5, 0.55, t);
+      G.rider(rx, 1440, 0.8, { robe: P.vermil, gallop: g, shield: P.vermil });
+      tray(rx + 40, 1440 - 480 * 0.8 + Math.sin(g) * 6, 0.62, t);
       G.puffs(rx - 120, 1460, t * 2, 3, 0.5, 8);
-      G.title('MADURAI', 300, 260, 84, seg(lt, 0, 0.6));
-      G.title('THANJAVUR', 790, 260, 64, seg(lt, 0.25, 0.9));
+      G.title('MADURAI', 300, 260, 68, seg(lt, 0, 0.6));
+      G.title('THANJAVUR', 785, 260, 54, seg(lt, 0.25, 0.9));
       G.glassTop(t, r);
     } });
   cue(tMad - 0.05, 'slide', { gain: 0.5 }); for (let i = 0; i < 4; i++) cue(tMad + 0.05 + i * 0.28, 'tock', { gain: 0.3, pan: -0.6 + i * 0.4 });
@@ -320,9 +319,9 @@ export function buildA(add, cue) {
       groundStrip(1150, '#C9A35A');
       G.wall(700, 1100, 1220, 220, {});
       for (const bx of [740, 880, 1000]) G.banner(bx, 1000, 0.55, P.green, t + bx);
-      army(lt, t, 170 * lt, [[1240, 0.42, 9, 70, 300, 3], [1330, 0.52, 8, 88, 240, 3], [1450, 0.66, 7, 110, 170, 0]]);
+      army(lt, t, 170 * lt, [[1230, 0.62, 8, 95, 330, 3], [1340, 0.78, 7, 115, 260, 3], [1470, 0.95, 6, 140, 170, 0]]);
       G.glassTop(t, r);
-      G.tag('MADURAI', 300, 560, { sc: pop(lt, Wd('madurai', 3) - tArmy) * 0.85, col: P.vermil, ink: P.cream, rot: -0.03 });
+      G.tag('MADURAI', 330, 700, { sc: pop(lt, Wd('madurai', 3) - tArmy) * 0.85, col: P.vermil, ink: P.cream, rot: -0.03 });
     } });
   for (let i = 0; i * 0.449 < Wd('thanjavur', 3) - tArmy; i++) cue(tArmy + i * 0.449, 'drum', { gain: 0.55, pan: -0.4 });
   cue(Wd('madurai', 3), 'pop', { gain: 0.4 });
@@ -333,9 +332,9 @@ export function buildA(add, cue) {
       const r = G.panel(t, { ground: [P.ultraHi, P.cream], rot: lerp(0.01, -0.02, k), sc: 1 + 0.05 * eo(rush) });
       G.palace(760, 900, 0.75, { lit: 0.5, t }); G.banner(757, 900 - 880 * 0.75, 0.55, P.green, t);
       groundStrip(1140, '#C9A35A');
-      G.wall(300, 1200, 1250, 330, {});
-      for (const bx of [380, 560, 760, 960]) G.banner(bx, 920, 0.8, P.green, t + bx);
-      army(lt, t, 260 * lt + 400 * rush * rush, [[1330, 0.62, 6, 105, 90, 2], [1460, 0.8, 5, 135, 0, 2]]);
+      G.wall(560, 1200, 1250, 330, {});
+      for (const bx of [620, 780, 940]) G.banner(bx, 920, 0.8, P.green, t + bx);
+      army(lt, t, 260 * lt + 400 * rush * rush, [[1330, 1.0, 5, 150, 330, 2], [1490, 1.3, 4, 200, 250, 2]]);
       // speed streaks for forward momentum
       ctx.save(); ctx.globalAlpha = 0.25 + 0.5 * rush; for (let i = 0; i < 6; i++) { const yy = 1180 + i * 45, xx = ((lt * 900 + rnd(i) * 600) % 1100) - 200; line([[xx, yy], [xx + 160 + 120 * rush, yy]], P.cream, 6); } ctx.restore();
       G.glassTop(t, r);

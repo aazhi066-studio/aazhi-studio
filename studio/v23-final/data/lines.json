@@ -1,88 +1,88 @@
 {
- "duration": 58.006,
+ "duration": 57.236,
  "lines": [
   {
-   "text": "Did a Pandya prince kill his own father for the throne?",
-   "caps": "did a *Pandya *prince | *kill | his own *father | for the *throne?",
+   "text": "Did a Pandya prince kill his own father?",
+   "caps": "did a *Pandya *prince | *kill | his own *father?",
    "start": 0.15,
-   "end": 3.035,
+   "end": 2.265,
    "i": 0
   },
   {
    "text": "Madurai, around thirteen ten. King Kulasekhara had ruled about forty years.",
    "caps": "*Madurai | around *1310 | king *Kulasekhara | ruled about | *forty *years",
-   "start": 3.385,
-   "end": 8.349,
+   "start": 2.615,
+   "end": 7.579,
    "i": 1
   },
   {
    "text": "Two Persian chroniclers say he favoured Vira, a son they call illegitimate, over Sundara.",
    "caps": "two *Persian | *chroniclers say | he *favoured *Vira | a son they call | *illegitimate | over *Sundara",
-   "start": 8.749,
-   "end": 14.263,
+   "start": 7.979,
+   "end": 13.493,
    "i": 2
   },
   {
    "text": "In their story, Sundara struck down his father and took Madurai.",
    "caps": "in *their story | Sundara | *struck *down | his *father | and took *Madurai",
-   "start": 14.663,
-   "end": 18.274,
+   "start": 13.893,
+   "end": 17.504,
    "i": 3
   },
   {
    "text": "Vira fought back. Brother against brother, the kingdom split in two.",
    "caps": "Vira | *fought *back | *brother | against *brother | the kingdom | *split in two",
-   "start": 18.724,
-   "end": 22.533,
+   "start": 17.954,
+   "end": 21.763,
    "i": 4
   },
   {
    "text": "Some accounts say Sundara fled north and asked the Delhi Sultanate for help.",
    "caps": "some *accounts say | Sundara *fled *north | and asked | the *Delhi *Sultanate | for *help",
-   "start": 22.933,
-   "end": 27.552,
+   "start": 22.163,
+   "end": 26.782,
    "i": 5
   },
   {
    "text": "In thirteen eleven, Malik Kafur's army marched south.",
    "caps": "in *1311 | *Malik *Kafur's | *army | *marched *south",
-   "start": 27.952,
-   "end": 31.234,
+   "start": 27.182,
+   "end": 30.464,
    "i": 6
   },
   {
    "text": "Their court poet wrote that Vira's capital stood empty. The king had fled.",
    "caps": "their *court *poet | wrote that | Vira's *capital | stood *empty | the king | had *fled",
-   "start": 31.634,
-   "end": 36.043,
+   "start": 30.864,
+   "end": 35.273,
    "i": 7
   },
   {
    "text": "He claims Madurai was raided and hundreds of elephants taken. The numbers may be boasts.",
    "caps": "he *claims | Madurai was *raided | *hundreds | of *elephants | the *numbers | may be *boasts",
-   "start": 36.443,
-   "end": 41.96,
+   "start": 35.673,
+   "end": 41.19,
    "i": 8
   },
   {
    "text": "But the story is contested. Some later writers name Vira as the killer.",
    "caps": "but the story | is *contested | some later writers | name *Vira | as the *killer",
-   "start": 42.41,
-   "end": 46.634,
+   "start": 41.64,
+   "end": 45.864,
    "i": 9
   },
   {
    "text": "Some historians say the raid was about loot, not the brothers' feud.",
    "caps": "some *historians say | the raid | was about *loot | not the | brothers' *feud",
-   "start": 47.034,
-   "end": 50.925,
+   "start": 46.264,
+   "end": 50.155,
    "i": 10
   },
   {
    "text": "A son's crime, or a story told far away? Tell me below. Watch again, and watch the crown.",
    "caps": "a son's *crime | or a story | told *far *away? | tell me *below | watch *again | watch the *crown",
-   "start": 51.375,
-   "end": 57.106,
+   "start": 50.605,
+   "end": 56.336,
    "i": 11
   }
  ]

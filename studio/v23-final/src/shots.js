@@ -1,4 +1,4 @@
-// EPISODE 22 · KOPPAM 1054 ("Leather Shadow Puppets")
+// EPISODE 23 · PANDYA PARRICIDE c.1310 ("Ebony Chessboard & Marbled Ink")
 import { buildA } from './shots_a.js';
 import { buildB } from './shots_b.js';
 import { buildC } from './shots_c.js';

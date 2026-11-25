@@ -8,8 +8,8 @@
  "music_seed": 23719,
  "lines": [
   {
-   "text": "Did a Pandya prince kill his own father for the throne?",
-   "caps": "did a *Pandya *prince | *kill | his own *father | for the *throne?",
+   "text": "Did a Pandya prince kill his own father?",
+   "caps": "did a *Pandya *prince | *kill | his own *father?",
    "gap": 0.35
   },
   {

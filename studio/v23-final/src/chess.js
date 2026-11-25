@@ -42,9 +42,9 @@ export function spot(x, y, r, dark = 0.88, t = 0) {
 export function board(o = {}) {
   const cx = o.cx ?? 540, cy = o.cy ?? 980, size = o.size ?? 880, tilt = o.tilt ?? 0.55, rot = o.rot ?? 0, split = o.split ?? 0;
   const depth = 1 - tilt * 0.55;
-  const proj = (u, v) => {
+  const proj = (u, v, side) => {
     let x = (u - 4) / 8, y = (v - 4) / 8;
-    if (split) x += (u < 4 || (u === 4 && x < 0) ? -1 : 1) * split * 0.09;
+    if (split) x += (side ?? (u < 4 ? -1 : 1)) * split * 0.09;
     const cr = Math.cos(rot), sr = Math.sin(rot); const xr = x * cr - y * sr, yr = x * sr + y * cr;
     const z = 1 + yr * tilt * 0.9;                    // nearer rows (bigger v) are bigger
     const k = size / (1 + tilt * 0.45) * z;
@@ -61,7 +61,7 @@ export function board(o = {}) {
   }
   const light = o.light ?? '#CDB48A', dark = o.dark ?? PAL.rose;
   for (let u = 0; u < 8; u++) for (let v = 0; v < 8; v++) {
-    const q = [proj(u, v), proj(u + 1, v), proj(u + 1, v + 1), proj(u, v + 1)];
+    const sd = u < 4 ? -1 : 1, q = [proj(u, v, sd), proj(u + 1, v, sd), proj(u + 1, v + 1, sd), proj(u, v + 1, sd)];
     let f = (u + v) % 2 ? dark : light;
     if (o.glow && o.glow[0] === u && o.glow[1] === v) f = PAL.blood;
     drawQ(q, f);

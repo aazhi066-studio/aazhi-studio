@@ -3,3 +3,4 @@ studio/*/review/
 studio/*/renders/
 *.wav
 __pycache__/
+studio/*/renders_*.log

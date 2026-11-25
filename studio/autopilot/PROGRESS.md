@@ -1,3 +1,4 @@
+heartbeat: 2026-11-25T14:10:00Z (run 14:08 UTC 25 Nov ACTIVE: publish Video 6)
 heartbeat: 2026-11-25T13:14:00Z (run 13:08 UTC 25 Nov finished; lock free)
 Run 13:08 UTC 25 Nov (18:38 IST 25 Nov): v13 Vellore 1806 upload retry FAILED again ~13:13 UTC: Zapier upload_video 'This action has been throttled without retry' (no video created; 1 call only). 19th run in a row since 19:08 UTC 24 Nov. No WhatsApp and no push notification (both already sent for this problem). Production 2/2 already done for IST 25 Nov (v21, v22). Next: retry v13 once per run; publish Video 6 Buckingham Canal at first run >= 13:30 UTC 25 Nov (next run, 14:0x UTC); analytics at first run >= 14:30 UTC 25 Nov; v23 at first run >= 18:30 UTC 25 Nov. Zapier calls this run: YT upload 1 (throttled). Memory /areas/aazhi-channel.md still not reachable.
 heartbeat: 2026-11-25T12:12:00Z (run 12:07 UTC 25 Nov finished; lock free)

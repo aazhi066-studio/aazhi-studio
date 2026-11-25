@@ -75,3 +75,8 @@
 - Unchanged vs the pre-v22 check. Total public views ~1,089 over 6 public videos, but only 3 have a usable sample and none is a retention-rule video (v15+ not public yet).
 - Verdict: no new evidence; nothing changed. Concrete-act hooks (Video 2, 74-80%) still beat monument/slow openers (Video 1, 35%); keep RETENTION RULES + the 24 Nov concrete-act note. Publish time 19:36 IST unchanged (no hourly data).
 - Next study: first run after 20:00 IST 26 Nov (>= 14:30 UTC), plus a pre-video check before v23.
+
+## Pre-v23 check 2026-11-25 19:12 UTC (00:42 IST 26 Nov), Windsor.ai YouTube (1 call, last_30dT per-video)
+- Rows: 7, unchanged vs the 25 Nov 15:20 UTC study (Video 1 911 views 35.1%; Video 2 66 views 74.3%; Video 3 98 views 48.0%; Videos 4-7 2-9 views). No retention-rule video public yet.
+- Verdict: no new evidence; nothing changed. v23 follows the RETENTION RULES + concrete-act hook note.
+- v23 Pandya parricide c.1310 (25 Nov UTC / 26 Nov IST): hook 'Did a Pandya prince kill his own father?' (question, 8 words, concrete act: son kills father; over an ivory prince toppling a gold king + red flash + crack at 0.0 s), length 57.2 s (147 words), topic type: palace murder / disputed killer (Persian chroniclers vs later accounts vs historians) leading to a foreign raid. End: 'A son's crime, or a story told far away? Tell me below. Watch again, and watch the crown.' Art 'Ebony Chessboard & Marbled Ink', music gen:frost 23719 (music_sim PASS).

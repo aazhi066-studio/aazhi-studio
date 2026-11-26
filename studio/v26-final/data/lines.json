@@ -1,0 +1,82 @@
+{
+ "duration": 56.745,
+ "lines": [
+  {
+   "text": "Who took a Chola emperor prisoner?",
+   "caps": "who *took | a *Chola *emperor | *prisoner?",
+   "start": 0.15,
+   "end": 2.074,
+   "i": 0
+  },
+  {
+   "text": "Around twelve thirty one, the Chola empire was cracking. Rajaraja the Third was on the throne.",
+   "caps": "around *1231 | the *Chola *empire | was *cracking | *Rajaraja the *Third | on the *throne",
+   "start": 2.424,
+   "end": 8.589,
+   "i": 1
+  },
+  {
+   "text": "Kopperunchinga, a Kadava chief and once a Chola vassal, raised an army against him.",
+   "caps": "*Kopperunchinga | a *Kadava *chief | once a Chola *vassal | raised an *army | *against him",
+   "start": 8.989,
+   "end": 14.786,
+   "i": 2
+  },
+  {
+   "text": "At Tellaru, records say, the emperor was beaten. He, his queen and his ministers were taken.",
+   "caps": "at *Tellaru | records say | the emperor was *beaten | he, his *queen | and his *ministers | were *taken",
+   "start": 15.186,
+   "end": 21.158,
+   "i": 3
+  },
+  {
+   "text": "They were held at Sendamangalam, the chief's fortified capital.",
+   "caps": "they were *held | at *Sendamangalam | the chief's | *fortified *capital",
+   "start": 21.558,
+   "end": 25.128,
+   "i": 4
+  },
+  {
+   "text": "Rajaraja's ally, the Hoysala king Vira Narasimha the Second, sent armies south.",
+   "caps": "Rajaraja's *ally | the *Hoysala king | *Vira *Narasimha *II | sent *armies *south",
+   "start": 25.528,
+   "end": 30.679,
+   "i": 5
+  },
+  {
+   "text": "Kadava towns were sacked. As the siege closed in, the chief asked for peace.",
+   "caps": "Kadava towns | were *sacked | as the *siege | *closed in | the chief asked | for *peace",
+   "start": 31.079,
+   "end": 35.798,
+   "i": 6
+  },
+  {
+   "text": "Inscriptions say the emperor was set free at Tiruvendipuram.",
+   "caps": "*inscriptions say | the emperor was | *set *free | at *Tiruvendipuram",
+   "start": 36.198,
+   "end": 39.663,
+   "i": 7
+  },
+  {
+   "text": "But was he captured once, or twice? Scholars still disagree.",
+   "caps": "but was he *captured | *once | or *twice? | scholars still *disagree",
+   "start": 40.063,
+   "end": 43.697,
+   "i": 8
+  },
+  {
+   "text": "Many historians mark it as the start of the end. Within fifty years, the Chola empire was gone.",
+   "caps": "many historians | mark it as | the *start of the *end | within *50 *years | the Chola empire | was *gone",
+   "start": 44.147,
+   "end": 50.375,
+   "i": 9
+  },
+  {
+   "text": "A traitor, or a man breaking free? Tell me below. Watch again, and watch the dots.",
+   "caps": "a *traitor | or a man | *breaking *free? | tell me *below | watch *again | and watch the *dots",
+   "start": 50.825,
+   "end": 55.945,
+   "i": 10
+  }
+ ]
+}

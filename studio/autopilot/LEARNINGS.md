@@ -91,3 +91,7 @@
 - Essentially unchanged vs the pre-v24 check (only +1 like on Video 1, +1 like on Video 3 via rounding of the window). Total ~1,520 views over 7 public videos; 4 usable samples; still no retention-rule video (v15+) public, so hook styles under the 21 Nov rules cannot be compared yet.
 - Verdict: no new evidence; nothing changed. Ranking by % viewed still: concrete-act opener (Video 2, 71%) > mystery/disaster and conquest (Videos 3-4, 45-46%) > slow monument opener (Video 1, 35%). Keep RETENTION RULES + the 24 Nov concrete-act hook note. Publish time 19:36 IST unchanged (no hourly data). The first rule-era video (v15+) goes public only after Videos 9-14 in the queue.
 - Next study: first run after 20:00 IST 27 Nov (>= 14:30 UTC), plus a pre-video check before v25.
+
+## Pre-v25 check 2026-11-26 19:20 UTC (00:50 IST 27 Nov), Windsor.ai YouTube (1 call, last_30dT per-video)
+- Rows: 7, identical to the 15:12 UTC study (Video 1 918 views 35.1%; Video 4 406 views 46.2%; Video 3 113 views 45.1%; Video 2 75 views 71.2%; Videos 5-7 2-3 views; Video 7 Korkai public since 14:1x UTC, analytics lag).
+- Verdict: no new evidence; nothing changed. v25 follows RETENTION RULES + concrete-act hook note.

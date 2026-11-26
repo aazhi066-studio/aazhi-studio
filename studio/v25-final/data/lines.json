@@ -1,0 +1,82 @@
+{
+ "duration": 56.943,
+ "lines": [
+  {
+   "text": "How did Jaffna's last Tamil king really die?",
+   "caps": "how did *Jaffna's | *last *Tamil *king | *really *die?",
+   "start": 0.15,
+   "end": 2.669,
+   "i": 0
+  },
+  {
+   "text": "Jaffna, in the north of Sri Lanka, sixteen seventeen. A Tamil kingdom, ruled from Nallur.",
+   "caps": "*Jaffna | north of *Sri *Lanka | *1617 | a *Tamil *kingdom | ruled from *Nallur",
+   "start": 3.019,
+   "end": 9.069,
+   "i": 1
+  },
+  {
+   "text": "Accounts say Cankili seized the throne, killing rival claimants and princes of royal blood.",
+   "caps": "accounts say | *Cankili | *seized the *throne | killing *rival *claimants | and *princes | of royal *blood",
+   "start": 9.469,
+   "end": 15.133,
+   "i": 2
+  },
+  {
+   "text": "The Portuguese wanted Jaffna. Cankili called in soldiers from the Nayaks of Thanjavur.",
+   "caps": "the *Portuguese | *wanted *Jaffna | Cankili called in | *soldiers | from the *Nayaks | of *Thanjavur",
+   "start": 15.533,
+   "end": 21.044,
+   "i": 3
+  },
+  {
+   "text": "In sixteen nineteen, Phillippe de Oliveira marched on Nallur. The kingdom fell.",
+   "caps": "in *1619 | *Phillippe de *Oliveira | marched on *Nallur | the kingdom | *fell",
+   "start": 21.444,
+   "end": 26.411,
+   "i": 4
+  },
+  {
+   "text": "Cankili fled by boat for South India. Accounts say the winds drove him back.",
+   "caps": "Cankili *fled | by *boat | for *South *India | accounts say | the *winds | drove him *back",
+   "start": 26.811,
+   "end": 31.643,
+   "i": 5
+  },
+  {
+   "text": "He was captured with his family, and shipped to Goa.",
+   "caps": "he was *captured | with his *family | and *shipped | to *Goa",
+   "start": 32.043,
+   "end": 34.917,
+   "i": 6
+  },
+  {
+   "text": "Some histories say he was hanged. Others say he was beheaded.",
+   "caps": "some histories say | he was *hanged | others say | he was *beheaded",
+   "start": 35.317,
+   "end": 38.909,
+   "i": 7
+  },
+  {
+   "text": "Even the year is disputed. Sixteen nineteen, or sixteen twenty one?",
+   "caps": "even the *year | is *disputed | *1619 | or *1621?",
+   "start": 39.309,
+   "end": 43.779,
+   "i": 8
+  },
+  {
+   "text": "The surviving royals, accounts say, were told to become monks and nuns. No heirs. The line ended.",
+   "caps": "the *surviving *royals | accounts say | were told to become | *monks and *nuns | *no *heirs | the line *ended",
+   "start": 44.229,
+   "end": 50.427,
+   "i": 9
+  },
+  {
+   "text": "A usurper, or Jaffna's last defender? Tell me below. Watch again, and watch the wind.",
+   "caps": "a *usurper | or Jaffna's | *last *defender? | *tell me *below | watch *again | and watch the *wind",
+   "start": 50.877,
+   "end": 56.443,
+   "i": 10
+  }
+ ]
+}

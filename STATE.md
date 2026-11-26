@@ -1,3 +1,4 @@
+Run 06:09 UTC 26 Nov (11:09 IST 26 Nov): idle by plan; no Zapier calls. Next: publish Video 7 Korkai at first run >= 13:30 UTC 26 Nov; upload v14 + start v25 at first run >= 18:30 UTC 26 Nov.
 Run 03:08 UTC 26 Nov (08:38 IST 26 Nov): idle by plan; no Zapier calls. Next: publish Video 7 Korkai at first run >= 13:30 UTC 26 Nov; upload v14 + start v25 at first run >= 18:30 UTC 26 Nov.
 Run 23:08 UTC 25 Nov (04:38 IST 26 Nov): idle by plan; no Zapier calls. Next: publish Video 7 Korkai at first run >= 13:30 UTC 26 Nov; upload v14 + start v25 at first run >= 18:30 UTC 26 Nov.
 Run 20:07 UTC 25 Nov (01:37 IST 26 Nov): v24 Thanjavur 1673 finished + QA pass (56.2 s, v/v24.mp4, art 'Reverse-Glass & Shatter'); production 2/2 for IST 26 Nov. No Zapier calls. Next: publish Video 7 Korkai at first run >= 13:30 UTC 26 Nov; upload v14 + start v25 at first run >= 18:30 UTC 26 Nov.

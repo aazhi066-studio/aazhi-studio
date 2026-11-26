@@ -54,7 +54,7 @@ export function buildC(add, cue) {
   cue(once, 'tock', { gain: 0.75, pan: -0.5 }); cue(twice, 'tock', { gain: 0.75, pan: 0.5 }); cue(twice + 0.3, 'tock', { gain: 0.6, pan: 0.5 });
 
   add({ id: 'c8_flicker', at: sch, cam: [540, 760], zoom: 0.12, note: 'closer: both diagrams flicker and redraw, halves drift apart, a powder gust blows down the gap; on DISAGREE the floor cracks down the middle, big ? stamps', draw: (lt, d) => {
-    const di = dis - sch, [sx, sy] = K.shk(lt, di, 12, 0.5), dr = eio(seg(lt, 0, d)) * 40;
+    const di = dis - sch, [sx, sy] = K.shk(lt, di, 12, 0.5), dr = eio(seg(lt, 0, d)) * 25;
     ctx.save(); ctx.translate(sx, sy);
     K.floor(lt + 3, { lamp: 0.26, lx: 540, ly: 760 });
     // left: single loop, redraws in a flicker
@@ -68,7 +68,7 @@ export function buildC(add, cue) {
     K.dots(810, 760, 3, 3, 90, 1, { r: 7 }); K.dot(810, 760, 18, P.yellow); K.glow(810, 760, 90, P.yellowHi, 0.3 + 0.15 * Math.sin(lt * 17));
     const f2 = ((lt + 0.37) % 0.75) / 0.75; ctx.globalAlpha = 0.65 + 0.35 * Math.cos(lt * 27) ** 2;
     K.cage(810, 760, 120, f2 < 0.15 ? 1 - f2 / 0.15 : seg(f2, 0.15, 0.55), { rot: 0.5, w: 10 });
-    K.cage(810, 760, 190, f2 < 0.15 ? 1 - f2 / 0.15 : seg(f2, 0.3, 0.8), { rot: -0.3, w: 10 });
+    K.cage(810, 760, 180, f2 < 0.15 ? 1 - f2 / 0.15 : seg(f2, 0.3, 0.8), { rot: -0.3, w: 10 });
     ctx.restore();
     // gust down the gap
     band(400, 680, () => { K.gust((lt * 0.9) % 1, { y: 300, y1: 1350, n: 200 }); K.gust((lt * 0.9 + 0.5) % 1, { y: 300, y1: 1350, n: 160, dir: -1 }); });
@@ -127,8 +127,7 @@ export function buildC(add, cue) {
     ctx.save(); ctx.translate(eio(g) * 500, -eio(g) * 60); ctx.globalAlpha = 1 - g;
     crownKolam(lt + 4, 1, { out: (i, j) => rnd(i * 5 + j * 11) < 0.4 + g }); ctx.restore();
     K.gust(seg(lt, 0, 0.8), { y: 300, y1: 1350, n: 340, col: P.yellowHi }); K.gust(seg(lt, 0.15, 1), { y: 400, y1: 1300, n: 200 });
-    K.smudge(420, 820, 220, seg(lt, 0.2, 0.9), -0.2);
-    K.title('c. 1279', 540, 1240, seg(lt, 0.3, 0.7), { size: 110, col: P.ash });
+    K.title('c. 1279', 540, 1240, seg(lt, 0.3, 0.7), { size: 110, col: P.powderDk });
   } });
   cue(gone, 'whoosh', { gain: 0.85, pan: 0.4, dur: 1 }); cue(gone + 0.1, 'rumble', { gain: 0.45, dur: 0.9 });
 
@@ -146,7 +145,7 @@ export function buildC(add, cue) {
   add({ id: 'c10_free', at: man, cam: [540, 1000], zoom: 0.12, note: 'the red figure stands inside a yellow loop (the old overlord); on BREAKING the loop bursts open, gust; BREAKING FREE? in powder', draw: (lt) => {
     const b = brk - man, f = free - man;
     K.floor(lt + 2, { lamp: 0.28, lx: 540, ly: 1000 }); K.motes(lt, 30, 14, 0.4);
-    K.cage(540, 1060, 330, seg(lt, 0, 0.25), { col: P.yellow, open: eo(seg(lt, b, b + 0.6)), spread: 220, k: 10, rot: lt * 0.2 });
+    K.cage(540, 1060, 330, seg(lt, 0, 0.25), { col: P.yellow, open: eo(seg(lt, b, b + 0.6)), spread: 220, k: 10, rot: -Math.PI / 2 + lt * 0.15 });
     K.figure(540, 1360, 1.45, { p: 1, col: P.red, hat: 'turban', spear: 1 });
     K.glow(540, 1060, 400, P.yellowHi, 0.25 * (1 - seg(lt, b, b + 0.8)));
     K.gust(seg(lt, b, b + 0.8), { y: 650, y1: 1400, n: 220, col: P.yellowHi });
@@ -160,7 +159,7 @@ export function buildC(add, cue) {
     K.floor(lt, { tone: 'night', lamp: 0.3, lx: 540, ly: 820 }); K.motes(lt, 35, 17, 0.45);
     K.dots(540, 820, 5, 5, 120, seg(lt, 0, 0.6), { r: 9 });
     K.dot(540, 820, 22 * K.pop(lt, 0.05), P.yellow); K.glow(540, 820, 120, P.yellowHi, 0.4);
-    K.cage(540, 820, 230, seg(lt, 0.2, 0.9), { rot: lt * 0.3 });
+    K.cage(540, 820, 230, seg(lt, 0.2, 0.9), { rot: -Math.PI / 2 + lt * 0.1 });
     arrowDown(540, 1200, 1410, seg(lt, 0, 0.5), lt);
   } });
   cue(below, 'pop', { gain: 0.6 }); cue(below + 0.2, 'zip', { gain: 0.4, dur: 0.6 });
@@ -169,8 +168,8 @@ export function buildC(add, cue) {
     const dt = dots - and;
     K.floor(lt + 1.3, { tone: 'night', lamp: 0.3, lx: 540, ly: 820 }); K.motes(lt, 35, 17, 0.45);
     K.dots(540, 820, 5, 5, 120, 1, { r: 9 });
-    const beat = Math.max(0, Math.sin(lt * TAU * 1.7)) ** 3, op = lt < dt ? 0.18 * beat : eo(seg(lt, dt, dt + 0.7));
-    K.cage(540, 820, 230 - 14 * beat * (lt < dt ? 1 : 0), 1, { rot: 1.3 * 0.3 + lt * 0.3, open: op, spread: 180 });
+    const beat = Math.max(0, Math.sin(lt * TAU * 1.7)) ** 3, op = lt < dt ? 0.12 * beat : 0.75 * eo(seg(lt, dt, dt + 0.7));
+    K.cage(540, 820, 230 - 14 * beat * (lt < dt ? 1 : 0), 1, { rot: -Math.PI / 2 + (below < and ? and - below : 0) * 0.1 + lt * 0.1, open: op, spread: 110 });
     const fr = seg(lt, dt, dt + 0.6);
     K.glow(540, 820, 120 + 260 * fr, P.yellowHi, 0.4 + 0.4 * fr - 0.2 * seg(lt, dt + 0.8, d));
     K.dot(540, 820, 22 * (1 + 0.15 * beat + 0.5 * eob(fr)), P.yellow);

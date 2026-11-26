@@ -1,3 +1,4 @@
+Run 18:07 UTC 26 Nov (23:37 IST): idle by plan; no Zapier calls. Next: upload v14 + start v25 at first run >= 18:30 UTC 26 Nov; publish Video 9 Kuyili at first run >= 13:30 UTC 27 Nov.
 Run 14:07 UTC 26 Nov (19:37 IST): PUBLISHED Video 7 Korkai (YT public A0sM5m_p5vA, FB 4627268784162094, IG 18141366628635246 - possible duplicate reel after a 503; sheet row 8 + WhatsApp). Next publish Video 9 Kuyili 27 Nov; analytics next run; upload v14 + start v25 at first run >= 18:30 UTC 26 Nov.
 Run 10:08 UTC 26 Nov (15:38 IST 26 Nov): idle by plan; no Zapier calls. Next: publish Video 7 Korkai at first run >= 13:30 UTC 26 Nov; upload v14 + start v25 at first run >= 18:30 UTC 26 Nov.
 Run 08:07 UTC 26 Nov (13:37 IST 26 Nov): idle by plan; no Zapier calls. Next: publish Video 7 Korkai at first run >= 13:30 UTC 26 Nov; upload v14 + start v25 at first run >= 18:30 UTC 26 Nov.

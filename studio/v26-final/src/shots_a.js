@@ -47,7 +47,7 @@ export function buildA(add, cue) {
       K.glow(540, 900, 420, P.yellow, 0.25); K.figure(540, 1130, 1.25, { hat: 'crown', p: 1 });
       K.cage(540, 900, 350 - 18 * eo(seg(lt, 0.1, 0.9)), clamp(0.45 + lt / 0.11), { w: 16, rot: 0.6 });
       burst(540, 900, lt, 0.1, P.red, 90, 600, 1); burst(540, 900, lt, 0.1, P.powder, 50, 460, 40);
-      K.flash(0.55 * clamp(1 - Math.abs(lt - 0.12) / 0.14), P.redHi); K.flash(0.5 * clamp(1 - lt / 0.08), P.white); } });
+      K.flash(0.5 * clamp(1 - Math.abs(lt - 0.13) / 0.07), P.redHi); } });
   cue(0, 'slam', { gain: 0.9 }); cue(0, 'thud', { gain: 0.9 }); cue(0.1, 'rumble', { gain: 0.6, dur: 1.2 }); cue(0.12, 'zip', { gain: 0.4 });
 
   add({ id: 'a1_dot', at: t1, cam: [540, 820], zoom: 0.22,
@@ -112,13 +112,13 @@ export function buildA(add, cue) {
   cue(t6, 'whoosh', { gain: 0.5, pan: -0.4 }); cue(t6 + 0.1, 'bell', { gain: 0.4 });
 
   // ---------- line 2: Kopperunchinga, the Kadava chief, once a Chola vassal, raises an army ----------
-  add({ id: 'a7_chief', at: t7, cam: [600, 900], zoom: 0.14,
+  add({ id: 'a7_chief', at: t7, cam: [540, 900], zoom: 0.14,
     note: '"Kopperunchinga, a Kadava chief": a RED turbaned powder figure with a spear draws himself in the lamp light; name lettering, KADAVA CHIEF tag; red dots ring',
     draw: (lt) => { const tk = Wd('kadava', 2) - t7; bg(lt, { lamp: 0.3, lx: 300, ly: 800 });
       K.dots(540, 900, 7, 9, 120, 1, { r: 5 }); K.motes(lt, 35, 41, 0.6);
       K.glow(600, 1000, 380, P.red, 0.3); K.figure(600, 1330, 1.45, { col: P.red, hat: 'turban', spear: 1, p: seg(lt, 0.05, 1.1) });
       K.stroke(K.loopPts(600, 1000, 380, 9, 0.1, 240, lt * 0.2), seg(lt, 0.3, 1.6), { col: P.red, w: 8, seed: 44, tip: true, a: 0.85 });
-      K.title('KOPPERUNCHINGA', 540, 300, seg(lt, 0.05, 0.5), { size: 92, col: P.redHi, font: 'sans', ls: 4 });
+      K.title('KOPPERUNCHINGA', 540, 300, seg(lt, 0.05, 0.5), { size: 78, col: P.redHi, font: 'sans', ls: 3 });
       K.tag('KADAVA CHIEF', 540, 430, K.pop(lt, tk, 0.3), P.redHi); } });
   cue(t7, 'whoosh', { gain: 0.6, pan: 0.4 }); cue(t7 + 0.1, 'drum', { gain: 0.6 }); cue(Wd('kadava', 2), 'pop', { gain: 0.5 });
 
@@ -170,17 +170,17 @@ export function buildA(add, cue) {
       K.flash(0.6 * clamp(1 - lt / 0.16), P.red); } });
   cue(tBeat, 'slam', { gain: 0.8 }); cue(tBeat + 0.02, 'thud', { gain: 0.7 }); cue(tBeat + 0.1, 'whoosh', { gain: 0.7, pan: 0.6, dur: 0.8 });
 
-  add({ id: 'a12_taken', at: t12, cam: [540, 1020], zoom: 0.16,
+  add({ id: 'a12_taken', at: t12, cam: [540, 990], zoom: 0.14,
     note: '"He, his queen and his ministers were taken": crowned emperor, veiled queen and two small powderDk ministers stand in a row; on "taken" the red loop closes round all of them',
     draw: (lt) => { const tq = Wd('queen', 3) - t12, tm = Wd('ministers', 3) - t12, tt = tTake - t12;
       bg(lt, { lamp: 0.28, lx: 760, ly: 900 }, K.shk(lt, tt + 0.12, 18, 0.45));
       K.dots(540, 1000, 9, 7, 110, 1, { r: 4 }); K.motes(lt, 35, 81, 0.5);
       K.glow(540, 1060, 380, P.yellow, 0.22);
-      K.figure(500, 1210, 1.0, { hat: 'crown' });
-      K.figure(340, 1220, 0.85, { hat: 'veil', p: seg(lt, tq - 0.05, tq + 0.6) });
-      K.figure(650, 1230, 0.58, { col: P.powderDk, p: seg(lt, tm - 0.05, tm + 0.5) }); K.figure(750, 1230, 0.58, { col: P.powderDk, p: seg(lt, tm + 0.1, tm + 0.65) });
-      K.cage(540, 1030, lerp(420, 375, eob(seg(lt, tt + 0.05, tt + 0.4))), seg(lt, tt - 0.35, tt + 0.12), { w: 15, rot: 0.3 });
-      burst(540, 1030, lt, tt + 0.12, P.red, 70, 560, 91);
+      K.figure(500, 1170, 1.0, { hat: 'crown' });
+      K.figure(340, 1180, 0.85, { hat: 'veil', p: seg(lt, tq - 0.05, tq + 0.6) });
+      K.figure(650, 1190, 0.58, { col: P.powderDk, p: seg(lt, tm - 0.05, tm + 0.5) }); K.figure(750, 1190, 0.58, { col: P.powderDk, p: seg(lt, tm + 0.1, tm + 0.65) });
+      K.cage(540, 990, lerp(410, 360, eob(seg(lt, tt + 0.05, tt + 0.4))), seg(lt, tt - 0.35, tt + 0.12), { w: 15, rot: 0.3 });
+      burst(540, 990, lt, tt + 0.12, P.red, 70, 560, 91);
       K.flash(0.5 * clamp(1 - Math.abs(lt - tt - 0.12) / 0.14), P.redHi); } });
   cue(t12, 'whoosh', { gain: 0.5, pan: -0.3 }); cue(Wd('queen', 3), 'pop', { gain: 0.4 }); cue(Wd('ministers', 3), 'pop', { gain: 0.4, pan: 0.3 });
   cue(tTake - 0.3, 'zip', { gain: 0.5 }); cue(tTake + 0.12, 'slam', { gain: 0.85 }); cue(tTake + 0.14, 'thud', { gain: 0.6 });

@@ -1,3 +1,4 @@
+heartbeat: 2026-11-26T14:15Z (14:07 UTC run: Video 7 YT public, FB 4627268784162094 done; IG 1st try "still processing (180)", retry after ~215 s; lock TAKEN)
 heartbeat: 2026-11-26T14:13Z (14:07 UTC run: Video 7 YT public done; FB/IG next; lock TAKEN)
 heartbeat: 2026-11-26T14:08Z (14:07 UTC run = 19:37 IST 26 Nov: PUBLISH run; lock TAKEN)
 heartbeat: 2026-11-26T13:09Z (run 13:07 UTC 26 Nov finished; lock free)

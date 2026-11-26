@@ -1,3 +1,4 @@
+heartbeat: 2026-11-26T14:08Z (14:07 UTC run = 19:37 IST 26 Nov: PUBLISH run; lock TAKEN)
 heartbeat: 2026-11-26T13:09Z (run 13:07 UTC 26 Nov finished; lock free)
 Run 13:07 UTC 26 Nov (18:37 IST 26 Nov): idle by plan (before 13:30 UTC publish point). IST 26 Nov upload 1/1 (v8b), production 2/2 (v23, v24). Zapier calls this run: 0. Next: publish Video 7 Korkai at first run >= 13:30 UTC 26 Nov (Video 8 needs re-approval); analytics at first run >= 14:30 UTC 26 Nov; upload v14 Hunt for Noses + start v25 at first run >= 18:30 UTC 26 Nov. Memory /areas/aazhi-channel.md still not reachable.
 heartbeat: 2026-11-26T12:09Z (run 12:08 UTC 26 Nov finished; lock free)

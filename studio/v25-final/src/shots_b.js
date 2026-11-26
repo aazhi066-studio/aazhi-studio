@@ -91,7 +91,7 @@ export function buildB(add, cue) {
 
   // ---------------- line 5: fled by boat; the winds drove him back ----------------
   const t5 = L(5), tAcc = Wd('Accounts', 5) - 0.05, tWind = Wd('winds', 5), tDrove = Wd('drove', 5);
-  const boatAt = (pts, p, dir, lt, roll, s = 0.27) => { const { head } = along(pts, p); const [x, y] = toMap(head); G.ship(x, y + 10, s, lt, { kind: 'boat', dir, roll }); };
+  const boatAt = (pts, p, dir, lt, roll, s = 0.45) => { const { head } = along(pts, p); const [x, y] = toMap(head); G.ship(x, y + 10, s, lt, { kind: 'boat', dir, roll }); };
   add({ id: 'b0_d', at: t5, cam: [600, 900], zoom: 0.12, note: 'storm night chart; Cankili\'s green boat pushes out from Jaffna toward South India, dashed green route',
     draw(lt, d, t) {
       const r = G.sheet(lt, { seed: 11, ground: STORM });
@@ -132,7 +132,7 @@ export function buildB(add, cue) {
       route(OUT.map(toMap), 1, rgba(P.greenHi, 0.35), 7, [20, 14]);
       const p = eio(seg(lt, 0.05, d * 0.95));
       route(BACK.map(toMap), p, P.greenHi, 10);
-      const { ang } = along(BACK, p); boatAt(BACK, p, Math.cos(ang) < 0 ? -1 : 1, lt * 1.6, 1.6, 0.3);
+      const { ang } = along(BACK, p); boatAt(BACK, p, Math.cos(ang) < 0 ? -1 : 1, lt * 1.6, 1.6, 0.5);
       ctx.restore();
       G.wind(t, 40, 200, 1040, 1400, 1, 21, { col: P.vellumHi, n: 22, speed: 2.4 });
       G.wind(t + 0.4, 40, 400, 1040, 1200, 0.7, 33, { col: P.sea, n: 12, speed: 1.8 });
@@ -169,13 +169,13 @@ export function buildB(add, cue) {
   add({ id: 'b0_h', at: tShip, cam: [320, 1000], zoom: 0.14, note: 'red carrack sails away on a long red route off the chart edge; GOA ink-lettered, rhumb lines',
     draw(lt, d, t) {
       const r = G.sheet(lt, { seed: 15 });
-      G.rhumb(600, 1220, 1300, eo(seg(lt, 0, 0.6)), { a: 0.5 });
+      G.rhumb(860, 1280, 1300, eo(seg(lt, 0, 0.6)), { a: 0.5 });
       G.coast(G.GEO.INDIA, 1, { land: rgba(P.stain, 0.3) }); G.coast(G.GEO.JAFFNA, 1, { land: rgba(P.stain, 0.3), hatchSide: -1 });
       G.waves(60, 1020, 1000, t, { rows: 3, gap: 50, a: 0.4 });
       const p = lerp(0.1, 1, eio(seg(lt, 0, d + 0.2)));
       route(GOA, 1, rgba(P.red, 0.3), 6, [18, 12]); route(GOA, p, P.red, 9);
       const { head } = along(GOA, p); G.ship(head[0], head[1] + 8, 0.3, t, { dir: -1, roll: 0.4 });
-      G.rose(600, 1220, 110, lt, { spin: -0.9 + Math.sin(lt * 3) * 0.2 });
+      G.rose(860, 1280, 95, lt, { spin: -0.9 + Math.sin(lt * 3) * 0.2 });
       G.wind(lt, 60, 700, 1020, 1000, 0.45, 17, { dir: -1 });
       G.sheetTop(lt, r);
       G.title('GOA', 300, 1200, 180, seg(t, tGoa - 0.05, tGoa + 0.45), { col: P.red });

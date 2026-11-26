@@ -1,3 +1,4 @@
+heartbeat: 2026-11-26T20:05Z (19:08 UTC run: v25 rendering; lock TAKEN)
 heartbeat: 2026-11-26T19:40Z (19:08 UTC run: v25 Jaffna 1619 in production, 3 workers; lock TAKEN)
 Run 19:08 UTC 26 Nov (00:38 IST 27 Nov): v14 Hunt for Noses UPLOADED unlisted dYYu5meWNaQ 19:09:56 UTC; sheet row 15 (Video 14, Pending, IG Yes); WhatsApp uploaded sent. Upload for IST 27 Nov done (rolling 24h: 1). UPLOAD QUEUE now: v15 Aditya Karikalan, v16, v17, v18, v19, v20, v21, v22, v23, v24. Zapier calls so far: YT 1, sheet 1, WhatsApp 1. Next: pre-v25 Windsor check + v25.
 heartbeat: 2026-11-26T19:14Z (19:08 UTC run: v14 uploaded; starting v25; lock TAKEN)

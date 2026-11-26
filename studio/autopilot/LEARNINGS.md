@@ -95,3 +95,4 @@
 ## Pre-v25 check 2026-11-26 19:20 UTC (00:50 IST 27 Nov), Windsor.ai YouTube (1 call, last_30dT per-video)
 - Rows: 7, identical to the 15:12 UTC study (Video 1 918 views 35.1%; Video 4 406 views 46.2%; Video 3 113 views 45.1%; Video 2 75 views 71.2%; Videos 5-7 2-3 views; Video 7 Korkai public since 14:1x UTC, analytics lag).
 - Verdict: no new evidence; nothing changed. v25 follows RETENTION RULES + concrete-act hook note.
+- v25 Jaffna 1619 (26 Nov UTC / 27 Nov IST): hook 'How did Jaffna's last Tamil king really die?' (question, 8 words; contested death; storm + lightning + red X seal slam at 0.0 s), length ~56.9 s (140 words), topic type: erased dynasty / disputed execution (hanged vs beheaded, 1619 vs 1621; usurper vs defender) under colonial conquest. End: 'A usurper, or Jaffna's last defender? Tell me below. Watch again, and watch the wind.' Art 'Storm Portolan & Wax Seal', music gen:tide 31517 (music_sim PASS).

@@ -29,10 +29,10 @@ function landPath() { ctx.beginPath(); GEO.JAFFNA.forEach((q, i) => (i ? ctx.lin
 function figL(x, y, s, o) { ctx.save(); ctx.translate(x, y); ctx.scale(-1, 1); G.figure(0, 0, s, o); ctx.restore(); }
 // ink throne on its dais steps: n steps rising to the right, drawn in with p
 function dais(x0, y0, n, sw, sh, p, lt) {
-  for (let i = 0; i < n; i++) { const q = eo(clamp(p * n - i)); if (q <= 0) continue; const x = x0 + i * sw, y = y0 - (i + 1) * sh, w = (n - i) * sw;
+  for (let i = 0; i < n; i++) { const q = eo(clamp(p * (n + 1) - i)); if (q <= 0) continue; const x = x0 + i * sw, y = y0 - (i + 1) * sh, w = (n - i) * sw;
     ctx.save(); ctx.globalAlpha *= q; ctx.fillStyle = mixc(P.vellumDk, P.stain, i / n); ctx.fillRect(x, y, w, sh); ctx.strokeStyle = P.ink; ctx.lineWidth = 6; ctx.strokeRect(x, y, w, sh);
     for (let k = 12; k < w; k += 22) line([[x + k, y + sh - 4], [x + k - 14, y + 6]], rgba(P.ink, 0.3), 2); ctx.restore(); }
-  const tq = eo(clamp(p * n - n)); if (tq <= 0) return; const tx = x0 + (n - 0.5) * sw, ty = y0 - n * sh;
+  const tq = eo(clamp(p * (n + 1) - n)); if (tq <= 0) return; const tx = x0 + (n - 0.5) * sw, ty = y0 - n * sh;
   ctx.save(); ctx.globalAlpha *= tq; ctx.translate(tx, ty); ctx.fillStyle = P.sepia; ctx.strokeStyle = P.ink; ctx.lineWidth = 6;
   ctx.fillRect(-70, -260, 140, 30); ctx.strokeRect(-70, -260, 140, 30); ctx.fillRect(-60, -230, 18, 230); ctx.fillRect(42, -230, 18, 230); ctx.fillRect(-90, -100, 180, 26); ctx.strokeRect(-90, -100, 180, 26);
   ctx.fillStyle = P.green; ctx.fillRect(-80, -124, 160, 24); ctx.strokeRect(-80, -124, 160, 24); G.pennant(0, -300, 50, lt, P.green); line([[0, -260], [0, -302]], P.ink, 5); ctx.restore();
@@ -49,9 +49,9 @@ export function buildA(add, cue) {
     draw: (lt) => { const [sx, sy] = shk(lt, 0.03, 30, 0.7); const r = G.sheet(lt, { ground: STORM, lift: 0.7, x: 50 + sx, y: 110 + sy });
       ctx.save(); ctx.globalAlpha = 0.9; coasts(1, 1, { col: P.vellumHi, land: mixc(P.storm, P.green, 0.35), landI: mixc(P.storm, P.sepia, 0.35) }); ctx.restore();
       G.waves(60, 1020, 900, lt, { storm: 1, col: P.sea, a: 0.6, rows: 5, gap: 70 });
-      const fl = Math.max(1 - lt / 0.3, lt > 0.75 ? 0.7 * (1 - (lt - 0.75) / 0.25) : 0);
+      const fl = Math.max(1 - lt / 0.12, lt > 0.75 ? 0.45 * (1 - (lt - 0.75) / 0.12) : 0);
       G.lightning(300, 110, 1000, 4, clamp(1 - lt / 0.2)); G.lightning(820, 110, 700, 9, lt > 0.75 ? clamp(1 - (lt - 0.75) / 0.2) : 0);
-      glow(330, 1100, 420, '#CFE3FF', 0.25 + 0.5 * clamp(fl));
+      glow(330, 1100, 420, '#CFE3FF', 0.2 + 0.4 * clamp(fl));
       G.figure(330, 1380, 1.55, { hat: 'crown', robe: P.green, t: lt, arm: 0.2 + Math.sin(lt * 4) * 0.1 });
       G.stamp(GEO.NALLUR[0] + 20, GEO.NALLUR[1] + 120, 150, 0.3 + lt / 0.7, { mark: 'cross' });
       G.wind(lt * 1.4, 60, 300, 1020, 1300, 0.9, 1, { col: P.vellumHi }); G.rain(lt, 0.8);
@@ -61,12 +61,12 @@ export function buildA(add, cue) {
   add({ id: 'a1_fate', at: t1, cam: [540, 760], zoom: 0.14, note: 'HOOK: rope swings in from the left, blade from the right, a "?" seal slams between them over the small crowned figure',
     draw: (lt) => { const [sx, sy] = shk(lt, 0.38, 22, 0.5); const r = G.sheet(lt, { ground: STORM, lift: 0.9, x: 50 + sx, y: 110 + sy });
       G.rhumb(540, 760, 1000, 1, { a: 0.35, rot: lt * 0.2 }); G.waves(60, 1020, 1200, lt, { storm: 1, col: P.sea, a: 0.5, rows: 5, gap: 50 });
-      glow(540, 1250, 300, '#CFE3FF', 0.25); G.figure(540, 1400, 0.9, { hat: 'crown', robe: P.green, t: lt });
+      glow(540, 1250, 300, '#CFE3FF', 0.15); G.figure(540, 1400, 0.9, { hat: 'crown', robe: P.green, t: lt });
       const qi = eob(seg(lt, 0, 0.45)), sw = Math.sin(lt * 6) * 0.25 * (1 - seg(lt, 0.4, 0.9) * 0.6);
       G.rope(lerp(-260, 270, qi), 560, 1.5, { rot: 0.5 * (1 - qi) + sw }); G.blade(lerp(1340, 830, qi), 920, 1.5, { rot: -0.6 * (1 - qi) - sw });
       G.stamp(540, 760, 130, seg(lt, 0.1, 0.9), { mark: 'blank', text: '?' });
       G.wind(lt * 1.5, 60, 200, 1020, 1100, 0.8, 7, { col: P.vellumHi, dir: -1 }); G.rain(lt, 0.6, 3);
-      G.sheetTop(lt, r, { lamp: 0.4 }); G.flash(0.5 * clamp(1 - (lt - 0.38) / 0.15) * (lt > 0.38)); } });
+      G.sheetTop(lt, r, { lamp: 0.4 }); G.flash(0.4 * clamp(1 - (lt - 0.38) / 0.1) * (lt > 0.38)); } });
   cue(t1, 'whoosh', { gain: 0.8, pan: -0.5 }); cue(t1 + 0.08, 'whoosh', { gain: 0.7, pan: 0.5 }); cue(t1 + 0.38, 'slam', { gain: 0.9 });
 
   add({ id: 'a2_disputed', at: t2, cam: [540, 800], zoom: 0.12, note: '"really die?": lightning, "?" seal centre, rope + blade swaying, DISPUTED tag slams, vellum starts to burn at the edge',
@@ -125,18 +125,18 @@ export function buildA(add, cue) {
   add({ id: 'a8_dais', at: t8, cam: [620, 800], zoom: 0.1, note: 'ACCOUNTS SAY: ink dais steps draw in, crowned green Cankili climbs to the throne; small seal thud as he takes it',
     draw: (lt, d) => { const r = G.sheet(lt, {}); G.rhumb(X0 + (N - 0.5) * SW, Y0 - N * SH - 150, 1100, seg(lt, 0, 0.8), { a: 0.25 });
       dais(X0, Y0, N, SW, SH, seg(lt, 0, 0.9), lt);
-      const u = clamp(seg(lt, 0.5, d - 0.4) * N), i = Math.min(N - 1, Math.floor(u)), f = u - Math.floor(u);
-      const a = i === 0 && u < 1 ? [X0 - 60, Y0] : stepTop(X0, Y0, SW, SH, Math.max(0, i - 1)), b = stepTop(X0, Y0, SW, SH, i);
+      const u = seg(lt, 0.5, d - 0.4) * N, i = Math.min(N - 1, Math.floor(u)), f = u - Math.floor(u);
+      const a = i === 0 ? [X0 - 60, Y0] : stepTop(X0, Y0, SW, SH, Math.max(0, i - 1)), b = stepTop(X0, Y0, SW, SH, i);
       const [fx, fy] = u >= N ? stepTop(X0, Y0, SW, SH, N - 1) : [lerp(a[0], b[0], f), lerp(a[1], b[1], f) - Math.sin(f * Math.PI) * 50];
-      G.figure(fx - 100, fy, 0.95, { hat: 'crown', robe: P.green, t: lt, walk: u < N ? 1 : 0, arm: u >= N ? 0.8 : 0 });
-      G.stamp(880, 340, 70, seg(lt, d - 0.45, d + 0.3), { mark: 'ring', col: P.green }); G.wind(lt, 60, 200, 1020, 500, 0.4, 3);
+      G.figure(fx, fy, 1.05, { hat: 'crown', robe: P.green, t: lt, walk: u < N ? 1 : 0, arm: u >= N ? 0.8 : 0 });
+      G.stamp(880, 340, 70, seg(lt, d - 0.45, d + 0.3), { mark: 'ring' }); G.wind(lt, 60, 200, 1020, 500, 0.4, 3);
       G.sheetTop(lt, r); G.tag('ACCOUNTS SAY', 400, 250, { sc: pop(lt, 0.1, 0.3) }); } });
   cue(t8, 'slide', { gain: 0.5 }); cue(t8 + 0.1, 'pop', { gain: 0.5 }); for (let i = 0; i < N; i++) cue(t8 + 0.5 + (i + 0.5) * (t9 - t8 - 0.9) / N, 'tock', { gain: 0.4 });
   cue(t9 - 0.3, 'thud', { gain: 0.6 });
 
   add({ id: 'a9_rivals', at: t9, cam: [540, 980], zoom: 0.1, note: '"killing rival claimants": Cankili on the throne above, a row of small turban/hood claimants below blotted out one by one by ink blots',
     draw: (lt) => { const r = G.sheet(lt, {}); G.rhumb(540, 560, 900, 1, { a: 0.2 });
-      dais(300, 760, 3, 160, 70, 1, lt); G.figure(620, 760 - 3 * 70, 0.75, { hat: 'crown', robe: P.green, t: lt, arm: 0.6 + Math.sin(lt * 3) * 0.1 });
+      dais(300, 760, 3, 160, 70, 1, lt); G.figure(700, 760 - 3 * 70, 0.75, { hat: 'crown', robe: P.green, t: lt, arm: 0.6 + Math.sin(lt * 3) * 0.1 });
       line([[100, 1330], [980, 1330]], P.ink, 5);
       for (let i = 0; i < 5; i++) { const x = 170 + i * 185, tb = 0.2 + i * 0.26, gone = seg(lt, tb + 0.1, tb + 0.35);
         G.figure(x, 1330 + Math.sin(lt * 4 + i) * 3, 0.7, { hat: i % 2 ? 'hood' : 'turban', robe: [P.sepia, P.ochre, P.vellumDk, P.stain, P.sepia][i], t: lt, a: 1 - gone });
@@ -146,9 +146,9 @@ export function buildA(add, cue) {
 
   add({ id: 'a10_princes', at: t10, cam: [540, 760], zoom: 0.12, note: '"princes of royal blood": ink line of descent branches to small princes; blots fall, a red X seal slams on the tree; green Cankili alone on top',
     draw: (lt) => { const r = G.sheet(lt, { lift: 0.2 });
-      G.figure(540, 560, 0.9, { hat: 'crown', robe: P.green, t: lt, arm: 0.3 }); dais(380, 600, 2, 160, 40, 1, lt);
+      dais(380, 600, 2, 160, 40, 1, lt); G.figure(620, 520, 0.8, { hat: 'crown', robe: P.green, t: lt, arm: 0.3 });
       const br = [[200, 1260], [370, 1260], [710, 1260], [880, 1260]], pg = seg(lt, 0, 0.6);
-      route([[540, 640], [540, 900]], pg * 2, P.sepia, 6); br.forEach(([x, y], i) => { route([[540, 900], [x, 940], [x, y - 220]], seg(pg, 0.4, 1), P.sepia, 5);
+      route([[540, 620], [540, 900]], pg * 2, P.sepia, 6); br.forEach(([x, y], i) => { route([[540, 900], [x, 940], [x, y - 220]], seg(pg, 0.4, 1), P.sepia, 5);
         const tb = 0.55 + i * 0.2; G.figure(x, y, 0.6, { hat: 'turban', robe: P.gold, t: lt, a: eo(seg(lt, 0.3, 0.6)) * (1 - seg(lt, tb + 0.1, tb + 0.3)) }); G.blot(x, y - 110, 85, seg(lt, tb, tb + 0.4), i + 11); });
       G.stamp(540, 1030, 120, seg(lt, 1.25, 2.0), { mark: 'cross' }); G.wind(lt, 60, 1300, 1020, 1420, 0.5, 9);
       G.sheetTop(lt, r); G.flash(0.35 * clamp(1 - (lt - 1.51) / 0.2) * (lt > 1.51), P.wax); } });
@@ -160,7 +160,7 @@ export function buildA(add, cue) {
       ctx.save(); landPath(); ctx.fillStyle = rgba(P.green, 0.35); ctx.fill(); ctx.restore(); G.fort(GEO.NALLUR[0], GEO.NALLUR[1] + 40, 0.3, { t: lt });
       const R = [[[60, 1400], [300, 1150], [600, 960]], [[60, 1100], [300, 960], [490, 740]], [[260, 1450], [480, 1300], [630, 1180]]];
       R.forEach((pts, i) => { const p = seg(lt, 0.1 + i * 0.15, 1.2 + i * 0.15); route(pts, p, P.red, 8, [26, 14]);
-        const q = part(pts, 0.25 + p * 0.45), sp = q[q.length - 1]; G.ship(sp[0] - 40, sp[1] + 20, 0.32, lt + i, { kind: 'carrack', roll: 0.3 }); });
+        const q = part(pts, Math.max(0.12, p)), sp = q[q.length - 1]; G.ship(sp[0], sp[1] - 10, 0.32, lt + i, { kind: 'carrack', roll: 0.3 }); });
       G.wind(lt, 60, 1100, 1020, 1420, 0.5, 12); G.sheetTop(lt, r); G.tag('PORTUGUESE', 330, 260, { sc: pop(lt, Wd('portuguese', 3) - t11 + 0.05, 0.3), ink: P.red }); } });
   cue(t11, 'whoosh', { gain: 0.6, pan: -0.5 }); cue(t11 + 0.15, 'zip', { gain: 0.5 }); cue(t11 + 0.3, 'zip', { gain: 0.5 }); cue(Wd('portuguese', 3) + 0.05, 'pop', { gain: 0.5 }); cue(Wd('wanted', 3), 'drum', { gain: 0.5 });
 
@@ -175,8 +175,8 @@ export function buildA(add, cue) {
 
   add({ id: 'a13_march', at: t13, cam: [560, 900], zoom: 0.12, note: '"from the Nayaks of Thanjavur": ochre-robed Nayak soldiers march across the strait along the dashed ochre line toward the green Nallur fort; THANJAVUR tag',
     draw: (lt) => { const r = G.sheet(lt, {}); G.waves(60, 1020, 900, lt, { a: 0.6, rows: 9, gap: 60 }); G.coast(GEO.INDIA, 1, { land: LANDI });
-      const fpX = 860, fpY = 760; G.fort(fpX, fpY, 0.6, { t: lt, col: P.green });
-      const path = [[200, 640], [420, 900], [640, 1050], [820, 1120]]; route(path, 1, P.ochre, 9, [24, 14]);
+      const fpX = 870, fpY = 1000; G.fort(fpX, fpY, 0.6, { t: lt, col: P.green });
+      const path = [[180, 640], [380, 960], [580, 1110], [760, 1040]]; route(path, 1, P.ochre, 9, [24, 14]);
       for (let i = 0; i < 6; i++) { const u = clamp(0.05 + i * 0.1 + lt * 0.2), q = part(path, u), sp = q[q.length - 1];
         G.figure(sp[0], sp[1] + 20, 0.55, { hat: 'turban', robe: P.ochre, walk: 1 + i, t: lt }); line([[sp[0] + 40, sp[1] - 120], [sp[0] + 52, sp[1] - 230]], P.ink, 5); }
       G.wind(lt, 60, 250, 1020, 500, 0.5, 16); G.sheetTop(lt, r); G.tag('THANJAVUR', 330, 300, { sc: pop(lt, Wd('thanjavur', 3) - t13, 0.3), ink: mixc(P.ochre, P.ink, 0.4) }); } });

@@ -1,0 +1,82 @@
+{
+ "duration": 56.647,
+ "lines": [
+  {
+   "text": "Did a Chola king's own city kill him?",
+   "caps": "did a *chola king's | *own city | *kill him?",
+   "start": 0.15,
+   "end": 2.217,
+   "i": 0
+  },
+  {
+   "text": "Ten seventy. Athirajendra had just been crowned Chola king, and his capital was in revolt.",
+   "caps": "*1070 | *Athirajendra | just *crowned | Chola king | his capital | in *revolt",
+   "start": 2.567,
+   "end": 8.743,
+   "i": 1
+  },
+  {
+   "text": "His brother-in-law, the Chalukya prince Vikramaditya, marched in, crushed the unrest, and set him on the throne.",
+   "caps": "his *brother-in-law | the *Chalukya prince | *Vikramaditya | marched *in | *crushed the unrest | set him on | the *throne",
+   "start": 9.143,
+   "end": 16.111,
+   "i": 2
+  },
+  {
+   "text": "That is the version told by Bilhana, the prince's own court poet.",
+   "caps": "that is | the *version | told by *Bilhana | the prince's own | *court poet",
+   "start": 16.511,
+   "end": 20.544,
+   "i": 3
+  },
+  {
+   "text": "Soon after the prince rode home, a new rising broke out.",
+   "caps": "soon after | the prince | rode *home | a new *rising | *broke out",
+   "start": 20.944,
+   "end": 24.437,
+   "i": 4
+  },
+  {
+   "text": "Athirajendra was killed. His reign had lasted only months.",
+   "caps": "Athirajendra | was *killed | his *reign | lasted only *months",
+   "start": 24.787,
+   "end": 28.528,
+   "i": 5
+  },
+  {
+   "text": "Within days, a cousin from Vengi, Rajendra Chalukya, son of a Chola princess, took the throne as Kulottunga the First.",
+   "caps": "within *days | a *cousin | from *Vengi | *Rajendra Chalukya | son of a | Chola *princess | took the *throne | as *Kulottunga I",
+   "start": 28.978,
+   "end": 37.165,
+   "i": 6
+  },
+  {
+   "text": "The old Chola line, father to son, ended right there.",
+   "caps": "the *old Chola line | *father to son | *ended | right there",
+   "start": 37.565,
+   "end": 40.864,
+   "i": 7
+  },
+  {
+   "text": "Who was behind it? Some point to religious strife, from much later stories.",
+   "caps": "who was *behind it? | some point to | *religious strife | from much *later | stories",
+   "start": 41.314,
+   "end": 45.64,
+   "i": 8
+  },
+  {
+   "text": "Some suspect the cousin who gained the crown. No record proves either.",
+   "caps": "some *suspect | the *cousin | who gained | the *crown | *no record | proves *either",
+   "start": 45.99,
+   "end": 50.048,
+   "i": 9
+  },
+  {
+   "text": "An angry city, or a cousin's plan? Tell me below. Watch again, and watch the throne.",
+   "caps": "an *angry city | or a *cousin's plan? | tell me *below | watch *again | and watch | the *throne",
+   "start": 50.498,
+   "end": 55.847,
+   "i": 10
+  }
+ ]
+}

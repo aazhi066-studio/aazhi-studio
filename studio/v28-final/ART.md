@@ -1,0 +1,29 @@
+# v28 Why did three Tamil kings kill one generous chief? (Vel Pari of Parambu hill, Sangam age, dates uncertain: Pari, a Velir chief, ruled Parambu hill; old poems (Purananuru, Kapilar) say he gave its villages to poets; legend: gave his chariot to a jasmine creeper with nothing to climb; the Chera, Chola and Pandya kings joined and besieged the hill; his friend the poet Kapilar warned them armies would never take it, singers only had to ask; yet the hill fell and Pari was killed; HOW is unknown: the old poems never say, later tellings blame treachery and disagree; a poem credited to his two daughters mourns: under one full moon a father and a hill, by the next both gone; Kapilar led the girls away to find husbands and chiefs turned them down; later tradition: poet Avvaiyar saw them married)
+ART DIRECTION "Indigo Batik & Wax Crackle" (new to the channel): every scene is a hand-dyed BATIK cloth: deep indigo cotton weave, cream WAX-resist line art drawing itself with a glowing tjanting tip, ragged DYE BLOOMS, crackle veins, dye-bath FLOOD wipes, wax drips, the cloth sways.
+Kit: src/batik.js (import * as B from './batik.js'; READ IT FULLY FIRST). B.cloth(lt,{tone:'indigo'|'night'|'madder'|'dawn'}) background (always first); B.wax(pts,p,{col,w,fill,close,tip}); B.drips; B.bloom(x,y,r,p,col,a); B.flood(p,col,lt) transition wipe;
+B.flash; B.vignette; B.crackle(x,y,w,h,p,seed,col); B.moon(x,y,r,{p,crack,stain,glow}) THE MOTIF; B.hill(x0,x1,y,h,p,{dots,villages,stain}) Parambu hill; B.creeper(x,y,h,p,lt) jasmine; B.chariot(x,y,s,lt,{p});
+B.figure(x,y,s,{col,p,crown,bow,spear,arm,sit,kneel,a,dead}) faceless figures (feet at y); B.king(x,y,s,'bow'|'tiger'|'fish',{p,lt}) the three crowns with emblem banner; B.emblemMark; B.army(x0,x1,y,n,lt,{col,s,march,p}); B.leaf(x,y,w,h,p,lt) poem leaf with ABSTRACT lines;
+B.ring(x,y,r,p,lt) siege ring closing; B.tag(text,x,y,size,{s,col,rot,bg}); B.title(text,x,y,size,{p,col,s}); B.pop, B.shk, B.shake, B.glow, B.part, B.circPts, B.rectPts, B.wob. Palette B.PAL, B.KCOL.
+RECURRING MOTIF ("watch the moon"): the cream WAX FULL MOON above Parambu hill. Hook: the moon CRACKS madder red as three crowns close in. Through lines 1-4 the moon is whole. Line 5 (hill fell / killed): moon stains madder.
+Line 7 (the daughters' poem): TWO moons side by side: the first whole over the hill with father figure; the second cracked, hill gone/stained, figure gone. End: the moon whole again over an empty hill with a tiny jasmine creeper; push-in on "moon".
+Colour code: Pari = WAX cream (no crown, a chief); Chera = GREEN (bow), Chola = TURMERIC (tiger), Pandya = TEAL (fish); Kapilar poet = OCHRE; the two daughters = ROSE (small figures); Avvaiyar = LAVENDER; war/siege/death = MADDER red.
+Line times (s) (data/lines.json):
+0 0.15-3.305 | 1 3.655-9.538 | 2 9.938-15.254 | 3 15.654-20.234 | 4 20.634-26.688 | 5 27.088-29.127 | 6 29.576-35.29 | 7 35.69-43.066 | 8 43.516-47.834 | 9 48.234-52.264 | 10 52.714-58.7 | end 59.5
+ 0 "Why did three Tamil kings kill one generous chief?"
+ 1 "Sangam age. Pari ruled Parambu hill, and old poems say he gave its villages to poets."
+ 2 "Legend says he even gave his chariot to a jasmine creeper that had nothing to climb."
+ 3 "Then the Chera, Chola and Pandya kings joined together, and besieged his hill."
+ 4 "His friend, the poet Kapilar, warned them. Armies would never take it. Singers only had to ask."
+ 5 "Yet the hill fell, and Pari was killed."
+ 6 "How? The old poems never say. Later tellings blame treachery, and even they disagree."
+ 7 "One poem, credited to his daughters, mourns it. Under one full moon, a father and a hill. By the next, both were gone."
+ 8 "Kapilar led the girls away to find them husbands, and chiefs turned them down."
+ 9 "Later tradition says the poet Avvaiyar finally saw them married."
+ 10 "Envy of a generous man, or a war for his hill? Tell me below. Watch again, and watch the moon."
+Timing: L(i), Le(i), Wd(word, line) from ./core/timing.js (never hard-code absolute seconds except small offsets; Wd matches a word prefix, case-insensitive, punctuation removed, e.g. Wd('three',0), Wd('parambu',1), Wd('jasmine',2), Wd('pandya',3), Wd('kapilar',4), Wd('killed',5), Wd('treachery',6), Wd('moon',7), Wd('next',7), Wd('avvaiyar',9), Wd('moon',10)). Library ./core/lib.js (ctx, W, H, clamp, lerp, seg, eo, eio, eob, rnd, TAU). art.js: rgba, mixc.
+Shot object: add({ id, at, cam:[x,y], zoom, note, draw: (lt, d, t) => {...} }) where lt = time since shot start, d = shot duration; main.js already does a punch-in on each cut plus a slow push (zoom default 0.06). cue(t, type, {gain, dur, pan}) types: whoosh slide pop plop thud slam tock zip rumble drum swell bell sparkle chisel heartbeat inhale (wax drawing = zip/sparkle softly, dye bloom/flood = whoosh/swell, siege/war = drum/rumble, hits/kill = slam/thud, tension = heartbeat).
+Captions are drawn by main.js at about y 1540-1740: keep key art, titles and tags between y 110 and 1450.
+Rules: cuts every 1-2.5 s (first 8 s: every 1-1.5 s, strongest motion, bold contrast, sound hit at 0.0); every shot moves (wax drawing, blooms, sway, army bob, drips); no static frames;
+no faces, no portraits, no real writing/inscription text (only our short tags/titles), no invented quotes, no religious symbols, temples or deities, no gore (death = figure.dead crackle + fade, crown/spear falls).
+Tags to use where relevant: ILLUSTRATION (early), SANGAM AGE, PARAMBU HILL, OLD POEMS SAY, LEGEND, CHERA, CHOLA, PANDYA, SIEGE, KAPILAR, POEMS NEVER SAY, LATER TELLINGS, TREACHERY?, DISPUTED, ONE POEM SAYS, LATER TRADITION, AVVAIYAR.
+Never reuse: neon tubes/brick wall, kolam powder, storm portolan/wax seal, reverse-glass/shatter, chessboard/marbled ink, shadow puppets, playing cards, mosaic, linocut, kalamkari, charcoal, palm-leaf manuscripts as a whole style, copper plates, iron/rust, gold leaf/sonar, sand bottle, paper theatre, blueprint, bronze lamp corridor, ledger watercolour.

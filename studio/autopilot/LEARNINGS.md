@@ -101,3 +101,9 @@
 - Rows: 7, identical to the pre-v25 check (Video 1 918 views 35.1%; Video 4 406 views 46.2%; Video 3 113 views 45.1%; Video 2 75 views 71.2%; Videos 5-7 2-3 views). No retention-rule video public yet.
 - Verdict: no new evidence; nothing changed. v26 follows RETENTION RULES + concrete-act hook note.
 - v26 Kadava captivity c.1231 (26 Nov UTC / 27 Nov IST): hook 'Who took a Chola emperor prisoner?' (question, 6 words; concrete act: an emperor taken captive by his own former vassal; red loop slams shut around the crowned figure + red flash + crack at 0.0 s), length 56.7 s (140 words), topic type: forgotten humiliation / rival-king politics, records vs inscriptions, once-vs-twice captivity disputed, start of the Chola end. End: 'A traitor, or a man breaking free? Tell me below. Watch again, and watch the dots.' Art 'Kolam Threshold', music gen:ember 46219.
+
+## Pre-v27 check 2026-11-28 05:15 UTC (10:45 IST 28 Nov), Windsor.ai YouTube (1 call, last_30dT per-video)
+- (The 27 Nov daily study was missed: no scheduled runs fired 09:07 UTC 27 Nov - 05:06 UTC 28 Nov.)
+- Rows: 13. Video 1 Rajaraja 927 views 35.1%; Video 4 Lake Nyos 426 views 45.6%; Video 5 Kallanai now 174 views, 52.0% viewed, avg 39 s, 10 likes; Video 3 Srivijaya 130 views 43.3%; Video 6 Buckingham Canal now 123 views, 45.1%, 8 likes; Video 2 Gangaikonda 86 views 69.3%; Video 7 Korkai 3 views (lag). Unlisted v8-v12 1-2 views (owner checks), ignored.
+- Total ~1,870 views over 7 public videos; 6 usable samples. % viewed: concrete-act opener (Video 2, 69%) > engineering/place stories (Kallanai 52%, Buckingham 45%, Lake Nyos 46%, Srivijaya 43%) > slow monument opener (Video 1, 35%). Every pre-rule video sits under the 60% target, which supports the RETENTION RULES; still no rule-era video (v15+) is public, so hook styles cannot be compared yet.
+- Verdict: no new evidence; nothing big changed. v27 follows RETENTION RULES + concrete-act hook note.

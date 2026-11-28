@@ -229,7 +229,7 @@ export function buildB(add, cue) {
       N.throne(620, 940, 1.1, { col: P.magenta, b: N.buzz(lt, 13, 0.6) });
       seated(620, 940, 1.1, { col: P.magenta, hat: 'crown', hatCol: P.magenta, b: N.buzz(lt, 17, 0.6) });
       deadFig(210, 1270, 0.6, { sit: true });
-      N.sign('KULOTTUNGA I', 540, 300, 110, P.magenta, { p: eo(seg(lt, 0.0, 0.5)), flick: 0.4, t: lt });
+      N.sign('KULOTTUNGA I', 540, 300, 92, P.magenta, { p: eo(seg(lt, 0.0, 0.5)), flick: 0.4, t: lt });
       N.sparks(620, 560, lt, 0.05, 20, 260, 41, P.magentaHi);
       N.reflect(WET, () => N.throne(620, 940, 1.1, { col: P.magenta, b: 0.8 }), 0.25, lt);
     } });

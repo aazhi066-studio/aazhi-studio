@@ -1,3 +1,4 @@
+heartbeat: 2026-11-28T14:10Z (publish run: v10 YT public, FB video 922590487511515; IG try 1 still processing (180), retry after ~200 s; lock held)
 YT PUBLIC tgEX1Hbq56I (Video 10 Vatapi) 14:1x UTC 28 Nov (PUT 200, 1st try). v9 IG retry (1 try) FAILED again: still processing (180) - not retrying (possible silent post: check @aazhi). Sheet read 1: rows 10-13 approved (v9 published, v10 publishing now; NOTE row 9 Video 8 Mangammal l8wOiRDzK30 is also approved + unpublished).
 heartbeat: 2026-11-28T14:08Z (14:07 UTC run = 19:37 IST 28 Nov: PUBLISH run (v9 IG retry + Video 10 Vatapi); lock TAKEN)
 heartbeat: 2026-11-28T13:09Z (run 13:08 UTC 28 Nov finished: idle; lock free)

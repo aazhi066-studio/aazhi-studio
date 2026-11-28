@@ -126,13 +126,17 @@ export function buildB(add, cue) {
     draw(lt, d) {
       const tk = tKill - sF;
       B.cloth(lt, { tone: 'madder', sway: 4 });
+      ctx.save(); sh(B.shk(lt, tk, 16, 0.5));
       B.moon(540, 300, 150, { stain: seg(lt, tk - 0.1, tk + 0.8), crack: 0.35 * seg(lt, tk + 0.2, tk + 0.8) });
       B.hill(-200, 1280, 1500, 700, 1, { stain: 1 });
       B.flood(0.42, P.madder, lt, 0.8);
       B.bloom(540, 700, 190, seg(lt, tk + 0.25, tk + 0.95), P.madder, 0.75, 5);
       const dead = seg(lt, tk, tk + 0.55);
-      B.figure(540, 812, 0.9, { dead, a: 1 - 0.85 * seg(lt, tk + 0.45, tk + 0.95) });
-      B.drips(540, 760, lt, tk + 0.4, 4, 7, P.madder);
+      B.figure(540, 812, 0.9, { dead });
+      B.bloom(540, 690, 200, seg(lt, tk + 0.4, tk + 0.9), P.madder, 0.92, 6); // the figure dissolves into madder dye
+      B.drips(540, 780, lt, tk + 0.6, 4, 7, P.madder);
+      ctx.restore();
+      B.flash(0.35 * (1 - seg(lt, tk, tk + 0.3)) * (lt > tk ? 1 : 0), P.madderHi);
       B.vignette(0.65);
     } });
   cue(sF, 'heartbeat', { gain: 0.6 }); cue(tKill, 'thud', { gain: 0.8 }); cue(tKill + 0.05, 'heartbeat', { gain: 0.55 }); cue(tKill + 0.5, 'swell', { gain: 0.3, dur: 0.6 });
@@ -195,11 +199,11 @@ export function buildB(add, cue) {
       B.cloth(lt, { tone: 'night' });
       B.moon(240, 300, 85, { stain: 1, glow: 0.5 });
       B.hill(...hp, 1, { stain: 0.5 });
-      const th = [[1040, 1450], [980, 1300], [1010, 1180], [900, 1080], [940, 960], [800, 880], [830, 760], [660, 690], [560, 640]];
+      const th = [[990, 1440], [960, 1300], [1010, 1180], [900, 1080], [940, 960], [800, 880], [830, 760], [660, 690], [560, 640]];
       const tp = eio(seg(lt, 0, d * 0.9)), fl = 0.75 + 0.25 * Math.sin(lt * 14);
       B.glow(...B.part(th, tp).slice(-1)[0], 60, P.madderHi, 0.5);
       B.wax(th, tp, { col: P.madder, w: 6, a: fl });
-      B.figure(900, 1215, 0.5, { col: P.indigoLt, a: 0.7 * seg(lt, 0.2, 0.7) });
+      B.figure(lerp(40, 150, eo(seg(lt, 0.1, 0.8))), 1215, 0.5, { col: P.indigoLt, a: 0.7 });
       B.tag('TREACHERY?', 540, 1340, 56, { s: B.pop(lt, 0.15), col: P.madderHi });
       B.vignette(0.6);
     } });
@@ -211,11 +215,11 @@ export function buildB(add, cue) {
       const ts = tDis - sK;
       B.cloth(lt);
       const k = eo(seg(lt, ts, ts + 0.55)), jit = lt < ts ? Math.sin(lt * 60) * 4 * seg(lt, 0, ts) : 0;
-      const to = [[200, 400, -0.5], [930, 780, 0.45], [250, 1190, -0.35]];
+      const to = [[260, 420, -0.4], [830, 640, 0.35], [700, 1180, -0.25]];
       L3.forEach(([x, y, r], i) => { const [tx, ty, tr] = to[i];
-        leafAt(lerp(x, tx, k) + jit * (i - 1), lerp(y, ty, k), 640, 170, lerp(r, tr, k), 1, lt + i, { s: lerp(1, 0.8, k), crack: seg(lt, ts - 0.05, ts + 0.4), seed: 3 + i }); });
+        leafAt(lerp(x, tx, k) + jit * (i - 1), lerp(y, ty, k), 640, 170, lerp(r, tr, k), 1, lt + i, { s: lerp(1, 0.75, k), crack: seg(lt, ts - 0.05, ts + 0.4), seed: 3 + i }); });
       B.glow(540, 810, 300, P.madderHi, 0.35 * (1 - seg(lt, ts, ts + 0.4)) * (lt > ts ? 1 : 0));
-      B.tag('DISPUTED', 560, 830, 68, { s: B.pop(lt, ts + 0.3), rot: -0.05, col: P.madderHi });
+      B.tag('DISPUTED', 520, 900, 68, { s: B.pop(lt, ts + 0.3), rot: -0.05, col: P.madderHi });
       B.vignette(0.5);
     } });
   cue(sK, 'tock', { gain: 0.3 }); cue(tDis, 'slam', { gain: 0.45 }); cue(tDis + 0.05, 'whoosh', { gain: 0.4 }); cue(tDis + 0.3, 'pop', { gain: 0.4 });

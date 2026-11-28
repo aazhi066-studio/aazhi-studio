@@ -93,7 +93,7 @@ export function crackle(x, y, w, h, p, seed = 1, col = PAL.madder, lw = 2.5) {
 export function wax(pts, p = 1, o = {}) {
   if (p <= 0 || pts.length < 2) return;
   const col = o.col || PAL.wax, w = o.w ?? 10, a = o.a ?? 1, q = part(pts, p);
-  ctx.save(); ctx.globalAlpha = a; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  ctx.save(); ctx.globalAlpha *= a; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
   if (o.fill && p >= 1) { ctx.beginPath(); pts.forEach((pt, i) => (i ? ctx.lineTo(pt[0], pt[1]) : ctx.moveTo(pt[0], pt[1]))); ctx.closePath(); ctx.fillStyle = o.fill; ctx.fill(); }
   ctx.beginPath(); q.forEach((pt, i) => (i ? ctx.lineTo(pt[0], pt[1]) : ctx.moveTo(pt[0], pt[1]))); if (o.close && p >= 1) ctx.closePath();
   ctx.strokeStyle = 'rgba(0,0,10,0.35)'; ctx.lineWidth = w + 6; ctx.stroke();     // dye halo around the resist
@@ -110,7 +110,7 @@ export function drips(x, y, lt, t0, n = 5, seed = 1, col = PAL.wax) {
 }
 /** a DYE BLOOM: colour spreading from (x, y) to radius r with a ragged edge (p 0..1) */
 export function bloom(x, y, r, p, col, a = 0.75, seed = 1) {
-  if (p <= 0) return; const R = r * eo(clamp(p)); ctx.save(); ctx.globalAlpha = a; ctx.beginPath();
+  if (p <= 0) return; const R = r * eo(clamp(p)); ctx.save(); ctx.globalAlpha *= a; ctx.beginPath();
   for (let i = 0; i <= 40; i++) { const an = i / 40 * TAU, rr = R * (0.82 + 0.18 * rnd(i * 5 + seed)); const px = x + Math.cos(an) * rr, py = y + Math.sin(an) * rr; i ? ctx.lineTo(px, py) : ctx.moveTo(px, py); }
   ctx.closePath(); const g = ctx.createRadialGradient(x, y, 0, x, y, R); g.addColorStop(0, col); g.addColorStop(0.8, col); g.addColorStop(1, rgba(col, 0.4));
   ctx.fillStyle = g; ctx.fill(); ctx.restore();
@@ -118,7 +118,7 @@ export function bloom(x, y, r, p, col, a = 0.75, seed = 1) {
 /** DYE-BATH FLOOD wipe: colour rises from the bottom (p 0..1 covers the frame) with a wavy edge. Use as a transition. */
 export function flood(p, col = PAL.madder, lt = 0, a = 1) {
   if (p <= 0) return; const y = H + 80 - (H + 260) * eio(clamp(p));
-  ctx.save(); ctx.globalAlpha = a; ctx.beginPath(); ctx.moveTo(-60, H + 60);
+  ctx.save(); ctx.globalAlpha *= a; ctx.beginPath(); ctx.moveTo(-60, H + 60);
   for (let x = -60; x <= W + 60; x += 30) ctx.lineTo(x, y + Math.sin(x * 0.012 + lt * 5) * 26 + Math.sin(x * 0.031) * 12);
   ctx.lineTo(W + 60, H + 60); ctx.closePath(); ctx.fillStyle = col; ctx.fill();
   ctx.strokeStyle = rgba(PAL.wax, 0.5); ctx.lineWidth = 6; ctx.stroke(); ctx.restore();
@@ -179,7 +179,7 @@ export function chariot(x, y, s = 1, lt = 0, o = {}) {
 /** faceless FIGURE (feet at x, y; standing height ~ 300*s). o: {col, p, crown, bow, spear, arm (raise 0..1), sit, kneel, a, dead (0..1 cracks+fades)} */
 export function figure(x, y, s = 1, o = {}) {
   const col = o.col || PAL.wax, p = o.p ?? 1, a = (o.a ?? 1) * (1 - 0.7 * (o.dead || 0));
-  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha = a;
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.globalAlpha *= a;
   const hy = o.sit ? -200 : o.kneel ? -210 : -270;
   // body: a tunic shape filled with dye + wax outline
   const body = o.sit ? [[-40, hy + 40], [40, hy + 40], [55, -90], [90, -80], [90, 0], [60, 0], [50, -40], [-50, -40], [-55, hy + 40]]

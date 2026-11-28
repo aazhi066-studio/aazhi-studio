@@ -257,7 +257,7 @@ export function buildC(add, cue) {
     B.cloth(lt + 29, { tone: 'indigo' });
     const sc = lerp(1.17, 1.11, eio(seg(lt, 0, d)));
     view(270, 830, sc, () => envyPanel(lt, 1, 1), 800);
-    tagIn('ENVY?', 540, 250, lt, 0.08, 64);
+    tagIn('ENVY?', 540, 300, lt, 0.08, 64);
     B.vignette(0.5);
   } });
   cue(s11, 'whoosh', { gain: 0.5 }); cue(envy + 0.08, 'pop', { gain: 0.55 }); cue(gen, 'heartbeat', { gain: 0.5 });
@@ -267,7 +267,7 @@ export function buildC(add, cue) {
     B.cloth(lt + 32, { tone: 'indigo' });
     const k = eio(seg(lt, 0, 0.35)); const sc = lerp(1.11, 1, k), fx = lerp(270, 540, k), fy = lerp(830, 860, k);
     view(fx, fy, sc, () => { envyPanel(lt + 1.7, 1, lerp(1, 0.55, seg(lt, 0.3, 0.8))); warPanel(lt, k >= 1 ? 1 : seg(lt, 0.1, 0.35), lt); }, lerp(800, 860, k));
-    if (k >= 0.99) { tagIn('ENVY?', 270, 360, lt, 0.3, 46); tagIn('WAR FOR LAND?', 795, 360, lt, 0.4, 38, { col: P.madderHi }); tagIn('OR', 540, 860, lt, 0.55, 40); }
+    if (k >= 0.99) { tagIn('ENVY?', 270, 395, lt, 0.3, 46); tagIn('WAR FOR LAND?', 795, 395, lt, 0.4, 38, { col: P.madderHi }); tagIn('OR', 540, 860, lt, 0.55, 40); }
     B.vignette(0.5);
   } });
   cue(s12, 'slide', { gain: 0.5 }); cue(s12 + 0.4, 'drum', { gain: 0.6 }); cue(s12 + 0.7, 'rumble', { gain: 0.45 }); cue(hill10, 'drum', { gain: 0.5 });

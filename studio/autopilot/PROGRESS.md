@@ -1,4 +1,4 @@
-heartbeat: 2026-11-28T05:08Z (run 05:06 UTC 28 Nov ACTIVE: lock held)
+heartbeat: 2026-11-28T05:45Z (run 05:06 UTC 28 Nov ACTIVE: v27 in production; lock held)
 UPLOAD 28 Nov 05:07:25 UTC: v15 Aditya Karikalan 3lZEiu7SHi0 unlisted (https://www.youtube.com/watch?v=3lZEiu7SHi0). Upload IST 28 Nov 1/1 (rolling 24h: 1). Sheet row 16 (Video 15, Pending, IG Yes) added; WhatsApp uploaded sent. Note: no runs fired between 09:07 UTC 27 Nov and 05:06 UTC 28 Nov (scheduler gap): Video 9 Kuyili publish on 27 Nov and the 27 Nov analytics were missed. Zapier calls so far: YT upload 1, sheet 1, WhatsApp 1.
 Run 09:07 UTC 27 Nov (14:37 IST 27 Nov): idle by plan. IST 27 Nov upload 1/1 (v14), production 2/2 (v25, v26). Zapier calls this run: 0. Next: publish Video 9 Kuyili at first run >= 13:30 UTC 27 Nov; analytics at first run >= 14:30 UTC 27 Nov; upload v15 + start v27 at first run >= 18:30 UTC 27 Nov. Memory /areas/aazhi-channel.md still not reachable.
 heartbeat: 2026-11-27T09:07Z (run 09:07 UTC 27 Nov finished: idle; lock free)
